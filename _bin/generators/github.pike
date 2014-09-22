@@ -6,26 +6,27 @@
   specifically, the GPL, LGPL and MPL licenses apply to this software.
 */
 
-#include "../../../social-keys/instagram.pike";
+#include "../../../social-keys/github.pike";
 inherit "../generator.pike";
 
 string generate(string template)
 {
   mapping data;
 
-#ifndef REGEN_INSTAGRAM
+#ifndef REGEN_GITHUB
    data = get_cache();
 #endif
 
   if (!data) {
-    write("Re-generating Instagram...");
-    Social.Instagram api = Social.Instagram(API_KEY, API_SECRET, 0, 0);
+    write("Re-generating Github...");
+    Social.Github api = Social.Github(API_KEY, API_SECRET, 0, 0);
     api->authorization->access_token = ACCESS_TOKEN;
-    data = api->users->recent();
+    data = api->get("users/poppa");
     save_cache(data);
     write("OK!\n");
   }
 
+#if 0
   String.Buffer b = String.Buffer();
 
   foreach (data->data, mapping m) {
@@ -48,4 +49,7 @@ string generate(string template)
   }
 
   return b->get();
+#endif
+
+  return "<p>GITHUB</p>";
 }

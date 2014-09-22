@@ -34,7 +34,7 @@ Poppa.scrollWin = function(to, speed, return_false, offset) {
 
 Poppa.loadBackgroundImage = function(url, target) {
   var w = $(window).outerWidth(),
-  src = 'assets/img/preamble/' + url,
+  src = '/assets/img/preamble/' + url,
   img = $('<img>');
 
   console.log('Load bg: ', src);

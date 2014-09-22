@@ -21,14 +21,14 @@ html, body {
 }
 
 .wrapper {
-  padding: 3vw;
+  padding: 48px;
 }
 .wrapper.body {
   height: 100%;
 }
 
 body {
-  font: 2vw/1.5 arial, sans-serif;
+  font: 140%/1.5 arial, sans-serif;
   overflow-y: scroll;
 }
 
@@ -36,7 +36,7 @@ header {
   background: rgba(0, 0, 0, .1);
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 header .wrapper {
@@ -54,7 +54,7 @@ header h1 {
 header h1 a {
   text-decoration: none;
   color: #FFE795;
-  padding: 1vw 3vw;
+  padding: 12px 48px;
   display: inline-block;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
 }
@@ -86,7 +86,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-  margin: -3vw -3vw 0vw;
+  margin: -48px -48px 0vw;
 }
 .fade-layer {
   width: 100%;
@@ -110,7 +110,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 3vw;
+  padding: 48px;
   color: white;
   font-size: larger;
   z-index: 1;

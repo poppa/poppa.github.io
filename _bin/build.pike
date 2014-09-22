@@ -16,6 +16,15 @@ mapping(string:object) generators = ([]);
 
 int main(int argc, array(string) argv)
 {
+# ifndef NO_GENERATORS
+  scan_dir(generators_path, lambda(string s) {
+    if (has_suffix(s, ".pike")) {
+      string name = (s - generators_path)[1..];
+      generators[name] = ((program) s)();
+    }
+  });
+# endif /* NO_GENERATORS */
+
 #ifdef LISTEN
   Stdio.File f = Stdio.File(site_path);
 
@@ -26,21 +35,11 @@ int main(int argc, array(string) argv)
             Stdio.DN_RENAME, lambda ()
   {
     werror("Got DN_MODIFY callback!\n");
-
     return 0;
   });
 
   return -1;
 #else
-
-# ifndef NO_GENERATORS
-  scan_dir(generators_path, lambda(string s) {
-    if (has_suffix(s, ".pike")) {
-      string name = (s - generators_path)[1..];
-      generators[name] = ((program) s)();
-    }
-  });
-# endif /* NO_GENERATORS */
 
   build();
 #endif
@@ -116,9 +115,7 @@ void copy_file(string from, string to)
     ok = Stdio.mkdirhier(dir);
 
   if (ok) Stdio.cp(from, to);
-  else {
-    werror("Unable to create parent directories for %O\n", to);
-  }
+  else werror("Unable to create parent directories for %O\n", to);
 }
 
 void write_file(string path, string data, void|int(0..1) compare)
@@ -131,10 +128,8 @@ void write_file(string path, string data, void|int(0..1) compare)
   else {
     if (Stdio.exist(path) && compare) {
       string old = Stdio.read_file(path);
-      if (old == data) {
-        werror("Identical content...skip writing\n");
+      if (old == data)
         return;
-      }
     }
   }
 
@@ -284,6 +279,9 @@ class Template
     contents = p->feed(contents)->finish()->read();
 
     foreach (bundles; string name; array s) {
+      if (name[0] == '/')
+        name = "." + name;
+
       write_file(combine_path(real_path, name), s*"\n", 1);
     }
   }
@@ -328,6 +326,11 @@ class Asset
   {
     attr = _attr;
 
+    if (attr->href && sizeof(attr->href) && attr->href[0] == '/')
+      attr->href = "." + attr->href;
+    else if (attr->src && sizeof(attr->src) && attr->src[0] == '/')
+      attr->src = "." + attr->src;
+
     if (attr->minify)
       minify = 1;
 
@@ -357,8 +360,10 @@ class Css
   {
     string d = Stdio.read_file(realpath);
 
-#if constant(Standards.CSS)
+#ifndef NO_MINIFY
+# if constant(Standards.CSS)
     if (minify) d = Standards.CSS.minify(d);
+# endif
 #endif
 
     return d;
@@ -379,8 +384,10 @@ class JavaScript
   {
     string d = Stdio.read_file(realpath);
 
-#if constant(Standards.JavaScript)
+#ifndef NO_MINIFY
+# if constant(Standards.JavaScript)
     if (minify) d = Standards.JavaScript.minify(d);
+# endif
 #endif
 
     return d;

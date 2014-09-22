@@ -1,0 +1,33 @@
+<title>Welcome to my site</title>
+
+<content>
+
+  <div class="preamble" data-bg="spiderweb.jpg">
+    <div class="fade-layer"></div>
+    <div class="text">
+      <h1>Welcome</h1>
+      <p>Just like the spider, I'm a web developer too</p>
+    </div>
+  </div>
+
+
+  <div class="square-wrapper instagram">
+    <generator name="instagram.pike">
+      <div class="square" data-data="${_data}" data-id="${id}">
+        <div class="inner">
+          <div class="header meta">
+            <img src="${user.profile_picture}" alt="${user.username}">
+            <span>${user.username}</span>
+          </div>
+          <div class="image">
+            <img src="${images.standard_resolution.url}">
+          </div>
+        </div>
+        <div class="footer meta">
+          <span>${elapsed}</span>
+        </div>
+      </div>
+    </generator>
+  </div>
+
+</content>

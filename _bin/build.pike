@@ -121,13 +121,22 @@ void copy_file(string from, string to)
   }
 }
 
-void write_file(string path, string data)
+void write_file(string path, string data, void|int(0..1) compare)
 {
   string dir = dirname(path);
   int(0..1) ok = 1;
 
   if (!Stdio.exist(dir))
     ok = Stdio.mkdirhier(dir);
+  else {
+    if (Stdio.exist(path) && compare) {
+      string old = Stdio.read_file(path);
+      if (old == data) {
+        werror("Identical content...skip writing\n");
+        return;
+      }
+    }
+  }
 
   if (ok) {
     Stdio.write_file(path, data);
@@ -273,6 +282,10 @@ class Template
 #endif
 
     contents = p->feed(contents)->finish()->read();
+
+    foreach (bundles; string name; array s) {
+      write_file(combine_path(real_path, name), s*"\n", 1);
+    }
   }
 
   string make_tag(string name, mapping attr)
@@ -288,23 +301,12 @@ class Template
     return make_tag(name, attr) + data + "</" + name + ">";
   }
 
-  private int(0..1) bundles_rendered = 0;
-
   string render(Page page)
   {
     string data = replace(contents, ([ "${title}"    : page->title,
                                        "${contents}" : page->contents,
                                        "${date}"     : "" ]));
-
-    write_file(page->sitepath, data);
-
-    if (!bundles_rendered) {
-      foreach (bundles; string name; array s) {
-        write_file(combine_path(real_path, name), s*"\n");
-      }
-
-      bundles_rendered = 1;
-    }
+    write_file(page->sitepath, data, 1);
   }
 
   string _sprintf(int how)

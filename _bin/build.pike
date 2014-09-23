@@ -11,6 +11,11 @@ constant site_path = combine_path(__DIR__, "../_site/");
 constant tmpl_path = combine_path(site_path, "_template/");
 constant generators_path = combine_path(__DIR__, "generators");
 
+#if constant(System.Inotify)
+import System.Inotify;
+DirectoryWatcher monitor;
+#endif
+
 mapping(string:int(0..1)) no_copy_asset = ([]);
 mapping(string:object) generators = ([]);
 
@@ -26,24 +31,191 @@ int main(int argc, array(string) argv)
 # endif /* NO_GENERATORS */
 
 #ifdef LISTEN
-  Stdio.File f = Stdio.File(site_path);
+#if !constant(System.Inotify)
+  werror("System.Inotify is not present on this system %O!\n", System.Inotify);
+  return 1;
+#endif
 
-  f->notify(Stdio.DN_MULTISHOT|
-            Stdio.DN_MODIFY|
-            Stdio.DN_ATTRIB|
-            Stdio.DN_CREATE|
-            Stdio.DN_DELETE|
-            Stdio.DN_RENAME, lambda ()
-  {
-    werror("Got DN_MODIFY callback!\n");
-    return 0;
-  });
+
+
+  write("Adding watcher for \"%s\"\n", site_path);
+
+  int last_call = 0;
+
+  function wcb = lambda(int mask, int cookie, string name, mixed ... args) {
+    werror("Mask: %4d, Cookie: %4d, File: %s\n", mask, cookie, name);
+
+    switch (mask) {
+      case IN_ACCESS:
+        werror("IN_ACCESS\n");
+        break;
+
+      case IN_ATTRIB:
+        werror("IN_ATTRIB\n");
+        break;
+
+      case IN_CLOSE:
+        werror("IN_CLOSE\n");
+        break;
+
+      case IN_CLOSE_WRITE:
+        werror("IN_CLOSE_WRITE\n");
+        break;
+
+      case IN_CLOSE_NOWRITE:
+        werror("IN_CLOSE_NOWRITE\n");
+        break;
+
+      case IN_CREATE:
+        werror("IN_CREATE\n");
+        break;
+
+      case IN_DELETE:
+        werror("IN_DELETE\n");
+        break;
+
+      case IN_DELETE_SELF:
+        werror("IN_DELETE_SELF\n");
+        break;
+
+      case IN_MODIFY:
+        werror("IN_MODIFY\n");
+        break;
+
+      case IN_MOVE_SELF:
+        werror("IN_MOVE_SELF\n");
+        break;
+
+      case IN_MOVED_FROM:
+        werror("IN_MOVED_FROM\n");
+        break;
+
+      case IN_MOVED_TO:
+        werror("IN_MOVED_TO\n");
+        break;
+
+      case IN_OPEN:
+        werror("IN_OPEN\n");
+        break;
+
+      case IN_MOVE:
+        werror("IN_MOVE\n");
+        break;
+
+      case IN_DONT_FOLLOW:
+        werror("IN_DONT_FOLLOW\n");
+        break;
+
+      case IN_MASK_ADD:
+        werror("IN_MASK_ADD\n");
+        break;
+
+      case IN_ONESHOT:
+        werror("IN_ONESHOT\n");
+        break;
+
+      case IN_ONLYDIR:
+        werror("IN_ONLYDIR\n");
+        break;
+
+      case IN_IGNORED:
+        werror("IN_IGNORED\n");
+        break;
+
+      case IN_ISDIR:
+        werror("IN_ISDIR\n");
+        break;
+
+      case IN_Q_OVERFLOW:
+        werror("IN_Q_OVERFLOW\n");
+        break;
+
+      case IN_UNMOUNT:
+        werror("IN_UNMOUNT\n");
+        break;
+
+      default:
+        error("Unknown mask!\n");
+        break;
+    }
+
+    last_call = time();
+  };
+
+  monitor = DirectoryWatcher(site_path, 1);
+  monitor->monitor(IN_MOVE|IN_MODIFY|IN_CREATE|IN_DELETE, wcb);
 
   return -1;
 #else
 
   build();
 #endif
+}
+
+class FileSystemWatcher
+{
+  protected string path;
+  protected System.Inotify.Instance watcher;
+
+  void create(string path)
+  {
+    this_program::path = path;
+    watcher = System.Inotify.Instance();
+  }
+}
+
+class DirectoryWatcher
+{
+  inherit FileSystemWatcher;
+
+  private array(int) watchers = ({});
+  private int(0..1) recursive;
+
+  void create(string path, void|int(0..1) recursive)
+  {
+    ::create(path);
+    this_program::recursive = recursive;
+  }
+
+  void monitor(int mask, function callback, void|mixed ... args)
+  {
+    function _scan_dir;
+    if (!args) args = ({});
+    int w = watcher->add_watch(path, mask, callback, @args);
+
+    watchers += ({ w });
+
+    if (recursive) {
+      _scan_dir = lambda(string p) {
+        foreach (get_dir(p), string pp) {
+          pp = combine_path(p, pp);
+
+          if (Stdio.is_dir(pp)) {
+            watchers += ({
+              watcher->add_watch(pp, mask, callback, @args)
+            });
+
+            _scan_dir(pp);
+          }
+        }
+      };
+      _scan_dir(path);
+    }
+  }
+
+  void stop_monitor()
+  {
+    foreach (watchers, int w) {
+      write("Removing watcher: %d\n", w);
+      watcher->rm_watch(w);
+    }
+  }
+
+  void destroy()
+  {
+    werror("DirectoryWatcher->destroy()\n");
+    stop_monitor();
+  }
 }
 
 int build()

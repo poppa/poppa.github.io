@@ -113,5 +113,8 @@ protected mixed get_cache()
 
 protected void save_cache(mixed data)
 {
+  if (!Stdio.exist(dirname(cache_file)))
+    Stdio.mkdirhier(dirname(cache_file));
+
   Stdio.write_file(cache_file, encode_value(data));
 }

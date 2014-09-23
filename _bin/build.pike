@@ -6,9 +6,9 @@
   specifically, the GPL, LGPL and MPL licenses apply to this software.
 */
 
-constant real_path       = combine_path(__DIR__, "../");
-constant site_path       = combine_path(__DIR__, "../_site/");
-constant tmpl_path       = combine_path(site_path, "_template/");
+constant real_path = combine_path(__DIR__, "../");
+constant site_path = combine_path(__DIR__, "../_site/");
+constant tmpl_path = combine_path(site_path, "_template/");
 constant generators_path = combine_path(__DIR__, "generators");
 
 mapping(string:int(0..1)) no_copy_asset = ([]);
@@ -28,7 +28,8 @@ int main(int argc, array(string) argv)
 #ifdef LISTEN
   Stdio.File f = Stdio.File(site_path);
 
-  f->notify(Stdio.DN_MODIFY|
+  f->notify(Stdio.DN_MULTISHOT|
+            Stdio.DN_MODIFY|
             Stdio.DN_ATTRIB|
             Stdio.DN_CREATE|
             Stdio.DN_DELETE|

@@ -10,8 +10,7 @@
   listen on port 8080 but an arbitrary port number can be given as first
   argument to this program.
 
-  You can stop a running server with:
-
+  You can stop a running server by adding "stop" as first argument:
   user@computer:~/path$ server.pike stop
 */
 

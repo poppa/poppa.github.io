@@ -11,9 +11,98 @@ constant site_path = combine_path(__DIR__, "../_site/");
 constant tmpl_path = combine_path(site_path, "_template/");
 constant generators_path = combine_path(__DIR__, "generators");
 
-#if constant(System.Inotify)
-import System.Inotify;
-DirectoryWatcher monitor;
+#if constant(Filesystem.Monitor.symlinks)
+import Filesystem.Monitor;
+Watcher monitor;
+
+class Watcher
+{
+  inherit symlinks;
+
+  protected constant default_max_dir_check_interval = 0;
+  protected constant default_file_interval_factor = 0;
+  protected constant default_stable_time = 0;
+
+  enum ChangeType {
+    CREATED,
+    DELETED,
+    CHANGED,
+    DATA
+  };
+
+  private function file_created_cb;
+  private function file_deleted_cb;
+  private function attr_changed_cb;
+  private function data_changed_cb;
+
+  string change_type_as_string(ChangeType t)
+  {
+    switch (t) {
+      case CREATED: return "CREATED";
+      case DELETED: return "DELETED";
+      case CHANGED: return "CHANGED";
+      case DATA:    return "DATA";
+    }
+
+    return "UNKNOWN";
+  }
+
+  void on_file_created(function f)
+  {
+    file_created_cb = f;
+  }
+
+  void on_file_changed(function f)
+  {
+    attr_changed_cb = f;
+  }
+
+  void on_file_deleted(function f)
+  {
+    file_deleted_cb = f;
+  }
+
+  void on_data_changed(function f)
+  {
+    data_changed_cb = f;
+  }
+
+  protected void data_changed(string p, Stdio.Stat st)
+  {
+    if (data_changed_cb) {
+      catch {
+        data_changed_cb(DATA, p, st);
+      };
+    }
+  }
+
+  protected void file_created(string p, Stdio.Stat st)
+  {
+    if (file_created_cb) {
+      catch {
+        file_created_cb(CREATED, p, st);
+      };
+    }
+  }
+
+  protected void file_deleted(string p, Stdio.Stat st)
+  {
+    if (file_deleted_cb) {
+      catch {
+        file_deleted_cb(DELETED, p, st);
+      };
+    }
+  }
+
+  protected void attr_changed(string p, Stdio.Stat st)
+  {
+    if (attr_changed_cb) {
+      catch {
+        attr_changed_cb(CHANGED, p, st);
+      };
+    }
+  }
+}
 #endif
 
 mapping(string:int(0..1)) no_copy_asset = ([]);
@@ -21,206 +110,47 @@ mapping(string:object) generators = ([]);
 
 int main(int argc, array(string) argv)
 {
-# ifndef NO_GENERATORS
   scan_dir(generators_path, lambda(string s) {
     if (has_suffix(s, ".pike")) {
       string name = (s - generators_path)[1..];
       generators[name] = ((program) s)();
     }
   });
-# endif /* NO_GENERATORS */
 
 #ifdef LISTEN
-#if !constant(System.Inotify)
-  werror("System.Inotify is not present on this system %O!\n", System.Inotify);
-  return 1;
-#endif
-
-
 
   write("Adding watcher for \"%s\"\n", site_path);
 
-  int last_call = 0;
-
-  function wcb = lambda(int mask, int cookie, string name, mixed ... args) {
-    werror("Mask: %4d, Cookie: %4d, File: %s\n", mask, cookie, name);
-
-    switch (mask) {
-      case IN_ACCESS:
-        werror("IN_ACCESS\n");
-        break;
-
-      case IN_ATTRIB:
-        werror("IN_ATTRIB\n");
-        break;
-
-      case IN_CLOSE:
-        werror("IN_CLOSE\n");
-        break;
-
-      case IN_CLOSE_WRITE:
-        werror("IN_CLOSE_WRITE\n");
-        break;
-
-      case IN_CLOSE_NOWRITE:
-        werror("IN_CLOSE_NOWRITE\n");
-        break;
-
-      case IN_CREATE:
-        werror("IN_CREATE\n");
-        break;
-
-      case IN_DELETE:
-        werror("IN_DELETE\n");
-        break;
-
-      case IN_DELETE_SELF:
-        werror("IN_DELETE_SELF\n");
-        break;
-
-      case IN_MODIFY:
-        werror("IN_MODIFY\n");
-        break;
-
-      case IN_MOVE_SELF:
-        werror("IN_MOVE_SELF\n");
-        break;
-
-      case IN_MOVED_FROM:
-        werror("IN_MOVED_FROM\n");
-        break;
-
-      case IN_MOVED_TO:
-        werror("IN_MOVED_TO\n");
-        break;
-
-      case IN_OPEN:
-        werror("IN_OPEN\n");
-        break;
-
-      case IN_MOVE:
-        werror("IN_MOVE\n");
-        break;
-
-      case IN_DONT_FOLLOW:
-        werror("IN_DONT_FOLLOW\n");
-        break;
-
-      case IN_MASK_ADD:
-        werror("IN_MASK_ADD\n");
-        break;
-
-      case IN_ONESHOT:
-        werror("IN_ONESHOT\n");
-        break;
-
-      case IN_ONLYDIR:
-        werror("IN_ONLYDIR\n");
-        break;
-
-      case IN_IGNORED:
-        werror("IN_IGNORED\n");
-        break;
-
-      case IN_ISDIR:
-        werror("IN_ISDIR\n");
-        break;
-
-      case IN_Q_OVERFLOW:
-        werror("IN_Q_OVERFLOW\n");
-        break;
-
-      case IN_UNMOUNT:
-        werror("IN_UNMOUNT\n");
-        break;
-
-      default:
-        error("Unknown mask!\n");
-        break;
-    }
-
-    last_call = time();
+  function on_change = lambda (Watcher.ChangeType t, string p, Stdio.Stat st) {
+    werror("on_change(%s:%s)\n", monitor->change_type_as_string(t), p);
+    build();
   };
 
-  monitor = DirectoryWatcher(site_path, 1);
-  monitor->monitor(IN_MOVE|IN_MODIFY|IN_CREATE|IN_DELETE, wcb);
+  string dummy = combine_path(site_path, "__dummy__");
+
+  monitor = Watcher();
+  monitor->monitor(site_path, 1);
+
+  Stdio.write_file(dummy, "\n");
+  rm(dummy);
+
+  monitor->on_data_changed(on_change);
+  monitor->on_file_deleted(on_change);
+  monitor->on_file_created(on_change);
 
   return -1;
 #else
 
   build();
+
 #endif
-}
-
-class FileSystemWatcher
-{
-  protected string path;
-  protected System.Inotify.Instance watcher;
-
-  void create(string path)
-  {
-    this_program::path = path;
-    watcher = System.Inotify.Instance();
-  }
-}
-
-class DirectoryWatcher
-{
-  inherit FileSystemWatcher;
-
-  private array(int) watchers = ({});
-  private int(0..1) recursive;
-
-  void create(string path, void|int(0..1) recursive)
-  {
-    ::create(path);
-    this_program::recursive = recursive;
-  }
-
-  void monitor(int mask, function callback, void|mixed ... args)
-  {
-    function _scan_dir;
-    if (!args) args = ({});
-    int w = watcher->add_watch(path, mask, callback, @args);
-
-    watchers += ({ w });
-
-    if (recursive) {
-      _scan_dir = lambda(string p) {
-        foreach (get_dir(p), string pp) {
-          pp = combine_path(p, pp);
-
-          if (Stdio.is_dir(pp)) {
-            watchers += ({
-              watcher->add_watch(pp, mask, callback, @args)
-            });
-
-            _scan_dir(pp);
-          }
-        }
-      };
-      _scan_dir(path);
-    }
-  }
-
-  void stop_monitor()
-  {
-    foreach (watchers, int w) {
-      write("Removing watcher: %d\n", w);
-      watcher->rm_watch(w);
-    }
-  }
-
-  void destroy()
-  {
-    werror("DirectoryWatcher->destroy()\n");
-    stop_monitor();
-  }
 }
 
 int build()
 {
-  mapping templates = ([]);
+  write("build...");
+
+  mapping(string:Template) templates = ([]);
   array(Page) pages = ({});
 
   scan_dir(tmpl_path, lambda(string s) {
@@ -228,19 +158,17 @@ int build()
     templates[name] = Template(s);
   });
 
-  scan_dir(site_path, lambda (string s) {
+  scan_dir(site_path, lambda(string s) {
     if (has_suffix(s, ".html")) {
       pages += ({ Page(s) });
     }
   });
 
   foreach (pages, Page p) {
-    if (Template t = templates[p->template]) {
+    if (Template t = templates[p->template])
       t->render(p);
-    }
-    else {
+    else
       werror("No template was found for %O\n", p);
-    }
   }
 
   scan_dir(combine_path(site_path, "assets"), lambda (string s) {
@@ -251,6 +179,8 @@ int build()
 
     copy_file(s, npath);
   });
+
+  write("...done\n");
 
 	return 0;
 }
@@ -276,9 +206,8 @@ void copy_file(string from, string to)
     Stdio.Stat a = file_stat(from);
     Stdio.Stat b = file_stat(to);
 
-    if (a->mtime <= b->mtime) {
+    if (a->mtime <= b->mtime)
       return;
-    }
   }
 
   string dir = dirname(to);
@@ -306,12 +235,10 @@ void write_file(string path, string data, void|int(0..1) compare)
     }
   }
 
-  if (ok) {
+  if (ok)
     Stdio.write_file(path, data);
-  }
-  else {
+  else
     werror("Unable to create parent directories for %O\n", path);
-  }
 }
 
 class Page
@@ -334,8 +261,9 @@ class Page
       },
 
       "content": lambda(Parser.HTML pp, mapping attr, string data) {
-
-#ifndef KEEP_WS
+#ifdef KEEP_WS
+        contents = data;
+#else
         pp = pp->clone();
 
         // Remove all unneccessary whietspace
@@ -347,8 +275,6 @@ class Page
         });
 
         contents = pp->feed(data)->finish()->read();
-#else
-        contents = data;
 #endif
       },
 
@@ -356,13 +282,11 @@ class Page
         template = data;
       },
 
-#ifndef NO_GENERATORS
       "generator": lambda(Parser.HTML pp, mapping attr, string data) {
         if (object o = generators[attr->name]) {
           return o->generate(data);
         }
       }
-#endif
     ]));
 
     p->feed(Stdio.read_file(realpath))->finish();
@@ -451,6 +375,9 @@ class Template
 
     contents = p->feed(contents)->finish()->read();
 
+    if (!contents)
+      contents = "";
+
     foreach (bundles; string name; array s) {
       if (name[0] == '/')
         name = "." + name;
@@ -474,8 +401,8 @@ class Template
 
   string render(Page page)
   {
-    string data = replace(contents, ([ "${title}"    : page->title,
-                                       "${contents}" : page->contents,
+    string data = replace(contents, ([ "${title}"    : page->title||"",
+                                       "${contents}" : page->contents||"",
                                        "${date}"     : "" ]));
     write_file(page->sitepath, data, 1);
   }

@@ -1,32 +1,77 @@
 <title>Welcome to my site</title>
 
 <content>
-
   <div class="preamble" data-bg="spiderweb.jpg">
     <div class="fade-layer"></div>
-    <div class="text">
-      <h1>Welcome</h1>
-      <p>Just like the spider, I'm a web developer too</p>
+    <div class="text gray">
+      <div class="inner">
+        <h1>My name is <span class="invert">Pontus</span>
+          <small>Just like the spider, I'm a web developer too</small>
+        </h1>
+      </div>
     </div>
   </div>
+
+  <div id="ig-target"></div>
 
   <div class="square-wrapper instagram">
     <generator name="instagram.pike">
       <div class="square" data-data="${_data}" data-id="${id}">
         <div class="inner">
-          <div class="header meta">
-            <img src="${user.profile_picture}" alt="${user.username}">
-            <span>${user.username}</span>
-          </div>
           <div class="image">
             <img src="${images.standard_resolution.url}">
           </div>
-        </div>
-        <div class="footer meta">
-          <span>${elapsed}</span>
+          <div class="fade-layer"></div>
+          <div class="footer meta">
+            <span>${elapsed}</span>
+          </div>
         </div>
       </div>
     </generator>
   </div>
 
+  <script type="text/javascript" src="/assets/js/instagram.js"></script>
+  <script type="text/x-handlebars-template" id="hbar-image">
+    <div class="img-header meta">
+      <div class="caption">{{ text }}</div>
+      <div class="action">
+        <a href="#" data-close=""><i class="fa fa-times-circle"></i> Stäng</a>
+      </div>
+    </div>
+    <div id="img-target">
+      <img src="{{{{ image.url }}}}" alt="{{{{ text }}}}" />
+      <div id="insta-src">
+        <i class="fa fa-instagram"></i>
+        <div class="links">
+          <a target="insta" href="{{{{ url }}}}" title="Gå till bilden på Instagram för att kommentera eller lajka">Bilden på Instagram</a>
+          <a target="insta" href="{{{{ user.url }}}}"><strong>{{ user.username }}</strong> på Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="img-footer meta">
+      <div class="caption smaller">
+        <div>
+          <span><i class="fa fa-heart"></i> {{ likes.count }}</span>
+          <xsl:text> &#160; </xsl:text>
+          <span><i class="fa fa-comment"></i> {{ comments.count }}</span>
+        </div>
+      </div>
+      <div class="action">
+        <a href="#" data-close="">
+          <i class="fa fa-times-circle"></i> Stäng</a>
+      </div>
+      <div class="clear-float"></div>
+      <div class="comments smaller">{{#each comments.data}}<div class="comment">
+        <div class="avatar">
+          <img src="{{{{ from.profile_picture }}}}" alt="{{{{ from.username }}}}" />
+        </div>
+        <div class="data">
+          <a href="https://instagram.com/{{{{ from.username }}}}" data-target="ig">
+            <strong>{{ from.username }}</strong>
+          </a>
+          <div>{{ text }}</div>
+        </div>
+      </div>{{/each}}</div>
+    </div>
+  </script>
 </content>

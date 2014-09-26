@@ -28,7 +28,7 @@ string generate(string template)
 
   String.Buffer b = String.Buffer();
 
-  foreach (data->data, mapping m) {
+  foreach (data->data||({}), mapping m) {
     mapping x = ([
       "id"           : m->id,
       "link"         : m->link,

@@ -26,6 +26,8 @@ string generate(string template)
     write("OK!\n");
   }
 
+  werror("%O, %s\n", data, template);
+
 #if 0
   String.Buffer b = String.Buffer();
 

@@ -2,18 +2,23 @@
 
 <content>
 
-  <div class="preamble" data-bg="IMG_6485.JPG">
+  <div class="preamble" data-bg="garstad-1.jpg">
     <div class="fade-layer"></div>
     <div class="text">
-      <h1>LinkedIn</h1>
-      <p>Well, you gotta be there (I've heard)</p>
+      <div class="inner">
+        <h1>Linked<span class="invert">In</span>
+          <small>Well, you gotta be there (I've heard)</small></h1>
+      </div>
     </div>
   </div>
 
+  <h1>Follow me at LinkedIn!</h1>
 
-  <h1>Hello</h1>
   <generator name="linkedin.pike">
-    Hepp
-  </generator>
 
+    <foreach select="skills.values">
+      <strong>${schoolName}</strong>
+    </foreach>
+
+  </generator>
 </content>

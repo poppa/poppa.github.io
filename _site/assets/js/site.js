@@ -10,6 +10,43 @@ window.Poppa = {
   mobileBreakPoint: 480
 };
 
+Poppa.loadAsset = function(asset, callback) {
+  var a = null, r = null;
+  if (asset.match(/.*\.js/i)) {
+    a = document.createElement('script'),
+    r = false;
+    a.type = 'text/javascript';
+    a.async = true;
+    a.src = asset;
+    if (callback) {
+      console.log("loadAsset(", asset, ", ", callback, ")");
+      a.onload = a.onreadystatechange = function() {
+        console.log('Loaded!');
+        if (!r && (!this.readyState || this.readyState == 'complete')) {
+          r = true;
+          callback();
+        }
+      };
+    }
+
+    var p = document.getElementsByTagName('script')[0];
+    p.parentNode.insertBefore(a, p);
+    return;
+  }
+  else if (asset.match(/.*\.css/i)) {
+    a = $('<link>').attr({
+      rel: 'stylesheet',
+      href: asset
+    });
+
+    if (callback) a.on('load', callback);
+  }
+
+  if (a) {
+    $('body').append(a);
+  }
+};
+
 Poppa.scrollWin = function(to, speed, return_false, offset) {
   var pos = to;
 
@@ -82,5 +119,50 @@ Poppa.onload = function() {
 
 $(function() {
   Poppa.onload();
+
+  var w = $(window),
+  header = $('header'),
+  at = $('#scroll-top'),
+  lowBreak = 30,
+  highBreak = 350,
+  maxOpaq = 0.4,
+  cOpacq = maxOpaq;
+  st = 0,
+  prevpos = 0,
+  scrollTopCheck = function() {
+    var sd = 0;
+    st = w.scrollTop();
+
+    if (st > prevpos) {
+      if (st > 100)
+        header.addClass('hide');
+    }
+    else if (st < prevpos) {
+      header.removeClass('hide');
+    }
+
+    if (st < lowBreak) {
+      at.hide();
+    }
+    else {
+      cOpacq = (st / highBreak) * (maxOpaq/2);
+
+      if (cOpacq > maxOpaq) {
+        at.show().css('opacity', maxOpaq);
+      }
+      else {
+        at.show().css('opacity', cOpacq);
+      }
+    }
+
+    prevpos = st;
+  };
+
+  w.on('scroll', scrollTopCheck);
+
+  $('#scroll-top').click(function() {
+    Poppa.scrollWin(0, 400, true);
+    return false;
+  });
 });
 

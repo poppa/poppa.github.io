@@ -126,6 +126,11 @@ footer {
   position: relative;
   margin: -24px -24px 0vw;
 }
+.preamble p { margin: 24px 0 0;  }
+.preamble .goto-start {
+  color: #A9D3FF;
+  text-decoration: none;
+}
 .fade-layer {
   width: 100%;
   height: 40%;
@@ -229,4 +234,35 @@ footer {
   /*background: rgba(0, 0, 0, .4);*/
   z-index: 1;
   color: rgba(255, 255, 255, .4);
+}
+
+.instalink {
+  color: rgba(255, 255, 255, .2);
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+  vertical-align: middle;
+}
+.instalink:hover { color: rgba(255, 255, 255, .8); }
+.instalink:hover p {
+  width: 70%;
+  visibility: visible;
+}
+.instalink i { font-size: 160%; vertical-align: middle; margin: 0; }
+.instalink p {
+  margin: 0 0 0 0px;
+  padding-left: 6px;
+  display: inline-block;
+  visibility: hidden;
+  vertical-align: middle;
+  width: 0;
+  overflow:hidden;
+  white-space: nowrap;
+  transition: width .4s ease-in-out;
+  }
+
+#gmap {
+  float: right;
+  margin: 0 0 12px 24px;
+  width: 40%;
+  height: 20vw;
 }

@@ -91,6 +91,14 @@ Poppa.loadBackgroundImage = function(url, target) {
     });
   };
 
+  $.fn.dataTarget = function() {
+    return this.each(function() {
+      $(this).on('click', function() {
+        $(this).attr('target', $(this).attr('data-target'));
+      });
+    });
+  };
+
   $.fn.initBigPic = function() {
     var w = $(window).outerWidth();
     if (w < Poppa.mobileBreakPoint) {
@@ -113,6 +121,7 @@ Poppa.loadBackgroundImage = function(url, target) {
 }(jQuery));
 
 Poppa.onload = function() {
+  $('[data-target]').dataTarget();
   $('[data-href]').dataHref();
   $('.preamble').initBigPic();
 };
@@ -159,6 +168,11 @@ $(function() {
   };
 
   w.on('scroll', scrollTopCheck);
+
+  $('.goto-start').click(function() {
+    Poppa.scrollWin('#real-content', 500, true, -12);
+    return false;
+  });
 
   $('#scroll-top').click(function() {
     Poppa.scrollWin(0, 400, true);

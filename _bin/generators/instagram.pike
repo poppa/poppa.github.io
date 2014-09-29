@@ -18,7 +18,7 @@ string generate(string template)
 #endif
 
   if (!data) {
-    write("Re-generating Instagram...");
+    write("\n  Re-generating Instagram...");
     Social.Instagram api = Social.Instagram(API_KEY, API_SECRET, 0, 0);
     api->authorization->access_token = ACCESS_TOKEN;
     data = api->users->recent();

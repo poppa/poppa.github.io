@@ -73,6 +73,26 @@ Poppa.scrollWin = function(to, speed, return_false, offset) {
   }
 };
 
+// $(window).resize(singleResize(function () {
+//   console.log ('Fire only once');
+// }));
+Poppa.singleResize = function(todo) {
+  return (function(todo) {
+    var res = null;
+    return function() {
+      if (res) {
+        clearInterval(res);
+        res = null;
+        return;
+      }
+      else {
+        res = setTimeout(function() {}, 100);
+        todo();
+      }
+    }
+  })(todo);
+};
+
 Poppa.loadBackgroundImage = function(url, target) {
   var w = $(window).outerWidth(),
   src = '/assets/img/preamble/' + url,
@@ -270,6 +290,12 @@ $(function() {
   };
 
   w.on('scroll', scrollTopCheck);
+
+  if ($('[data-level-height]').length) {
+    w.on('resize', Poppa.singleResize(function() {
+      $('[data-level-height]').levelHeight();
+    }));
+  }
 
   $('.goto-start').click(function() {
     Poppa.scrollWin('#real-content', 500, true, -12);

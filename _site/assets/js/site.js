@@ -10,6 +10,10 @@ window.Poppa = {
   mobileBreakPoint: 480
 };
 
+Poppa.isMobile = function() {
+  return $(window).outerWidth() <= Poppa.mobileBreakPoint;
+};
+
 Poppa.loadAsset = function(asset, callback) {
   var a = null, r = null;
   if (asset.match(/.*\.js/i)) {
@@ -118,12 +122,121 @@ Poppa.loadBackgroundImage = function(url, target) {
       }, 200);
     });
   };
+
+  /* Level height of objects. In the parent element add the attribute
+   * "data-level-height" with the class of the sub elements to level
+   *
+   * <div class="row" data-level-height=".box">
+   *   <div class="fourcol">
+   *     <div class="box">
+   *       ...
+   *     </div>
+   *   </div>
+   *   <div class="fourcol last">
+   *     <div class="box">
+   *       ...
+   *     </div>
+   *   </div>
+   * </div>
+   */
+  $.fn.levelHeight = function()
+  {
+    var levelIt = function(container)
+    {
+      var cls = $(container).attr('data-level-height'),
+      imgs = 0, img = null, my = this;
+
+      this.collection = [];
+      this.height = 0;
+
+      $(container).find(cls).each(function(i, el) {
+        el = $(el);
+
+        if (el.attr('data-no-level-height'))
+          return;
+
+        if ((img = el.find('img')).length > 0) {
+          img.load(function() { if (--imgs === 0) my.doAll(); });
+          imgs++;
+          my.collection.push(el[0]);
+          return;
+        }
+
+        //my.doCalc (el);
+        my.collection.push(el[0]);
+      });
+
+      if (imgs === 0) {
+        setTimeout(function() {
+          my.doAll();
+        }, 50);
+      }
+    };
+
+    levelIt.prototype = {
+      doAll: function() {
+        var my = this;
+        this.height = 0;
+
+        $(this.collection).each(function(i, el) {
+          my.doCalc($(el));
+        });
+
+        this.doStretch();
+      },
+
+      doCalc: function(el) {
+        el.css('min-height', 0);
+        var h = el.height();
+        if (h > this.height) this.height = h;
+      },
+
+      doStretch: function() {
+        if (!Poppa.isMobile())
+          $(this.collection).css('min-height', this.height);
+        else
+          $(this.collection).css('min-height', 'auto');
+      },
+
+      reStretch: function () {
+        this.doAll();
+      }
+    };
+
+    if (this.length) {
+      return this.each(function(el) {
+        var old = $.data(this, 'levelHeight');
+
+        if (old) {
+          old.reStretch();
+          return;
+        }
+
+        $.data(this, 'levelHeight', new levelIt (this));
+      });
+    }
+
+    return this;
+  };
+
 }(jQuery));
 
-Poppa.onload = function() {
-  $('[data-target]').dataTarget();
-  $('[data-href]').dataHref();
-  $('.preamble').initBigPic();
+Poppa.onload = function(t) {
+  if (t && typeof t === 'string')
+    t = $(t);
+
+  var _ = function(p) {
+    if (t) {
+      return t.find(p);
+    }
+
+    return $(p);
+  };
+
+  _('[data-level-height]').levelHeight();
+  _('[data-target]').dataTarget();
+  _('[data-href]').dataHref();
+  _('.preamble').initBigPic();
 };
 
 $(function() {
@@ -131,37 +244,26 @@ $(function() {
 
   var w = $(window),
   header = $('header'),
-  at = $('#scroll-top'),
-  lowBreak = 30,
-  highBreak = 350,
-  maxOpaq = 0.4,
-  cOpacq = maxOpaq;
+  footer = $('footer'),
   st = 0,
   prevpos = 0,
   scrollTopCheck = function() {
-    var sd = 0;
     st = w.scrollTop();
 
+    if (st > 100) {
+      footer.addClass('visible');
+    }
+    else {
+      footer.removeClass('visible');
+    }
+
     if (st > prevpos) {
-      if (st > 100)
+      if (st > 100) {
         header.addClass('hide');
+      }
     }
     else if (st < prevpos) {
       header.removeClass('hide');
-    }
-
-    if (st < lowBreak) {
-      at.hide();
-    }
-    else {
-      cOpacq = (st / highBreak) * (maxOpaq/2);
-
-      if (cOpacq > maxOpaq) {
-        at.show().css('opacity', maxOpaq);
-      }
-      else {
-        at.show().css('opacity', cOpacq);
-      }
     }
 
     prevpos = st;

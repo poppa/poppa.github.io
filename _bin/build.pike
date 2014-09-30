@@ -271,7 +271,7 @@ class Page
           if (sizeof(String.trim_all_whites(d)) == 0)
             return ({  });
 
-          return ({ map(d/"\n", String.trim_all_whites) * " " });
+          return ({ replace(map(d/"\n", String.trim_all_whites) * " ", "&nbsp;", " ") });
         });
 
         contents = pp->feed(data)->finish()->read();
@@ -359,6 +359,18 @@ class Template
             return ret;
           }
         }
+      },
+
+      "style": lambda(Parser.HTML ps, mapping attr, string data) {
+#ifndef NO_MINIFY
+# if constant(Standards.CSS)
+
+        if (attr->minify)
+          data = Standards.CSS.minify(data);
+
+        return ({ make_container("style", attr, data) });
+# endif
+#endif
       }
     ]));
 

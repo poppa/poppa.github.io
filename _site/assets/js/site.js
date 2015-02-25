@@ -253,6 +253,37 @@ Poppa.onload = function(t) {
     return $(p);
   };
 
+  _('.flipper').closest('a').hover(
+    function() {
+      if (this.iv) {
+        clearInterval(this.iv);
+      }
+
+      var f = $(this).find('.flipper'),
+      fw = $(this).find('.fw:first'),
+      css = {
+        width: fw.outerWidth(),
+        height: fw.outerHeight()
+      }
+
+      f.parent().addClass('on').css(css);
+      f.find('.fw').css(css);
+    },
+    function() {
+      var f = $(this).find('.flipper'),
+      my = this;
+      f.addClass('out');
+      f.parent().removeClass('on');
+
+      my.iv = setTimeout(function() {
+        clearInterval(my.iv);
+        f.removeClass('out');
+        f.parent().css({ width: 'auto', height: 'auto' });
+        f.find('.fw').css({ width: 'auto', height: 'auto' });
+      }, 600);
+    }
+  );
+
   _('[data-level-height]').levelHeight();
   _('[data-target]').dataTarget();
   _('[data-href]').dataHref();
@@ -262,9 +293,14 @@ Poppa.onload = function(t) {
 $(function() {
   Poppa.onload();
 
+  setTimeout(function() {
+    $('.preamble').removeClass('blurred');
+  },20);
+
   var w = $(window),
   header = $('header'),
   footer = $('footer'),
+  preamble = $('.preamble'),
   st = 0,
   prevpos = 0,
   scrollTopCheck = function() {
@@ -284,6 +320,13 @@ $(function() {
     }
     else if (st < prevpos) {
       header.removeClass('hide');
+    }
+
+    if (st > 120) {
+      preamble.addClass('blurred');
+    }
+    else {
+      preamble.removeClass('blurred');
     }
 
     prevpos = st;

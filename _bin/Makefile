@@ -1,6 +1,6 @@
 
 all:
-	pike build.pike
+	pike78 build.pike
 
 nominify:
 	pike78 -DNO_MINIFY build.pike

@@ -89,7 +89,7 @@ mapping flat_mapping(mapping m)
     if (stringp(v) || intp(v) || floatp(v))
       r[k] = (string) v;
     else if (mappingp(v)) {
-      handle_mapping(k + ".",v);
+      handle_mapping(k + ".", v);
     }
     else if (arrayp(v)) {
       handle_array(k + ".", v);

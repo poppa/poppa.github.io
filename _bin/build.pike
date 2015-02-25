@@ -148,7 +148,7 @@ int main(int argc, array(string) argv)
 
 int build()
 {
-  write("build...");
+  write("build...\n");
 
   mapping(string:Template) templates = ([]);
   array(Page) pages = ({});
@@ -180,7 +180,7 @@ int build()
     copy_file(s, npath);
   });
 
-  write("...done\n");
+  write("\n...done\n");
 
 	return 0;
 }
@@ -271,7 +271,8 @@ class Page
           if (sizeof(String.trim_all_whites(d)) == 0)
             return ({  });
 
-          return ({ replace(map(d/"\n", String.trim_all_whites) * " ", "&nbsp;", " ") });
+          return ({ replace(map(d/"\n", String.trim_all_whites) * " ",
+                            "&nbsp;", " ") });
         });
 
         contents = pp->feed(data)->finish()->read();

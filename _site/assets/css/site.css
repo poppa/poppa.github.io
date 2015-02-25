@@ -13,11 +13,6 @@ acronym, abbr, .abbr {
   font-variant: small-caps;
 }
 
-#real-content {
-  margin-bottom: 42px;
-  margin-top: 24px;
-}
-
 h1, h2, h3 { text-transform: uppercase; }
 #scroll-top {
   opacity: .4;
@@ -157,9 +152,11 @@ footer .wrapper {
   margin-top: 4px;
   margin-bottom: 48px;
   border-bottom: 1px solid #ccc;
-  /*
   box-shadow: 0px 5px 10px -6px rgba(0, 0, 0, .2);
-  */
+}
+.divider.narrow {
+  margin-bottom: 24px;
+  margin-top: -12px;
 }
 
 h1.header, h2.header, h3.header {
@@ -188,6 +185,39 @@ section.green .divider {
 section.green h1, section.green h2, section.green h3 {
   color: #658F72;
 }
+section.blue {
+  background: #E3F1FF;
+}
+section.blue .divider {
+  border-color: #BFDDFA;
+}
+section.blue h1, section.blue h2, section.blue h3 {
+  color: #5092D3;
+}
+
+.puff {
+  text-decoration: none;
+  background: transparent;
+  display: block;
+  padding: 12px 12px 12px;
+  border-radius: 3px;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: background .3s ease-in-out;
+  overflow: hidden;
+}
+.puff:hover {
+  background: #C4E0FC;
+}
+.puff h2 {
+  margin: 0 0 12px;
+}
+.puff img {
+  display: block;
+  border-radius: 3px;
+}
 
 .screenshot {
   max-height: 25vw;
@@ -200,4 +230,38 @@ section.green h1, section.green h2, section.green h3 {
   height: auto;
   margin-left: 0%;
   margin-top: 0%;
+}
+
+.flip-container {
+  perspective: 1000;
+}
+
+.flipper {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-container.on .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container.on .front, .flip-container.on .back, .out .back, .out .front {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+.back {
+  display: none;
+  transform: rotateY(180deg);
+  background: rgba(0, 0, 0, .05);
+  border-radius: 3px;
 }

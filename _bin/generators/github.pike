@@ -18,7 +18,7 @@ string generate(string template)
 #endif
 
   if (!data) {
-    write("Re-generating Github...");
+    write("  Re-generating Github...");
     Social.Github api = Social.Github(API_KEY, API_SECRET, 0, 0);
     api->authorization->access_token = ACCESS_TOKEN;
     data = api->get("users/poppa");

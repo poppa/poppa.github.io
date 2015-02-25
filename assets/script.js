@@ -26,9 +26,13 @@ $(this.collection).css('min-height','auto');},reStretch:function(){this.doAll();
 $.data(this,'levelHeight',new levelIt(this));});}
 return this;};}(jQuery));Poppa.onload=function(t){if(t&&typeof t==='string')
 t=$(t);var _=function(p){if(t){return t.find(p);}
-return $(p);};_('[data-level-height]').levelHeight();_('[data-target]').dataTarget();_('[data-href]').dataHref();_('.preamble').initBigPic();};$(function(){Poppa.onload();var w=$(window),header=$('header'),footer=$('footer'),st=0,prevpos=0,scrollTopCheck=function(){st=w.scrollTop();if(st>100){footer.addClass('visible');}
+return $(p);};_('.flipper').closest('a').hover(function(){if(this.iv){clearInterval(this.iv);}
+var f=$(this).find('.flipper'),fw=$(this).find('.fw:first'),css={width:fw.outerWidth(),height:fw.outerHeight()}
+f.parent().addClass('on').css(css);f.find('.fw').css(css);},function(){var f=$(this).find('.flipper'),my=this;f.addClass('out');f.parent().removeClass('on');my.iv=setTimeout(function(){clearInterval(my.iv);f.removeClass('out');f.parent().css({width:'auto',height:'auto'});f.find('.fw').css({width:'auto',height:'auto'});},600);});_('[data-level-height]').levelHeight();_('[data-target]').dataTarget();_('[data-href]').dataHref();_('.preamble').initBigPic();};$(function(){Poppa.onload();setTimeout(function(){$('.preamble').removeClass('blurred');},20);var w=$(window),header=$('header'),footer=$('footer'),preamble=$('.preamble'),st=0,prevpos=0,scrollTopCheck=function(){st=w.scrollTop();if(st>100){footer.addClass('visible');}
 else{footer.removeClass('visible');}
 if(st>prevpos){if(st>100){header.addClass('hide');}}
 else if(st<prevpos){header.removeClass('hide');}
+if(st>120){preamble.addClass('blurred');}
+else{preamble.removeClass('blurred');}
 prevpos=st;};w.on('scroll',scrollTopCheck);if($('[data-level-height]').length){w.on('resize',Poppa.singleResize(function(){$('[data-level-height]').levelHeight();}));}
 $('.goto-start').click(function(){Poppa.scrollWin('#real-content',500,true,-12);return false;});$('#scroll-top').click(function(){Poppa.scrollWin(0,400,true);return false;});});

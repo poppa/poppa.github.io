@@ -12,6 +12,13 @@
 
       a { color: #6BA3E0; }
 
+      h1, h2, h3 { text-transform: uppercase; }
+      .no-margin-top { margin-top: 0; }
+      .clear-float { clear: both; }
+      .float-left { float: left; }
+      .float-right { float: right; }
+      .hidden { display: none; }
+
       html, body {
         height: 100%;
         margin: 0;
@@ -86,13 +93,15 @@
       }
       .preamble {
         height: 100vh;
-        width: 100%;
-        position: relative;
-        margin: -24px -24px 0vw;
+        width: 100vw;
+        margin: -24px -24px 0;
         position:fixed;
         transition: filter .6s ease-out;
-        -webkit-transition: -webkit-filter .8s ease-out;
-        -moz-transition: -moz-filter .8s ease-out;
+        -webkit-transition: -webkit-filter .6s ease-out;
+        -moz-transition: -moz-filter .6s ease-out;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
       .preamble.blurred {
         -webkit-filter: blur(10px);
@@ -101,12 +110,13 @@
         -ms-filter: blur(10px);
         filter: blur(10px);
       }
-      .preamble:before {
+      /*
+      .preamble.with-bg:before {
         display: block;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
+        width: 100vw;
+        height: 100vh;
       }
+      */
       .preamble p { margin: 24px 0 0;  }
       .preamble .goto-start {
         color: #A9D3FF;
@@ -176,9 +186,7 @@
     </style>
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" bundle="/assets/style.css">
     <link rel="stylesheet" href="/assets/css/site.css" minify="" bundle="/assets/style.css">
-    <script src="/assets/js/vendor/modernizr.js" bundle="/assets/script.js"></script>
-    <script src="/assets/js/vendor/jquery.js" bundle="/assets/script.js"></script>
-    <script src="/assets/js/site.js" minify="" bundle="/assets/script.js"></script>
+
   </head>
   <body>
     <header>
@@ -201,5 +209,8 @@
         </a>
       </div>
     </footer>
+    <script src="/assets/js/vendor/modernizr.js" bundle="/assets/script.js"></script>
+    <script src="/assets/js/vendor/jquery.js" bundle="/assets/script.js"></script>
+    <script src="/assets/js/site.js" minify="" bundle="/assets/script.js"></script>
   </body>
 </html>

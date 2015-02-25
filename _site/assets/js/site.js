@@ -98,9 +98,10 @@ Poppa.loadBackgroundImage = function(url, target) {
   src = '/assets/img/preamble/' + url,
   img = $('<img>');
 
-  console.log('Load bg: ', src);
+  console.log('Load bg: ', src, target);
 
   img.attr('src', src).on('load', function() {
+    //$(target).attr('data-bg-url', src).addClass('with-bg');
     $(target).css('background-image', 'url(' + src + ')');
   });
 };

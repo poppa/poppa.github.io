@@ -349,6 +349,8 @@ class Template
             if (!bundles[a->bundle]) {
               bundles[a->bundle] = ({});
               attr->src = a->bundle;
+              if (a->is_async) attr->async = "true";
+
               ret = ({ make_container("script", attr, "") });
             }
             else {
@@ -487,10 +489,15 @@ class JavaScript
 {
   inherit Asset;
 
+  int(0..1) is_async = 0;
+
   void create(mapping attr)
   {
     ::create(attr);
     realpath = combine_path(site_path, attr->src);
+
+    if (attr->async)
+      is_async = 1;
   }
 
   string get_contents()

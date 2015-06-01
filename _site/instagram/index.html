@@ -1,41 +1,33 @@
 <title>Poppanator at Instagram - Pontus Östlund</title>
-
+<color>green instagram</color>
 <content>
-  <div class="preamble blurred" data-bg="IMG_2347.JPG">
-    <div class="fade-layer"></div>
-    <div class="text gray">
-      <div class="inner">
-        <h1><span class="invert">Poppanator</span> at Inst<i class="fa fa-instagram"></i>gram
-          <small>I like taking pictures with my phone</small>
-        </h1>
-        <p>
-          <a href="#" class="goto-start">Want some pictures?&nbsp; <i class="fa fa-arrow-circle-down"></i></a>
-        </p>
+  <div class="preamble blurred"></div>
+  <div id="content">
+    <div id="ig-target"></div>
+
+    <div class="section white">
+      <div class="container">
+        <div class="square-wrapper instagram" id="real-content">
+          <generator name="instagram.pike">
+            <div class="square" data-data="${_data}" data-id="${id}">
+              <div class="inner">
+                <div class="image">
+                  <img src="${images.standard_resolution.url}">
+                </div>
+                <div class="fade-layer"></div>
+                <div class="footer meta">
+                  <a href="${link}" class="instalink" data-target="instagram">
+                    <i class="fa fa-instagram"></i>
+                    <p>View image on Instagram</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </generator>
+        </div>
       </div>
     </div>
   </div>
-
-  <div id="ig-target"></div>
-
-  <div class="square-wrapper instagram" id="real-content">
-    <generator name="instagram.pike">
-      <div class="square" data-data="${_data}" data-id="${id}">
-        <div class="inner">
-          <div class="image">
-            <img src="${images.standard_resolution.url}">
-          </div>
-          <div class="fade-layer"></div>
-          <div class="footer meta">
-            <a href="${link}" class="instalink" data-target="instagram">
-              <i class="fa fa-instagram"></i>
-              <p>View image on Instagram</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </generator>
-  </div>
-
 
   <script type="text/javascript" src="/assets/js/instagram.js"></script>
   <script type="text/x-handlebars-template" id="hbar-image">

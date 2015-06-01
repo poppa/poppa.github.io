@@ -1,0 +1,106 @@
+/*
+  Author: Pontus Östlund <https://profiles.google.com/poppanator>
+
+  Permission to copy, modify, and distribute this source for any legal
+  purpose granted as long as my name is still attached to it. More
+  specifically, the GPL, LGPL and MPL licenses apply to this software.
+*/
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  position: relative;
+  margin-left: -36px;
+}
+
+.grid + .grid {
+  margin-top: 36px;
+}
+
+.grid img, .grid object, .grid iframe {
+  width: 100%;
+  height: auto;
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.grid-pad {
+  padding: 36px 36 36px 0;
+}
+
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 36px;
+}
+
+[class*='col-'] {
+  padding-left: 36px;
+  float: left;
+}
+
+[class*='col-']:last-of-type {
+
+}
+
+[class*='col-'] > *:first-child {
+  margin-top: 0;
+}
+
+[class*='col-'] > *:last-child {
+  margin-bottom: 0;
+}
+
+.col-1 {
+  width: 8.33333333%;
+}
+
+.col-2 {
+  width: 16.6666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333333%;
+}
+
+.col-5 {
+  width: 41.66666666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333333%;
+}
+
+.col-8 {
+  width: 66.66666666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333333%;
+}
+
+.col-11 {
+  width: 91.66666666%;
+}
+
+.col-12 {
+  width: 100%;
+}

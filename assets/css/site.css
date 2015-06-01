@@ -69,23 +69,13 @@ h3 { font-size: 32px; }
 
 img { border-radius: 5px; }
 
-acronym, abbr, .abbr {
-  font-variant: small-caps;
-}
-img { border: none; }
-a img { border: none; }
-
 .preamble {
   height: 480px;
   width: 100%;
-  background-image: url("/assets/img/preamble/spiderweb.jpg");
+  background-image: url("../img/spiderweb.jpg");
   background-size: cover;
   background-position: 100% 70%;
   background-repeat: no-repeat;
-}
-
-.instagram .preamble {
-  background-image: url(/assets/img/preamble/IMG_2347.JPG);
 }
 
 .preamble + #content {

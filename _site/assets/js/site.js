@@ -131,16 +131,8 @@ Poppa.loadBackgroundImage = function(url, target) {
     }
 
     return this.each(function() {
-      var my = $(this),
-      h1 = my.find('.text').hide(),
-      flay = my.find('.fade-layer').hide();
-
+      var my = $(this);
       Poppa.loadBackgroundImage(my.attr('data-bg'), this);
-
-      setTimeout(function() {
-        h1.fadeIn();
-        flay.fadeIn();
-      }, 200);
     });
   };
 

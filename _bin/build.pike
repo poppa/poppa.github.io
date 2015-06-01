@@ -248,6 +248,7 @@ class Page
   string title;
   string realpath;
   string sitepath;
+  string color;
 
   void create(string s)
   {
@@ -287,6 +288,10 @@ class Page
         if (object o = generators[attr->name]) {
           return o->generate(data);
         }
+      },
+
+      "color": lambda (Parser.HTML pp, mapping attr, string data) {
+        color = String.trim_all_whites(data);
       }
     ]));
 
@@ -416,8 +421,9 @@ class Template
 
   string render(Page page)
   {
-    string data = replace(contents, ([ "${title}"    : page->title||"",
-                                       "${contents}" : page->contents||"",
+    string data = replace(contents, ([ "${title}"    : page->title    || "",
+                                       "${contents}" : page->contents || "",
+                                       "${color}"    : page->color    || "",
                                        "${date}"     : "" ]));
     write_file(page->sitepath, data, 1);
   }

@@ -1,0 +1,22 @@
+  // SCAFFOLDING
+  $options__use-scaffolding: true;
+
+    // SCAFFOLDING -> GRID
+    $options__use-grid: true;
+      $options__grid__screen-xxs: true;
+      $options__grid__screen-xs: true;
+      $options__grid__screen-sm: true;
+      $options__grid__screen-md: true;
+      $options__grid__screen-lg: false;
+
+      $options__grid__push-classes: true;
+      $options__grid__pull-classes: false;
+      $options__grid__offset-classes: false;
+
+
+    //SCAFFOLDING -> SITE-WRAP
+    $options__use-sitewrap: true;
+
+    //SCAFFOLDING -> (detect css breakpoints in scripts)
+    $options__use-show-breakpoints: true;
+

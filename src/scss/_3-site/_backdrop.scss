@@ -1,0 +1,35 @@
+.backdrop {
+  position: relative;
+  width: 100%;
+  min-height: 25vw;
+  margin-bottom: $spacing-unit*2;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &.b1 {
+    background-image: url(../img/IMG_2347.JPG);
+  }
+
+  &.ig {
+    background-color: $accent-color-3;
+    margin-top: $spacing-unit;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &.github {
+    background-color: $accent-color-4;
+    margin-top: $spacing-unit;
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &.content {
+    padding: $spacing-unit 0;
+  }
+}
+

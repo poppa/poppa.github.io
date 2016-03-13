@@ -1,0 +1,92 @@
+@mixin make-row($type: block) {
+  display: $type;
+  @if ($type == table) {
+    width: auto;
+    border-collapse: collapse;
+  }
+  @if ($type == block) {
+    width: auto;
+  }
+  margin-bottom: $grid-gutter-width / 2;
+  margin-left: -$grid-gutter-width / 2;
+  margin-right: -$grid-gutter-width / 2;
+
+  &.grid {
+    [class^='col'] {
+      border-right: 1px dashed #ccc;
+      &:last-child {
+        border-right-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-column-count {
+  $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  #{$list} {
+    display: block;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+    @media (max-width: $screen-xs) {
+      padding-left:  ($grid-gutter-width / 4);
+      padding-right: ($grid-gutter-width / 4);
+    }
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      display: inline-block;
+      width: percentage(($index / $grid-column-count));
+    }
+  }
+  @if ($type == table) and ($index > 0) {
+    .col-#{$class}-#{$index}-tbl {
+      display: table-cell;
+      width: percentage(($index / $grid-column-count));
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+
+@mixin make-grid($class) {
+  @include loop-grid-columns($grid-column-count, $class, width);
+  @include loop-grid-columns($grid-column-count, $class, table);
+}
+
+
+@mixin columns($number) {
+  column-count: $number;
+  &--screen-sm {
+    @media (max-width: $screen-sm) {
+      column-count: $number;
+    }
+  }
+  &--screen-xs {
+    @media (max-width: $screen-xs) {
+      column-count: $number;
+    }
+  }
+}
+
+div[class^='col-'] {
+  > *:first-child {
+    margin-top: 0;
+  }
+}

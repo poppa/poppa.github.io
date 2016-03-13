@@ -1,2 +1,4 @@
 *.cache
 *.pid
+node_modules
+*.sublime-*

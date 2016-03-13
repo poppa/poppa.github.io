@@ -1,0 +1,101 @@
+// Colors and such
+$font-color: #333;
+$header-bg-color: rgba(255, 255, 255, .9);
+$accent-color-1: #334;
+$accent-color-2: #C9FFE2;
+$accent-color-3: #111118;
+$accent-color-4: #f1f1f6;
+$accent-color-5: #4F0936;
+$header-color: #55555a;
+$tagline-color: #ccc;
+$complementary-color: #555;
+
+$default-link-color: purple;
+$default-link-color-hover: #333;
+
+$light-grey: #f9f9fc;
+$light-grey-text: #d0d0d0;
+$dark-grey: #757780;
+$grey-link-color: #99D3F4;
+
+$button-bg-color: #e43324;
+$button-ok-bg-color: #62A760;
+$button-error-bg-color: #990D35;
+
+$border-color: #eee;
+
+// #ROOT SIZING UNIT
+// Sets a sizing unit on the root HTML element that all spacing
+// units, font sizes etc. that use the REM unit inherit from.
+// 62.5% means 1 REM will equal 10px on screens larger than $screen-md
+$root-sizing-unit: 62.5%;
+// coefficcient dictates the rate of reducion as the screen size is
+// reduced.
+$root-sizing-coefficient: 2;
+
+// #FONT SIZES
+//
+// First list item dictates the font-size in REMs
+// Second list item is a coefficient, that controls
+// the rate of font-size change as the screen gets smaller
+// a higher positive number = font reducton,
+// 0 means it reduces at the rate of the HTML root element
+// a negative number = font-increase
+// NOTE FONT-SIZE IS ALSO INFLUENCED BY THE ROOT HTML ELEMENT.
+
+// RECOMMENDED THAT YOU TEST ALL FONT SIZES AT ALL SCREENSIZES FOR READABILITY.
+$txt-xxl:   3.2rem, 0.3;
+$txt-xl:    2.8rem, 0.2;
+$txt-lg:    2.2rem, 0.1;
+$txt-md:    1.95rem, 0;
+$txt-sm:    1.75rem, -0.04;
+$txt-xs:    1.55rem, -0.06;
+$txt-xxs:   1.25rem, -0.1;
+
+$base-font-size: $txt-sm;
+$h1-font-size: $txt-xxl;
+$h2-font-size: $txt-lg;
+$h3-font-size: $txt-md;
+$h4-font-size: $txt-sm;
+
+//#FONT FAMILY
+$font-family: Lato, arial, sans-serif;
+
+// #LINE-HEIGHT
+$site-line-height: 1.45;
+
+// #GRID & SPACING
+// N.B. 1 REM = 10px for screens > $screen-md if
+// $root-sizing-unit equals 62.5%
+// spacing unit is used throughoutt the framework.
+$spacing-unit:            1.5rem;
+//
+//main wrapping container for site.
+$site-wrap-width:         117rem;
+//
+//padding for main wrapping container
+$site-padding-width:      $spacing-unit;
+//
+// Should be double $site-padding-width
+$grid-gutter-width:       $site-padding-width * 2;
+//
+// Number of colums in grid, 12 is default.
+$grid-column-count:       12;
+//
+// Amount of spacing between site sections, used on
+// .section abstraction. located in objects->generic->section
+$section-padding:         $spacing-unit * 3;
+
+
+// #MEDIA QUERY BREAKPOINTS
+$screen-xxs: 400px;
+$screen-xs:  480px;
+$screen-sm:  768px;
+$screen-md:  992px;
+$screen-sp:  1080px; // Special case
+$screen-lg:  1200px;
+
+$sidebar-grid-bp: $screen-sm;
+
+// #BORDER RADIUS
+$border-radius: 3px;

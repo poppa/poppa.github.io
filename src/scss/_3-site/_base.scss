@@ -1,0 +1,138 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+body {
+  @include font-size($base-font-size);
+  font-family: 'source sans pro', arial, sans-serif;
+}
+
+a {
+  color: $default-link-color;
+  transition: color 0.2s ease-in;
+  &:hover {
+    color: $default-link-color-hover;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: $spacing-unit 0;
+}
+
+.body-content {
+  position: relative;
+  h2, h3, h4 {
+    color: $header-color;
+    line-height: 1;
+    &.small {
+      font-weight: normal;
+      @include font-size($txt-xl);
+      letter-spacing: 0;
+    }
+    &.bordered {
+      border-bottom: 2px solid $header-color;
+      padding-bottom: $spacing-unit/2;
+    }
+  }
+  h2 {
+    font-size: 3.8rem;
+    letter-spacing: -2px;
+  }
+}
+
+header {
+  z-index: 2;
+  vertical-align: middle;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $header-bg-color;
+  transition: background-color .6s ease-in;
+  //background: #f1f1f1;
+
+  + div:first-of-type {
+    margin-top: 111px;
+  }
+
+  &.scrolled {
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    background-color: rgba(255, 255, 255, .4);
+    box-shadow: 0px 3px 12px rgba(0,0,0,.1);
+    h1 {
+      img {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+      .text {
+        font-size: 2.5rem;
+      }
+      .tagline {
+        opacity: 0;
+        font-size: .1rem;
+      }
+    }
+    .container {
+      padding: $spacing-unit/2 $spacing-unit;
+    }
+  }
+
+  .container {
+    padding: $spacing-unit $spacing-unit;
+    transition: padding .3s ease-in;
+  }
+
+  h1 {
+    margin: 0;
+    line-height: 1;
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+    .text {
+      display: block;
+      letter-spacing: -2px;
+      vertical-align: middle;
+      white-space: nowrap;
+      margin-top: 8px;
+      transition: font-size .3s ease-in;
+    }
+    .tagline {
+      vertical-align: middle;
+      @include font-size($txt-md);
+      font-weight: normal;
+      letter-spacing: 5.8px;
+      display: block;
+      white-space: nowrap;
+      color: $tagline-color;
+      opacity: 1;
+      transition: opacity .3s ease-in, font-size .3s ease-in;
+    }
+    img {
+      vertical-align: middle;
+      margin-right: $spacing-unit;
+      float: left;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 8rem;
+      transition: width .3s ease-in, height .3s ease-in;
+    }
+
+  }
+}
+
+footer {
+  margin-top: $spacing-unit*2;
+  border-top: 1px solid $border-color;
+  padding: $spacing-unit 0;
+  color: #999;
+  div[class^='col-'] {
+    @include font-size($txt-xs);
+  }
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,75 @@
+$grid-gutter-width: 3rem;
+$grid-column-count: 12;
+$screen-xxs: 400px;
+$screen-xs:  480px;
+$screen-sm:  768px;
+$screen-md:  992px;
+$screen-sp:  1080px; // Special case
+$screen-lg:  1200px;
+
+@mixin make-row() {
+  display: table;
+  width: auto;
+  margin-bottom: $grid-gutter-width / 2;
+  margin-left: -$grid-gutter-width / 2;
+  margin-right: -$grid-gutter-width / 2;
+
+  &.grid {
+    [class^='col'] {
+      border-right: 1px dashed #ccc;
+      &:last-child {
+        border-right-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-column-count {
+  $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  #{$list} {
+    display: block;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+    @media (max-width: $screen-xs) {
+      padding-left:  ($grid-gutter-width / 4);
+      padding-right: ($grid-gutter-width / 4);
+    }
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      display: table-cell;
+      width: percentage(($index / $grid-column-count));
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+
+@mixin make-grid($class) {
+  @include loop-grid-columns($grid-column-count, $class, width);
+}
+
+.col-row {
+  @include make-row();
+}
+@include make-grid-columns();
+@include make-grid(lg);
+@include make-grid(md);
+@include make-grid(sm);

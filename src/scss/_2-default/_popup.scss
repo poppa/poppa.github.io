@@ -1,0 +1,47 @@
+.popup {
+  //border: 1px solid #111;
+  background: #222;
+  min-height: 200px;
+  border-radius: $border-radius;
+  box-shadow: 5px 5px 100px rgba(0, 0, 0, .9);
+  overflow: hidden;
+  opacity: 1;
+  transform: scale(1);
+
+  transition: opacity .3s ease-out, transform .3s ease-out;
+
+  &-titlebar {
+    padding: $spacing-unit $spacing-unit*1.5;
+    background: #111;
+    &-title {
+      font-weight: bold;
+    }
+  }
+
+  &-body {
+    padding: $spacing-unit*1.5 $spacing-unit*1.5;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-begin-show {
+    display: block;
+    opacity: 0;
+    transform: scale(.6);
+  }
+
+  &-init {
+    display: none;
+  }
+
+  &-dimmed {
+    opacity: .2;
+    pointer-events: none;
+  }
+}

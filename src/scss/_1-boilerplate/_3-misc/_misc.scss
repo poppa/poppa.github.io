@@ -1,0 +1,16 @@
+.text {
+  &-right {
+    text-align: right;
+  }
+  &-left {
+    text-align: left;
+  }
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.padding {
+  padding: $spacing-unit;
+}

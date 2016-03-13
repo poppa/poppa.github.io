@@ -1,0 +1,76 @@
+.boxlist {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  a {
+    text-decoration: none;
+  }
+
+  h2, h3 {
+    margin: 0;
+  }
+
+  h2.header {
+    background: $border-color;
+    padding: $spacing-unit;
+    line-height: 1;
+    color: #666;
+  }
+
+  .header {
+    position: relative;
+    a {
+        display: block;
+        padding: $spacing-unit $spacing-unit;
+        transition: background .3s ease-out;
+    }
+  }
+
+  h3.header {
+    &:hover {
+      a {
+          background: #f9f9f9;
+      }
+    }
+  }
+
+  .service-box {
+    border-bottom: 1px solid $border-color;
+  }
+
+  .more {
+    padding: $spacing-unit/2 $spacing-unit;
+    border-top: 1px dashed $border-color;
+    background: #fcfcfc;
+    font-size: smaller;
+
+    .pipe {
+      margin: 0 $spacing-unit/2;
+      color: #999;
+    }
+  }
+
+  .badge {
+    display: inline-block;
+    position: absolute;
+    right: $spacing-unit;
+    top: $spacing-unit;
+    margin-top: 3px;
+    background: $accent-color-1;
+    border-radius: 50px;
+    padding: $spacing-unit/5 $spacing-unit/2.5;
+    min-width: 24px;
+    color: white;
+    font-size: small;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background: $default-link-color-hover;
+      opacity: .8;
+    }
+  }
+
+  .lplist {
+    display: none;
+  }
+}

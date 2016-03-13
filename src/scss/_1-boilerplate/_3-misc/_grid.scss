@@ -1,0 +1,55 @@
+
+
+@if ($options__use-grid) {
+    .row {
+        @include make-row();
+    }
+    .row-table {
+        @include make-row(table);
+    }
+    ul.row,
+    ol.row {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    @include make-grid-columns();
+
+    @if ($options__grid__screen-xxs) {
+        // Ultra small grid
+        .col-xxs-6 {
+            float: left;
+            width: percentage((6 / $grid-column-count));
+        }
+    }
+
+    @if ($options__grid__screen-xs) {
+        // Extra small grid
+        @include screen-xs-up {
+            @include make-grid(xs);
+        }
+    }
+
+    @if ($options__grid__screen-sm) {
+        // Small grid
+        @include screen-sm-up {
+            @include make-grid(sm);
+        }
+    }
+
+    @if ($options__grid__screen-md) {
+        // Medium grid
+        @include screen-md-up {
+            @include make-grid(md);
+        }
+    }
+
+    // Large grid
+    @if ($options__grid__screen-lg) {
+        @include screen-lg-up {
+            @include make-grid(lg);
+        }
+    }
+}

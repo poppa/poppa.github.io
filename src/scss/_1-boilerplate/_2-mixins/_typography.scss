@@ -1,0 +1,41 @@
+///*
+// * Responsive font-size mixin
+// * Written by Robert Smith
+// *
+// */
+
+@mixin font-size($size, $important: null) {
+  // Mixin uses REMs as the font-size unit.
+  // Takes size and important flag params,
+  // important flag null by default.
+
+  // set breakpoints to be used
+  $screen-sizes: $screen-sm, $screen-xs;
+
+  //declare initial font-size
+  @if ($important) {
+    font-size: nth($size,1) + !important;
+  } @else {
+    font-size: nth($size,1);
+  }
+
+  @if (nth($size, 2) != 0) {
+    // if the size has a coefficient not
+    // equal to zero.
+    @each $scr in $screen-sizes {
+      // loop through the screen sizes list.
+      @media (max-width: $scr) {
+        // media query for the current screen size
+        $newSize: null;
+        $index: index($screen-sizes, $scr);
+        $newSize: nth($size,1) - (nth($size,2)*$index);
+        @if ($important) {
+          font-size: $newSize + !important;
+        } @else {
+          font-size: $newSize;
+        }
+      }
+    }
+  }
+}
+

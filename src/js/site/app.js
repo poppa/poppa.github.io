@@ -12,10 +12,10 @@
     });
   });
 
-  let body = $(document.body);
+  let win = $(window);
   let scrollState = 0;
   let checkScroll = () => {
-    let st = body.scrollTop();
+    let st = win.scrollTop();
 
     if (st > 100) {
       if (scrollState === 2) {
@@ -35,7 +35,7 @@
     }
   };
 
-  $(window).on('scroll', checkScroll);
+  win.on('scroll', checkScroll);
 
   window.App = App;
 

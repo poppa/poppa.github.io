@@ -87,8 +87,7 @@ gulp.task('style', () => {
     .pipe(livereload());
 });
 
-let linters = [
-  'gulpfile.js' ];
+let linters = [ 'gulpfile.js', SRC + '/js/site/**/*.js' ];
 
 // Lint everything except the vendor directory.
 gulp.task('lint', () => {

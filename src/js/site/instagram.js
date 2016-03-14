@@ -1,4 +1,4 @@
-/* global app $ localStorage */
+/* global App $ localStorage */
 
 (function() {
   'use strict';

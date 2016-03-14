@@ -7,7 +7,7 @@
   const USERNAME = 'poppa';
 
   App.plugins.github = (new function() {
-    let apiUri = 'https://api.github.com'
+    let apiUri = 'https://api.github.com';
     let repoPath = `/users/${USERNAME}/repos`;
     let query = `?token=${TOKEN}&auth=oauth&callback=?`;
     let store = localStorage;
@@ -46,21 +46,29 @@
     this._handleData = (data) => {
       let t = $('#github');
       t.empty();
+      data.data.sort((a, b) => {
+        return a.watchers_count < b.watchers_count
+          ? 1
+          : a.watchers_count === b.watchers_count
+            ? 0
+            : -1;
+      });
       data.data.forEach((row) => {
-        window.console.log('row: ', row);
         let s = `<li class='col-md-4 col-xs-6'>
           <div class='wrapper'>
-            <h3>${row.name}</h3>
+            <h3><a href='${row.html_url}' target='github'>${row.name}</a></h3>
             <p>${row.description}</p>
             <div class='meta'>`;
 
         if (row.fork) {
-          s += `<i class='item fa fa-code-fork'></i>`;
+          s += '<i class="item fa fa-code-fork"></i>';
         }
 
         s += `<span class='item'>${row.language || 'Misc'}</span>`;
+        s += `<span class='item'><i class='fa fa-star'></i> ${row.stargazers_count}</span>`;
+        s += `<span class='item'><i class='fa fa-eye'></i> ${row.watchers_count}</span>`;
 
-        s += `</div></div></li>`;
+        s += '</div></div></li>';
 
         t.append(s);
       });

@@ -1,6 +1,9 @@
 .text {
   &-right {
     text-align: right;
+    @media (max-width: $screen-xs) {
+      text-align: left;
+    }
   }
   &-left {
     text-align: left;

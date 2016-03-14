@@ -1,14 +1,19 @@
 .backdrop {
   position: relative;
   width: 100%;
-  min-height: 25vw;
+  min-height: 180px;
   margin-bottom: $spacing-unit*2;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: $screen-xs) {
+    margin-bottom: $spacing-unit;
+  }
 
   &.b1 {
     background-image: url(../img/IMG_2347.JPG);
+    max-height: 320px;
+    height: 25vw;
   }
 
   &.ig {

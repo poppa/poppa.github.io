@@ -47,7 +47,7 @@
       let t = $('#instagram');
       t.empty();
       d.data.forEach(row => {
-        let s = `<li class="col-md-3 col-sm-6">
+        let s = `<li class="col-md-3 col-xs-6">
             <a href="${row.link}" target="ig">
               <span class="overlay top">${row.caption.text}</span>
               <img src="${row.images.low_resolution.url}"

@@ -1,15 +1,20 @@
-@mixin make-row($type: block) {
+@mixin make-row($type: block, $narrow: false) {
   display: $type;
-  @if ($type == table) {
-    width: auto;
-    border-collapse: collapse;
-  }
+
   @if ($type == block) {
     width: auto;
   }
-  margin-bottom: $grid-gutter-width / 2;
-  margin-left: -$grid-gutter-width / 2;
-  margin-right: -$grid-gutter-width / 2;
+
+  @if ($narrow == true) {
+    margin-bottom: $spacing-unit / 2;
+    margin-left: -$spacing-unit;
+    margin-right: -$spacing-unit;
+  }
+  @else if ($narrow == false) {
+    margin-bottom: $grid-gutter-width / 2;
+    margin-left: -$grid-gutter-width / 2;
+    margin-right: -$grid-gutter-width / 2;
+  }
 
   &.grid {
     [class^='col'] {
@@ -21,53 +26,55 @@
   }
 }
 
-@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}", $narrow: false) {
   @for $i from (1 + 1) through $grid-column-count {
   $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
   }
   #{$list} {
-    display: block;
     // Prevent columns from collapsing when empty
     min-height: 1px;
-    // Inner gutter via padding
-    padding-left:  ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
-    width: 100%;
+    @if ($narrow == false) {
+      display: block;
+      // Inner gutter via padding
+      padding-left:  ($grid-gutter-width / 2);
+      padding-right: ($grid-gutter-width / 2);
+      width: 100%;
+    }
+    @else if ($narrow == true) {
+      // Inner gutter via padding
+      padding-left:  ($spacing-unit / 2);
+      padding-right: ($spacing-unit / 2);
+    }
+
     vertical-align: top;
     text-align: left;
     @media (max-width: $screen-xs) {
-      padding-left:  ($grid-gutter-width / 4);
-      padding-right: ($grid-gutter-width / 4);
+      padding-left:  ($grid-gutter-width / 3);
+      padding-right: ($grid-gutter-width / 3);
     }
   }
 }
 
-@mixin calc-grid-column($index, $class, $type) {
+@mixin calc-grid-column($index, $class, $type, $narrow) {
   @if ($type == width) and ($index > 0) {
     .col-#{$class}-#{$index} {
       display: inline-block;
       width: percentage(($index / $grid-column-count));
     }
   }
-  @if ($type == table) and ($index > 0) {
-    .col-#{$class}-#{$index}-tbl {
-      display: table-cell;
-      width: percentage(($index / $grid-column-count));
-    }
-  }
 }
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin loop-grid-columns($columns, $class, $type) {
+@mixin loop-grid-columns($columns, $class, $type, $narrow) {
   @for $i from 0 through $columns {
-    @include calc-grid-column($i, $class, $type);
+    @include calc-grid-column($i, $class, $type, $narrow);
   }
 }
 
 
-@mixin make-grid($class) {
-  @include loop-grid-columns($grid-column-count, $class, width);
-  @include loop-grid-columns($grid-column-count, $class, table);
+@mixin make-grid($class, $narrow: false) {
+  @include loop-grid-columns($grid-column-count, $class, width, $narrow);
+  // @include loop-grid-columns($grid-column-count, $class, table);
 }
 
 

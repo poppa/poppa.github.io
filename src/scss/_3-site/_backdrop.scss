@@ -16,7 +16,7 @@
     height: 25vw;
   }
 
-  &.ig {
+  &.ig, &.stuff {
     background-color: $accent-color-3;
     margin-top: $spacing-unit;
 
@@ -30,6 +30,17 @@
     margin-top: $spacing-unit;
     h2 {
       margin: 0;
+    }
+  }
+
+  &.stuff {
+    margin-top: -$spacing-unit*2;
+    color: #77777c;
+    hr {
+      border-color: #444;
+    }
+    @media (max-width: $screen-xs) {
+      margin-top: -$spacing-unit;
     }
   }
 

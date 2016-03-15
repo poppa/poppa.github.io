@@ -247,3 +247,69 @@ a.profile {
   display: block;
   padding: $spacing-unit;
 }
+
+.examples {
+  position: relative;
+  margin: $spacing-unit;
+  margin-left:  -($spacing-unit/2);
+  margin-right:  -($spacing-unit/2);
+
+  .flexrow {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+  }
+
+  .flexcell {
+    display: flex;
+    margin: $spacing-unit/2;
+    margin-top: 0;
+    flex: 1;
+    vertical-align: middle;
+    background: #040404;
+    cursor: pointer;
+    border-radius: $border-radius;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      // background: rgba(0,0,0,0);
+      .preview {
+        opacity: .5;
+        transform: perspective(60rem) rotateY(25deg) scale(.7);
+        box-shadow: -10px 10px 25px 10px rgba(0,0,0,.8);
+      }
+    }
+
+    &.nai {
+      background-image: url(../img/pw/nai-small.jpg);
+    }
+  }
+
+  .preview {
+    display: table;
+    position: relative;
+    padding: $spacing-unit;
+    background: #27252a;
+    width: 100.5%;
+    min-height: 20vw;;
+    text-align: center;
+    border-radius: $border-radius;
+    margin-bottom: -1px;
+    opacity: 1;
+    transition: transform .4s ease-in-out, box-shadow .4s ease-out, opacity .4s ease-in;
+    transform-origin: 50% 50%;
+
+    @media (min-width: $screen-lg) {
+      min-height: 242px;
+    }
+
+    .text-content {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

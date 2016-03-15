@@ -39,6 +39,9 @@
 
   + footer {
     margin-top: -$spacing-unit*2;
+    @media (max-width: $screen-xs) {
+      margin-top: -$spacing-unit;
+    }
   }
 }
 

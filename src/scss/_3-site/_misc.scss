@@ -60,20 +60,20 @@ a.profile {
 #instagram {
   list-style: none;
   padding: 0;
-
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
 
 
   li {
     position: relative;
-    transform: scale(1);
-    transition: transform .3s ease-in-out;
+    overflow: hidden;
     color: #888;
 
     &:hover {
       z-index: 1;
-      transform: scale(1.2);
+      img {
+        transform: scale(1.2);
+      }
 
       &.no-scale {
         transform: scale(1);
@@ -98,15 +98,16 @@ a.profile {
     .overlay {
       display: block;
       position: absolute;
-      width: 100%;
+      width: auto;
       padding: $spacing-unit / 2;
       background: rgba(0, 0, 0, .6);
-      color: #888;
+      color: #aaa;
       left: 0;
       right: 0;
       opacity: 0;
       font-size: small;
       line-height: 1.1;
+      z-index: 1;
       transition: opacity .3s ease-in,
                   top .2s ease-in-out,
                   bottom .2s ease-in-out;
@@ -148,18 +149,18 @@ a.profile {
   img {
     width: 100% !important;
     height: auto !important;
-    border-radius: $border-radius - 1;
+    transform: scale(1.0);
+    transition: transform .3s ease-in-out;
   }
 
   .col-md-3, .col-sm-6 {
     margin-bottom: $spacing-unit;
     vertical-align: middle;
     a {
+      border-radius: $border-radius;
       position: relative;
       display: block;
       overflow: hidden;
-
-      border-radius: $border-radius;
       // padding: $spacing-unit;
       background: transparent;
     }
@@ -170,6 +171,7 @@ a.profile {
   li {
     position: relative;
     margin-bottom: $spacing-unit;
+    cursor: default;
     *:first-child {
       margin-top: 0;
       margin-bottom: 0;
@@ -177,31 +179,34 @@ a.profile {
     *:last-child {
       margin-bottom: 0;
     }
-    transform: scale(1);
-    transition: transform .3s ease-in-out;
+
     &:hover {
-      transform: scale(1.1);
+      .wrapper {
+        background: #f8f8fc;
+      }
     }
-  }
-  .wrapper {
-    padding: $spacing-unit;
-    background: #e1e1e6;
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    p {
-      font-size: smaller;
-      margin-top: $spacing-unit/2;
-    }
-    .meta {
-      font-size: small;
-      color: #666;
-      .item {
-        display: inline-block;
-        margin-right: 6px;
+
+    .wrapper {
+      padding: $spacing-unit;
+      background: #e1e1e6;
+      position: relative;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: background .3s ease-in-out;
+      p {
+        font-size: smaller;
+        margin-top: $spacing-unit/2;
+      }
+      .meta {
+        font-size: small;
+        color: #666;
+        .item {
+          display: inline-block;
+          margin-right: 6px;
+        }
       }
     }
   }

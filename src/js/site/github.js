@@ -56,7 +56,7 @@
       data.data.forEach((row) => {
         let s = `<li class='col-md-4 col-xs-6'>
           <div class='wrapper'>
-            <h3><a href='${row.html_url}' target='github'>${row.name}</a></h3>
+            <h3>${row.name}</h3>
             <p>${row.description}</p>
             <div class='meta'>`;
 

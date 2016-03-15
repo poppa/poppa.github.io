@@ -21,29 +21,29 @@ h1, h2, h3, h4, h5, h6, p {
   margin: $spacing-unit 0;
 }
 
-.body-content {
-  position: relative;
-  h2, h3, h4 {
-    color: $header-color;
-    line-height: 1;
-    &.small {
-      font-weight: normal;
-      @include font-size($txt-xl);
-      letter-spacing: 0;
-    }
-    &.bordered {
-      border-bottom: 2px solid $header-color;
-      padding-bottom: $spacing-unit/2;
-    }
+
+
+h2, h3, h4 {
+  color: $header-color;
+  line-height: 1;
+  &.small {
+    font-weight: normal;
+    @include font-size($txt-xl);
+    letter-spacing: 0;
   }
-  h2 {
-    font-size: 3.8rem;
-    letter-spacing: -2px;
-    @media (max-width: $screen-xs) {
-      font-size: 3.0rem;
-    }
+  &.bordered {
+    border-bottom: 2px solid $header-color;
+    padding-bottom: $spacing-unit/2;
   }
 }
+h2 {
+  font-size: 3.8rem;
+  letter-spacing: -2px;
+  @media (max-width: $screen-xs) {
+    font-size: 3.0rem;
+  }
+}
+
 
 header {
   z-index: 2;
@@ -97,6 +97,11 @@ header {
     a {
       display: inline-block;
       text-decoration: none;
+      &:hover {
+        .text {
+          color: $default-link-color;
+        }
+      }
     }
     .text {
       display: block;
@@ -104,7 +109,8 @@ header {
       vertical-align: middle;
       white-space: nowrap;
       margin-top: 8px;
-      transition: font-size .3s ease-in;
+      transition: font-size .3s ease-in, color .2s ease-in;
+      color: $font-color;
     }
     .tagline {
       vertical-align: middle;
@@ -149,10 +155,30 @@ footer {
   border-top: 1px solid $border-color;
   padding: $spacing-unit 0;
   color: #999;
+  .row {
+    margin-bottom: 0;
+  }
   div[class^='col-'] {
     @include font-size($txt-xs);
   }
   a {
+    color: #666;
     text-decoration: none;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    &.follow {
+      margin-left: -$spacing-unit;
+      li {
+        display: inline-block;
+        margin-left: $spacing-unit;
+      }
+    }
   }
 }

@@ -235,7 +235,7 @@ gulp.task('htmlmin', function() {
 });
 
 let templates = [ SRC + '/tmpl/header.html', SRC + '/tmpl/footer.html' ];
-gulp.task('reload-template', [ 'htmlmin' ], () => {
+gulp.task('reload-template', function() {
   gutil.log('Re-read templates');
 
   fs.readFile(templates[0], 'utf-8', function(err, _data) {
@@ -244,7 +244,7 @@ gulp.task('reload-template', [ 'htmlmin' ], () => {
   fs.readFile(templates[1], 'utf-8', function(err, _data) {
     HTML_FOOTER = _data;
   });
-  return gulp.pipe(livereload());
+  return gulp.src(templates).pipe(livereload());
 });
 
 
@@ -263,7 +263,7 @@ gulp.task('all-js', [ 'lint', 'vendor-js', 'app-js' ]);
  |                                                                           |
  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 
-gulp.task('default', [ 'all-js', 'style', 'image', 'font', 'htmlmin' ], () => {
+gulp.task('default', [ 'all-js', 'style', 'image', 'font', 'reload-template', 'htmlmin' ], () => {
   livereload.listen();
 
   let scss = SRC + '/scss/**/*.scss';
@@ -273,6 +273,6 @@ gulp.task('default', [ 'all-js', 'style', 'image', 'font', 'htmlmin' ], () => {
   gulp.watch(apps,         [ 'lint', 'app-js'              ]);
   gulp.watch(images,       [ 'image'                       ]);
   gulp.watch(fonts,        [ 'font'                        ]);
-  gulp.watch(datafiles,    [ 'htmlmin'                    ]);
-  gulp.watch(templates     [ 'reload-template', 'htmlmin' ]);
+  gulp.watch(datafiles,    [ 'htmlmin'                     ]);
+  gulp.watch(templates     [ 'reload-template', 'htmlmin'  ]);
 });

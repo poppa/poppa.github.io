@@ -19,7 +19,6 @@
           this._handleData(cache.data);
           return;
         }
-        window.console.log('Old instagram cache, renew');
       }
 
       let url = `https://api.instagram.com/v1/users/${USER_ID}/media/recent/` +

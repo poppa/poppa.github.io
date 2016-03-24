@@ -251,55 +251,64 @@ a.profile {
 .examples {
   position: relative;
   margin: $spacing-unit;
-  margin-left:  -($spacing-unit/2);
-  margin-right:  -($spacing-unit/2);
+  margin-left: 0;
+  margin-right: 0;
+  // margin-left:  -($spacing-unit/2);
+  // margin-right:  -($spacing-unit/2);
 
   .flexrow {
     display: flex;
     flex-wrap: wrap;
     vertical-align: middle;
+    margin-left: -($spacing-unit/2);
+    margin-right: -($spacing-unit/2);
+    margin-bottom: $spacing-unit/2;
   }
 
   .flexcell {
     display: flex;
     margin: $spacing-unit/2;
     margin-top: 0;
-    flex: 1;
-    vertical-align: middle;
+    flex: 2;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-content: flex-end;
     background: #040404;
     cursor: pointer;
-    border-radius: $border-radius;
     background-position: 0% 0%;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 
     &:hover {
       // background: rgba(0,0,0,0);
       .preview {
         opacity: .5;
         transform: perspective(60rem) rotateY(25deg) scale(.7);
-        box-shadow: -10px 10px 25px 10px rgba(0,0,0,.8);
+        box-shadow: -10px 10px 25px 10px rgba(0,0,0,.5);
       }
-    }
-
-    &.nai {
-      background-image: url(../img/pw/nai-small.jpg);
     }
   }
 
   .preview {
-    display: table;
+    display: block;
     position: relative;
     padding: $spacing-unit;
     background: #27252a;
     width: 100.5%;
-    min-height: 20vw;;
+    min-height: 20vw;
     text-align: center;
-    border-radius: $border-radius;
     margin-bottom: -1px;
     opacity: 1;
-    transition: transform .4s ease-in-out, box-shadow .4s ease-out, opacity .4s ease-in;
+    transition: transform  .4s ease-in-out,
+                box-shadow .4s ease-out,
+                opacity    .4s ease-in,
+                background .4s ease-out;
     transform-origin: 50% 50%;
+
+    h3 {
+      transition: color .3s ease-in;
+    }
 
     @media (min-width: $screen-lg) {
       min-height: 242px;

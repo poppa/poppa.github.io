@@ -22,6 +22,11 @@
         return;
       }
 
+      win.off('scroll');
+      setTimeout(() => {
+        win.on('scroll', checkScroll);
+      }, 500);
+
       scrollState = 2;
       $('header').addClass('scrolled');
     }
@@ -30,6 +35,10 @@
         return;
       }
 
+      win.off('scroll');
+      setTimeout(() => {
+        win.on('scroll', checkScroll);
+      }, 500);
       scrollState = 1;
       $('header').removeClass('scrolled');
     }

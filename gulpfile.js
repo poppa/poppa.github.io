@@ -202,6 +202,7 @@ gulp.task('htmlmin', function() {
   };
 
   return gulp.src(datafiles)
+    .pipe(plumber())
     .pipe(insert.transform(function(content, file) {
       // Check for definition comment. Must be the first thing in a .md file
       // to be recognized.
@@ -214,12 +215,18 @@ gulp.task('htmlmin', function() {
       let obj = {};
 
       if (m) {
-        // gutil.log('Meta  header: ', JSON.parse(m[1]));
+        // gutil.log('Meta  header: ', m);
         obj = JSON.parse(m[1]);
         content = content.replace(reg, '');
+        gutil.log('obj: ', obj);
       }
 
-      content = HTML_HEADER + content + HTML_FOOTER;
+      if (!obj.noconcat) {
+        content = HTML_HEADER + content + HTML_FOOTER;
+      }
+      else {
+        gutil.log('Skip header nd footer');
+      }
 
       Object.keys(obj).forEach((k) => {
         content = content.replace('${' + k + '}', obj[k]);

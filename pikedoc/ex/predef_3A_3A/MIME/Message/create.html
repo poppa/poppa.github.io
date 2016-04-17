@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - MIME.Message()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/MIME.html'><b class='head'>MIME</b></a>
+<a href='../../../../ex/predef_3A_3A/MIME/Message.html'><b class='head'>MIME.Message</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/MIME/Message/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/MIME/Message.html" class="prev"><span>&#10148;</span> MIME.Message</a>
+              <a href="../../../../ex/predef_3A_3A/MIME/Message/get_filename.html" class="next">MIME.Message()-&gt;get_filename() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method MIME.Message()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>MIME.Message</span> <span class='class'>MIME.Message</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>MIME.Message</span> <span class='class'>MIME.Message</span><b>(</b><code class='datatype'>string</code> <code class='argument'>message</code><b>)</b></code><br>
+<code><span class='object'>MIME.Message</span> <span class='class'>MIME.Message</span><b>(</b><code class='datatype'>string</code> <code class='argument'>message</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)) <code class='argument'>headers</code>, <code class='datatype'>array</code>(<code class='datatype'>object</code>)|<code class='datatype'>void</code> <code class='argument'>parts</code><b>)</b></code><br>
+<code><span class='object'>MIME.Message</span> <span class='class'>MIME.Message</span><b>(</b><code class='datatype'>string</code> <code class='argument'>message</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)) <code class='argument'>headers</code>, <code class='datatype'>array</code>(<code class='datatype'>object</code>)|<code class='datatype'>void</code> <code class='argument'>parts</code>, <code class='datatype'>bool</code> <code class='argument'>guess</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>There are several ways to call the constructor of the Message class:</p>
+<ul>
+<li><p>With zero arguments, you will get a dummy message with neither
+     headers nor body. Not very useful.</p>
+</li><li><p>With one argument, the argument is taken to be a byte stream
+     containing a message in encoded form. The constructor will analyze
+     the string and extract headers and body.</p>
+</li><li><p>With two or three arguments, the first argument is taken to be the
+     raw body data, and the second argument a desired set of headers.
+     The keys of this mapping are not case-sensitive.  If the given
+     headers indicate that the message should be of type multipart,
+     an array of Message objects constituting the subparts should be
+     given as a third argument.</p>
+</li><li><p>With the <code class='reference paramref'>guess</code> argument set to 1 (<code class='reference paramref'>headers</code> and <code class='reference paramref'>parts</code> may be 0
+     if you don't want to give any), you get a more forgiving MIME Message
+     that will do its best to guess what broken input data really meant. It
+     won't always guess right, but for applications like mail archives and
+     similar where you can't get away with throwing an error at the user,
+     this comes in handy. Only use the <code class='reference paramref'>guess</code> mode only for situations
+     where you <i>need</i> to process broken MIME messages silently; the
+     abuse of overly lax tools is what poisons standards.</p>
+</li></ul>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/MIME/Message/cast.html'>cast()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/MIME/Message/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/MIME/Message/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/MIME/Message/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

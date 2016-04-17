@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - CompilationHandler</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<b class='selected head'>CompilationHandler</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/CompilationHandler/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/Codec.html" class="prev"><span>&#10148;</span> Codec</a>
+              <a href="../../ex/predef_3A_3A/CompilationHandler/compile_error.html" class="next">CompilationHandler()-&gt;compile_error() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class CompilationHandler</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>CompilationHandler</tspan></text>
+<line x1='5' y1='25' x2='5' y2='36' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../predef_3A_3A/MasterObject.html'>MasterObject</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Objects used by the compiler to handle references to global symbols,
+   modules, external files, etc.</p>
+<p>   There can be up to three compilation handlers active at the same
+   time during a compilation. They are in order of precedence:</p>
+<ol>
+<li><p>The error handler</p>
+<p>       This is the object passed to <a class='ms reference' href='../predef_3A_3A/compile.html'>compile()</a> as
+       the second argument (if any). This object is returned by
+       <a class='ms reference' href='../predef_3A_3A/get_active_error_handler.html'>get_active_error_handler()</a> during a compilation.</p>
+</li><li><p>The compatibility handler</p>
+<p>       This is the object returned by
+       <code class='reference unresolved'>master()-&gt;get_compilation_handler()</code> (if any), which
+       the compiler calls when it sees <tt>#pike</tt>-directives,
+       or expressions using the version scope
+       (eg <code class='expr'>7.4::rusage</code>). This object is returned by
+       <a class='ms reference' href='../predef_3A_3A/get_active_compilation_handler.html'>get_active_compilation_handler()</a> during a compilation.</p>
+</li><li><p>The master object.</p>
+<p>       This is returned by <a class='ms reference' href='../predef_3A_3A/master.html'>master()</a> at any time.</p>
+</li></ol><p>Any of the objects may implement a subset of the <a class='ms reference' href='../predef_3A_3A/CompilationHandler.html'>CompilationHandler</a>
+   functions, and the first object that implements a function will be
+   used. The error handler object can thus be used to block certain
+   functionality (eg to restrict the number of available functions).</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>master()-&gt;get_compilation_handler()</code>, <a class='ms reference' href='../predef_3A_3A/get_active_error_handler.html'>get_active_error_handler()</a>,
+   <a class='ms reference' href='../predef_3A_3A/get_active_compilation_handler.html'>get_active_compilation_handler()</a>, <a class='ms reference' href='../predef_3A_3A/compile.html'>compile()</a></p>
+</dd></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/CompilationHandler.html","name":"CompilationHandler"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/CompilationHandler/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

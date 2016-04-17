@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;modify_by_intensity()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/mirrory.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;mirrory()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/noise.html" class="next">Image.Image()-&gt;noise() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;modify_by_intensity()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>modify_by_intensity</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>modify_by_intensity</span>(</b><code class='datatype'>int</code> <code class='argument'>r</code>, <code class='datatype'>int</code> <code class='argument'>g</code>, <code class='datatype'>int</code> <code class='argument'>b</code>, <code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>int</code>) ...  <code class='argument'>vn</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Recolor an image from intensity values.</p>
+
+<p>For each color an intensity is calculated, from r, g and b factors
+(see <a class='ms reference' href='../../../predef_3A_3A/Image/Image/grey.html'>grey</a>), this gives a value between 0 and max.</p>
+
+<p>The color is then calculated from the values given, v1 representing
+the intensity value of 0, vn representing max, and colors between
+representing intensity values between, linear.</p>
+
+<p> <table><tr valign='center'>
+ <td><img height='115' src='../../../../images/predef.Image.Image.modify_by_intensity.1.png' width='80' /></td>
+ <td><img height='115' src='../../../../images/predef.Image.Image.modify_by_intensity.2.png' width='80' /></td>
+ </tr><tr valign='center'>
+ <td>original</td>
+ <td>-&gt;grey()-&gt;modify_by_intensity(1,0,0, 0,({255,0,0}),({0,255,0}));</td>
+ </tr></table>
+</p>
+</dd>
+<dt class='head--doc'><span id='p-r'></span>Parameter <code class='parameter'>r</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-g'></span>Parameter <code class='parameter'>g</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-b'></span>Parameter <code class='parameter'>b</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>red, green, blue intensity factors</p></dd>
+<dt class='head--doc'><span id='p-v1'></span>Parameter <code class='parameter'>v1</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-vn'></span>Parameter <code class='parameter'>vn</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>destination color
+</p></dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new image object</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'>
+<p><a class='ms reference' href='../../../predef_3A_3A/Image/Image/grey.html'>grey</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_2A.html'>`*</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/color.html'>color</a></p></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/modify_by_intensity.html","name":"modify_by_intensity"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glBindTexture()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glBegin.html" class="prev"><span>&#10148;</span> GL.glBegin()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glBlendFunc.html" class="next">GL.glBlendFunc() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glBindTexture()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glBindTexture</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glBindTexture</span>(</b><code class='datatype'>int</code> <code class='argument'>target</code>, <code class='datatype'>int</code> <code class='argument'>texture</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> lets you create or use a named texture. Calling <a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> with</p>
+<p><i>target</i> set to
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_1D</a> or <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a> and <i>texture</i> set to the name
+of the newtexture binds the texture name to the target.
+When a texture is bound to a target, the previous binding for that
+target is automatically broken.</p>
+<p>Texture names are unsigned integers. The value zero is reserved to
+represent the default texture for each texture target.
+Texture names and the corresponding texture contents are local to
+the shared display-list space (see <code class='reference unresolved'>glXCreateContext</code>) of the current
+GL rendering context;
+two rendering contexts share texture names only if they
+also share display lists.</p>
+<p>You may use <code class='reference unresolved'>glGenTextures</code> to generate a set of new texture names.</p>
+<p>When a texture is first bound, it assumes the dimensionality of its
+target:  A texture first bound to <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_1D</a> becomes
+1-dimensional and a texture first bound to <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a> becomes
+2-dimensional. The state of a 1-dimensional texture
+immediately after it is first bound is equivalent to the state of the
+default <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_1D</a> at GL initialization, and similarly for
+2-dimensional textures.</p>
+<p>While a texture is bound, GL operations on the target to which it is
+bound affect the bound texture, and queries of the target to which it
+is bound return state from the bound texture. If texture mapping of
+the dimensionality of the target to which a texture is bound is
+active, the bound texture is used.
+In effect, the texture targets become aliases for the textures currently
+bound to them, and the texture name zero refers to the default textures
+that were bound to them at initialization.</p>
+<p>A texture binding created with <a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> remains active until a different
+texture is bound to the same target, or until the bound texture is
+deleted with <code class='reference unresolved'>glDeleteTextures</code>.</p>
+<p>Once created, a named texture may be re-bound to the target of the
+matching dimensionality as often as needed.
+It is usually much faster to use <a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> to bind an existing named
+texture to one of the texture targets than it is to reload the texture image
+using <code class='reference unresolved'>glTexImage1D</code> or <a class='ms reference' href='../../predef_3A_3A/GL/glTexImage2D.html'>glTexImage2D</a>.
+For additional control over performance, use
+<code class='reference unresolved'>glPrioritizeTextures</code>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> is included in display lists.</p>
+</dd>
+<dt class='head--doc'><span id='p-target'></span>Parameter <code class='parameter'>target</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the target to which the texture is bound.
+Must be either
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_1D</a> or
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-texture'></span>Parameter <code class='parameter'>texture</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the name of a texture.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>target</i> is not one of the allowable
+values.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <i>texture</i> has a dimensionality
+which doesn't match that of <i>target</i>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glBindTexture.html'>glBindTexture</a> is executed
+between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a> and the corresponding
+execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glBindTexture.html","name":"glBindTexture"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

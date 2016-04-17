@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Mysql.SqlTable()-&gt;insert()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql.html'><b class='head'>Mysql</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql/SqlTable.html'><b class='head'>Mysql.SqlTable</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Mysql/SqlTable/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Mysql/SqlTable/handle_argspec.html" class="prev"><span>&#10148;</span> Mysql.SqlTable()-&gt;handle_argspec()</a>
+              <a href="../../../../ex/predef_3A_3A/Mysql/SqlTable/insert_ignore.html" class="next">Mysql.SqlTable()-&gt;insert_ignore() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Mysql.SqlTable()-&gt;insert()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>insert</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>insert</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) ...  <code class='argument'>records</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Inserts one or more records into the table using an INSERT
+ command. An SQL error is thrown if a record conflicts with an
+ existing one.</p>
+<p> A record is represented as a mapping with one entry for each
+ column or property (if <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a> is used). The values must be of
+ the right type for the column: Integers for integer columns,
+ floats for floating point columns, strings for all other data
+ types, and <a class='ms reference' href='../../../predef_3A_3A/Val.html'>Val.null</a> for the SQL NULL value.</p>
+<p> If the property feature is used (i.e. if <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a> is set) then
+ any entries in the record mapping that don't match a column are
+ treated as properties and are stored encoded in the <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a>
+ column. Note that column names are matched with case sensitivity.
+ Properties may store any pike data type (as long as it is accepted
+ by <a class='ms reference' href='../../../predef_3A_3A/encode_value_canonic.html'>encode_value_canonic</a>).</p>
+<p> If <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>id_col</a> is set and that column doesn't exist in a record
+ mapping then the field is added to the mapping with the value that
+ the record got. This currently only works for the first record
+ mapping if there are several.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>The value of the <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>id_col</a> column for the new record. If several
+ records are inserted at once then the value for the first one is
+ returned. Zero is returned if there is no <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>id_col</a> column.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable/insert_ignore.html'>insert_ignore</a>, <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable/replace.html'>replace</a>, <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable/insert_or_update.html'>insert_or_update</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Mysql/SqlTable/insert.html","name":"insert"};</script>
+<script src='../../../../ex/predef_3A_3A/Mysql/SqlTable/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Mysql/SqlTable/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

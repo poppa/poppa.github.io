@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - `%()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/_backtick_21_eq.html" class="prev"><span>&#10148;</span> `!=()</a>
+              <a href="../../ex/predef_3A_3A/_backtick_26.html" class="next">`&amp;() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method `%()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>`%</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mixed</code> <b><span class='method'>`%</span>(</b><code class='datatype'>object</code> <code class='argument'>arg1</code>, <code class='datatype'>mixed</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>mixed</code> <b><span class='method'>`%</span>(</b><code class='datatype'>mixed</code> <code class='argument'>arg1</code>, <code class='datatype'>object</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>string</code> <b><span class='method'>`%</span>(</b><code class='datatype'>string</code> <code class='argument'>arg1</code>, <code class='datatype'>int</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>array</code> <b><span class='method'>`%</span>(</b><code class='datatype'>array</code> <code class='argument'>arg1</code>, <code class='datatype'>int</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>float</code> <b><span class='method'>`%</span>(</b><code class='datatype'>float</code> <code class='argument'>arg1</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>float</code> <b><span class='method'>`%</span>(</b><code class='datatype'>int</code> <code class='argument'>arg1</code>, <code class='datatype'>float</code> <code class='argument'>arg2</code><b>)</b></code><br>
+<code><code class='datatype'>int</code> <b><span class='method'>`%</span>(</b><code class='datatype'>int</code> <code class='argument'>arg1</code>, <code class='datatype'>int</code> <code class='argument'>arg2</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Modulo.</p>
+<p>   Every expression with the <code class='expr'>%</code> operator becomes a call to
+   this function, i.e. <code class='expr'>a%b</code> is the same as
+   <code class='expr'>predef::`%(a,b)</code>.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>If <code class='reference paramref'>arg1</code> is an object that implements <a class='ms reference' href='../lfun_3A_3A/_backtick_25.html'>lfun::`%()</a> then
+   that function will be called with <code class='reference paramref'>arg2</code> as the single argument.</p>
+<p>   If <code class='reference paramref'>arg2</code> is an object that implements <a class='ms reference' href='../lfun_3A_3A/_backtick_backtick_25.html'>lfun::``%()</a> then
+   that function will be called with <code class='reference paramref'>arg2</code> as the single argument.</p>
+<p>   Otherwise the result will be as follows:</p>
+<code>arg1</code> can have any of the following types:<br /><table class='box'><tr><td><code><code class='datatype'>string</code>|<code class='datatype'>array</code></code></td><td><p>If <code class='reference paramref'>arg2</code> is positive, the result will be the last
+   	  <code class='expr'>`%(<a&nbsp;class='ms&nbsp;reference'&nbsp;href='../predef_3A_3A/sizeof.html'>sizeof</a>(<code&nbsp;class='reference&nbsp;paramref'>arg1</code>),&nbsp;<code&nbsp;class='reference&nbsp;paramref'>arg2</code>)</code> elements of <code class='reference paramref'>arg1</code>.
+   	  If <code class='reference paramref'>arg2</code> is negative, the result will be the first
+   	  <code class='expr'>`%(<a&nbsp;class='ms&nbsp;reference'&nbsp;href='../predef_3A_3A/sizeof.html'>sizeof</a>(<code&nbsp;class='reference&nbsp;paramref'>arg1</code>),&nbsp;-<code&nbsp;class='reference&nbsp;paramref'>arg2</code>)</code> elements of <code class='reference paramref'>arg1</code>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code>|<code class='datatype'>float</code></code></td><td><p>The result will be
+   	  <code class='expr'><code&nbsp;class='reference&nbsp;paramref'>arg1</code>&nbsp;-&nbsp;<code&nbsp;class='reference&nbsp;paramref'>arg2</code>*<a&nbsp;class='ms&nbsp;reference'&nbsp;href='../predef_3A_3A/floor.html'>floor</a>(<code&nbsp;class='reference&nbsp;paramref'>arg1</code>/<code&nbsp;class='reference&nbsp;paramref'>arg2</code>)</code>.
+   	  The result will be a float if either <code class='reference paramref'>arg1</code> or <code class='reference paramref'>arg2</code> is
+   	  a float, and an int otherwise.</p>
+</td></tr>
+</table><p>For numbers, this means that</p>
+<ol>
+<li><p><code class='expr'>a&nbsp;%&nbsp;b</code> always has the same sign as <code class='expr'>b</code>
+       (typically <code class='expr'>b</code> is positive;
+       array size, rsa modulo, etc, and <code class='expr'>a</code> varies a
+       lot more than <code class='expr'>b</code>).</p>
+</li><li><p>The function <code class='expr'>f(x)&nbsp;=&nbsp;x&nbsp;%&nbsp;n</code> behaves in a sane way;
+       as <code class='expr'>x</code> increases, <code class='expr'>f(x)</code> cycles through the
+       values <code class='expr'>0,1,&nbsp;...,&nbsp;n-1,&nbsp;0,&nbsp;...</code>. Nothing
+       strange happens when you cross zero.</p>
+</li><li><p>The <code class='expr'>%</code> operator implements the binary "mod" operation,
+       as defined by Donald Knuth (see the Art of Computer Programming,
+       1.2.4). It should be noted that Pike treats %-by-0 as an error
+       rather than returning 0, though.</p>
+</li><li><p><code class='expr'>/</code> and <code class='expr'>%</code> are compatible, so that
+       <code class='expr'>a&nbsp;==&nbsp;b*<a&nbsp;class='ms&nbsp;reference'&nbsp;href='../predef_3A_3A/floor.html'>floor</a>(a/b)&nbsp;+&nbsp;a%b</code> for all <code class='expr'>a</code> and <code class='expr'>b</code>.</p>
+</li></ol></dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/_backtick_2F.html'>`/</a>, <a class='ms reference' href='../predef_3A_3A/floor.html'>floor()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/_backtick_25.html","name":"`%"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

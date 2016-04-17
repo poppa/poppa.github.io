@@ -1,0 +1,4 @@
+// Class path Image.PNM
+PikeDoc.registerSymbol('Image.PNM', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Image/PNM/decode.html","name":"decode"},{"link":"ex/predef_3A_3A/Image/PNM/encode.html","name":"encode"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P1.html","name":"encode_P1"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P2.html","name":"encode_P2"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P3.html","name":"encode_P3"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P4.html","name":"encode_P4"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P5.html","name":"encode_P5"},{"link":"ex/predef_3A_3A/Image/PNM/encode_P6.html","name":"encode_P6"},{"link":"ex/predef_3A_3A/Image/PNM/encode_ascii.html","name":"encode_ascii"},{"link":"ex/predef_3A_3A/Image/PNM/encode_binary.html","name":"encode_binary"}])
+.finish();

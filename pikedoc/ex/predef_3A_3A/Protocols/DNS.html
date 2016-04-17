@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.DNS</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<b class='selected head'>Protocols.DNS</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Protocols/DNS/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Protocols/Bittorrent/PeerID/identify_peer.html" class="prev"><span>&#10148;</span> Protocols.Bittorrent.PeerID.identify_peer()</a>
+              <a href="../../../ex/predef_3A_3A/Protocols/DNS/async_client.html" class="next">Protocols.DNS.async_client <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Protocols.DNS</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='65px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>predef::Protocols.DNS</tspan></text>
+<line x1='5' y1='25' x2='5' y2='56' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../7.8_3A_3A/Protocols/DNS.html'>7.8::Protocols.DNS</a></text>
+<line x1='4' y1='55' x2='35' y2='55' />
+<text x='40' y='60'><a class='ms reference' xlink:href='../../7.8_3A_3A/Protocols/DNS.html'>7.8::Protocols.DNS</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Support for the Domain Name System protocol.</p>
+<p> Implements <b><a href='http://pike.lysator.liu.se/rfc1034.xml'>RFC 1034</a></b>, <b><a href='http://pike.lysator.liu.se/rfc1035.xml'>RFC 1035</a></b> and <b><a href='http://pike.lysator.liu.se/rfc2308.xml'>RFC 2308</a></b>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>FORMERR</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>FORMERR</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name server was unable to interpret the request due to a
+ format error.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>NOERROR</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>NOERROR</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>No error condition.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>NOTIMPL</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>NOTIMPL</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name server does not support the specified Opcode.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>NXDOMAIN</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>NXDOMAIN</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Some name that ought to exist, does not exist.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>NXRRSET</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>NXRRSET</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Some RRset that ought to exist, does not exist.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>REFUSED</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>REFUSED</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name server refuses to perform the specified operation for
+ policy or security reasons.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>SERVFAIL</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>final</code>  constant</code> <code class='datatype'>int</code> Protocols.DNS.<code class='constant'>SERVFAIL</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name server encountered an internal failure while processing
+ this request, for example an operating system error or a
+ forwarding timeout.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/DNS.html","name":"DNS"};</script>
+<script src='../../../ex/predef_3A_3A/Protocols/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Protocols/DNS/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

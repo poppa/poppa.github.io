@@ -1,0 +1,4 @@
+// Class path GTK2.RecentFilter
+PikeDoc.registerSymbol('GTK2.RecentFilter', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_age.html","name":"add_age"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_application.html","name":"add_application"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_group.html","name":"add_group"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_mime_type.html","name":"add_mime_type"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_pattern.html","name":"add_pattern"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/add_pixbuf_formats.html","name":"add_pixbuf_formats"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/create.html","name":"create"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/get_name.html","name":"get_name"},{"link":"ex/predef_3A_3A/GTK2/RecentFilter/set_name.html","name":"set_name"}])
+.finish();

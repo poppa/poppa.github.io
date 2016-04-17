@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Getopt.find_option()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Getopt.html'><b class='head'>Getopt</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Getopt/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Getopt/find_all_options.html" class="prev"><span>&#10148;</span> Getopt.find_all_options()</a>
+              <a href="../../../ex/predef_3A_3A/Getopt/get_args.html" class="next">Getopt.get_args() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Getopt.find_option()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>find_option</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code>|<code class='datatype'>bool</code> <b><span class='method'>find_option</span>(</b><code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>argv</code>, <code class='datatype'>array</code>(<code class='datatype'>string</code>)|<code class='datatype'>string</code> <code class='argument'>shortform</code>, <code class='datatype'>array</code>(<code class='datatype'>string</code>)|<code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>longform</code>, <code class='datatype'>array</code>(<code class='datatype'>string</code>)|<code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>envvars</code>, <code class='datatype'>string</code>|<code class='datatype'>bool</code>|<code class='datatype'>void</code> <code class='argument'>def</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>throw_errors</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This is a generic function to parse command line options of the
+   type <tt>-f</tt>, <tt>--foo</tt> or <tt>--foo=bar</tt>.</p>
+</dd>
+<dt class='head--doc'><span id='p-argv'></span>Parameter <code class='parameter'>argv</code></dt>
+<dd></dd><dd class='body--doc'><p>The first argument should be the array of strings that was sent as
+   the second argument to your <code class='expr'>main()</code> function.</p>
+</dd>
+<dt class='head--doc'><span id='p-shortform'></span>Parameter <code class='parameter'>shortform</code></dt>
+<dd></dd><dd class='body--doc'><p>The second is a string with the short form of your option. The
+   short form must be only one character long. It can also be an
+   array of strings, in which case any of the options in the array
+   will be accepted.</p>
+</dd>
+<dt class='head--doc'><span id='p-longform'></span>Parameter <code class='parameter'>longform</code></dt>
+<dd></dd><dd class='body--doc'><p>This is an alternative and maybe more readable way to give the
+   same option. If you give <code class='expr'>"foo"</code> as <code class='reference paramref'>longform</code> your program
+   will accept <tt>--foo</tt> as argument. This argument can also be
+   an array of strings, in which case any of the options in the
+   array will be accepted.</p>
+</dd>
+<dt class='head--doc'><span id='p-envvars'></span>Parameter <code class='parameter'>envvars</code></dt>
+<dd></dd><dd class='body--doc'><p>This argument specifies an environment variable that can be used
+   to specify the same option, to make it easier to customize
+   program usage. It can also be an array of strings, in which case
+   any of the mentioned variables in the array may be used.</p>
+</dd>
+<dt class='head--doc'><span id='p-def'></span>Parameter <code class='parameter'>def</code></dt>
+<dd></dd><dd class='body--doc'><p>This argument has two functions: It specifies if the option takes an
+   argument or not, and it informs <a class='ms reference' href='../../predef_3A_3A/Getopt/find_option.html'>find_option()</a> what to return if the
+   option is not present.</p>
+<p>   The value may be one of:</p>
+<table class='box'><tr><td><code><code class='datatype'>int(0..0)</code>|<code class='datatype'>zero</code></code></td><td><p>The option does not require a value.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int(1..1)</code>|<code class='datatype'>string</code></code></td><td><p>The option requires a value, and <code class='reference paramref'>def</code> will be returned
+       if the option is not present. If the option is present,
+       but does not have an argument <a class='ms reference' href='../../predef_3A_3A/Getopt/find_option.html'>find_option()</a> will fail.</p>
+<p>       Note that a set option will always return a <code class='expr'>string</code>,
+       so setting <code class='reference paramref'>def</code> to <code class='expr'>1</code> can be used to detect whether
+       the option is present or not.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-throw_errors'></span>Parameter <code class='parameter'>throw_errors</code></dt>
+<dd></dd><dd class='body--doc'><p>If <code class='reference paramref'>throw_errors</code> has been specified <a class='ms reference' href='../../predef_3A_3A/Getopt/find_option.html'>find_option()</a> will
+   throw errors on failure. If it has been left out, or is
+   <code class='expr'>0</code> (zero), it will instead print an error message on
+   <a class='ms reference' href='../../predef_3A_3A/Stdio.html'>Stdio.stderr</a> and exit the program with result code 1 on
+   failure.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the value the option has been set to if any.</p>
+<p>   If the option is present, but has not been set to anything
+   <code class='expr'>1</code> will be returned.</p>
+<p>   Otherwise if any of the environment variables specified in <code class='reference paramref'>envvars</code> has
+   been set, that value will be returned.</p>
+<p>   If all else fails, <code class='reference paramref'>def</code> will be returned.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>If an option that requires an argument lacks an argument and
+   <code class='reference paramref'>throw_errors</code> is set an error will be thrown.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Getopt/find_option.html'>find_option()</a> modifies <code class='reference paramref'>argv</code>. Parsed options will be removed
+   from <code class='reference paramref'>argv</code>. Elements of <code class='reference paramref'>argv</code> that have been removed entirely will
+   be replaced with zeroes.</p>
+<p>   This function reads options even if they are written after the first
+   non-option on the line.</p>
+<p>   Index <code class='expr'>0</code> (zero) of <code class='reference paramref'>argv</code> is not scanned for options,
+   since it is reserved for the program name.</p>
+<p>   Only the first ocurrance of an option will be parsed. To parse
+   multiple ocurrances, call <a class='ms reference' href='../../predef_3A_3A/Getopt/find_option.html'>find_option()</a> multiple times.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Getopt/get_args.html'>Getopt.get_args()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Getopt/find_option.html","name":"find_option"};</script>
+<script src='../../../ex/predef_3A_3A/Getopt/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Getopt/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

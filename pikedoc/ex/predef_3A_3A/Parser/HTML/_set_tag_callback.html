@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.HTML()-&gt;_set_tag_callback()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML.html'><b class='head'>Parser.HTML</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/_set_entity_callback.html" class="prev"><span>&#10148;</span> Parser.HTML()-&gt;_set_entity_callback()</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/add_container.html" class="next">Parser.HTML()-&gt;add_container() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Parser.HTML()-&gt;_set_tag_callback()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>_set_tag_callback</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>_set_tag_callback</span>(</b><code class='datatype'>function</code>(:<code class='datatype void'>void</code>)|<code class='datatype'>string</code>|<code class='datatype'>array</code> <code class='argument'>to_call</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>_set_entity_callback</span>(</b><code class='datatype'>function</code>(:<code class='datatype void'>void</code>)|<code class='datatype'>string</code>|<code class='datatype'>array</code> <code class='argument'>to_call</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>_set_data_callback</span>(</b><code class='datatype'>function</code>(:<code class='datatype void'>void</code>)|<code class='datatype'>string</code>|<code class='datatype'>array</code> <code class='argument'>to_call</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>These functions set up the parser object to call the given
+ callbacks upon tags, entities and/or data. The callbacks will
+ <i>only</i> be called if there isn't another tag/container/entity
+ handler for these.</p>
+<p> The callback function will be called with the parser object as
+ first argument, and the active string as second. Note that no
+ parsing of the contents has been done. Both endtags and normal
+ tags are called; there is no container parsing.</p>
+<p> The return values from the callbacks are handled in the same way
+ as the return values from callbacks registered with <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/add_tag.html'>add_tag</a> and
+ similar functions.</p>
+<p> The data callback will be called as seldom as possible with the
+ longest possible string, as long as it doesn't get called out of
+ order with any other callback. It will never be called with a zero
+ length string.</p>
+<p> If a string or array is given instead of a function, it
+ will act as the return value from the function. Arrays
+ or empty strings is probably preferable to avoid recursion.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the object being called.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/HTML/_set_tag_callback.html","name":"_set_tag_callback"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

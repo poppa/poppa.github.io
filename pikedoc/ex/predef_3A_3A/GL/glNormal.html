@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glNormal()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glNewList.html" class="prev"><span>&#10148;</span> GL.glNewList()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glOrtho.html" class="next">GL.glOrtho() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glNormal()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glNormal</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glNormal</span>(</b><code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>float</code>|<code class='datatype'>int</code>) <code class='argument'>nx</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>ny</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>nz</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The current normal is set to the given coordinates
+whenever <a class='ms reference' href='../../predef_3A_3A/GL/glNormal.html'>glNormal</a> is issued.
+Byte, short, or integer arguments are converted to floating-point
+format with a linear mapping that maps the most positive representable integer
+value to 1.0,
+and the most negative representable integer value to -1.0.</p>
+<p>Normals specified with <a class='ms reference' href='../../predef_3A_3A/GL/glNormal.html'>glNormal</a> need not have unit length.
+If normalization is enabled,
+then normals specified with <a class='ms reference' href='../../predef_3A_3A/GL/glNormal.html'>glNormal</a> are normalized after transformation.
+To enable and disable normalization, call <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a>
+with the argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_NORMALIZE</a>.
+Normalization is initially disabled.</p>
+</dd>
+<dt class='head--doc'><span id='p-nx'></span>Parameter <code class='parameter'>nx</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify the x, y, and z coordinates of the new current normal.
+The initial value of the current normal is the unit vector, (0, 0, 1).</p>
+</dd>
+<dt class='head--doc'><span id='p-v'></span>Parameter <code class='parameter'>v</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a pointer to an array of three elements:
+the x, y, and z coordinates of the new current normal.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glNormal.html","name":"glNormal"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

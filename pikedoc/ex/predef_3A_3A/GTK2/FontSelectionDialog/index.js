@@ -1,0 +1,4 @@
+// Class path GTK2.FontSelectionDialog
+PikeDoc.registerSymbol('GTK2.FontSelectionDialog', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/create.html","name":"create"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/get_apply_button.html","name":"get_apply_button"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/get_cancel_button.html","name":"get_cancel_button"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/get_font_name.html","name":"get_font_name"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/get_ok_button.html","name":"get_ok_button"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/get_preview_text.html","name":"get_preview_text"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/set_font_name.html","name":"set_font_name"},{"link":"ex/predef_3A_3A/GTK2/FontSelectionDialog/set_preview_text.html","name":"set_preview_text"}])
+.finish();

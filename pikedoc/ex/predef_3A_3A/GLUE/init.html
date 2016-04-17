@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GLUE.init()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GLUE.html'><b class='head'>GLUE</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GLUE/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GLUE/hide_cursor.html" class="prev"><span>&#10148;</span> GLUE.hide_cursor()</a>
+              <a href="../../../ex/predef_3A_3A/GLUE/make_rect_texture.html" class="next">GLUE.make_rect_texture() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GLUE.init()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>init</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>init</span>(</b><code class='datatype'>void</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Initializes GLUE and loads a driver from a list of drivers.
+ If a driver fails to load or initialize, the next driver
+ is tried.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>driver_names</code> not listed in the result from <a class='ms reference' href='../../predef_3A_3A/GLUE/get_drivers.html'>get_drivers</a>
+ will cause an error to be thrown.</p>
+</dd>
+<dt class='head--doc'><span id='p-options'></span>Parameter <code class='parameter'>options</code></dt>
+<dd></dd><dd class='body--doc'><table class='box'><tr><td><code><code class='key'>"driver_names"</code> : <code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)</code></td><td><p>The name of a driver or a list of drivers to try, in given
+       order. If no driver name is given, the list given by
+       <a class='ms reference' href='../../predef_3A_3A/GLUE/get_drivers.html'>get_drivers</a> is used.</p>
+</td></tr>
+<tr><td><code><code class='key'>"event_callback"</code> : <code class='datatype'>function</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/GLUE/Events/Event.html'>.Events.Event</a></code>:<code class='datatype'>void</code>)</code></td><td><p>This callback is called with a <a class='ms reference' href='../../predef_3A_3A/GLUE/Events/Event.html'>Events.Event</a> object
+       whenever an event is trapped by the driver. If no event
+       callback is given, a callback that calls <code class='expr'>exit(0)</code> on
+       Escape and Exit events is used.</p>
+</td></tr>
+<tr><td><code><code class='key'>"resize_callback"</code> : <code class='datatype'>function</code>(<code class='datatype'>float</code>, <code class='datatype'>bool</code>:<code class='datatype'>void</code>)</code></td><td><p>This callback is called with the aspect whenever the drawing
+       area is resized, either by an event or explicitly by the program.</p>
+</td></tr>
+<tr><td><code><code class='key'>"fullscreen"</code> : <code class='datatype'>bool</code></code></td><td><p>Set fullscreen/window mode. 1 is fullscreen, 0 is window.
+       Defaults to fullscreen.</p>
+</td></tr>
+<tr><td><code><code class='key'>"resolution"</code> : <code class='datatype'>array</code>(<code class='datatype'>int</code>)</code></td><td><p>Sets the resolution of the drawing area. Defaults to
+       ({ 800, 600 }).</p>
+</td></tr>
+<tr><td><code><code class='key'>"aspect"</code> : <code class='datatype'>float</code></code></td><td><p>Sets the aspect of the drawing area. Defaults to 1.333333
+       (4:3).</p>
+</td></tr>
+<tr><td><code><code class='key'>"depth"</code> : <code class='datatype'>int</code></code></td><td><p>Sets the color depth of the drawing area. Defaults to 32.</p>
+</td></tr>
+<tr><td><code><code class='key'>"title"</code> : <code class='datatype'>string</code></code></td><td><p>Sets the window title to this string.</p>
+</td></tr>
+<tr><td><code><code class='key'>"icon_title"</code> : <code class='datatype'>string</code></code></td><td><p>Sets the icon title to this string.</p>
+</td></tr>
+<tr><td><code><code class='key'>"fast_mipmap"</code> : <code class='datatype'>bool</code></code></td><td><p>Use GL_NEAREST_MIMAP_NEAREST instead of GL_LINEAR_MIPMAP_LINEAR,
+       which also is the default.</p>
+</td></tr>
+<tr><td><code><code class='key'>"rotation"</code> : <code class='datatype'>float</code></code></td><td><p>The rotation in z-axis of the drawing field.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mirror"</code> : <code class='datatype'>string</code></code></td><td><p>Mirroring in x and/or y axis.</p>
+</td></tr>
+</table></dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GLUE/get_drivers.html'>get_drivers</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GLUE/init.html","name":"init"};</script>
+<script src='../../../ex/predef_3A_3A/GLUE/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GLUE/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

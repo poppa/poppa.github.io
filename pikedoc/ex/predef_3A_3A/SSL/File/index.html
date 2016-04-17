@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.File</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<b class='selected head'>SSL.File</b>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="" class="prev"><span>&#10148;</span> </a>
+              <a href="" class="next"> <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Index of class SSL.File</h1>
+            <nav><ul class='multicol'>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/accept.html'>accept()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/backend_once.html'>backend_once()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/close.html'>close()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/connect.html'>connect()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/create.html'>create()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/destroy.html'>destroy()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/errno.html'>errno()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/get_peer_certificate_info.html'>get_peer_certificate_info()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/get_peer_certificates.html'>get_peer_certificates()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/internal_poll.html'>internal_poll()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/is_open.html'>is_open()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/linger.html'>linger()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_accept_callback.html'>query_accept_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_address.html'>query_address()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_alert_callback.html'>query_alert_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_application_protocol.html'>query_application_protocol()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_backend.html'>query_backend()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_callbacks.html'>query_callbacks()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_close_callback.html'>query_close_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_connection.html'>query_connection()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_context.html'>query_context()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_id.html'>query_id()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_read_callback.html'>query_read_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_stream.html'>query_stream()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_suite.html'>query_suite()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_version.html'>query_version()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_write_callback.html'>query_write_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/read.html'>read()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/renegotiate.html'>renegotiate()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/schedule_poll.html'>schedule_poll()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_accept_callback.html'>set_accept_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_alert_callback.html'>set_alert_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_backend.html'>set_backend()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_blocking.html'>set_blocking()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_blocking_keep_callbacks.html'>set_blocking_keep_callbacks()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_callbacks.html'>set_callbacks()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_close_callback.html'>set_close_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_id.html'>set_id()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_nonblocking.html'>set_nonblocking()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_nonblocking_keep_callbacks.html'>set_nonblocking_keep_callbacks()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_read_callback.html'>set_read_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_write_callback.html'>set_write_callback()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/shutdown.html'>shutdown()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/write.html'>write()</a></li>
+</ul></nav>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

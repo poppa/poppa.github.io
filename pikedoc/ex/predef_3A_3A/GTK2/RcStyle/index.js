@@ -1,0 +1,4 @@
+// Class path GTK2.RcStyle
+PikeDoc.registerSymbol('GTK2.RcStyle', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/RcStyle/copy.html","name":"copy"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/create.html","name":"create"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_base.html","name":"set_base"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_bg.html","name":"set_bg"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_bg_pixmap_name.html","name":"set_bg_pixmap_name"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_color_flags.html","name":"set_color_flags"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_fg.html","name":"set_fg"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_name.html","name":"set_name"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_text.html","name":"set_text"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_xthickness.html","name":"set_xthickness"},{"link":"ex/predef_3A_3A/GTK2/RcStyle/set_ythickness.html","name":"set_ythickness"}])
+.finish();

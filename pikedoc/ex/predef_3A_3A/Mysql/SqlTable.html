@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Mysql.SqlTable</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Mysql.html'><b class='head'>Mysql</b></a>
+<b class='selected head'>Mysql.SqlTable</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Mysql/SqlTable/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Mysql.html" class="prev"><span>&#10148;</span> Mysql</a>
+              <a href="../../../ex/predef_3A_3A/Mysql/SqlTable/Result.html" class="next">Mysql.SqlTable()-&gt;Result <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Mysql.SqlTable</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This class provides some abstractions on top of an SQL table.</p>
+<p> At the core it is generic for any SQL database, but the current
+ implementation is MySQL specific on some points, notably the
+ semantics of AUTO_INCREMENT, the quoting method, knowledge about
+ column types, and some conversion functions. Hence the location in
+ the <a class='ms reference' href='../../predef_3A_3A/Mysql.html'>Mysql</a> module.</p>
+<p> Among other things, this class handles some convenient conversions
+ between SQL and pike data types:</p>
+<ul>
+<li><p>Similar to <code class='reference unresolved'>Sql.big_typed_query</code>, SQL integer and floating
+   point columns are converted to/from pike ints and floats, and
+   SQL NULLs are converted to/from the <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.null</a> object.</p>
+<p>   MySQL DECIMAL columns are converted to/from <a class='ms reference' href='../../predef_3A_3A/Gmp/mpq.html'>Gmp.mpq</a> objects
+   if they have one or more decimal places, otherwise they are
+   converted to/from ints.</p>
+</li><li><p>MySQL TIMESTAMP columns are converted to/from pike ints
+   containing unix timestamps. This conversion is done on the MySQL
+   side using the UNIX_TIMESTAMP and FROM_UNIXTIME functions, which
+   means that the conversion is not susceptible to offsets due to
+   time zone differences etc. There is however one special case
+   here that MySQL doesn't handle cleanly - see note below.</p>
+</li><li><p>Other SQL types are kept in string form. That includes DATE,
+   TIME, and DATETIME, which are returned as MySQL formats them.</p>
+<p>   Note that <a class='ms reference' href='../../predef_3A_3A/Sql/mysql.html'>Sql.mysql</a> can handle conversions to/from Unicode
+   strings for text data types. If that is enabled then this class
+   also supports that conversion.</p>
+</li><li><p>There are debug checks (with the DEBUG define) that verify the
+   incoming pike types, to avoid bugs which could otherwise be
+   hidden by implicit casts on the SQL side. The date and time
+   types (except TIMESTAMP) can be sent either as strings or
+   integers (e.g. either "2010-01-01" or 20100101).</p>
+</li></ul><p>This class can also optionally simulate an arbitrary set of fields
+ in each table row: If a field name is the same as a column then
+ the column is accessed, otherwise it accesses an entry in a
+ mapping stored in a special BLOB column which is usually called
+ "properties".</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Although SQL is case insensitive on column names, this class
+ isn't.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The generated SQL queries always quote table and column names
+ according to MySQL syntax using backticks (`). However, literal
+ backticks in names are not quoted and might therefore lead to SQL
+ syntax errors. This might change if it becomes a problem.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The handling of TIMESTAMP columns in MySQL (as of 5.1 at least)
+ through UNIX_TIMESTAMP and FROM_UNIXTIME has one problem if the
+ active time zone uses daylight savings time:</p>
+<p> Apparently FROM_UNIXTIME internally formats the integer to a MySQL
+ date/time string, which is then parsed again to set the unix
+ timestamp in the TIMESTAMP column. The formatting and the parsing
+ uses the same time zone, so the conversions generally cancel
+ themselves out. However, there is one exception with the 1 hour
+ overlap in the fall when going from summer time to normal time.</p>
+<p> E.g. if the active time zone on the connection is Central European
+ Time, which uses DST, then setting 1130630400 (Sun 30 Oct 2005
+ 2:00:00 CEST) through "INSERT INTO foo SET ts =
+ FROM_UNIXTIME(1130630400)" actually sets the ts column to
+ 1130634000 (Sun 30 Oct 2005 2:00:00 CET).</p>
+<p> The only way around that problem is apparently to ensure that the
+ time zone used on the connection is one which doesn't use DST.
+ E.g. UTC is a reasonable choice, which can be set on the
+ connection through "SET time_zone = '+00:00'". That is not done
+ automatically by this class.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>col_types</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Mysql.SqlTable.<b><span class='variable'>col_types</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maps the names of the table columns to the types <a class='ms reference' href='../../predef_3A_3A/Mysql/SqlTable.html'>SqlTable</a> will
+ handle them as. This is queried from the database in <a class='ms reference' href='../../predef_3A_3A/Mysql/SqlTable/create.html'>create</a>. Do
+ not change.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>get_db</b></span>
+</dt>
+<dd><p><code><code class='datatype'>function</code>(<code class='datatype'>void</code>:<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Sql/Sql.html'>Sql.Sql</a></code>) Mysql.SqlTable.<b><span class='variable'>get_db</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Callback to get a database connection.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>id_col</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Mysql.SqlTable.<b><span class='variable'>id_col</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The column containing the AUTO_INCREMENT values (if any).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>pk_cols</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string</code>) Mysql.SqlTable.<b><span class='variable'>pk_cols</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The column(s) containing the primary key, in order. Typically it
+ is the same as <code class='expr'>({<a&nbsp;class='ms&nbsp;reference'&nbsp;href='../../predef_3A_3A/Mysql/SqlTable.html'>id_col</a>})</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>prop_col</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Mysql.SqlTable.<b><span class='variable'>prop_col</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The column containing miscellaneous properties. May be zero if
+ this feature is disabled. Do not change.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>prop_col_max_length</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Mysql.SqlTable.<b><span class='variable'>prop_col_max_length</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maximum length of the value <a class='ms reference' href='../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a> can hold. Only applicable
+ if <a class='ms reference' href='../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a> is set. Do not change.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>table</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Mysql.SqlTable.<b><span class='variable'>table</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The table to query or change. Do not change.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Mysql.SqlTable</span> <span class='class'>Mysql.SqlTable</span><b>(</b><code class='datatype'>function</code>(<code class='datatype'>void</code>:<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Sql/Sql.html'>Sql.Sql</a></code>) <code class='argument'>get_db</code>, <code class='datatype'>string</code> <code class='argument'>table</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>prop_col</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Creates an <a class='ms reference' href='../../predef_3A_3A/Mysql/SqlTable.html'>SqlTable</a> object for accessing (primarily) a specific
+ table.</p>
+</dd>
+<dt class='head--doc'><span id='p-get_db'></span>Parameter <code class='parameter'>get_db</code></dt>
+<dd></dd><dd class='body--doc'><p>A function that will be called to get a connection to the database
+ containing the table.</p>
+</dd>
+<dt class='head--doc'><span id='p-table'></span>Parameter <code class='parameter'>table</code></dt>
+<dd></dd><dd class='body--doc'><p>The name of the table.</p>
+</dd>
+<dt class='head--doc'><span id='p-prop_col'></span>Parameter <code class='parameter'>prop_col</code></dt>
+<dd></dd><dd class='body--doc'><p>The column in which all fields which don't have explicit columns
+ are stored. It has to be a non-null blob or varbinary column. If
+ this isn't specified and there is such a column called
+ "properties" then it is used for this purpose. Set to <code class='expr'>"-"</code>
+ to force this feature to be disabled.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Mysql/SqlTable.html","name":"SqlTable"};</script>
+<script src='../../../ex/predef_3A_3A/Mysql/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Mysql/SqlTable/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

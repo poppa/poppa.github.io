@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - combine_path_amigaos()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/combine_path.html" class="prev"><span>&#10148;</span> combine_path()</a>
+              <a href="../../ex/predef_3A_3A/combine_path_nt.html" class="next">combine_path_nt() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method combine_path_amigaos()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>combine_path_amigaos</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> <b><span class='method'>combine_path</span>(</b><code class='datatype'>string</code> <code class='argument'>path</code>, <code class='datatype'>string</code> ...  <code class='argument'>paths</code><b>)</b></code><br>
+<code><code class='datatype'>string</code> <b><span class='method'>combine_path_unix</span>(</b><code class='datatype'>string</code> <code class='argument'>path</code>, <code class='datatype'>string</code> ...  <code class='argument'>paths</code><b>)</b></code><br>
+<code><code class='datatype'>string</code> <b><span class='method'>combine_path_nt</span>(</b><code class='datatype'>string</code> <code class='argument'>path</code>, <code class='datatype'>string</code> ...  <code class='argument'>paths</code><b>)</b></code><br>
+<code><code class='datatype'>string</code> <b><span class='method'>combine_path_amigaos</span>(</b><code class='datatype'>string</code> <code class='argument'>path</code>, <code class='datatype'>string</code> ...  <code class='argument'>paths</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Concatenate a number of paths to a straightforward path without
+   any <code class='expr'>"//"</code>, <code class='expr'>"/.."</code> or <code class='expr'>"/."</code>. If any path
+   argument is absolute then the result is absolute and the
+   preceding arguments are ignored. If the result is relative then
+   it might have leading <code class='expr'>".."</code> components. If the last
+   nonempty argument ends with a directory separator then the
+   result ends with that too. If all components in a relative path
+   disappear due to subsequent <code class='expr'>".."</code> components then the
+   result is <code class='expr'>"."</code>.</p>
+<p>   <a class='ms reference' href='../predef_3A_3A/combine_path_unix.html'>combine_path_unix()</a> concatenates in UNIX style, which also is
+   appropriate for e.g. URL:s ("/" separates path components and
+   absolute paths start with "/"). <a class='ms reference' href='../predef_3A_3A/combine_path_nt.html'>combine_path_nt()</a>
+   concatenates according to NT filesystem conventions ("/" and "\"
+   separates path components and there might be a drive letter in
+   front of absolute paths). <a class='ms reference' href='../predef_3A_3A/combine_path_amigaos.html'>combine_path_amigaos()</a> concatenates
+   according to AmigaOS filesystem conventions.</p>
+<p>   <a class='ms reference' href='../predef_3A_3A/combine_path.html'>combine_path()</a> is equivalent to <a class='ms reference' href='../predef_3A_3A/combine_path_unix.html'>combine_path_unix()</a> on UNIX-like
+   operating systems, and equivalent to <a class='ms reference' href='../predef_3A_3A/combine_path_nt.html'>combine_path_nt()</a> on NT-like
+   operating systems, and equivalent to <a class='ms reference' href='../predef_3A_3A/combine_path_amigaos.html'>combine_path_amigaos()</a> on
+   AmigaOS-like operating systems.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/getcwd.html'>getcwd()</a>, <a class='ms reference' href='../predef_3A_3A/Stdio/append_path.html'>Stdio.append_path()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/combine_path_amigaos.html","name":"combine_path_amigaos"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

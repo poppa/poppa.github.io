@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GSSAPI.Context()-&gt;wrap()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GSSAPI.html'><b class='head'>GSSAPI</b></a>
+<a href='../../../../ex/predef_3A_3A/GSSAPI/Context.html'><b class='head'>GSSAPI.Context</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GSSAPI/Context/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GSSAPI/Context/verify_mic.html" class="prev"><span>&#10148;</span> GSSAPI.Context()-&gt;verify_mic()</a>
+              <a href="../../../../ex/predef_3A_3A/GSSAPI/Context/wrap_size_limit.html" class="next">GSSAPI.Context()-&gt;wrap_size_limit() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GSSAPI.Context()-&gt;wrap()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>wrap</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> <b><span class='method'>wrap</span>(</b><code class='datatype'>string</code> <code class='argument'>message</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>encrypt</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>qop</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Calculates a MIC (message integrity checksum) for the given
+ message, and returns it together with the message, which is
+ optionally encrypted. The returned value can be verified and (if
+ applicable) decrypted by the receiver using <a class='ms reference' href='../../../predef_3A_3A/GSSAPI/Context/unwrap.html'>unwrap</a> or some
+ other <tt>GSS_Unwrap</tt> wrapper.</p>
+<p> This wraps <tt>GSS_Wrap</tt> according to <b><a href='http://pike.lysator.liu.se/rfc2743.xml#2.3.3'>RFC 2743 section 2.3.3</a></b>.</p>
+<p> This function requires that the context is established, or that
+ the early per-message protection service is available (c.f.
+ <a class='ms reference' href='../../../predef_3A_3A/GSSAPI.html'>GSSAPI.PROT_READY_FLAG</a>. If not, a
+ <a class='ms reference' href='../../../predef_3A_3A/GSSAPI/MissingServicesError.html'>GSSAPI.MissingServicesError</a> is thrown (but the context is not
+ closed).</p>
+</dd>
+<dt class='head--doc'><span id='p-message'></span>Parameter <code class='parameter'>message</code></dt>
+<dd></dd><dd class='body--doc'><p>The message to be wrapped. It may be of zero length.</p>
+</dd>
+<dt class='head--doc'><span id='p-encrypt'></span>Parameter <code class='parameter'>encrypt</code></dt>
+<dd></dd><dd class='body--doc'><p>Set to nonzero to request that the message is encrypted.
+   Otherwise only a MIC is calculated and the returned value
+   contains the unencrypted message.</p>
+<p>   If this is set and the confidentiality service (c.f.
+   <a class='ms reference' href='../../../predef_3A_3A/GSSAPI.html'>GSSAPI.CONF_FLAG</a>) is required then the returned value is
+   always encrypted. Otherwise it might not be encrypted anyway,
+   and a call to <a class='ms reference' href='../../../predef_3A_3A/GSSAPI/Context/last_confidential.html'>last_confidential</a> will tell if it is or not.</p>
+</dd>
+<dt class='head--doc'><span id='p-qop'></span>Parameter <code class='parameter'>qop</code></dt>
+<dd></dd><dd class='body--doc'><p>The quality of protection. This is a mechanism-specific value
+   that lets the user direct how the underlying mechanism
+   calculates the MIC. See <b><a href='http://pike.lysator.liu.se/rfc2743.xml#1.2.4'>RFC 2743 section 1.2.4</a></b>.</p>
+<p>   Zero or left out means use the default method.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This function sets the value returned by <a class='ms reference' href='../../../predef_3A_3A/GSSAPI/Context/last_confidential.html'>last_confidential</a>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/GSSAPI/Context/wrap_size_limit.html'>wrap_size_limit</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GSSAPI/Context/wrap.html","name":"wrap"};</script>
+<script src='../../../../ex/predef_3A_3A/GSSAPI/Context/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GSSAPI/Context/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

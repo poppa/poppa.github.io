@@ -1,0 +1,4 @@
+// Class path CompilationHandler
+PikeDoc.registerSymbol('CompilationHandler', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/CompilationHandler/compile_error.html","name":"compile_error"},{"link":"ex/predef_3A_3A/CompilationHandler/compile_exception.html","name":"compile_exception"},{"link":"ex/predef_3A_3A/CompilationHandler/compile_warning.html","name":"compile_warning"},{"link":"ex/predef_3A_3A/CompilationHandler/get_default_module.html","name":"get_default_module"},{"link":"ex/predef_3A_3A/CompilationHandler/get_predefines.html","name":"get_predefines"},{"link":"ex/predef_3A_3A/CompilationHandler/handle_import.html","name":"handle_import"},{"link":"ex/predef_3A_3A/CompilationHandler/handle_include.html","name":"handle_include"},{"link":"ex/predef_3A_3A/CompilationHandler/read_include.html","name":"read_include"},{"link":"ex/predef_3A_3A/CompilationHandler/resolv.html","name":"resolv"}])
+.finish();

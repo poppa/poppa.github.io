@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Tools.AutoDoc.ProcessXML.mergeTrees()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Tools.html'><b class='head'>Tools</b></a>
+<a href='../../../../../ex/predef_3A_3A/Tools/AutoDoc.html'><b class='head'>Tools.AutoDoc</b></a>
+<a href='../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML.html'><b class='head'>Tools.AutoDoc.ProcessXML</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/handleAppears.html" class="prev"><span>&#10148;</span> Tools.AutoDoc.ProcessXML.handleAppears()</a>
+              <a href="../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/moveImages.html" class="next">Tools.AutoDoc.ProcessXML.moveImages() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Tools.AutoDoc.ProcessXML.mergeTrees()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>mergeTrees</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>mergeTrees</span>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Parser/XML/Tree/SimpleNode.html'>SimpleNode</a></code> <code class='argument'>dest</code>, <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Parser/XML/Tree/SimpleNode.html'>SimpleNode</a></code> <code class='argument'>source</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Puts all children of <code class='reference paramref'>source</code> into the tree <code class='reference paramref'>dest</code>, in their
+   correct place module-hierarchically.</p>
+<p>   Used to merge the results of extractions of different Pike and C files.</p>
+<p>   Some minor effort is expended to normalize the result to some
+   sort of canonical order.</p>
+</dd>
+<dt class='head--doc'><span id='p-source'></span>Parameter <code class='parameter'>source</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-dest'></span>Parameter <code class='parameter'>dest</code></dt>
+<dd></dd><dd class='body--doc'><p>The nodes <code class='reference paramref'>source</code> and <code class='reference paramref'>dest</code> are <tt>&lt;class&gt;</tt>, <tt>&lt;module&gt;</tt>,
+   <tt>&lt;namespace&gt;</tt> or <tt>&lt;autodoc&gt;</tt> nodes that are identical in
+   the sense that they represent the same module, class or namespace.
+   Typically they both represent <tt>&lt;autodoc&gt;</tt> nodes.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Both <code class='reference paramref'>source</code> and <code class='reference paramref'>dest</code> are modified destructively.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>After calling this method, any <tt>&lt;class&gt;</tt> or <tt>&lt;module&gt;</tt> nodes
+   that have been marked with @appears or @belongs, are still in the
+   wrong place in the tree, so <a class='ms reference' href='../../../../predef_3A_3A/Tools/AutoDoc/ProcessXML/handleAppears.html'>handleAppears()</a> (or <a class='ms reference' href='../../../../predef_3A_3A/Tools/AutoDoc/ProcessXML/postProcess.html'>postProcess()</a>)
+   must be called on the whole documentation tree to relocate them once
+   the tree has been fully merged.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/mergeTrees.html","name":"mergeTrees"};</script>
+<script src='../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Tools/AutoDoc/ProcessXML/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

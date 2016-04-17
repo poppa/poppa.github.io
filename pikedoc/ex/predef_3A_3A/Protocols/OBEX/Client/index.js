@@ -1,0 +1,4 @@
+// Class path Protocols.OBEX.Client
+PikeDoc.registerSymbol('Protocols.OBEX.Client', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/connect.html","name":"connect"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/create.html","name":"create"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/disconnect.html","name":"disconnect"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_abort.html","name":"do_abort"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_get.html","name":"do_get"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_put.html","name":"do_put"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_request.html","name":"do_request"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_session.html","name":"do_session"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/do_setpath.html","name":"do_setpath"},{"link":"ex/predef_3A_3A/Protocols/OBEX/Client/low_do_request.html","name":"low_do_request"}])
+.finish();

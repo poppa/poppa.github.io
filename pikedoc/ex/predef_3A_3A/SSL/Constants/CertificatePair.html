@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.Constants.CertificatePair</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<a href='../../../../ex/predef_3A_3A/SSL/Constants.html'><b class='head'>SSL.Constants</b></a>
+<b class='selected head'>SSL.Constants.CertificatePair</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/SSL/Constants/CertificatePair/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/SSL/Constants.html" class="prev"><span>&#10148;</span> SSL.Constants</a>
+              <a href="../../../../ex/predef_3A_3A/SSL/Constants/CertificatePair/create.html" class="next">SSL.Constants.CertificatePair()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class SSL.Constants.CertificatePair</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>A chain of X509 certificates with corresponding private key.</p>
+<p> It also contains some derived metadata.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cert_type</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Constants.CertificatePair.<b><span class='variable'>cert_type</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Cerificate type for the leaf cert.</p>
+<p> One of the <code class='reference unresolved'>AUTH_*</code> constants.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>certs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Constants.CertificatePair.<b><span class='variable'>certs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Chain of certificates, root cert last.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>globs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Constants.CertificatePair.<b><span class='variable'>globs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Array of commonName globs from the first certificate in <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>certs</a>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>issuers</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Constants.CertificatePair.<b><span class='variable'>issuers</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Array of DER for the issuers matching <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>certs</a>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ke_mask</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int(0..)</code> SSL.Constants.CertificatePair.<b><span class='variable'>ke_mask</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Bitmask of the key exchange algorithms supported by the main certificate.
+ This is used for TLS 1.1 and earlier.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>ke_mask_invariant</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ke_mask_invariant</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int(0..)</code> SSL.Constants.CertificatePair.<b><span class='variable'>ke_mask_invariant</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Bitmask of the key exchange algorithms supported by the main certificate.
+ This is the same as <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>ke_mask</a>, but unified with respect to
+ <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/KeyExchangeType.html'>KE_dh_dss</a>/<a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/KeyExchangeType.html'>KE_dh_rsa</a> and <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/KeyExchangeType.html'>KE_ecdh_ecdsa</a>/<a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/KeyExchangeType.html'>KE_ecdh_rsa</a>,
+ as supported by TLS 1.2 and later.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>key</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>Crypto.Sign.State</code></code> SSL.Constants.CertificatePair.<b><span class='variable'>key</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Private key.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>sign_algs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/HashAlgorithm.html'>HashAlgorithm</a></code>|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/SignatureAlgorithm.html'>SignatureAlgorithm</a></code>)) SSL.Constants.CertificatePair.<b><span class='variable'>sign_algs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>TLS 1.2-style hash and signature pairs matching the <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>certs</a>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>SSL.Constants.CertificatePair</span> <span class='class'>SSL.Constants.CertificatePair</span><b>(</b><code class='object resolved'><code class='reference unresolved'>Crypto.Sign.State</code></code> <code class='argument'>key</code>, <code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) <code class='argument'>certs</code>, <code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>)|<code class='datatype'>void</code> <code class='argument'>extra_name_globs</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Initializa a new <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>CertificatePair</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-key'></span>Parameter <code class='parameter'>key</code></dt>
+<dd></dd><dd class='body--doc'><p>Private key.</p>
+</dd>
+<dt class='head--doc'><span id='p-certs'></span>Parameter <code class='parameter'>certs</code></dt>
+<dd></dd><dd class='body--doc'><p>Chain of certificates, root cert last.</p>
+</dd>
+<dt class='head--doc'><span id='p-extra_globs'></span>Parameter <code class='parameter'>extra_globs</code></dt>
+<dd></dd><dd class='body--doc'><p>The set of <a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CertificatePair.html'>globs</a> from the first certificate
+   is optionally extended with these.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Performs various validation checks.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/SSL/Constants/CertificatePair.html","name":"CertificatePair"};</script>
+<script src='../../../../ex/predef_3A_3A/SSL/Constants/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/SSL/Constants/CertificatePair/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

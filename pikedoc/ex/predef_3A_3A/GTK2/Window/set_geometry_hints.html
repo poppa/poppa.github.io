@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Window()-&gt;set_geometry_hints()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/Window.html'><b class='head'>GTK2.Window</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/Window/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/Window/set_focus_on_map.html" class="prev"><span>&#10148;</span> GTK2.Window()-&gt;set_focus_on_map()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/Window/set_gravity.html" class="next">GTK2.Window()-&gt;set_gravity() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.Window()-&gt;set_geometry_hints()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_geometry_hints</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/Window.html'>GTK2.Window</a></code> <b><span class='method'>set_geometry_hints</span>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/Widget.html'>GTK2.Widget</a></code> <code class='argument'>widget</code>, <code class='datatype'>mapping</code> <code class='argument'>geometry</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This function sets up hints about how a window can be resized by the user.
+ You can set a minimum and maximum size; allowed resized increments (e.g.
+ for xterm, you can only resize by the size of a character); aspect ratios;
+ and more.
+ geometry is a mapping with the following fields.  Any field which is
+ omitted is left as the default:
+ ([ "min_width": int,
+    "min_height": int,
+    "max_width": int,
+    "max_height": int,
+    "base_width": int,
+    "base_height": int,
+    "width_inc": int,
+    "height_inc": int,
+    "min_aspect": float,
+    "max_aspect": float,
+    "win_gravity": int, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_CENTER</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_EAST</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_NORTH</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_NORTH_EAST</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_NORTH_WEST</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_SOUTH</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_SOUTH_EAST</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_SOUTH_WEST</a>, <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_STATIC</a> and <a class='ms reference' href='../../../predef_3A_3A/GTK2.html'>GDK_GRAVITY_WEST</a>
+ ]);
+ min_width/min_height/max_width/max_height may be set to -1, and it will
+ substitute the size request of the window or geometry widget.  If the
+ minimum size hint is not provided, it will use its requisition as the
+ minimum size.  If the minimum size is provided and a geometry widget is
+ set, it will take the minimum size as the minimum size of the geometry
+ widget rather than the entire window.  The base size is treat similarly.
+ min_width: minimum width of the window (-1 to use requisition)
+ min_height: minimum height of window (-1 to use requisition)
+ max_width: maximum width of window (-1 to use requisition)
+ max_height: maximum height of window (-1 to use requisition)
+ base_width: allow window widths are base_width+width_inc*N (-1 allowed)
+ base_height: allowed window widths are base_height+height_inc*N (-1 allowed)
+ width_inc: width resize increment
+ height_inc: height resize increment
+ min_aspect: minimum width/height ratio
+ max_aspect: maximum width/height ratio
+ win_gravity: window gravity</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Window/set_geometry_hints.html","name":"set_geometry_hints"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Window/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Window/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+// Class path Search.Utils
+PikeDoc.registerSymbol('Search.Utils', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Search/Utils/Logger.html","name":"Logger"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileCache.html","name":"ProfileCache"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry.html","name":"ProfileEntry"},{"link":"ex/predef_3A_3A/Search/Utils/Scheduler.html","name":"Scheduler"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Search/Utils/flush_profile.html","name":"flush_profile"},{"link":"ex/predef_3A_3A/Search/Utils/get_profile_cache.html","name":"get_profile_cache"},{"link":"ex/predef_3A_3A/Search/Utils/get_profile_storage.html","name":"get_profile_storage"},{"link":"ex/predef_3A_3A/Search/Utils/get_scheduler.html","name":"get_scheduler"},{"link":"ex/predef_3A_3A/Search/Utils/normalize.html","name":"normalize"},{"link":"ex/predef_3A_3A/Search/Utils/tokenize.html","name":"tokenize"},{"link":"ex/predef_3A_3A/Search/Utils/tokenize_and_normalize.html","name":"tokenize_and_normalize"}])
+.finish();

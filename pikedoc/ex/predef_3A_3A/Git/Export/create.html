@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Git.Export()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Git.html'><b class='head'>Git</b></a>
+<a href='../../../../ex/predef_3A_3A/Git/Export.html'><b class='head'>Git.Export</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Git/Export/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Git/Export/commit.html" class="prev"><span>&#10148;</span> Git.Export()-&gt;commit()</a>
+              <a href="../../../../ex/predef_3A_3A/Git/Export/done.html" class="next">Git.Export()-&gt;done() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Git.Export()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Git.Export</span> <span class='class'>Git.Export</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Git.Export</span> <span class='class'>Git.Export</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code> <code class='argument'>fd</code><b>)</b></code><br>
+<code><span class='object'>Git.Export</span> <span class='class'>Git.Export</span><b>(</b><code class='datatype'>string</code> <code class='argument'>git_dir</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a new fast-import command-stream.</p>
+</dd>
+<dt class='head--doc'><span id='p-fd'></span>Parameter <code class='parameter'>fd</code></dt>
+<dd></dd><dd class='body--doc'><p>File to write the command-stream to.</p>
+</dd>
+<dt class='head--doc'><span id='p-git_dir'></span>Parameter <code class='parameter'>git_dir</code></dt>
+<dd></dd><dd class='body--doc'><p>Git directory to modify. If the directory doesn't exist,
+   it will be created empty. A git-fast-import session will
+   be started for the directory to receive the command-stream.</p>
+<p>   If neither <code class='reference paramref'>fd</code> nor <code class='reference paramref'>git_dir</code> has been specified, the
+   command stream will be output to <a class='ms reference' href='../../../predef_3A_3A/Stdio.html'>Stdio.stdout</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-verbosity'></span>Parameter <code class='parameter'>verbosity</code></dt>
+<dd></dd><dd class='body--doc'><p>The amount of verbosity on <a class='ms reference' href='../../../predef_3A_3A/Stdio.html'>Stdio.stderr</a> for various commands.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Git/Export/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/Git/Export/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Git/Export/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

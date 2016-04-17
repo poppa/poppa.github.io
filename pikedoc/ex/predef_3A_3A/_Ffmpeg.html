@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - _Ffmpeg</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<b class='selected head'>_Ffmpeg</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/_Ffmpeg/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/ZXID/version.html" class="prev"><span>&#10148;</span> ZXID.version()</a>
+              <a href="../../ex/predef_3A_3A/_Ffmpeg/ffmpeg.html" class="next">_Ffmpeg.ffmpeg <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module _Ffmpeg</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_NONE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_AC3</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_ADPCM_IMA_QT</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_ADPCM_IMA_WAV</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_ADPCM_MS</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_H263</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_H263I</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_H263P</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MJPEG</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MPEG1VIDEO</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MPEG4</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MP2</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MP3LAME</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MSMPEG4V1</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MSMPEG4V2</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_MSMPEG4V3</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_ALAW</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_MULAW</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_S16BE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_S16LE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_S8</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_U16BE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_U16LE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_PCM_U8</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_RAWVIDEO</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_RV10</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_SVQ1</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_VORBIS</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_WMV1</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_ID_WMV2</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_NONE</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_AC3</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_ADPCM_IMA_QT</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_ADPCM_IMA_WAV</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_ADPCM_MS</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_H263</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_H263I</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_H263P</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MJPEG</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MPEG1VIDEO</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MPEG4</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MP2</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MP3LAME</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MSMPEG4V1</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MSMPEG4V2</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_MSMPEG4V3</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_ALAW</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_MULAW</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_S16BE</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_S16LE</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_S8</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_U16BE</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_U16LE</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_PCM_U8</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_RAWVIDEO</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_RV10</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_SVQ1</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_VORBIS</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_WMV1</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_ID_WMV2</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Various audio and video codecs.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The list of supported codecs depends on Ffmpeg library.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_TYPE_AUDIO</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>CODEC_TYPE_VIDEO</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_TYPE_AUDIO</code></code><br>
+<code><code class='datatype'>constant</code> _Ffmpeg.<code class='constant'>CODEC_TYPE_VIDEO</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Type of codec.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/_Ffmpeg.html","name":"_Ffmpeg"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/_Ffmpeg/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

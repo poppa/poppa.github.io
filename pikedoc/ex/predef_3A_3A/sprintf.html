@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - sprintf()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/sort.html" class="prev"><span>&#10148;</span> sort()</a>
+              <a href="../../ex/predef_3A_3A/sqrt.html" class="next">sqrt() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method sprintf()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>sprintf</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> <b><span class='method'>sprintf</span>(</b><code class='object resolved'><a class='ms reference' href='../predef_3A_3A.html'>strict_sprintf_format</a></code> <code class='argument'>format</code>, <code class='object resolved'><a class='ms reference' href='../predef_3A_3A.html'>sprintf_args</a></code> ...  <code class='argument'>args</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Print formated output to string.</p>
+<p>   The <code class='reference paramref'>format</code> string is a string containing a description of how to
+   output the data in <code class='reference paramref'>args</code>. This string should generally speaking
+   have one <tt>%<i>&lt;modifiers&gt;</i><i>&lt;operator&gt;</i></tt> format specifier
+   (examples: <tt>%s</tt>, <tt>%0d</tt>, <tt>%-=20s</tt>) for each of the arguments.</p>
+<p>   The following modifiers are supported:</p>
+<table class='box'><tr><td><code><code class='key'>'0'</code></code></td><td><p>Zero pad numbers (implies right justification).</p>
+</td></tr>
+<tr><td><code><code class='key'>'!'</code></code></td><td><p>Toggle truncation.</p>
+</td></tr>
+<tr><td><code><code class='key'>' '</code></code></td><td><p>Pad positive integers with a space.</p>
+</td></tr>
+<tr><td><code><code class='key'>'+'</code></code></td><td><p>Pad positive integers with a plus sign.</p>
+</td></tr>
+<tr><td><code><code class='key'>'-'</code></code></td><td><p>Left adjust within field size (default is right).</p>
+</td></tr>
+<tr><td><code><code class='key'>'|'</code></code></td><td><p>Centered within field size.</p>
+</td></tr>
+<tr><td><code><code class='key'>'='</code></code></td><td><p>Column mode if strings are greater than field size. Breaks
+       between words (possibly skipping or adding spaces). Can not be
+       used together with <code class='expr'>'/'</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>'/'</code></code></td><td><p>Column mode with rough line break (break at exactly field size
+       instead of between words). Can not be used together with <code class='expr'>'='</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>'#'</code></code></td><td><p>Table mode, print a list of <code class='expr'>'\n'</code> separated words
+       (top-to-bottom order).</p>
+</td></tr>
+<tr><td><code><code class='key'>'$'</code></code></td><td><p>Inverse table mode (left-to-right order).</p>
+</td></tr>
+<tr><td><code><code class='key'>'n'</code></code></td><td rowspan='2'><p>(Where n is a number or *) field width specifier.</p>
+</td></tr>
+<tr><td><code><code class='key'>':n'</code></code></td></tr>
+<tr><td><code><code class='key'>'.n'</code></code></td><td><p>Precision specifier.</p>
+</td></tr>
+<tr><td><code><code class='key'>';n'</code></code></td><td><p>Column width specifier.</p>
+</td></tr>
+<tr><td><code><code class='key'>'*'</code></code></td><td><p>If n is a <tt>*</tt> then next argument is used for precision/field
+       size. The argument may either be an integer, or a modifier mapping
+       as received by <a class='ms reference' href='../lfun_3A_3A/_sprintf.html'>lfun::_sprintf()</a>:</p>
+<table class='box'><tr><td><code><code class='key'>"precision"</code> : <code class='datatype'>int</code>|<code class='datatype'>void</code></code></td><td><p>Precision.</p>
+</td></tr>
+<tr><td><code><code class='key'>"width"</code> : <code class='datatype'>int(0..)</code>|<code class='datatype'>void</code></code></td><td><p>Field width.</p>
+</td></tr>
+<tr><td><code><code class='key'>"flag_left"</code> : <code class='datatype'>bool</code>|<code class='datatype'>void</code></code></td><td><p>Indicates that the output should be left-aligned.</p>
+</td></tr>
+<tr><td><code><code class='key'>"indent"</code> : <code class='datatype'>int(0..)</code>|<code class='datatype'>void</code></code></td><td><p>Indentation level in <tt>%O</tt>-mode.</p>
+</td></tr>
+</table></td></tr>
+<tr><td><code><code class='key'>"'"</code></code></td><td><p>Set a pad string. <tt>'</tt> cannot be a part of the pad string (yet).</p>
+</td></tr>
+<tr><td><code><code class='key'>'~'</code></code></td><td><p>Get pad string from argument list.</p>
+</td></tr>
+<tr><td><code><code class='key'>'&lt;'</code></code></td><td><p>Use same argument again.</p>
+</td></tr>
+<tr><td><code><code class='key'>'^'</code></code></td><td><p>Repeat this on every line produced.</p>
+</td></tr>
+<tr><td><code><code class='key'>'@'</code></code></td><td><p>Repeat this format for each element in the argument array.</p>
+</td></tr>
+<tr><td><code><code class='key'>'&gt;'</code></code></td><td><p>Put the string at the bottom end of column instead of top.</p>
+</td></tr>
+<tr><td><code><code class='key'>'_'</code></code></td><td><p>Set width to the length of data.</p>
+</td></tr>
+<tr><td><code><code class='key'>'[n]'</code></code></td><td><p>Select argument number <tt><i>n</i></tt>. Use <tt>*</tt> to use the next
+       argument as selector. The arguments are numbered starting from
+       <code class='expr'>0</code> (zero) for the first argument after the <code class='reference paramref'>format</code>.
+       Note that this only affects where the current operand is fetched.</p>
+</td></tr>
+</table><p>The following operators are supported:</p>
+<table class='box'><tr><td><code><code class='key'>'%'</code></code></td><td><p>Percent.</p>
+</td></tr>
+<tr><td><code><code class='key'>'m'</code></code></td><td><p>Equivalent to strerror(errno()). Designed for exit() formatting.</p>
+</td></tr>
+<tr><td><code><code class='key'>'b'</code></code></td><td><p>Signed binary integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'d'</code></code></td><td><p>Signed decimal integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'u'</code></code></td><td><p>Unsigned decimal integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'o'</code></code></td><td><p>Signed octal integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'x'</code></code></td><td><p>Lowercase signed hexadecimal integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'X'</code></code></td><td><p>Uppercase signed hexadecimal integer.</p>
+</td></tr>
+<tr><td><code><code class='key'>'c'</code></code></td><td><p>Character. If a fieldsize has been specified this will output
+       the low-order bytes of the integer in network (big endian) byte
+       order. To get little endian byte order, negate the field size.</p>
+</td></tr>
+<tr><td><code><code class='key'>'f'</code></code></td><td><p>Float. (Locale dependent formatting.)</p>
+</td></tr>
+<tr><td><code><code class='key'>'g'</code></code></td><td><p>Heuristically chosen representation of float.
+       (Locale dependent formatting.)</p>
+</td></tr>
+<tr><td><code><code class='key'>'G'</code></code></td><td><p>Like <tt>%g</tt>, but uses uppercase <tt>E</tt> for exponent.</p>
+</td></tr>
+<tr><td><code><code class='key'>'e'</code></code></td><td><p>Exponential notation float. (Locale dependent output.)</p>
+</td></tr>
+<tr><td><code><code class='key'>'E'</code></code></td><td><p>Like <tt>%e</tt>, but uses uppercase <tt>E</tt> for exponent.</p>
+</td></tr>
+<tr><td><code><code class='key'>'F'</code></code></td><td><p>Binary IEEE representation of float (<tt>%4F</tt> gives
+       single precision, <tt>%8F</tt> gives double precision)
+       in network (big endian) byte order. To get little endian
+       byte order, negate the field size.</p>
+</td></tr>
+<tr><td><code><code class='key'>'s'</code></code></td><td><p>String.</p>
+</td></tr>
+<tr><td><code><code class='key'>'q'</code></code></td><td><p>Quoted string. Escapes all control and non-8-bit characters,
+       as well as the quote characters <tt>'\\'</tt> and <tt>'\"'</tt>.</p>
+</td></tr>
+<tr><td><code><code class='key'>'O'</code></code></td><td><p>Any value, debug style. Do not rely on the exact formatting;
+       how the result looks can vary depending on locale, phase of
+       the moon or anything else the <a class='ms reference' href='../lfun_3A_3A/_sprintf.html'>lfun::_sprintf()</a> method
+       implementor wanted for debugging.</p>
+</td></tr>
+<tr><td><code><code class='key'>'H'</code></code></td><td><p>Binary Hollerith string. Equivalent to <code class='expr'>sprintf("%c%s",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strlen(str),&nbsp;str)</code>. Arguments (such as width etc) adjust the
+       length-part of the format. Requires 8-bit strings.</p>
+</td></tr>
+<tr><td><code><code class='key'>'n'</code></code></td><td><p>No argument. Same as <code class='expr'>"%s"</code> with an empty string as argument.
+       Note: Does take an argument array (but ignores its content)
+       if the modifier <code class='expr'>'@'</code> is active.</p>
+</td></tr>
+<tr><td><code><code class='key'>'t'</code></code></td><td><p>Type of the argument.</p>
+</td></tr>
+<tr><td><code><code class='key'>'{'</code></code></td><td rowspan='2'><p>Perform the enclosed format for every element of the argument array.</p>
+</td></tr>
+<tr><td><code><code class='key'>'}'</code></code></td></tr>
+</table><p>Most modifiers and operators are combinable in any fashion, but some
+   combinations may render strange results.</p>
+<p>   If an argument is an object that implements <a class='ms reference' href='../lfun_3A_3A/_sprintf.html'>lfun::_sprintf()</a>, that
+   callback will be called with the operator as the first argument, and
+   the current modifiers as the second. The callback is expected to return
+   a string.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>sprintf-style formatting is applied by many formatting functions, such
+   <a class='ms reference' href='../predef_3A_3A/write.html'>write()</a> and <a class='ms reference' href='../predef_3A_3A/werror.html'>werror()</a>. It is also possible to get sprintf-style
+   compile-time argument checking by using the type-attributes
+   <a class='ms reference' href='../predef_3A_3A.html'>sprintf_format</a> or <a class='ms reference' href='../predef_3A_3A.html'>strict_sprintf_format</a> in combination
+   with <a class='ms reference' href='../predef_3A_3A.html'>sprintf_args</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The <code class='expr'>'q'</code> operator was added in Pike 7.7.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Support for specifying modifiers via a mapping was added in Pike 7.8.
+   This support can be tested for with the constant
+   <a class='ms reference' href='../predef_3A_3A/String.html'>String.__HAVE_SPRINTF_STAR_MAPPING__</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Support for specifying little endian byte order to <code class='expr'>'F'</code>
+   was added in Pike 7.8. This support can be tested for with the
+   constant <a class='ms reference' href='../predef_3A_3A/String.html'>String.__HAVE_SPRINTF_NEGATIVE_F__</a>.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><pre><code><span class='ns'>Pike</span> v7<span class='delim'>.</span>8 release 263 running Hilfe v3<span class='delim'>.</span>5 <span class='delim'>(</span>Incremental <span class='ns'>Pike</span> Frontend<span class='delim'>)</span>
+<span class='delim'>&gt;</span> sprintf<span class='delim'>(</span><span class='string'>"The unicode character %c has character code %04X."</span><span class='delim'>,</span> <span class='string'>'A'</span><span class='delim'>,</span> <span class='string'>'A'</span><span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>(</span>1<span class='delim'>)</span> Result<span class='delim'>:</span> <span class='string'>"The unicode character A has character code 0041."</span>
+<span class='delim'>&gt;</span> sprintf<span class='delim'>(</span><span class='string'>"#%@02X is the HTML code for purple."</span><span class='delim'>,</span> <span class='ns'>Image</span><span class='delim'>.</span>Color<span class='delim'>.</span>purple-&gt;rgb<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>(</span>2<span class='delim'>)</span> Result<span class='delim'>:</span> <span class='string'>"#A020F0 is the HTML code for purple."</span>
+<span class='delim'>&gt;</span> <span class='type'>int</span> n<span class='delim'>=</span>4711<span class='delim'>;</span>
+<span class='delim'>&gt;</span> sprintf<span class='delim'>(</span><span class='string'>"%d = hexadecimal %x = octal %o = %b binary"</span><span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>(</span>3<span class='delim'>)</span> Result<span class='delim'>:</span> <span class='string'>"4711 = hexadecimal 1267 = octal 11147 = 1001001100111 binary"</span>
+<span class='delim'>&gt;</span> write<span class='delim'>(</span><span class='string'>#"Formatting examples:
+Left adjusted  [%-10d]
+Centered       [%|10d]
+Right adjusted [%10d]
+Zero padded    [%010d]
+"</span><span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>,</span> n<span class='delim'>)</span><span class='delim'>;</span>
+Formatting examples<span class='delim'>:</span>
+Left adjusted  <span class='delim'>[</span>4711      <span class='delim'>]</span>
+Centered       <span class='delim'>[</span>   4711   <span class='delim'>]</span>
+Right adjusted <span class='delim'>[</span>      4711<span class='delim'>]</span>
+Zero padded    <span class='delim'>[</span>0000004711<span class='delim'>]</span>
+<span class='delim'>(</span>5<span class='delim'>)</span> Result<span class='delim'>:</span> 142
+<span class='type'>int</span> screen_width<span class='delim'>=</span>70<span class='delim'>;</span>
+<span class='delim'>&gt;</span> write<span class='delim'>(</span><span class='string'>"%-=*s\n"</span><span class='delim'>,</span> screen_width<span class='delim'>,</span>
+&gt;&gt; <span class='string'>"This will wordwrap the specified string within the "</span><span class='delim'>+</span>
+&gt;&gt; <span class='string'>"specified field size, this is useful say, if you let "</span><span class='delim'>+</span>
+&gt;&gt; <span class='string'>"users specify their screen size, then the room "</span><span class='delim'>+</span>
+&gt;&gt; <span class='string'>"descriptions will automagically word-wrap as appropriate.\n"</span><span class='delim'>+</span>
+&gt;&gt; <span class='string'>"slosh-n's will of course force a new-line when needed.\n"</span><span class='delim'>)</span><span class='delim'>;</span>
+This will wordwrap the specified <span class='type'>string</span> within the specified field
+size<span class='delim'>,</span> <span class='const'>this</span> is useful say<span class='delim'>,</span> <span class='lang'>if</span> you let users specify their screen size<span class='delim'>,</span>
+then the room descriptions will automagically word<span class='delim'>-</span>wrap as
+appropriate<span class='delim'>.</span>
+slosh<span class='delim'>-</span>n<span class='string'>'s will of course force a new-line when needed.
+(6) Result: 355
+&gt; write("%-=*s %-=*s\n", screen_width/2,
+&gt;&gt; "Two columns next to each other (any number of columns will "+
+&gt;&gt; "of course work) independantly word-wrapped, can be useful.",
+&gt;&gt; screen_width/2-1,
+&gt;&gt; "The - is to specify justification, this is in addherence "+
+&gt;&gt; "to std sprintf which defaults to right-justification, "+
+&gt;&gt; "this version also supports centre and right justification.");
+Two columns next to each other (any The - is to specify justification,
+number of columns will of course    this is in addherence to std
+work) independantly word-wrapped,   sprintf which defaults to
+can be useful.                      right-justification, this version
+                                    also supports centre and right
+                                    justification.
+(7) Result: 426
+&gt; write("%-$*s\n", screen_width,
+&gt;&gt; "Given a\nlist of\nslosh-n\nseparated\n'</span>words<span class='string'>',\nthis option\n"+
+&gt;&gt; "creates a\ntable out\nof them\nthe number of\ncolumns\n"+
+&gt;&gt; "be forced\nby specifying a\npresision.\nThe most obvious\n"+
+&gt;&gt; "use is for\nformatted\nls output.");
+Given a          list of          slosh-n
+separated        '</span>words<span class='string'>',         this option
+creates a        table out        of them
+the number of    columns          be forced
+by specifying a  presision.       The most obvious
+use is for       formatted        ls output.
+(8) Result: 312
+&gt; write("%-#*s\n", screen_width,
+&gt;&gt; "Given a\nlist of\nslosh-n\nseparated\n'</span>words<span class='string'>',\nthis option\n"+
+&gt;&gt; "creates a\ntable out\nof them\nthe number of\ncolumns\n"+
+&gt;&gt; "be forced\nby specifying a\npresision.\nThe most obvious\n"+
+&gt;&gt; "use is for\nformatted\nls output.");
+Given a          creates a        by specifying a
+list of          table out        presision.
+slosh-n          of them          The most obvious
+separated        the number of    use is for
+'</span>words<span class='string'>',         columns          formatted
+this option      be forced        ls output.
+(9) Result: 312
+&gt; sample = ([ "align":"left", "valign":"middle" ]);
+(10) Result: ([ /* 2 elements */
+         "align":"left",
+         "valign":"middle"
+       ])
+&gt; write("&lt;td%{ %s='</span><span class='delim'>%</span>s<span class='string'>'%}&gt;\n", (array)sample);
+&lt;td valign='</span>middle<span class='string'>' align='</span>left
+</code></pre>
+</pre></dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../lfun_3A_3A/_sprintf.html'>lfun::_sprintf()</a>, <a class='ms reference' href='../predef_3A_3A.html'>strict_sprintf_format</a>, <a class='ms reference' href='../predef_3A_3A.html'>sprintf_format</a>,
+   <a class='ms reference' href='../predef_3A_3A.html'>sprintf_args</a>, <a class='ms reference' href='../predef_3A_3A/String.html'>String.__HAVE_SPRINTF_STAR_MAPPING__</a>,
+   <a class='ms reference' href='../predef_3A_3A/String.html'>String.__HAVE_SPRINTF_NEGATIVE_F__</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/sprintf.html","name":"sprintf"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

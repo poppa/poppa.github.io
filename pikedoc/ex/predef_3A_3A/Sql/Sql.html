@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.Sql</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<b class='selected head'>Sql.Sql</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Sql/Sql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Sql/Result.html" class="prev"><span>&#10148;</span> Sql.Result</a>
+              <a href="../../../ex/predef_3A_3A/Sql/Sql/big_query.html" class="next">Sql.Sql()-&gt;big_query() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Sql.Sql</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This class encapsulates a connection to an SQL server. It is a
+ generic interface on top of the DB server specific
+ implementations. That doesn't mean that there aren't plenty of
+ server specific characteristics that still shine through, though.</p>
+<p> This class also serves as an interface guideline for the DB server
+ specific connection classes.</p>
+<h2>Untyped and typed mode</h2>
+<p>The query results are returned in different ways depending on the
+ query functions used: The <tt>..typed_query</tt> functions select
+ typed mode, while the other query functions uses the older untyped
+ mode.</p>
+<p> In untyped mode, all values except SQL NULL are returned as
+ strings in their display representation, and SQL NULL is returned
+ as zero.</p>
+<p> In typed mode, values are returned in pike native form where it
+ works well. That means at least that SQL integer fields are
+ returned as pike integers, floats as floats, SQL NULL as
+ <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.null</a>, and of course strings still as strings. The
+ representation of other SQL types depend on the capabilities of
+ the server specific backends. It's also possible that floats in
+ some cases are represented in other ways if too much precision is
+ lost in the conversion to pike floats.</p>
+
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>For historical reasons, there may be server specific backends that
+ operate differently from what is described here, e.g. some that
+ return a bit of typed data in untyped mode.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Typed operation was not supported at all prior to Pike 7.8.363,
+ and may not be supported for all databases.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>case_convert</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> Sql.Sql.<b><span class='variable'>case_convert</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Convert all field names in mappings to lower_case.
+ Only relevant to databases which only implement big_query(),
+ and use upper/mixed-case fieldnames (eg Oracle).</p>
+<table class='box'><tr><td><code><code class='key'>0</code></code></td><td><p>No (default)</p>
+</td></tr>
+<tr><td><code><code class='key'>1</code></code></td><td><p>Yes</p>
+</td></tr>
+</table>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>master_sql</b></span>
+</dt>
+<dd><p><code><code class='datatype'>object</code> Sql.Sql.<b><span class='variable'>master_sql</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Server specific connection object used for the actual SQL queries.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>db</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>int</code>|<code class='datatype'>string</code>) <code class='argument'>options</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>db</code>, <code class='datatype'>string</code> <code class='argument'>user</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>db</code>, <code class='datatype'>string</code> <code class='argument'>user</code>, <code class='datatype'>string</code> <code class='argument'>password</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>db</code>, <code class='datatype'>string</code> <code class='argument'>user</code>, <code class='datatype'>string</code> <code class='argument'>password</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>int</code>|<code class='datatype'>string</code>) <code class='argument'>options</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>object</code> <code class='argument'>host</code><b>)</b></code><br>
+<code><span class='object'>Sql.Sql</span> <span class='class'>Sql.Sql</span><b>(</b><code class='datatype'>object</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>db</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a new generic SQL object.</p>
+</dd>
+<dt class='head--doc'><span id='p-host'></span>Parameter <code class='parameter'>host</code></dt>
+<dd></dd><dd class='body--doc'><table class='box'><tr><td><code><code class='datatype'>object</code></code></td><td><p>Use this object to access the SQL-database.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code></code></td><td><p>Connect to the server specified. The string should be on the
+       format:
+       <tt>dbtype://[user[:password]@]hostname[:port][/database]</tt>
+       Use the <i>dbtype</i> protocol to connect to the database
+       server on the specified host. If the hostname is <code class='expr'>""</code>
+       then the port can be a file name to access through a
+       UNIX-domain socket or similar, e g
+       <code class='expr'>"mysql://root@:/tmp/mysql.sock/"</code>.</p>
+<p>       There is a special dbtype <code class='expr'>"mysqls"</code> which works like
+       <code class='expr'>"mysql"</code> but sets the <tt>CLIENT_SSL</tt> option and
+       loads the <tt>/etc/my.cnf</tt> config file to find the SSL
+       parameters. The same function can be achieved using the
+       <code class='expr'>"mysql"</code> dbtype.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int(0..0)</code></code></td><td><p>Access through a UNIX-domain socket or similar.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-db'></span>Parameter <code class='parameter'>db</code></dt>
+<dd></dd><dd class='body--doc'><p>Select this database.</p>
+</dd>
+<dt class='head--doc'><span id='p-user'></span>Parameter <code class='parameter'>user</code></dt>
+<dd></dd><dd class='body--doc'><p>User name to access the database as.</p>
+</dd>
+<dt class='head--doc'><span id='p-password'></span>Parameter <code class='parameter'>password</code></dt>
+<dd></dd><dd class='body--doc'><p>Password to access the database.</p>
+</dd>
+<dt class='head--doc'><span id='p-options'></span>Parameter <code class='parameter'>options</code></dt>
+<dd></dd><dd class='body--doc'><p>Optional mapping of options.
+   See the SQL-database documentation for the supported options.
+   (eg <a class='ms reference' href='../../predef_3A_3A/Mysql/mysql/create.html'>Mysql.mysql()-&gt;create()</a>).</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>In versions of Pike prior to 7.2 it was possible to leave out the
+   dbtype, but that has been deprecated, since it never worked well.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Exactly which databases are supported by pike depends on the
+  installed set of client libraries when pike was compiled.</p>
+<p> The possible ones are</p>
+<dl class='group--doc'><dt>mysql</dt>
+<dd><p>libmysql based mysql connection</p>
+</dd>
+<dt>mysqls</dt>
+<dd><p>libmysql based mysql connection, using SSL</p>
+</dd>
+<dt>dsn</dt>
+<dd><p><code class='reference unresolved'>ODBC</code> based connection</p>
+</dd>
+<dt>msql</dt>
+<dd><p><a class='ms reference' href='../../predef_3A_3A/Msql.html'>Msql</a></p>
+</dd>
+<dt>odbc</dt>
+<dd><p><code class='reference unresolved'>ODBC</code> based connection</p>
+</dd>
+<dt>oracle</dt>
+<dd><p><a class='ms reference' href='../../predef_3A_3A/Oracle.html'>Oracle</a> using oracle libraries</p>
+</dd>
+<dt>pgsql</dt>
+<dd><p>PostgreSQL direct network access.
+  This module is independent of any external libraries.</p>
+</dd>
+<dt>postgres</dt>
+<dd><p>PostgreSQL libray access. Uses the <a class='ms reference' href='../../predef_3A_3A/Postgres.html'>Postgres</a> module.</p>
+</dd>
+<dt>rsql</dt>
+<dd><p>Remote SQL api, requires a rsql server running on another host.
+  This is an API that uses sockets to communicate with a remote pike
+  running pike -x rsqld on another host.</p>
+</dd>
+<dt>sqlite</dt>
+<dd><p>In-process SQLite database, uses the <code class='reference unresolved'>SQLite</code> module</p>
+</dd>
+<dt>sybase</dt>
+<dd><p>Uses the <code class='reference unresolved'>sybase</code> module to access sybase</p>
+</dd>
+<dt>tds</dt>
+<dd><p>Sybase and Microsoft SQL direct network access using the TDS protocol.
+  This module is independent of any external libraries.</p>
+</dd>
+</dl>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Support for <a class='ms reference' href='../../predef_3A_3A/Sql/Sql/create.html'>options</a> was added in Pike 7.3.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/Sql.html","name":"Sql"};</script>
+<script src='../../../ex/predef_3A_3A/Sql/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Sql/Sql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.pgsql()-&gt;getruntimeparameters()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql/pgsql.html'><b class='head'>Sql.pgsql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Sql/pgsql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Sql/pgsql/get_charset.html" class="prev"><span>&#10148;</span> Sql.pgsql()-&gt;get_charset()</a>
+              <a href="../../../../ex/predef_3A_3A/Sql/pgsql/getstatistics.html" class="next">Sql.pgsql()-&gt;getstatistics() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Sql.pgsql()-&gt;getruntimeparameters()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>getruntimeparameters</b></span>
+</dt>
+<dd><p><code><code class='modifier'>final</code>  <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) <b><span class='method'>getruntimeparameters</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Currently active runtimeparameters for
+ the open session; these are initialised by the <tt>options</tt> parameter
+ during session creation, and then processed and returned by the server.
+ Common values are:</p>
+<table class='box'><tr><td><code><code class='key'>"client_encoding"</code> : <code class='datatype'>string</code></code></td><td><p>Character encoding for the client side, e.g.
+	<code class='expr'>"UTF8"</code> or <code class='expr'>"SQL_ASCII"</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"server_encoding"</code> : <code class='datatype'>string</code></code></td><td><p>Character encoding for the server side as determined when the
+	database was created, e.g. <code class='expr'>"UTF8"</code> or <code class='expr'>"SQL_ASCII"</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"DateStyle"</code> : <code class='datatype'>string</code></code></td><td><p>Date parsing/display, e.g. <code class='expr'>"ISO,&nbsp;DMY"</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"TimeZone"</code> : <code class='datatype'>string</code></code></td><td><p>Default timezone used by the database, e.g. <code class='expr'>"localtime"</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"standard_conforming_strings"</code> : <code class='datatype'>string</code></code></td><td><p>When on, backslashes in strings must not be escaped any longer.</p>
+</td></tr>
+<tr><td><code><code class='key'>"session_authorization"</code> : <code class='datatype'>string</code></code></td><td><p>Displays the authorisationrole which the current session runs under.</p>
+</td></tr>
+<tr><td><code><code class='key'>"is_superuser"</code> : <code class='datatype'>string</code></code></td><td><p>Indicates if the current authorisationrole has database-superuser
+	privileges.</p>
+</td></tr>
+<tr><td><code><code class='key'>"integer_datetimes"</code> : <code class='datatype'>string</code></code></td><td><p>Reports wether the database supports 64-bit-integer dates and times.</p>
+</td></tr>
+<tr><td><code><code class='key'>"server_version"</code> : <code class='datatype'>string</code></code></td><td><p>Shows the server version, e.g. <code class='expr'>"8.3.3"</code>.</p>
+</td></tr>
+</table><p>The values can be changed during a session using SET commands to the
+ database.
+ For other runtimeparameters check the PostgreSQL documentation.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a href='http://www.postgresql.org/search/?u=%2Fdocs%2Fcurrent%2F&q=client+connection+search_path'>http://www.postgresql.org/search/?u=%2Fdocs%2Fcurrent%2F&q=client+connection+search_path</a></p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This function is PostgreSQL-specific, and thus it is not available
+ through the generic SQL-interface.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/pgsql/getruntimeparameters.html","name":"getruntimeparameters"};</script>
+<script src='../../../../ex/predef_3A_3A/Sql/pgsql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Sql/pgsql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Nettle.dsa_generate_keypair()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Nettle.html'><b class='head'>Nettle</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Nettle/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Nettle/crypt_md5.html" class="prev"><span>&#10148;</span> Nettle.crypt_md5()</a>
+              <a href="../../../ex/predef_3A_3A/Nettle/rsa_generate_keypair.html" class="next">Nettle.rsa_generate_keypair() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Nettle.dsa_generate_keypair()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>dsa_generate_keypair</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code>) <b><span class='method'>dsa_generate_keypair</span>(</b><code class='datatype'>int</code> <code class='argument'>p_bits</code>, <code class='datatype'>int</code> <code class='argument'>q_bits</code>, <code class='datatype'>function</code>(<code class='datatype'>int(0..)</code>:<code class='datatype'>string(8bit)</code>) <code class='argument'>rnd</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Generates a DSA key pair with <code class='reference paramref'>p_bits</code> number of bits (sometimes
+ referred to as L) for p, and <code class='reference paramref'>q_bits</code> number of bits (sometimes
+ referred to as N) for q, using the random function <code class='reference paramref'>rnd</code>.</p>
+<p> Valid combinations as per FIPS 186-3 are
+ <pre>
+   p_bits  q_bits
+   1024    160
+   2048    224 (rejected by some versions of Hogweed)
+   2048    256
+   3072    256
+ </pre></p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><table class='box'><tr><td colspan='2'>Array</td></tr>
+<tr><td><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> <code class='key'>0</code></code></td><td><p>The value p, the modulo.</p>
+</td></tr>
+<tr><td><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> <code class='key'>1</code></code></td><td><p>The value q, the group order.</p>
+</td></tr>
+<tr><td><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> <code class='key'>2</code></code></td><td><p>The value g, the generator.</p>
+</td></tr>
+<tr><td><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> <code class='key'>3</code></code></td><td><p>The value y, the public value.</p>
+</td></tr>
+<tr><td><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> <code class='key'>4</code></code></td><td><p>The value x, the private value.</p>
+</td></tr>
+</table></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Nettle/dsa_generate_keypair.html","name":"dsa_generate_keypair"};</script>
+<script src='../../../ex/predef_3A_3A/Nettle/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Nettle/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

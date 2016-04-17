@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.HTTP.Query</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols/HTTP.html'><b class='head'>Protocols.HTTP</b></a>
+<b class='selected head'>Protocols.HTTP.Query</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Protocols/HTTP/Query/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Protocols/HTTP.html" class="prev"><span>&#10148;</span> Protocols.HTTP</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/HTTP/Query/PseudoFile.html" class="next">Protocols.HTTP.Query()-&gt;PseudoFile <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.HTTP.Query</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Open and execute an HTTP query.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>HTTP.Query o=HTTP.Query();</p>
+<p> void ok()
+ {
+    write("ok...\n");
+    write("%O\n", o-&gt;headers);
+    exit(0);
+ }</p>
+<p> void fail()
+ {
+    write("fail\n");
+    exit(0);
+ }</p>
+<p> int main()
+ {
+    o-&gt;set_callbacks(ok, fail);
+    o-&gt;async_request("pike.lysator.liu.se", 80, "HEAD / HTTP/1.0");
+    return -1;
+ }</p>
+</pre></dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>errno</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.HTTP.Query.<b><span class='variable'>errno</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Errno copied from the connection or simulated for async operations.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>In Pike 7.8 and earlier hardcoded Linux values were used in
+		async operations, 110 instead of <code class='expr'>System.ETIMEDOUT</code> and
+		113 instead of <code class='expr'>System.EHOSTUNREACH</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>headers</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> Protocols.HTTP.Query.<b><span class='variable'>headers</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Headers as a mapping. All header names are in lower case,
+	for convinience.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>host</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>real_host</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>port</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Query.<b><span class='variable'>host</span></b></code><br>
+<code><code class='datatype'>string</code> Protocols.HTTP.Query.<b><span class='variable'>real_host</span></b></code><br>
+<code><code class='datatype'>int</code> Protocols.HTTP.Query.<b><span class='variable'>port</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Connected host and port.</p>
+<p> Used to detect whether keep-alive can be used.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>hostname_cache</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> Protocols.HTTP.Query.<b><span class='variable'>hostname_cache</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set this to a global mapping if you want to use a cache,
+	prior of calling *request().</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ok</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.HTTP.Query.<b><span class='variable'>ok</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Tells if the connection is successfull.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>protocol</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Query.<b><span class='variable'>protocol</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Protocol string, ie <code class='expr'>"HTTP/1.0"</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>status</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>status_desc</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.HTTP.Query.<b><span class='variable'>status</span></b></code><br>
+<code><code class='datatype'>string</code> Protocols.HTTP.Query.<b><span class='variable'>status_desc</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Status number and description (eg <code class='expr'>200</code> and <code class='expr'>"ok"</code>).</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/HTTP/Query.html","name":"Query"};</script>
+<script src='../../../../ex/predef_3A_3A/Protocols/HTTP/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Protocols/HTTP/Query/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

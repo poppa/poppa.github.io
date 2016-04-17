@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Crypto</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<b class='selected head'>Crypto</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/Crypto/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/Concurrent/Promise/success.html" class="prev"><span>&#10148;</span> Concurrent.Promise()-&gt;success()</a>
+              <a href="../../ex/predef_3A_3A/Crypto/AEAD.html" class="next">Crypto.AEAD <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Crypto</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Various cryptographic classes and functions.</p>
+<p> <b>Hash functions</b>
+ These are based on the <a class='ms reference' href='../predef_3A_3A/Crypto/Hash.html'>Hash</a> API; <a class='ms reference' href='../predef_3A_3A/Crypto/MD2.html'>MD2</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/MD4.html'>MD4</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/MD5.html'>MD5</a>,
+ <a class='ms reference' href='../predef_3A_3A/Crypto/SHA1.html'>SHA1</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/SHA256.html'>SHA256</a>.</p>
+<p> <b>Stream cipher functions</b>
+ These are based on the <a class='ms reference' href='../predef_3A_3A/Crypto/Cipher.html'>Cipher</a> API; <a class='ms reference' href='../predef_3A_3A/Crypto/AES.html'>AES</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/Arcfour.html'>Arcfour</a>,
+ <a class='ms reference' href='../predef_3A_3A/Crypto/Blowfish.html'>Blowfish</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/CAST.html'>CAST</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/DES.html'>DES</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/DES3.html'>DES3</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/IDEA.html'>IDEA</a>, <a class='ms reference' href='../predef_3A_3A/Crypto/Serpent.html'>Serpent</a>,
+ <a class='ms reference' href='../predef_3A_3A/Crypto/Twofish.html'>Twofish</a>. The <a class='ms reference' href='../predef_3A_3A/Crypto/Substitution.html'>Substitution</a> program is compatible with the
+ CipherState. Also conforming to the API are the helper modules
+ <code class='reference unresolved'>Buffer</code>, <code class='reference unresolved'>CBC</code>, <code class='reference unresolved'>GCM</code> and <a class='ms reference' href='../predef_3A_3A/Crypto/Pipe.html'>Pipe</a>.</p>
+<p> As the cryptographic services offered from this module isn't
+ necessarily used for security applications, none of the strings
+ inputted or outputted are marked as secure. This is up to the
+ caller.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This module is only available if Pike has been compiled with
+   <a class='ms reference' href='../predef_3A_3A/Nettle.html'>Nettle</a> enabled (this is the default).</p>
+</dd></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Crypto.html","name":"Crypto"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/Crypto/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

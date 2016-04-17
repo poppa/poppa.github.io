@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Web.Crawler.Policy</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Web.html'><b class='head'>Web</b></a>
+<a href='../../../../ex/predef_3A_3A/Web/Crawler.html'><b class='head'>Web.Crawler</b></a>
+<b class='selected head'>Web.Crawler.Policy</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Web/Crawler/Policy/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Web/Crawler/MySQLQueue/create.html" class="prev"><span>&#10148;</span> Web.Crawler.MySQLQueue()-&gt;create()</a>
+              <a href="../../../../ex/predef_3A_3A/Web/Crawler/Queue.html" class="next">Web.Crawler.Queue <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Web.Crawler.Policy</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The crawler policy object.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bandwidth_throttling_floating_window_width</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>bandwidth_throttling_floating_window_width</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Bandwidth throttling floating window width. Defaults to 30.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>max_bits_per_second_per_host</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>max_bits_per_second_per_host</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maximum number of bits per second, per host. Defaults to off (0).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>max_bits_per_second_total</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>max_bits_per_second_total</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maximum number of bits per second. Defaults to off (0).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>max_concurrent_fetchers</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>max_concurrent_fetchers</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maximum number of fetchers. Defaults to 100.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>max_concurrent_fetchers_per_host</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>max_concurrent_fetchers_per_host</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Maximum concurrent fetchers per host. Defaults to 1.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>min_delay_per_host</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Web.Crawler.Policy.<b><span class='variable'>min_delay_per_host</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Minimum delay per host. Defaults to 0.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Crawler/Policy.html","name":"Policy"};</script>
+<script src='../../../../ex/predef_3A_3A/Web/Crawler/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Web/Crawler/Policy/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glPushName()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glPushMatrix.html" class="prev"><span>&#10148;</span> GL.glPushMatrix()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glRasterPos.html" class="next">GL.glRasterPos() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glPushName()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glPushName</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glPushName</span>(</b><code class='datatype'>int</code> <code class='argument'>name</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name stack is used during selection mode to allow sets of rendering
+commands to be uniquely identified.
+It consists of an ordered set of unsigned integers and is initially empty.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glPushName.html'>glPushName</a> causes <i>name</i> to be pushed onto the name stack.
+<a class='ms reference' href='../../predef_3A_3A/GL/glPopName.html'>glPopName</a> pops one name off the top of the stack.</p>
+<p>The maximum name stack depth is implementation-dependent; call
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAX_NAME_STACK_DEPTH</a> to find out the value for a particular
+implementation. It is an
+error to push a name onto a full stack,
+or to pop a name off an empty stack.
+It is also an error to manipulate the name stack between the execution of
+<a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a> and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.
+In any of these cases, the error flag is set and no other change is
+made to GL state.</p>
+<p>The name stack is always empty while the render mode is not <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_SELECT</a>.
+Calls to <a class='ms reference' href='../../predef_3A_3A/GL/glPushName.html'>glPushName</a> or <a class='ms reference' href='../../predef_3A_3A/GL/glPopName.html'>glPopName</a> while the render mode is not
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_SELECT</a> are ignored.</p>
+</dd>
+<dt class='head--doc'><span id='p-name'></span>Parameter <code class='parameter'>name</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a name that will be pushed onto the name stack.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_STACK_OVERFLOW</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glPushName.html'>glPushName</a> is called while the
+name stack is full.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_STACK_UNDERFLOW</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glPopName.html'>glPopName</a> is called while the
+name stack is empty.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glPushName.html'>glPushName</a> or <a class='ms reference' href='../../predef_3A_3A/GL/glPopName.html'>glPopName</a>
+is executed between a call to <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a> and the corresponding call to
+<a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glPushName.html","name":"glPushName"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

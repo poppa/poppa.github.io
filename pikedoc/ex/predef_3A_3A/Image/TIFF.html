@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.TIFF</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<b class='selected head'>Image.TIFF</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Image/TIFF/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Image/TGA/_decode.html" class="prev"><span>&#10148;</span> Image.TGA._decode()</a>
+              <a href="../../../ex/predef_3A_3A/Image/TIFF/decode.html" class="next">Image.TIFF.decode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Image.TIFF</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace;'>&quot;____Image_TIFF&quot;</tspan></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>Image.TIFF</tspan></text>
+</svg></div>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_CCITTFAX3</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_CCITTFAX3</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_CCITTFAX4</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_CCITTFAX4</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_CCITTRLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_CCITTRLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_CCITTRLEW</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_CCITTRLEW</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_JPEG</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_JPEG</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_LZW</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_LZW</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_NEXT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_NEXT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_NONE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_NONE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_PACKBITS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_PACKBITS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>COMPRESSION_THUNDERSCAN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Image.TIFF.<code class='constant'>COMPRESSION_THUNDERSCAN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>"____Image_TIFF"</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><code class='reference unresolved'>"____Image_TIFF"</code> : <span class='inherit'>&quot;____Image_TIFF&quot;</span></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/TIFF.html","name":"TIFF"};</script>
+<script src='../../../ex/predef_3A_3A/Image/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Image/TIFF/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

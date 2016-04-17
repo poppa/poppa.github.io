@@ -1,0 +1,4 @@
+// Class path GTK2.Gnome2Druid
+PikeDoc.registerSymbol('GTK2.Gnome2Druid', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/append_page.html","name":"append_page"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/create.html","name":"create"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/insert_page.html","name":"insert_page"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/prepend_page.html","name":"prepend_page"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/set_buttons_sensitive.html","name":"set_buttons_sensitive"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/set_page.html","name":"set_page"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/set_show_finish.html","name":"set_show_finish"},{"link":"ex/predef_3A_3A/GTK2/Gnome2Druid/set_show_help.html","name":"set_show_help"}])
+.finish();

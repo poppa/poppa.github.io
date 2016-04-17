@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - set_weak_flag()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/set_priority.html" class="prev"><span>&#10148;</span> set_priority()</a>
+              <a href="../../ex/predef_3A_3A/setxattr.html" class="next">setxattr() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method set_weak_flag()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_weak_flag</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>|<code class='datatype'>mapping</code>|<code class='datatype'>multiset</code> <b><span class='method'>set_weak_flag</span>(</b><code class='datatype'>array</code>|<code class='datatype'>mapping</code>|<code class='datatype'>multiset</code> <code class='argument'>m</code>, <code class='datatype'>int</code> <code class='argument'>state</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set the value <code class='reference paramref'>m</code> to use weak or normal references in its
+   indices and/or values (whatever is applicable). <code class='reference paramref'>state</code> is a
+   bitfield built by using <code class='expr'>|</code> between the following flags:</p>
+<table class='box'><tr><td><code><code class='key'>Pike.WEAK_INDICES</code></code></td><td><p>Use weak references for indices. Only applicable for
+   	  multisets and mappings.</p>
+</td></tr>
+<tr><td><code><code class='key'>Pike.WEAK_VALUES</code></code></td><td><p>Use weak references for values. Only applicable for arrays
+   	  and mappings.</p>
+</td></tr>
+<tr><td><code><code class='key'>Pike.WEAK</code></code></td><td><p>Shorthand for <code class='expr'>Pike.WEAK_INDICES|Pike.WEAK_VALUES</code>.</p>
+</td></tr>
+</table><p>If a flag is absent, the corresponding field will use normal
+   references. <code class='reference paramref'>state</code> can also be <code class='expr'>1</code> as a compatibility
+   measure; it's treated like <a class='ms reference' href='../predef_3A_3A/Pike.html'>Pike.WEAK</a>.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p><code class='reference paramref'>m</code> will be returned.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/set_weak_flag.html","name":"set_weak_flag"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

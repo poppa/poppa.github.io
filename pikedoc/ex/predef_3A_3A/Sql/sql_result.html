@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.sql_result</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<b class='selected head'>Sql.sql_result</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Sql/sql_result/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Sql/postgres_result.html" class="prev"><span>&#10148;</span> Sql.postgres_result</a>
+              <a href="../../../ex/predef_3A_3A/Sql/sql_result/create.html" class="next">Sql.sql_result()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Sql.sql_result</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Implements the generic result base class of the SQL-interface.
+ Used for return results from SQL.sql-&gt;big_query().</p>
+<p> You typically don't get a direct clone of this class,
+ but of a class that inherits it, like <code class='reference unresolved'>sql_array_result</code>
+ or <code class='reference unresolved'>sql_object_result</code>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>index</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Sql.sql_result.<b><span class='variable'>index</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This is the number of the current row. The actual semantics
+ differs between different databases.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>master_res</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mixed</code> Sql.sql_result.<b><span class='variable'>master_res</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The actual result.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Sql.sql_result</span> <span class='class'>Sql.sql_result</span><b>(</b><code class='datatype'>mixed</code> <code class='argument'>res</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a new Sql.sql_result object</p>
+</dd>
+<dt class='head--doc'><span id='p-res'></span>Parameter <code class='parameter'>res</code></dt>
+<dd></dd><dd class='body--doc'><p>Result to use as base.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/sql_result.html","name":"sql_result"};</script>
+<script src='../../../ex/predef_3A_3A/Sql/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Sql/sql_result/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

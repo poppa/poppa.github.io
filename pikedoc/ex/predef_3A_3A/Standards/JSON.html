@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.JSON</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<b class='selected head'>Standards.JSON</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Standards/JSON/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Standards/ISO639_2/map_to_639_1.html" class="prev"><span>&#10148;</span> Standards.ISO639_2.map_to_639_1()</a>
+              <a href="../../../ex/predef_3A_3A/Standards/JSON/DecodeError.html" class="next">Standards.JSON.DecodeError <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Standards.JSON</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Tools for handling the JSON structured data format. See
+ <a href='http://www.json.org/'>http://www.json.org/</a> and <b><a href='http://pike.lysator.liu.se/rfc4627.xml'>RFC 4627</a></b>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>ASCII_ONLY</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>HUMAN_READABLE</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>PIKE_CANONICAL</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Standards.JSON.<code class='constant'>ASCII_ONLY</code></code><br>
+<code><code class='datatype'>constant</code> Standards.JSON.<code class='constant'>HUMAN_READABLE</code></code><br>
+<code><code class='datatype'>constant</code> Standards.JSON.<code class='constant'>PIKE_CANONICAL</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Bit field flags for use with <a class='ms reference' href='../../predef_3A_3A/Standards/JSON/encode.html'>encode</a>:</p>
+<dl class='group--doc'><dt>Standards.JSON.ASCII_ONLY</dt>
+<dd><p>Use <code class='expr'>\uxxxx</code> escapes for all non-ascii characters and DEL
+   (U+007f). The default is to escape only the characters that must
+   be escaped. The flag value is 1.</p>
+<p>   Characters above U+FFFF are encoded using escaped surrogate
+   pairs, as per <b><a href='http://pike.lysator.liu.se/rfc4627.xml'>RFC 4627</a></b>.</p>
+</dd>
+<dt>Standards.JSON.HUMAN_READABLE</dt>
+<dd><p>Pretty print with indentation to make the result easier on human
+   eyes. The default is to use no extra whitespace at all. The flag
+   value is 2.</p>
+</dd>
+<dt>Standards.JSON.PIKE_CANONICAL</dt>
+<dd><p>Make the output canonical, so that the same value always
+   generates the same char-by-char equal string. In practice this
+   means that mapping elements are sorted on their indices. Note
+   that the other flags take precedence, so e.g. the canonical form
+   with <a class='ms reference' href='../../predef_3A_3A/Standards/JSON.html'>HUMAN_READABLE</a> is not the same as the canonical form
+   without it. The flag value is 4.</p>
+<p>   This canonical form is stable for the <a class='ms reference' href='../../predef_3A_3A/Standards/JSON/encode.html'>encode</a> function,
+   providing floats aren't used (their formatting is currently
+   affected by float size and libc formatting code). In the future
+   there may be a standardized canonical form which quite likely
+   will be different from this one. In that case a separate flag
+   has to be added so this one doesn't change - hence the name
+   <a class='ms reference' href='../../predef_3A_3A/Standards/JSON.html'>PIKE_CANONICAL</a>.</p>
+</dd>
+</dl></dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>true</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>false</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>null</b></span><br>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Val/True.html'>Val.True</a></code> Standards.JSON.<b><span class='variable'>true</span></b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Val/False.html'>Val.False</a></code> Standards.JSON.<b><span class='variable'>false</span></b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Val/Null.html'>Val.Null</a></code> Standards.JSON.<b><span class='variable'>null</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Compat aliases for the corresponding <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val</a> objects. These are
+ used to represent the three JSON literals <code class='expr'>true</code>,
+ <code class='expr'>false</code> and <code class='expr'>null</code>.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.true</a>, <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.false</a> and <a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.null</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/JSON.html","name":"JSON"};</script>
+<script src='../../../ex/predef_3A_3A/Standards/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Standards/JSON/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

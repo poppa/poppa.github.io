@@ -1,0 +1,5 @@
+// Class path Remote.Call
+PikeDoc.registerSymbol('Remote.Call', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Remote/Call/async.html","name":"async"},{"link":"ex/predef_3A_3A/Remote/Call/create.html","name":"create"},{"link":"ex/predef_3A_3A/Remote/Call/exists.html","name":"exists"},{"link":"ex/predef_3A_3A/Remote/Call/is_async.html","name":"is_async"},{"link":"ex/predef_3A_3A/Remote/Call/set_async.html","name":"set_async"},{"link":"ex/predef_3A_3A/Remote/Call/sync.html","name":"sync"}])
+.addChildren('operator', [{"link":"ex/predef_3A_3A/Remote/Call/_backtick_28_29.html","name":"`()"}])
+.finish();

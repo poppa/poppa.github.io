@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.LMTP.Server()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LMTP.html'><b class='head'>Protocols.LMTP</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LMTP/Server.html'><b class='head'>Protocols.LMTP.Server</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LMTP/Server/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/LMTP/Server.html" class="prev"><span>&#10148;</span> Protocols.LMTP.Server</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/LPD.html" class="next">Protocols.LPD <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Protocols.LMTP.Server()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Protocols.LMTP.Server</span> <span class='class'>Protocols.LMTP.Server</span><b>(</b><code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>_domains</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>port</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>ip</code>, <code class='datatype'>function</code>(:<code class='datatype void'>void</code>) <code class='argument'>_cb_mailfrom</code>, <code class='datatype'>function</code>(:<code class='datatype void'>void</code>) <code class='argument'>_cb_rcptto</code>, <code class='datatype'>function</code>(:<code class='datatype void'>void</code>) <code class='argument'>_cb_data</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a receiving LMTP server.</p>
+</dd>
+<dt class='head--doc'><span id='p-domain'></span>Parameter <code class='parameter'>domain</code></dt>
+<dd></dd><dd class='body--doc'><p>Domains name this server relay, you need to provide at least one
+   domain (the first one will be used for MAILER-DAEMON address).
+   if you want to relay everything you can put a '*' after this
+   first domain.</p>
+</dd>
+<dt class='head--doc'><span id='p-port'></span>Parameter <code class='parameter'>port</code></dt>
+<dd></dd><dd class='body--doc'><p>Port this server listen on</p>
+</dd>
+<dt class='head--doc'><span id='p-listenip'></span>Parameter <code class='parameter'>listenip</code></dt>
+<dd></dd><dd class='body--doc'><p>IP on which server listen</p>
+</dd>
+<dt class='head--doc'><span id='p-cb_mailfrom'></span>Parameter <code class='parameter'>cb_mailfrom</code></dt>
+<dd></dd><dd class='body--doc'><p>Mailfrom callback function, this function will be called
+   when a client send a mail from command. This function must take a
+   string as argument (corresponding to the sender's email) and return
+   int corresponding to the SMTP code to output to the client. If you
+   return an array the first element is the SMTP code and the second
+   is the error string to display.</p>
+</dd>
+<dt class='head--doc'><span id='p-cb_rcptto'></span>Parameter <code class='parameter'>cb_rcptto</code></dt>
+<dd></dd><dd class='body--doc'><p>Same as cb_mailfrom but called when a client sends a rcpt to.</p>
+</dd>
+<dt class='head--doc'><span id='p-cb_data'></span>Parameter <code class='parameter'>cb_data</code></dt>
+<dd></dd><dd class='body--doc'><p>This function is called for each recipient in the "rcpt to" command
+  after the client sends the "data" command
+  It must have the following synopsis:
+  int|array cb_data(object mime, string sender, string recipient, void|string rawdata)
+  object mime : the mime data object
+  string sender : sender of the mail (from the mailfrom command)
+  string recipient : one recipient given by one rcpt
+     command.
+ return : SMTP code to output to the client. If you return an array
+   the first element is the SMTP code and the second is the error string
+   to display. Note that to comply with LMTP protocol you must output a
+   code each time this function is called.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>Here is an example of silly program that does nothing except outputing
+  informations to stdout.
+ int cb_mailfrom(string mail)
+ {
+   return 250;
+ }</p>
+<p> int cb_rcptto(string email)
+ {
+   // check the user's mailbox here
+   return 250;
+ }</p>
+<p> int cb_data(object mime, string sender, string recipient)
+ {
+   write(sprintf("smtpd: mailfrom=%s, to=%s, headers=%O\ndata=%s\n",
+   sender, recipient, mime-&gt;headers, mime-&gt;getdata()));
+   // check the data and deliver the mail here
+   if(mime-&gt;body_parts)
+   {
+   {
+     foreach(mime-&gt;body_parts, object mpart)
+       write(sprintf("smtpd: mpart data = %O\n", mpart-&gt;getdata()));
+   }
+   return 250;
+ }</p>
+<p> int main(int argc, array(string) argv)
+ {
+   Protocols.LMTP.Server(({ "ece.fr" }), 2500, "127.0.0.1",       cb_mailfrom, cb_rcptto, cb_data);
+   return -1;
+ }</p>
+</pre></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/LMTP/Server/create.html","name":"create"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/LMTP/Server/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/LMTP/Server/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

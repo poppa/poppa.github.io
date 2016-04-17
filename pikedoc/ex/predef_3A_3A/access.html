@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - access()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/abs.html" class="prev"><span>&#10148;</span> abs()</a>
+              <a href="../../ex/predef_3A_3A/acos.html" class="next">acos() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method access()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>access</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>access</span>(</b><code class='datatype'>string</code> <code class='argument'>path</code>, <code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>mode</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>access() checks if the calling process can access the file
+ <code class='reference paramref'>path</code>. Symbolic links are dereferenced.</p>
+</dd>
+<dt class='head--doc'><span id='p-mode'></span>Parameter <code class='parameter'>mode</code></dt>
+<dd></dd><dd class='body--doc'><p>The <code class='reference paramref'>mode</code> specifies the accessibility checks to be performed, and
+   is either not specified or empty, in which case access() just tests
+   if the file exists, or one or more of the characters <code class='expr'>"rwx"</code>.</p>
+<p>   r, w, and x test whether the file exists and grants read, write,
+   and execute permissions, respectively.</p>
+<p> The check is done using the calling process's real UID and GID,
+ rather than the effective IDs as is done when actually attempting
+ an operation (e.g., open(2)) on the file. This allows set-user-ID
+ programs to easily determine the invoking user's authority.</p>
+<p> If the calling process is privileged (i.e., its real UID is zero),
+ then an X_OK check is successful for a regular file if execute
+ permission is enabled for any of the file owner, group, or other.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><table class='box'><tr><td><code><code class='key'>1</code></code></td><td><p>When the file is accessible using the given permissions.</p>
+</td></tr>
+<tr><td><code><code class='key'>0</code></code></td><td><p>When the file is not accessible, in which case <a class='ms reference' href='../predef_3A_3A/errno.html'>errno</a> is set
+       to one of the following values:</p>
+<table class='box'><tr><td><code><code class='key'>EACCESS</code></code></td><td><p>Access denied.</p>
+</td></tr>
+<tr><td><code><code class='key'>ELOOP</code></code></td><td><p>Too many symbolic links.</p>
+</td></tr>
+<tr><td><code><code class='key'>ENAMETOOLONG</code></code></td><td><p>The path is too long.</p>
+</td></tr>
+<tr><td><code><code class='key'>ENOENT</code></code></td><td><p>The file does not exist.</p>
+</td></tr>
+<tr><td><code><code class='key'>ENOTDIR</code></code></td><td><p>One of the directories used in <code class='reference paramref'>path</code> is not, in fact, a directory.</p>
+</td></tr>
+<tr><td><code><code class='key'>EROFS</code></code></td><td><p>The filesystem is read only and write access was requested.</p>
+</td></tr>
+</table><p>Other errors can occur, but are not directly related to the
+       requested path, such as <code class='expr'>ENOMEM</code>, etc.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/errno.html'>errno()</a>, <a class='ms reference' href='../predef_3A_3A/Stdio/File.html'>Stdio.File</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/access.html","name":"access"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

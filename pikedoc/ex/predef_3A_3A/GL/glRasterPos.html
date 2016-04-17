@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glRasterPos()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glPushName.html" class="prev"><span>&#10148;</span> GL.glPushName()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glReadBuffer.html" class="next">GL.glReadBuffer() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glRasterPos()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glRasterPos</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glRasterPos</span>(</b><code class='datatype'>float</code>|<code class='datatype'>int</code> <code class='argument'>x</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code> <code class='argument'>y</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>z</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>w</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>glRasterPos</span>(</b><code class='datatype'>array</code>(<code class='datatype'>float</code>|<code class='datatype'>int</code>) <code class='argument'>pos</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The GL maintains a 3D position in window coordinates.
+This position,
+called the raster position,
+is used to position pixel and bitmap write operations. It is
+maintained with subpixel accuracy.
+See <code class='reference unresolved'>glBitmap</code>, <a class='ms reference' href='../../predef_3A_3A/GL/glDrawPixels.html'>glDrawPixels</a>, and <a class='ms reference' href='../../predef_3A_3A/GL/glCopyPixels.html'>glCopyPixels</a>.</p>
+<p>The current raster position consists of three window coordinates
+(x, y, z),
+a clip coordinate value (w),
+an eye coordinate distance,
+a valid bit,
+and associated color data and texture coordinates.
+The w coordinate is a clip coordinate,
+because w is not projected to window coordinates.
+The variable z defaults to 0 and w defaults to 1.</p>
+<p>The object coordinates presented by <a class='ms reference' href='../../predef_3A_3A/GL/glRasterPos.html'>glRasterPos</a> are treated just like those
+of a <a class='ms reference' href='../../predef_3A_3A/GL/glVertex.html'>glVertex</a> command:
+They are transformed by the current modelview and projection matrices
+and passed to the clipping stage.
+If the vertex is not culled,
+then it is projected and scaled to window coordinates,
+which become the new current raster position,
+and the <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_POSITION_VALID</a> flag is set.
+If the vertex
+.I is
+culled,
+then the valid bit is cleared and the current raster position
+and associated color and texture coordinates are undefined.</p>
+<p>The current raster position also includes some associated color data
+and texture coordinates.
+If lighting is enabled,
+then <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_COLOR</a>
+(in RGBA mode)
+or <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_INDEX</a>
+(in color index mode)
+is set to the color produced by the lighting calculation
+(see <a class='ms reference' href='../../predef_3A_3A/GL/glLight.html'>glLight</a>, <a class='ms reference' href='../../predef_3A_3A/GL/glLightModel.html'>glLightModel</a>, and</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glShadeModel.html'>glShadeModel</a>).
+If lighting is disabled,
+current color
+(in RGBA mode, state variable <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_COLOR</a>)
+or color index
+(in color index mode, state variable <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_INDEX</a>)
+is used to update the current raster color.</p>
+<p>Likewise,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_TEXTURE_COORDS</a> is updated as a function
+of <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_TEXTURE_COORDS</a>,
+based on the texture matrix and the texture generation functions
+(see <a class='ms reference' href='../../predef_3A_3A/GL/glTexGen.html'>glTexGen</a>).
+Finally,
+the distance from the origin of the eye coordinate system to the
+vertex as transformed by only the modelview matrix replaces
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_DISTANCE</a>.</p>
+<p>Initially, the current raster position is (0, 0, 0, 1),
+the current raster distance is 0,
+the valid bit is set,
+the associated RGBA color is (1, 1, 1, 1),
+the associated color index is 1,
+and the associated texture coordinates are (0, 0, 0, 1).
+In RGBA mode,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CURRENT_RASTER_INDEX</a> is always 1;
+in color index mode,
+the current raster RGBA color always maintains its initial value.</p>
+</dd>
+<dt class='head--doc'><span id='p-x'></span>Parameter <code class='parameter'>x</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify the x, y, z, and w object coordinates
+(if present)
+for the raster position.</p>
+</dd>
+<dt class='head--doc'><span id='p-v'></span>Parameter <code class='parameter'>v</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a pointer to an array of two,
+three,
+or four elements,
+specifying x, y, z, and w coordinates, respectively.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glRasterPos.html'>glRasterPos</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glRasterPos.html","name":"glRasterPos"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

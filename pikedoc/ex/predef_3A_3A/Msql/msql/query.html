@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Msql.msql()-&gt;query()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Msql.html'><b class='head'>Msql</b></a>
+<a href='../../../../ex/predef_3A_3A/Msql/msql.html'><b class='head'>Msql.msql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Msql/msql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Msql/msql/list_tables.html" class="prev"><span>&#10148;</span> Msql.msql()-&gt;list_tables()</a>
+              <a href="../../../../ex/predef_3A_3A/Msql/msql/reload_acl.html" class="next">Msql.msql()-&gt;reload_acl() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Msql.msql()-&gt;query()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)) <b><span class='method'>query</span>(</b><code class='datatype'>string</code> <code class='argument'>sqlquery</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This is all you need to query the database. It takes as argument an SQL
+ query string (i.e.: "SELECT foo,bar FROM baz WHERE name like '%kinkie%'"
+ or "INSERT INTO baz VALUES ('kinkie','made','this')")
+ and returns a data structure containing the returned values.
+ The structure is an array (one entry for each returned row) of mappings
+ which have the column name as index and the column contents as data.
+ So to access a result from the first example you would have to do
+ "results[0]-&gt;foo".</p>
+<p> A query which returns no data results in an empty array (and NOT in a 0).
+ Also notice that when there is a column name clash (that is: when you
+ join two or more tables which have columns with the same name), the
+ clashing columns are renamed to &lt;tablename&gt;+"."+&lt;column name&gt;.
+ To access those you'll have to use the indexing operator '[]
+ (i.e.: results[0]["foo.bar"]).</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>Errors (both from the interface and the SQL server) are reported via
+ exceptions, and you definitely want to catch them. Error messages are
+ not particularly verbose, since they account only for errors inside the
+ driver. To get server-related error messages, you have to use the
+ <a class='ms reference' href='../../../predef_3A_3A/Msql/msql/error.html'>error</a> function.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that if the query is NOT a of SELECT type, but UPDATE or
+ MODIFY, the returned value is an empty array.
+ <b>This is not an error</b>. Errors are reported <b>only</b> via exceptions.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Msql/msql/error.html'>error</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Msql/msql/query.html","name":"query"};</script>
+<script src='../../../../ex/predef_3A_3A/Msql/msql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Msql/msql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

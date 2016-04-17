@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Alignment</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<b class='selected head'>GTK2.Alignment</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GTK2/Alignment/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GTK2/Adjustment/value_changed.html" class="prev"><span>&#10148;</span> GTK2.Adjustment()-&gt;value_changed()</a>
+              <a href="../../../ex/predef_3A_3A/GTK2/Alignment/create.html" class="next">GTK2.Alignment()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class GTK2.Alignment</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='145px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/G/Object.html'>GTK2.G.Object</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/G/InitiallyUnowned.html'>GTK2.G.InitiallyUnowned</a></text>
+<line x1='44' y1='55' x2='75' y2='55' />
+<line x1='45' y1='45' x2='45' y2='56' />
+<text x='80' y='60'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Object.html'>GTK2.Object</a></text>
+<line x1='84' y1='75' x2='115' y2='75' />
+<line x1='85' y1='65' x2='85' y2='76' />
+<text x='120' y='80'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Widget.html'>GTK2.Widget</a></text>
+<line x1='124' y1='95' x2='155' y2='95' />
+<line x1='125' y1='85' x2='125' y2='96' />
+<text x='160' y='100'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Container.html'>GTK2.Container</a></text>
+<line x1='164' y1='115' x2='195' y2='115' />
+<line x1='165' y1='105' x2='165' y2='116' />
+<text x='200' y='120'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Bin.html'>GTK2.Bin</a></text>
+<line x1='204' y1='135' x2='235' y2='135' />
+<line x1='205' y1='125' x2='205' y2='136' />
+<text x='240' y='140'><tspan style='font-family:monospace; font-weight:bold;'>GTK2.Alignment</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The W(Alignment) widget controls the alignment and size of its
+ child widget. It has four settings: xscale, yscale, xalign, and
+ yalign.</p>
+<p> The scale settings are used to specify how much the child widget
+ should expand to fill the space allocated to the W(Alignment). The
+ values can range from 0 (meaning the child doesn't expand at all)
+ to 1 (meaning the child expands to fill all of the available
+ space).</p>
+<p> The align settings are used to place the child widget within the
+ available area. The values range from 0 (top or left) to 1 (bottom
+ or right). Of course, if the scale settings are both set to 1, the
+ alignment settings have no effect.</p>
+<p> NOIMG
+ Properties:
+ int bottom-padding
+ int left-padding
+ int right-padding
+ int top-padding
+ float xalign
+ float xscale
+ float yalign
+ float yscale</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Bin</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/GTK2/Bin.html'>GTK2.Bin</a> : <span class='inherit'>Bin</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>GTK2.Alignment</span> <span class='class'>GTK2.Alignment</span><b>(</b><code class='datatype'>float</code>|<code class='datatype'>mapping</code> <code class='argument'>xalign_or_props</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>yalign</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>xscale</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>yscale</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><table class='box'>
+<tr><td>xalign :</td><td>the horizontal alignment of the child widget, from 0 (left) to 1 (right).</td></tr>
+<tr><td>                  yalign :</td><td>the vertical alignment of the child widget, from 0 (top) to 1 (bottom).</td></tr>
+<tr><td>                  xscale :</td><td>the amount that the child widget expands horizontally to fill up unused space, from 0 to 1. A value of 0 indicates that the child widget should never expand. A value of 1 indicates that the child widget will expand to fill all of the space allocated for the GTK2.Alignment.</td></tr>
+<tr><td>                  yscale :</td><td>the amount that the child widget expands vertically to fill up unused space, from 0 to 1. The values are similar to xscale.</td></tr>
+</table>
+</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Alignment.html","name":"Alignment"};</script>
+<script src='../../../ex/predef_3A_3A/GTK2/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GTK2/Alignment/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

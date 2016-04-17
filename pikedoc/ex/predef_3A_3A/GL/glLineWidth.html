@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glLineWidth()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glLineStipple.html" class="prev"><span>&#10148;</span> GL.glLineStipple()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glListBase.html" class="next">GL.glListBase() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glLineWidth()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glLineWidth</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glLineWidth</span>(</b><code class='datatype'>float</code> <code class='argument'>width</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glLineWidth.html'>glLineWidth</a> specifies the rasterized width of both aliased and antialiased
+lines.
+Using a line width other than 1 has different effects,
+depending on whether line antialiasing is enabled.
+To enable and disable line antialiasing, call
+<a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a>
+with argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LINE_SMOOTH</a>. Line antialiasing is initially
+disabled.</p>
+<p>If line antialiasing is disabled,
+the actual width is determined by rounding the supplied width
+to the nearest integer.
+(If the rounding results in the value 0,
+it is as if the line width were 1.)
+If
+.nf
+| DELTA x | &gt;= | DELTA y |,
+.fi
+<i>i</i> pixels are filled in each column that is rasterized,
+where <i>i</i> is the rounded value of <i>width</i>.
+Otherwise,
+<i>i</i> pixels are filled in each row that is rasterized.</p>
+<p>If antialiasing is enabled,
+line rasterization produces a fragment for each pixel square
+that intersects the region lying within the rectangle having width
+equal to the current line width,
+length equal to the actual length of the line,
+and centered on the mathematical line segment.
+The coverage value for each fragment is the window coordinate area
+of the intersection of the rectangular region with the corresponding
+pixel square.
+This value is saved and used in the final rasterization step.</p>
+<p>Not all widths can be supported when line antialiasing is enabled.
+If an unsupported width is requested,
+the nearest supported width is used.
+Only width 1 is guaranteed to be supported;
+others depend on the implementation.
+To query the range of supported widths and the size difference between
+supported widths within the range, call
+<code class='reference unresolved'>glGet</code> with arguments
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LINE_WIDTH_RANGE</a> and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LINE_WIDTH_GRANULARITY</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-width'></span>Parameter <code class='parameter'>width</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the width of rasterized lines.
+The initial value is 1.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if <i>width</i> is less than or equal to 0.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glLineWidth.html'>glLineWidth</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glLineWidth.html","name":"glLineWidth"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

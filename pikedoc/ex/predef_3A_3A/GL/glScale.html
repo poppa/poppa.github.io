@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glScale()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glRotate.html" class="prev"><span>&#10148;</span> GL.glRotate()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glScissor.html" class="next">GL.glScissor() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glScale()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glScale</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glScale</span>(</b><code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>float</code>|<code class='datatype'>int</code>) <code class='argument'>x</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>y</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>z</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glScale.html'>glScale</a> produces a nonuniform scaling along the <i>x</i>, <i>y</i>, and
+<i>z</i> axes.
+The three parameters indicate the desired scale factor along
+each of the three axes.</p>
+<p>The current matrix
+(see <a class='ms reference' href='../../predef_3A_3A/GL/glMatrixMode.html'>glMatrixMode</a>)
+is multiplied by this scale matrix,
+and the product replaces the current matrix
+as if <a class='ms reference' href='../../predef_3A_3A/GL/glScale.html'>glScale</a> were called with the following matrix
+as its argument:</p>
+<p>.ce
+.EQ
+left ( ~ down 20 matrix {
+   ccol { ~"x" above ~0 above ~0 above ~0 }
+   ccol { ~0 above ~"y" above ~0 above ~0 }
+   ccol { ~0 above ~0 above ~"z" above ~0 }
+   ccol { ~0 above ~0 above ~0 above ~1}
+} ~~ right )
+.EN
+.sp
+If the matrix mode is either <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MODELVIEW</a> or <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_PROJECTION</a>,
+all objects drawn after <a class='ms reference' href='../../predef_3A_3A/GL/glScale.html'>glScale</a> is called are scaled.</p>
+<p>Use <a class='ms reference' href='../../predef_3A_3A/GL/glPushMatrix.html'>glPushMatrix</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glPopMatrix.html'>glPopMatrix</a> to save and restore
+the unscaled coordinate system.</p>
+</dd>
+<dt class='head--doc'><span id='p-x'></span>Parameter <code class='parameter'>x</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify scale factors along the <i>x</i>, <i>y</i>, and <i>z</i> axes, respectively.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glScale.html'>glScale</a>
+is executed between the execution of
+<a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glScale.html","name":"glScale"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

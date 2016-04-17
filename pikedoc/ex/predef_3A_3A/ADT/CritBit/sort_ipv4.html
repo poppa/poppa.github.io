@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - ADT.CritBit.sort_ipv4()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/ADT.html'><b class='head'>ADT</b></a>
+<a href='../../../../ex/predef_3A_3A/ADT/CritBit.html'><b class='head'>ADT.CritBit</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/ADT/CritBit/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/ADT/CritBit/Tree.html" class="prev"><span>&#10148;</span> ADT.CritBit.Tree()</a>
+              <a href="../../../../ex/predef_3A_3A/ADT/Relation.html" class="next">ADT.Relation <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method ADT.CritBit.sort_ipv4()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>sort_ipv4</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string</code>) <b><span class='method'>sort_ipv4</span>(</b><code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>a</code>, <code class='datatype'>array</code> ...  <code class='argument'>data</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Sorts an ARRAY OF IPv4-Adresses (and optional netmasks) given in dotted
+ decimal representation with the /23 netmask notation.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><pre><code><span class='delim'>&gt;</span> <span class='type'>array</span><span class='delim'>(</span><span class='type'>string</span><span class='delim'>)</span> a <span class='delim'>=</span> <span class='delim'>(</span><span class='delim'>{</span> <span class='string'>"127.0.0.121"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"127.0.0.0/16"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"127.0.0.1/8"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"127.0.0.0/8"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"128.0.0.0/1"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"192.168.21.3"</span><span class='delim'>,</span>
+<span class='delim'>&gt;</span>	 <span class='string'>"8.8.8.8"</span> <span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>&gt;</span> write<span class='delim'>(</span><span class='string'>"%O\n"</span><span class='delim'>,</span> CritBit<span class='delim'>.</span>sort_ipv4<span class='delim'>(</span>a<span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>(</span><span class='delim'>{</span> <span class='comment'>/* 7 elements */</span>
+	<span class='string'>"8.8.8.8"</span><span class='delim'>,</span>
+	<span class='string'>"127.0.0.0/8"</span><span class='delim'>,</span>
+	<span class='string'>"127.0.0.0/16"</span><span class='delim'>,</span>
+	<span class='string'>"127.0.0.1/8"</span><span class='delim'>,</span>
+	<span class='string'>"127.0.0.121"</span><span class='delim'>,</span>
+	<span class='string'>"128.0.0.0/1"</span><span class='delim'>,</span>
+	<span class='string'>"192.168.21.3"</span>
+<span class='delim'>}</span><span class='delim'>)</span>
+</code></pre>
+</pre></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/ADT/CritBit/sort_ipv4.html","name":"sort_ipv4"};</script>
+<script src='../../../../ex/predef_3A_3A/ADT/CritBit/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/ADT/CritBit/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+// Class path SDL.Music
+PikeDoc.registerSymbol('SDL.Music', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/SDL/Music/create.html","name":"create"},{"link":"ex/predef_3A_3A/SDL/Music/fade_in.html","name":"fade_in"},{"link":"ex/predef_3A_3A/SDL/Music/fade_out.html","name":"fade_out"},{"link":"ex/predef_3A_3A/SDL/Music/fading.html","name":"fading"},{"link":"ex/predef_3A_3A/SDL/Music/halt.html","name":"halt"},{"link":"ex/predef_3A_3A/SDL/Music/pause.html","name":"pause"},{"link":"ex/predef_3A_3A/SDL/Music/paused.html","name":"paused"},{"link":"ex/predef_3A_3A/SDL/Music/play.html","name":"play"},{"link":"ex/predef_3A_3A/SDL/Music/playing.html","name":"playing"},{"link":"ex/predef_3A_3A/SDL/Music/resume.html","name":"resume"},{"link":"ex/predef_3A_3A/SDL/Music/rewind.html","name":"rewind"},{"link":"ex/predef_3A_3A/SDL/Music/set_volume.html","name":"set_volume"},{"link":"ex/predef_3A_3A/SDL/Music/volume.html","name":"volume"}])
+.finish();

@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Layer()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Layer.html'><b class='head'>Image.Layer</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Layer/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Layer/clone.html" class="prev"><span>&#10148;</span> Image.Layer()-&gt;clone()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Layer/crop.html" class="next">Image.Layer()-&gt;crop() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Layer()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Image.Layer</span> <span class='class'>Image.Layer</span><b>(</b><code class='datatype'>object</code> <code class='argument'>image</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code>, <code class='datatype'>string</code> <code class='argument'>mode</code><b>)</b></code><br>
+<code><span class='object'>Image.Layer</span> <span class='class'>Image.Layer</span><b>(</b><code class='datatype'>mapping</code> <code class='argument'>info</code><b>)</b></code><br>
+<code><span class='object'>Image.Layer</span> <span class='class'>Image.Layer</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Image.Layer</span> <span class='class'>Image.Layer</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code>, <code class='datatype'>object</code> <code class='argument'>color</code><b>)</b></code><br>
+<code><span class='object'>Image.Layer</span> <span class='class'>Image.Layer</span><b>(</b><code class='datatype'>object</code> <code class='argument'>color</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>The Layer construct either three arguments,
+the image object, alpha channel and mode, or
+a mapping with optional elements:
+<pre>
+"image":image,
+        // default: black
+ 
+"alpha":alpha,
+        // alpha channel object
+        // default: full opaque
+ 
+"mode":string mode,
+        // layer mode, see &lt;ref&gt;mode&lt;/ref&gt;.
+        // default: "normal"
+ 
+"alpha_value":float(0.0-1.0),
+        // layer general alpha value
+        // default is 1.0; this is multiplied
+        // with the alpha channel.
+ 
+"xoffset":int,
+"yoffset":int,
+        // offset of this layer
+ 
+"fill":Color,
+"fill_alpha":Color,
+        // fill color, ie what color is used
+        // "outside" the image. default: black
+        // and black (full transparency).
+ 
+"tiled":int(0|1),
+        // select tiling; if 1, the image
+        // will be tiled. deafult: 0, off
+</pre>
+The layer can also be created "empty",
+either giving a size and color -
+this will give a filled opaque square,
+or a color, which will set the "fill"
+values and fill the whole layer with an
+opaque color.</p>
+
+<p>All values can be modified after object creation.
+</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>image and alpha channel must be of the same size.
+</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Layer/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Layer/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Layer/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

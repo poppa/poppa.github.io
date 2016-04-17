@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Arg</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<b class='selected head'>Arg</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/Arg/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/ADT/Table/ASCII/encode.html" class="prev"><span>&#10148;</span> ADT.Table.ASCII.encode()</a>
+              <a href="../../ex/predef_3A_3A/Arg/LowOptions.html" class="next">Arg.LowOptions <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Arg</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Argument parsing module
+ This module supports two rather different methods of argument parsing.
+ The first is suitable quick argument parsing without much in the way of checking:</p>
+<pre><code><span class='type'>int</span> main<span class='delim'>(</span> <span class='type'>int</span> c<span class='delim'>,</span> <span class='type'>array</span><span class='delim'>(</span><span class='type'>string</span><span class='delim'>)</span> argv <span class='delim'>)</span>
+<span class='delim'>{</span>
+  <span class='type'>mapping</span> arguments <span class='delim'>=</span> <span class='ns'>Arg</span><span class='delim'>.</span>parse<span class='delim'>(</span>argv<span class='delim'>)</span><span class='delim'>;</span>
+  <span class='type'>array</span> files <span class='delim'>=</span> arguments<span class='delim'>[</span><span class='ns'>Arg</span><span class='delim'>.</span>REST<span class='delim'>]</span><span class='delim'>;</span>
+  <span class='lang'>if</span><span class='delim'>(</span> arguments-&gt;help <span class='delim'>)</span> print_help<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>;</span>
+  ...
+<span class='delim'>}</span>
+</code></pre><p>The <a class='ms reference' href='../predef_3A_3A/Arg/parse.html'>Arg.parse</a> method will return a mapping from argument name
+ to the argument value, if any.</p>
+<p> Non-option arguments will be placed in the index Arg.REST</p>
+<p> The second way to use this module is to inherit the LowOptions
+ class and then start adding supported arguments:</p>
+<pre><code><span class='type'>class</span> MyArguments <span class='delim'>{</span>
+   <span class='lang'>inherit</span> <span class='ns'>Arg</span><span class='delim'>.</span>LowOptions<span class='delim'>;</span>
+   Opt verbose <span class='delim'>=</span> NoOpt<span class='delim'>(</span><span class='string'>"-v"</span><span class='delim'>)</span><span class='delim'>|</span>NoOpt<span class='delim'>(</span><span class='string'>"--verbose"</span><span class='delim'>)</span><span class='delim'>;</span>
+   Opt help <span class='delim'>=</span> MaybeOpt<span class='delim'>(</span><span class='string'>"--help"</span><span class='delim'>)</span><span class='delim'>;</span>
+   Opt output <span class='delim'>=</span> HasOpt<span class='delim'>(</span><span class='string'>"--output"</span><span class='delim'>)</span><span class='delim'>|</span>HasOpt<span class='delim'>(</span><span class='string'>"-o"</span><span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span><span class='delim'>;</span>
+</code></pre><p>Then, in main:</p>
+<pre><code>MyArguments args = MyArguments(argv);</code></pre><p>See the documentation for <a class='ms reference' href='../predef_3A_3A/Arg/OptLibrary.html'>OptLibrary</a> for details about the various
+ Opt classes.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>REST</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Arg.<code class='constant'>REST</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Constant used by Arg.parse() to indicate the remaining objects.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Arg.html","name":"Arg"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/Arg/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

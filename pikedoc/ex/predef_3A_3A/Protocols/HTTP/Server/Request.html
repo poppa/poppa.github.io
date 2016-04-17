@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.HTTP.Server.Request</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP.html'><b class='head'>Protocols.HTTP</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP/Server.html'><b class='head'>Protocols.HTTP.Server</b></a>
+<b class='selected head'>Protocols.HTTP.Server.Request</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP/Server/Request/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/HTTP/Server/Port/create.html" class="prev"><span>&#10148;</span> Protocols.HTTP.Server.Port()-&gt;create()</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/HTTP/Server/Request/get_ip.html" class="next">Protocols.HTTP.Server.Request()-&gt;get_ip() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.HTTP.Server.Request</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>Protocols.HTTP.Server.Request</tspan></text>
+<line x1='5' y1='25' x2='5' y2='36' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../../predef_3A_3A/Protocols/WebSocket/Request.html'>Protocols.WebSocket.Request</a></text>
+</svg></div>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>body_raw</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>body_raw</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>raw unparsed body of the request (<a class='ms reference' href='../../../../predef_3A_3A/Protocols/HTTP/Server/Request.html'>raw</a> minus request line and headers)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>connection_timeout_delay</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.HTTP.Server.Request.<b><span class='variable'>connection_timeout_delay</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>connection timeout, delay until connection is closed while
+ waiting for the correct headers:</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cookies</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Protocols.HTTP.Server.Request.<b><span class='variable'>cookies</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>cookies set by client</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>full_query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>full_query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>full resource requested, including attached GET query</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>misc</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> Protocols.HTTP.Server.Request.<b><span class='variable'>misc</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>external use only</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>my_fd</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Stdio/NonblockingStream.html'>Stdio.NonblockingStream</a></code> Protocols.HTTP.Server.Request.<b><span class='variable'>my_fd</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The socket that this request came in on.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>not_query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>not_query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>resource requested minus any attached query</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>protocol</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>protocol</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>request protocol and version, eg. HTTP/1.0</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>query portion of requested resource, starting after the first "?"</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>raw</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>raw</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>raw unparsed full request (headers and body)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>request_headers</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)) Protocols.HTTP.Server.Request.<b><span class='variable'>request_headers</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>all headers included as part of the HTTP request, ie content-type.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>request_raw</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>request_raw</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>full request line (<a class='ms reference' href='../../../../predef_3A_3A/Protocols/HTTP/Server/Request.html'>request_type</a> + <a class='ms reference' href='../../../../predef_3A_3A/Protocols/HTTP/Server/Request.html'>full_query</a> + <a class='ms reference' href='../../../../predef_3A_3A/Protocols/HTTP/Server/Request.html'>protocol</a>)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>request_type</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.HTTP.Server.Request.<b><span class='variable'>request_type</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>HTTP request method, eg. POST, GET, etc.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>send_timeout_delay</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.HTTP.Server.Request.<b><span class='variable'>send_timeout_delay</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>send timeout (no activity for this period with data in send buffer)
+ in seconds, default is 180</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>variables</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)) Protocols.HTTP.Server.Request.<b><span class='variable'>variables</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>all variables included as part of a GET or POST request.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/HTTP/Server/Request.html","name":"Request"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/HTTP/Server/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/HTTP/Server/Request/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.PKCS.Signature.Signed</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards/PKCS.html'><b class='head'>Standards.PKCS</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards/PKCS/Signature.html'><b class='head'>Standards.PKCS.Signature</b></a>
+<b class='selected head'>Standards.PKCS.Signature.Signed</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Standards/PKCS/Signature/Signed/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Standards/PKCS/Signature.html" class="prev"><span>&#10148;</span> Standards.PKCS.Signature</a>
+              <a href="../../../../../ex/predef_3A_3A/Standards/PKCS/Signature/Signed/sign.html" class="next">Standards.PKCS.Signature.Signed()-&gt;sign() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Standards.PKCS.Signature.Signed</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='85px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../../../predef_3A_3A/Standards/ASN1/Types/Object.html'>Standards.ASN1.Types.Object</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../../predef_3A_3A/Standards/ASN1/Types/Compound.html'>Standards.ASN1.Types.Compound</a></text>
+<line x1='44' y1='55' x2='75' y2='55' />
+<line x1='45' y1='45' x2='45' y2='56' />
+<text x='80' y='60'><a class='ms reference' xlink:href='../../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Standards.ASN1.Types.Sequence</a></text>
+<line x1='84' y1='75' x2='115' y2='75' />
+<line x1='85' y1='65' x2='85' y2='76' />
+<text x='120' y='80'><tspan style='font-family:monospace; font-weight:bold;'>Standards.PKCS.Signature.Signed</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This is an ASN.1 structure from PKCS #10 v1.7 and others,
+ which represents a signed block of data.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/Standards/PKCS/Signature/Signed/sign.html'>sign()</a>, <a class='ms reference' href='../../../../predef_3A_3A/Standards/X509/sign_tbs.html'>Standards.X509.sign_tbs()</a>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>algorithm</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Sequence</a></code> Standards.PKCS.Signature.Signed.<b><span class='variable'>algorithm</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> Signing algorithm that was used to sign with.</p>
+<p>Setting</p>
+<p> Signing algorithm that was used to sign with.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Sequence</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Sequence</a> : <span class='inherit'>Sequence</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>signature</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types/BitString.html'>BitString</a></code> Standards.PKCS.Signature.Signed.<b><span class='variable'>signature</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> The signature.</p>
+<p>Setting</p>
+<p> The signature.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>tbs</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Object.html'>Object</a></code> Standards.PKCS.Signature.Signed.<b><span class='variable'>tbs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> ASN.1 structure that has been signed.</p>
+<p>Setting</p>
+<p> ASN.1 structure that has been signed.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/PKCS/Signature/Signed.html","name":"Signed"};</script>
+<script src='../../../../../ex/predef_3A_3A/Standards/PKCS/Signature/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Standards/PKCS/Signature/Signed/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

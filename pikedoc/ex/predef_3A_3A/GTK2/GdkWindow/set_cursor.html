@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.GdkWindow()-&gt;set_cursor()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/GdkWindow.html'><b class='head'>GTK2.GdkWindow</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/GdkWindow/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/GdkWindow/set_bitmap_cursor.html" class="prev"><span>&#10148;</span> GTK2.GdkWindow()-&gt;set_bitmap_cursor()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/GdkWindow/set_events.html" class="next">GTK2.GdkWindow()-&gt;set_events() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.GdkWindow()-&gt;set_cursor()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_cursor</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>GDK2.Window</code></code> <b><span class='method'>set_cursor</span>(</b><code class='datatype'>int</code> <code class='argument'>new_cursor</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Change the window cursor.&lt;table border="0" cellpadding="3" cellspacing="0"&gt;
+ CURS(GDK2.Arrow)
+ CURS(GDK2.BasedArrowDown)
+ CURS(GDK2.BasedArrowUp)
+ CURS(GDK2.Boat)
+ CURS(GDK2.Bogosity)
+ CURS(GDK2.BottomLeftCorner)
+ CURS(GDK2.BottomRightCorner)
+ CURS(GDK2.BottomSide)
+ CURS(GDK2.BottomTee)
+ CURS(GDK2.BoxSpiral)
+ CURS(GDK2.CenterPtr)
+ CURS(GDK2.Circle)
+ CURS(GDK2.Clock)
+ CURS(GDK2.CoffeeMug)
+ CURS(GDK2.Cross)
+ CURS(GDK2.CrossReverse)
+ CURS(GDK2.Crosshair)
+ CURS(GDK2.DiamondCross)
+ CURS(GDK2.Dot)
+ CURS(GDK2.Dotbox)
+ CURS(GDK2.DoubleArrow)
+ CURS(GDK2.DraftLarge)
+ CURS(GDK2.DraftSmall)
+ CURS(GDK2.DrapedBox)
+ CURS(GDK2.Exchange)
+ CURS(GDK2.Fleur)
+ CURS(GDK2.Gobbler)
+ CURS(GDK2.Gumby)
+ CURS(GDK2.Hand1)
+ CURS(GDK2.Hand2)
+ CURS(GDK2.Heart)
+ CURS(GDK2.Icon)
+ CURS(GDK2.IronCross)
+ CURS(GDK2.LeftPtr)
+ CURS(GDK2.LeftSide)
+ CURS(GDK2.LeftTee)
+ CURS(GDK2.Leftbutton)
+ CURS(GDK2.LlAngle)
+ CURS(GDK2.LrAngle)
+ CURS(GDK2.Man)
+ CURS(GDK2.Middlebutton)
+ CURS(GDK2.Mouse)
+ CURS(GDK2.Pencil)
+ CURS(GDK2.Pirate)
+ CURS(GDK2.Plus)
+ CURS(GDK2.QuestionArrow)
+ CURS(GDK2.RightPtr)
+ CURS(GDK2.RightSide)
+ CURS(GDK2.RightTee)
+ CURS(GDK2.Rightbutton)
+ CURS(GDK2.RtlLogo)
+ CURS(GDK2.Sailboat)
+ CURS(GDK2.SbDownArrow)
+ CURS(GDK2.SbHDoubleArrow)
+ CURS(GDK2.SbLeftArrow)
+ CURS(GDK2.SbRightArrow)
+ CURS(GDK2.SbUpArrow)
+ CURS(GDK2.SbVDoubleArrow)
+ CURS(GDK2.Shuttle)
+ CURS(GDK2.Sizing)
+ CURS(GDK2.Spider)
+ CURS(GDK2.Spraycan)
+ CURS(GDK2.Star)
+ CURS(GDK2.Target)
+ CURS(GDK2.Tcross)
+ CURS(GDK2.TopLeftArrow)
+ CURS(GDK2.TopLeftCorner)
+ CURS(GDK2.TopRightCorner)
+ CURS(GDK2.TopSide)
+ CURS(GDK2.TopTee)
+ CURS(GDK2.Trek)
+ CURS(GDK2.UlAngle)
+ CURS(GDK2.Umbrella)
+ CURS(GDK2.UrAngle)
+ CURS(GDK2.Watch)
+ CURS(GDK2.Xterm)
+ &lt;/table&gt;</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/GdkWindow/set_cursor.html","name":"set_cursor"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/GdkWindow/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/GdkWindow/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

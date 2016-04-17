@@ -1,0 +1,5 @@
+// Class path Web.Api.Instagram.V1
+PikeDoc.registerSymbol('Web.Api.Instagram.V1', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Any.html","name":"Any"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Comments.html","name":"Comments"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Likes.html","name":"Likes"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Locations.html","name":"Locations"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Media.html","name":"Media"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Method.html","name":"Method"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Tags.html","name":"Tags"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/Users.html","name":"Users"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/delete.html","name":"delete"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/get.html","name":"get"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/post.html","name":"post"},{"link":"ex/predef_3A_3A/Web/Api/Instagram/V1/put.html","name":"put"}])
+.finish();

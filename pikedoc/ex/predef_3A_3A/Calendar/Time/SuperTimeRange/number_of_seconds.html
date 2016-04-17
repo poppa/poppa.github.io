@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Calendar.Time.SuperTimeRange()-&gt;number_of_seconds()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar.html'><b class='head'>Calendar</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar/Time.html'><b class='head'>Calendar.Time</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange.html'><b class='head'>Calendar.Time.SuperTimeRange</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange/number_of_minutes.html" class="prev"><span>&#10148;</span> Calendar.Time.SuperTimeRange()-&gt;number_of_minutes()</a>
+              <a href="../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange/second.html" class="next">Calendar.Time.SuperTimeRange()-&gt;second() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Calendar.Time.SuperTimeRange()-&gt;number_of_seconds()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>number_of_seconds</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Second.html'>Second</a></code> <b><span class='method'>second</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Second.html'>Second</a></code> <b><span class='method'>second</span>(</b><code class='datatype'>int</code> <code class='argument'>n</code><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Second.html'>Second</a></code>) <b><span class='method'>seconds</span>(</b><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Second.html'>Second</a></code>) <b><span class='method'>seconds</span>(</b><code class='datatype'>int</code> <code class='argument'>first</code>, <code class='datatype'>int</code> <code class='argument'>last</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>number_of_seconds</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Minute.html'>Minute</a></code> <b><span class='method'>minute</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Minute.html'>Minute</a></code> <b><span class='method'>minute</span>(</b><code class='datatype'>int</code> <code class='argument'>n</code><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Minute.html'>Minute</a></code>) <b><span class='method'>minutes</span>(</b><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Minute.html'>Minute</a></code>) <b><span class='method'>minutes</span>(</b><code class='datatype'>int</code> <code class='argument'>first</code>, <code class='datatype'>int</code> <code class='argument'>last</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>number_of_minutes</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Hour.html'>Hour</a></code> <b><span class='method'>hour</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Hour.html'>Hour</a></code> <b><span class='method'>hour</span>(</b><code class='datatype'>int</code> <code class='argument'>n</code><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Hour.html'>Hour</a></code>) <b><span class='method'>hours</span>(</b><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/Hour.html'>Hour</a></code>) <b><span class='method'>hours</span>(</b><code class='datatype'>int</code> <code class='argument'>first</code>, <code class='datatype'>int</code> <code class='argument'>last</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>number_of_hours</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Similar to <a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/TimeofDay.html'>TimeofDay</a>, the Time::SuperTimeRange
+has a number of methods for digging out time parts of the
+range. Since a <a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/SuperTimeRange.html'>SuperTimeRange</a> is a bit more
+complex - the major reason for its existance it that it
+contains holes, this calculation is a bit more advanced too.</p>
+
+<p>If a range contains the seconds, say, 1..2 and 4..5,
+the third second (number 2, since we start from 0)
+in the range would be number 4, like this:</p>
+
+<p><pre>
+no   means this second
+0    1
+1    2
+2    4      &lt;- second three is missing,
+3    5         as we don't have it in the example range
+</pre></p>
+
+<p><a class='ms reference' href='../../../../predef_3A_3A/Calendar/Time/SuperTimeRange/number_of_seconds.html'>number_of_seconds</a>() will in this example
+therefore also report 4, not 5, even if the time from
+start of the range to the end of the range is 5 seconds.
+</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Calendar/Time/SuperTimeRange/number_of_seconds.html","name":"number_of_seconds"};</script>
+<script src='../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Calendar/Time/SuperTimeRange/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

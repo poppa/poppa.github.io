@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.LDAP.client()-&gt;modify()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LDAP.html'><b class='head'>Protocols.LDAP</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LDAP/client.html'><b class='head'>Protocols.LDAP.client</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/LDAP/client/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/LDAP/client/make_filter.html" class="prev"><span>&#10148;</span> Protocols.LDAP.client()-&gt;make_filter()</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/LDAP/client/modifydn.html" class="next">Protocols.LDAP.client()-&gt;modifydn() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Protocols.LDAP.client()-&gt;modify()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>modify</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>modify</span>(</b><code class='datatype'>string</code> <code class='argument'>dn</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>array</code>(<code class='datatype'>int(0..2)</code>|<code class='datatype'>string</code>)) <code class='argument'>attropval</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The Modify Operation allows a client to request that a modification
+  of an entry be performed on its behalf by a server.</p>
+</dd>
+<dt class='head--doc'><span id='p-dn'></span>Parameter <code class='parameter'>dn</code></dt>
+<dd></dd><dd class='body--doc'><p>The distinguished name of modified entry.</p>
+</dd>
+<dt class='head--doc'><span id='p-attropval'></span>Parameter <code class='parameter'>attropval</code></dt>
+<dd></dd><dd class='body--doc'><p>The mapping of attributes with requested operation and attribute's
+  values.</p>
+<pre><code>attropval<span class='delim'>=</span><span class='delim'>(</span><span class='delim'>[</span> attribute<span class='delim'>:</span> <span class='delim'>(</span><span class='delim'>{</span>operation<span class='delim'>,</span> value1<span class='delim'>,</span> value2<span class='delim'>,</span> ...<span class='delim'>}</span><span class='delim'>)</span> <span class='delim'>]</span><span class='delim'>)</span>
+</code></pre><p>Where operation is one of the following:</p>
+<dl class='group--doc'><dt>Protocols.LDAP.MODIFY_ADD</dt>
+<dd><p>Add values listed to the given attribute, creating the
+    attribute if necessary.</p>
+</dd>
+<dt>Protocols.LDAP.MODIFY_DELETE</dt>
+<dd><p>Delete values listed from the given attribute, removing the
+    entire attribute if no values are listed, or if all current
+    values of the attribute are listed for deletion.</p>
+</dd>
+<dt>Protocols.LDAP.MODIFY_REPLACE</dt>
+<dd><p>Replace all existing values of the given attribute with the
+    new values listed, creating the attribute if it did not
+    already exist. A replace with no value will delete the entire
+    attribute if it exists, and is ignored if the attribute does
+    not exist.</p>
+</dd>
+</dl><p>Values that are sent UTF-8 encoded according the the attribute
+  syntaxes are encoded automatically.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns <code class='expr'>1</code> on success, <code class='expr'>0</code> otherwise.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The API change: the returning code was changed in Pike 7.3+
+	to follow his logic better.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/LDAP/client/modify.html","name":"modify"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/LDAP/client/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/LDAP/client/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

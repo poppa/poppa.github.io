@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Widget()-&gt;keynav_failed()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/Widget.html'><b class='head'>GTK2.Widget</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/Widget/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/Widget/is_focus.html" class="prev"><span>&#10148;</span> GTK2.Widget()-&gt;is_focus()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/Widget/list_mnemonic_lables.html" class="next">GTK2.Widget()-&gt;list_mnemonic_lables() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.Widget()-&gt;keynav_failed()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>keynav_failed</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>keynav_failed</span>(</b><code class='datatype'>int</code> <code class='argument'>direction</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This function should be called whenever keyboard navigation within a 
+ single widget hits a boundary. The function emits the "keynav-changed" 
+ signal on the widget and its return value should be interpreted in a way 
+ similar to the return value of widget-&gt;child_focus():</p>
+<p> When TRUE is returned, stay in the widget, the failed keyboard navigation 
+ is Ok and/or there is nowhere we can/should move the focus to.</p>
+<p> When FALSE is returned, the caller should continue with keyboard 
+ navigation outside the widget, e.g. by calling widget-&gt;child_focus() 
+ on the widget's toplevel.</p>
+<p> The default ::keynav-failed handler returns TRUE for GTK_DIR.TAB_FORWARD 
+ and GTK_DIR.TAB_BACKWARD. For the other values of GtkDirectionType, it 
+ looks at the "gtk-keynav-cursor-only"" setting and returns FALSE if the 
+ setting is TRUE. This way the entire user interface becomes 
+ cursor-navigatable on input devices such as mobile phones which only have 
+ cursor keys but no tab key.</p>
+<p> Whenever the default handler returns TRUE, it also calls 
+ widget-&gt;error_bell() to notify the user of the failed keyboard navigation.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Widget/keynav_failed.html","name":"keynav_failed"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Widget/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Widget/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

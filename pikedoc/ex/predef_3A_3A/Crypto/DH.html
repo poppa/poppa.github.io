@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Crypto.DH</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Crypto.html'><b class='head'>Crypto</b></a>
+<b class='selected head'>Crypto.DH</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Crypto/DH/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Crypto/DES3.html" class="prev"><span>&#10148;</span> Crypto.DES3</a>
+              <a href="../../../ex/predef_3A_3A/Crypto/DH/Parameters.html" class="next">Crypto.DH.Parameters <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Crypto.DH</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Diffie-Hellman key-exchange related stuff.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE2048</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE2048</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 2048</p>
+<p> From Negotiated FF-DHE for TLS draft 05, December 2014, Appendix A.1.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE2432</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE2432</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 2432</p>
+<p> Mentioned in Negotiated FF-DHE for TLS draft 06, March 2015, Section 2.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE3072</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE3072</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 3072</p>
+<p> From Negotiated FF-DHE for TLS draft 05, December 2014, Appendix A.2.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE4096</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE4096</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 4096</p>
+<p> From Negotiated FF-DHE for TLS draft 05, December 2014, Appendix A.3.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE6144</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE6144</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 6144</p>
+<p> From Negotiated FF-DHE for TLS draft 06, March 2015.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>FFDHE8192</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>FFDHE8192</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Finite Field Diffie-Hellman 8192</p>
+<p> From Negotiated FF-DHE for TLS draft 05, December 2014, Appendix A.4.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup1</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup1</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 1 (768 bit) (aka First Oakley Group (aka ORM96 group 1)).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc2409.xml#6.1'>RFC 2409 section 6.1</a></b></p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Not allowed for use with FIPS 140.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup14</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup14</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 14 (2048 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#3'>RFC 3526 section 3</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup15</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup15</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 15 (3072 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#4'>RFC 3526 section 4</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup16</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup16</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 16 (4096 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#5'>RFC 3526 section 5</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup17</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup17</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 17 (6144 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#6'>RFC 3526 section 6</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup18</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup18</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 18 (8192 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#7'>RFC 3526 section 7</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup2</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup2</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 2 (1024 bit) (aka Second Oakley Group (aka ORM96 group 2)).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc2409.xml#6.2'>RFC 2409 section 6.2</a></b></p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Not allowed for use with FIPS 140.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup22</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup22</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 22 (1024-bit with 160-bit Subgroup).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc5114.xml#2.1'>RFC 5114 section 2.1</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup23</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup23</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 23 (2048-bit with 224-bit Subgroup).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc5114.xml#2.2'>RFC 5114 section 2.2</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup24</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup24</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 24 (2048-bit with 256-bit Subgroup).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc5114.xml#2.3'>RFC 5114 section 2.3</a></b></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>MODPGroup5</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/DH/Parameters.html'>Parameters</a></code> Crypto.DH.<b><span class='variable'>MODPGroup5</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>MODP Group 5 (1536 bit).</p>
+<p> <b><a href='http://pike.lysator.liu.se/rfc3526.xml#2'>RFC 3526 section 2</a></b></p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Not allowed for use with FIPS 140.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Crypto/DH.html","name":"DH"};</script>
+<script src='../../../ex/predef_3A_3A/Crypto/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Crypto/DH/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

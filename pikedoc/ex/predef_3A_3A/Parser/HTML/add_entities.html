@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.HTML()-&gt;add_entities()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML.html'><b class='head'>Parser.HTML</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/add_containers.html" class="prev"><span>&#10148;</span> Parser.HTML()-&gt;add_containers()</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/add_entity.html" class="next">Parser.HTML()-&gt;add_entity() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Parser.HTML()-&gt;add_entities()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>add_entities</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_tag</span>(</b><code class='datatype'>string</code> <code class='argument'>name</code>, <code class='datatype'>mixed</code> <code class='argument'>to_do</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_container</span>(</b><code class='datatype'>string</code> <code class='argument'>name</code>, <code class='datatype'>mixed</code> <code class='argument'>to_do</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_entity</span>(</b><code class='datatype'>string</code> <code class='argument'>entity</code>, <code class='datatype'>mixed</code> <code class='argument'>to_do</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_quote_tag</span>(</b><code class='datatype'>string</code> <code class='argument'>name</code>, <code class='datatype'>mixed</code> <code class='argument'>to_do</code>, <code class='datatype'>string</code> <code class='argument'>end</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_tags</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>tags</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_containers</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>containers</code><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>add_entities</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>entities</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Registers the actions to take when parsing various things. Tags,
+ containers, entities are as usual. <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/add_quote_tag.html'>add_quote_tag()</a> adds a special
+ kind of tag that reads any data until the next occurrence of the
+ end string immediately before a tag end.</p>
+</dd>
+<dt class='head--doc'><span id='p-to_do'></span>Parameter <code class='parameter'>to_do</code></dt>
+<dd></dd><dd class='body--doc'><p>This argument can be any of the following.</p>
+<table class='box'><tr><td><code><code class='datatype'>function</code>(:<code class='datatype void'>void</code>)</code></td><td><p>The function will be called as a callback function. It will
+       get the following arguments, depending on the type of
+       callback.
+	<pre>
+ mixed tag_callback(Parser.HTML parser,mapping args,mixed ... extra)
+ mixed container_callback(Parser.HTML parser,mapping args,string content,mixed ... extra)
+ mixed entity_callback(Parser.HTML parser,mixed ... extra)
+ mixed quote_tag_callback(Parser.HTML parser,string content,mixed ... extra)
+	</pre></p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code></code></td><td><p>This tag/container/entity is then replaced by the string.
+       The string is normally not reparsed, i.e. it's equivalent to
+       writing a function that returns the string in an array (but
+       a lot faster). If <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/reparse_strings.html'>reparse_strings</a> is set the string will
+       be reparsed, though.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>array</code></code></td><td><p>The first element is a function as above. It will receive
+       the rest of the array as extra arguments. If extra arguments
+       are given by <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/set_extra.html'>set_extra()</a>, they will appear after
+       the ones in this array.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int(0..)</code></code></td><td><p>If there is a tag/container/entity with the given name in
+       the parser, it's removed.</p>
+</td></tr>
+</table><p>The callback function can return:</p>
+<table class='box'><tr><td><code><code class='datatype'>string</code></code></td><td><p>This string will be pushed on the parser stack and be
+       parsed. Be careful not to return anything in this way that
+       could lead to a infinite recursion.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>array</code></code></td><td><p>The element(s) of the array is the result of the function.
+       This will not be parsed. This is useful for avoiding
+       infinite recursion. The array can be of any size, this means
+       the empty array is the most effective to return if you don't
+       care about the result. If the parser is operating in
+       <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/mixed_mode.html'>mixed_mode</a>, the array can contain anything. Otherwise
+       only strings are allowed.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int(0..0)</code></code></td><td><p>This means "don't do anything", ie the item that generated
+       the callback is left as it is, and the parser continues.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int(1..1)</code></code></td><td><p>Reparse the last item again. This is useful to parse a tag
+       as a container, or vice versa: just add or remove callbacks
+       for the tag and return this to jump to the right callback.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the object being called.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/tags.html'>tags</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/containers.html'>containers</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/entities.html'>entities</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/HTML/add_entities.html","name":"add_entities"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

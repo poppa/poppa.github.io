@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Label()-&gt;set_mnemonic_widget()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/Label.html'><b class='head'>GTK2.Label</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/Label/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/Label/set_max_width_chars.html" class="prev"><span>&#10148;</span> GTK2.Label()-&gt;set_max_width_chars()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/Label/set_pattern.html" class="next">GTK2.Label()-&gt;set_pattern() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.Label()-&gt;set_mnemonic_widget()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_mnemonic_widget</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/Label.html'>GTK2.Label</a></code> <b><span class='method'>set_mnemonic_widget</span>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/Widget.html'>GTK2.Widget</a></code> <code class='argument'>widget</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>If the label has been set so that it has a mnemonic key (using i.e. 
+ set_markup_with_mnemonic(), set_text_with_mnemonic(), or the 
+ "use_underline" property) the label can be associated with a widget that
+ is the target of the mnemonic.  When the label is inside a widget (like a
+ GTK2.Button or GTK2.Notebook tab) it is automatically associated with the
+ correct widget, but sometimes (i.e. when the target is a GTK2.Entry next
+ to the label) you need to set it explicitly using this function.</p>
+<p> The target widget will be accelerated by emitting "mnemonic_activate" on
+ it.  The default handler for this signal will activate the widget if there
+ are no mnemonic collisions and toggle focus between the colliding widgets
+ otherwise.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Label/set_mnemonic_widget.html","name":"set_mnemonic_widget"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Label/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Label/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+// Class path System.Inotify._Instance
+PikeDoc.registerSymbol('System.Inotify._Instance', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/System/Inotify/_Instance/add_watch.html","name":"add_watch"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/get_event_callback.html","name":"get_event_callback"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/poll.html","name":"poll"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/query_fd.html","name":"query_fd"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/rm_watch.html","name":"rm_watch"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/set_backend.html","name":"set_backend"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/set_blocking.html","name":"set_blocking"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/set_event_callback.html","name":"set_event_callback"},{"link":"ex/predef_3A_3A/System/Inotify/_Instance/set_nonblocking.html","name":"set_nonblocking"}])
+.finish();

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glFrontFace()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glFog.html" class="prev"><span>&#10148;</span> GL.glFog()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glFrustum.html" class="next">GL.glFrustum() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glFrontFace()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glFrontFace</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glFrontFace</span>(</b><code class='datatype'>int</code> <code class='argument'>mode</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>In a scene composed entirely of opaque closed surfaces,
+back-facing polygons are never visible.
+Eliminating these invisible polygons has the obvious benefit
+of speeding up the rendering of the image.
+To enable and disable elimination of back-facing polygons, call <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a>
+and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a> with argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CULL_FACE</a>.</p>
+<p>The projection of a polygon to window coordinates is said to have
+clockwise winding if an imaginary object following the path
+from its first vertex,
+its second vertex,
+and so on,
+to its last vertex,
+and finally back to its first vertex,
+moves in a clockwise direction about the interior of the polygon.
+The polygon's winding is said to be counterclockwise if the imaginary
+object following the same path moves in a counterclockwise direction
+about the interior of the polygon.
+<a class='ms reference' href='../../predef_3A_3A/GL/glFrontFace.html'>glFrontFace</a> specifies whether polygons with clockwise winding in window coordinates,
+or counterclockwise winding in window coordinates,
+are taken to be front-facing.
+Passing <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CCW</a> to <i>mode</i> selects counterclockwise polygons as
+front-facing;
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CW</a> selects clockwise polygons as front-facing.
+By default, counterclockwise polygons are taken to be front-facing.</p>
+</dd>
+<dt class='head--doc'><span id='p-mode'></span>Parameter <code class='parameter'>mode</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the orientation of front-facing polygons.
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CW</a> and <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CCW</a> are accepted.
+The initial value is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_CCW</a>.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>mode</i> is not an accepted value.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glFrontFace.html'>glFrontFace</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glFrontFace.html","name":"glFrontFace"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

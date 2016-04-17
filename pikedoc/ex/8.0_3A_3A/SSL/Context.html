@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.Context</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/8.0_3A_3A.html'><b class='head'>8.0::</b></a>
+<a href='../../../ex/8.0_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<b class='selected head'>SSL.Context</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/8.0_3A_3A/SSL/Context/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/8.0_3A_3A/SSL.html" class="prev"><span>&#10148;</span> SSL</a>
+              <a href="../../../ex/8.0_3A_3A/SSL/Context/dhe_dss_mode.html" class="next">SSL.Context()-&gt;dhe_dss_mode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class SSL.Context</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>8.0::SSL.Context</tspan></text>
+<line x1='5' y1='25' x2='5' y2='36' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>8.0::SSL.Context</tspan></text>
+</svg></div>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>certificates</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Context.<b><span class='variable'>certificates</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> The server's certificate, or a chain of X509.v3 certificates, with
+ the server's certificate first and root certificate last.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`rsa</code>, <code class='reference unresolved'>find_cert()</code></p>
+<p>Setting</p>
+<p> The server's certificate, or a chain of X509.v3 certificates, with
+ the server's certificate first and root certificate last.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`rsa</code>, <code class='reference unresolved'>find_cert()</code></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>client_certificates</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>)) SSL.Context.<b><span class='variable'>client_certificates</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> The client's certificate, or a chain of X509.v3 certificates, with
+ the client's certificate first and root certificate last.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`rsa</code>, <code class='reference unresolved'>find_cert()</code></p>
+<p>Setting</p>
+<p> The client's certificate, or a chain of X509.v3 certificates, with
+ the client's certificate first and root certificate last.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`rsa</code>, <code class='reference unresolved'>find_cert()</code></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>client_rsa</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../8.0_3A_3A/Crypto/RSA/State.html'>Crypto.RSA.State</a></code> SSL.Context.<b><span class='variable'>client_rsa</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> The clients RSA private key.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`certificates</code>, <code class='reference unresolved'>find_cert()</code></p>
+<p>Setting</p>
+<p> The clients RSA private key.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`certificates</code>, <code class='reference unresolved'>find_cert()</code></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>dsa</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../8.0_3A_3A/Crypto/DSA/State.html'>Crypto.DSA.State</a></code> SSL.Context.<b><span class='variable'>dsa</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> Compatibility.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd><dd class='body--doc'><p>Setting</p>
+<p> Compatibility.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Context</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../8.0_3A_3A/SSL/Context.html'>SSL.Context</a> : <span class='inherit'>Context</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rsa</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../8.0_3A_3A/Crypto/RSA/State.html'>Crypto.RSA.State</a></code> SSL.Context.<b><span class='variable'>rsa</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Getting</p>
+<p> The servers default private RSA key.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`certificates</code>, <code class='reference unresolved'>find_cert()</code></p>
+<p>Setting</p>
+<p> The servers default private RSA key.</p>
+<p> Compatibility, don't use.</p>
+</dd>
+<dt class='head--doc'>Deprecated</dt>
+<dd class='body--doc'><p>Replaced by <code class='reference unresolved'>find_cert</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>`certificates</code>, <code class='reference unresolved'>find_cert()</code></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/8.0_3A_3A/SSL/Context.html","name":"Context"};</script>
+<script src='../../../ex/8.0_3A_3A/SSL/index.js'></script>
+<script src='../../../ex/8.0_3A_3A/SSL/Context/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

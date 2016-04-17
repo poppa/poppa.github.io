@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.Session</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<b class='selected head'>SSL.Session</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/SSL/Session/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/SSL/ServerConnection/server_key_exchange_packet.html" class="prev"><span>&#10148;</span> SSL.ServerConnection()-&gt;server_key_exchange_packet()</a>
+              <a href="../../../ex/predef_3A_3A/SSL/Session/generate_keys.html" class="next">SSL.Session()-&gt;generate_keys() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class SSL.Session</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The most important information in a session object is a
+ choice of encryption algorithms and a "master secret" created by
+ keyexchange with a client. Each connection can either do a full key
+ exchange to established a new session, or reuse a previously
+ established session. That is why we have the session abstraction and
+ the session cache. Each session is used by one or more connections, in
+ sequence or simultaneously.</p>
+<p> It is also possible to change to a new session in the middle of a
+ connection.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cert_data</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> SSL.Session.<b><span class='variable'>cert_data</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Information about the certificate in use by the peer, such as
+ issuing authority, and verification status.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>certificate_chain</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Session.<b><span class='variable'>certificate_chain</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Our certificate chain</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cipher_spec</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/SSL/Cipher/CipherSpec.html'>Cipher.CipherSpec</a></code> SSL.Session.<b><span class='variable'>cipher_spec</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Information about the encryption method derived from the
+ cipher_suite.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cipher_suite</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>cipher_suite</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Constant defining a choice of keyexchange, encryption and mac
+ algorithm.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>compression_algorithm</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>compression_algorithm</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Always COMPRESSION_null.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>curve</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Crypto/ECC/Curve.html'>Crypto.ECC.Curve</a></code> SSL.Session.<b><span class='variable'>curve</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The ECC curve selected by the key exchange.</p>
+<table class='box'><tr><td><code><code class='key'>KE_ecdh_ecdsa</code></code></td><td rowspan='2'><p>The curve from the server certificate.</p>
+</td></tr>
+<tr><td><code><code class='key'>KE_ecdh_rsa</code></code></td></tr>
+<tr><td><code><code class='key'>KE_ecdhe_ecdsa</code></code></td><td rowspan='3'><p>The curve selected for the ECDHE key exchange
+     (typically the largest curve supported by both
+     the client and the server).</p>
+</td></tr>
+<tr><td><code><code class='key'>KE_ecdhe_rsa</code></code></td></tr>
+<tr><td><code><code class='key'>KE_ecdh_anon</code></code></td></tr>
+</table>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ecc_curves</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>int</code>) SSL.Session.<b><span class='variable'>ecc_curves</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Supported elliptical curve cipher curves in order of preference.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ecc_point_format</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>ecc_point_format</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The selected elliptical curve point format.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>May be <code class='expr'>-1</code> to indicate that there's no supported overlap
+   between the server and client.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>encrypt_then_mac</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>encrypt_then_mac</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Negotiated encrypt-then-mac mode.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>extended_master_secret</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> SSL.Session.<b><span class='variable'>extended_master_secret</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Indicates that the connection uses the Extended Master Secret method
+ of deriving the master secret.</p>
+<p> This setting is only relevant for TLS 1.2 and earlier.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ffdhe_groups</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>int</code>) SSL.Session.<b><span class='variable'>ffdhe_groups</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Supported finite field diffie-hellman groups in order of preference.</p>
+<table class='box'><tr><td><code><code class='datatype'>int(0..0)</code></code></td><td><p>Zero indicates that none have been specified.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>array</code>(<code class='datatype'>zero</code>)</code></td><td><p>The empty array indicates that none are supported.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>array</code>(<code class='datatype'>int</code>)</code></td><td><p>List of supported groups, with the most preferred first.</p>
+</td></tr>
+</table>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>heartbeat_mode</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>HeartBeatModeType</code></code> SSL.Session.<b><span class='variable'>heartbeat_mode</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Heartbeat mode.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>identity</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string(8bit)</code> SSL.Session.<b><span class='variable'>identity</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Identifies the session to the server</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>last_activity</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>last_activity</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>When this session object was used last.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>master_secret</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string(8bit)</code> SSL.Session.<b><span class='variable'>master_secret</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>48 byte secret shared between the client and the server. Used for
+ deriving the actual keys.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>max_packet_size</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.Session.<b><span class='variable'>max_packet_size</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The max fragment size requested by the client.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>peer_certificate_chain</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string(8bit)</code>) SSL.Session.<b><span class='variable'>peer_certificate_chain</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The peer certificate chain</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>peer_public_key</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>Crypto.Sign.State</code></code> SSL.Session.<b><span class='variable'>peer_public_key</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The peer's public key (from the certificate).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>private_key</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>Crypto.Sign.State</code></code> SSL.Session.<b><span class='variable'>private_key</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Our private key.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>server_name</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string(8bit)</code> SSL.Session.<b><span class='variable'>server_name</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><b><a href='http://pike.lysator.liu.se/rfc6066.xml#3.1'>RFC 6066 section 3.1</a></b> (SNI)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>signature_algorithms</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) SSL.Session.<b><span class='variable'>signature_algorithms</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The set of &lt;hash, signature&gt; combinations supported by the peer.</p>
+<p> Only used with TLS 1.2 and later.</p>
+<p> Defaults to the settings from <b><a href='http://pike.lysator.liu.se/rfc5246.xml#7.4.1.4.1'>RFC 5246 section 7.4.1.4.1</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>truncated_hmac</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> SSL.Session.<b><span class='variable'>truncated_hmac</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Indicates that the packet HMACs should be truncated
+ to the first 10 bytes (80 bits). Cf <b><a href='http://pike.lysator.liu.se/rfc3546.xml#3.5'>RFC 3546 section 3.5</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>version</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/SSL/Constants/ProtocolVersion.html'>ProtocolVersion</a></code> SSL.Session.<b><span class='variable'>version</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Negotiated protocol version.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/SSL/Session.html","name":"Session"};</script>
+<script src='../../../ex/predef_3A_3A/SSL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/SSL/Session/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

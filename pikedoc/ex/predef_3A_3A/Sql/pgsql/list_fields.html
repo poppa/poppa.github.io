@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.pgsql()-&gt;list_fields()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql/pgsql.html'><b class='head'>Sql.pgsql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Sql/pgsql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Sql/pgsql/list_dbs.html" class="prev"><span>&#10148;</span> Sql.pgsql()-&gt;list_dbs()</a>
+              <a href="../../../../ex/predef_3A_3A/Sql/pgsql/list_tables.html" class="next">Sql.pgsql()-&gt;list_tables() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Sql.pgsql()-&gt;list_fields()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>list_fields</b></span>
+</dt>
+<dd><p><code><code class='modifier'>final</code>  <code class='datatype'>array</code>(<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)) <b><span class='method'>list_fields</span>(</b><code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>table</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>glob</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>A mapping, indexed on the column name, of mappings describing
+ the attributes of a table of the current database.
+ The currently defined fields are:</p>
+<table class='box'><tr><td><code><code class='key'>"schema"</code> : <code class='datatype'>string</code></code></td><td><p>Schema the table belongs to</p>
+</td></tr>
+<tr><td><code><code class='key'>"table"</code> : <code class='datatype'>string</code></code></td><td><p>Name of the table</p>
+</td></tr>
+<tr><td><code><code class='key'>"kind"</code> : <code class='datatype'>string</code></code></td><td><p>Type of table</p>
+</td></tr>
+<tr><td><code><code class='key'>"owner"</code> : <code class='datatype'>string</code></code></td><td><p>Tableowner</p>
+</td></tr>
+<tr><td><code><code class='key'>"rowcount"</code> : <code class='datatype'>int</code></code></td><td><p>Estimated rowcount of the table</p>
+</td></tr>
+<tr><td><code><code class='key'>"datasize"</code> : <code class='datatype'>int</code></code></td><td><p>Estimated total datasize of the table in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"indexsize"</code> : <code class='datatype'>int</code></code></td><td><p>Estimated total indexsize of the table in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"name"</code> : <code class='datatype'>string</code></code></td><td><p>Name of the column</p>
+</td></tr>
+<tr><td><code><code class='key'>"type"</code> : <code class='datatype'>string</code></code></td><td><p>A textual description of the internal (to the server) column type-name</p>
+</td></tr>
+<tr><td><code><code class='key'>"typeoid"</code> : <code class='datatype'>int</code></code></td><td><p>The OID of the internal (to the server) column type</p>
+</td></tr>
+<tr><td><code><code class='key'>"length"</code> : <code class='datatype'>string</code></code></td><td><p>Size of the columndatatype</p>
+</td></tr>
+<tr><td><code><code class='key'>"default"</code> : <code class='datatype'>mixed</code></code></td><td><p>Default value for the column</p>
+</td></tr>
+<tr><td><code><code class='key'>"is_shared"</code> : <code class='datatype'>int</code></code></td><td rowspan='2'><p>If the table has any indices</p>
+</td></tr>
+<tr><td><code><code class='key'>"has_index"</code> : <code class='datatype'>int</code></code></td></tr>
+<tr><td><code><code class='key'>"has_primarykey"</code> : <code class='datatype'>int</code></code></td><td><p>If the table has a primary key</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-glob'></span>Parameter <code class='parameter'>glob</code></dt>
+<dd></dd><dd class='body--doc'><p>If specified, list only the tables with matching names.
+ Setting it to <code class='expr'>*</code> will include system columns in the list.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/pgsql/list_fields.html","name":"list_fields"};</script>
+<script src='../../../../ex/predef_3A_3A/Sql/pgsql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Sql/pgsql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+// Class path SANE.Scanner
+PikeDoc.registerSymbol('SANE.Scanner', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/SANE/Scanner/cancel_scan.html","name":"cancel_scan"},{"link":"ex/predef_3A_3A/SANE/Scanner/create.html","name":"create"},{"link":"ex/predef_3A_3A/SANE/Scanner/get_option.html","name":"get_option"},{"link":"ex/predef_3A_3A/SANE/Scanner/get_parameters.html","name":"get_parameters"},{"link":"ex/predef_3A_3A/SANE/Scanner/list_options.html","name":"list_options"},{"link":"ex/predef_3A_3A/SANE/Scanner/nonblocking_row_scan.html","name":"nonblocking_row_scan"},{"link":"ex/predef_3A_3A/SANE/Scanner/row_scan.html","name":"row_scan"},{"link":"ex/predef_3A_3A/SANE/Scanner/set_option.html","name":"set_option"},{"link":"ex/predef_3A_3A/SANE/Scanner/simple_scan.html","name":"simple_scan"}])
+.finish();

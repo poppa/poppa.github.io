@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Process.create_process</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Process.html'><b class='head'>Process</b></a>
+<b class='selected head'>Process.create_process</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Process/create_process/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Process/TraceProcess/wait.html" class="prev"><span>&#10148;</span> Process.TraceProcess()-&gt;wait()</a>
+              <a href="../../../ex/predef_3A_3A/Process/create_process/create.html" class="next">Process.create_process()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Process.create_process</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='65px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>Process.create_process</tspan></text>
+<line x1='5' y1='25' x2='5' y2='56' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../predef_3A_3A/Process/Process.html'>Process.Process</a></text>
+<line x1='4' y1='55' x2='35' y2='55' />
+<text x='40' y='60'><a class='ms reference' xlink:href='../../predef_3A_3A/Process/TraceProcess.html'>Process.TraceProcess</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This is the recommended and most portable way to start processes
+ in Pike. The process object is a pike abstraction of the running
+ system process, with methods for various process housekeeping.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Process/Process.html'>Process</a></p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>limit_value</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Process.create_process.<code class='constant'>limit_value</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Each <i>limit_value</i> may be either of:</p>
+<dl class='group--doc'><dt>integer</dt>
+<dd><p>sets current limit, max is left as it is.</p>
+</dd>
+<dt>mapping</dt>
+<dd><p>([ "hard":int, "soft":int ]) Both values are optional,
+   hard &lt;= soft.</p>
+</dd>
+<dt>array</dt>
+<dd><p>({ hard, soft }), both can be set to the string
+   "unlimited". A value of -1 means 'keep the old value'.</p>
+</dd>
+<dt>string</dt>
+<dd><p>The string "unlimited" sets both the hard and soft limit to unlimited</p>
+</dd>
+</dl></dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Process.create_process</span> <span class='class'>Process.create_process</span><b>(</b><code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>command_args</code>, <code class='datatype'>void</code>|<code class='datatype'>mapping</code> <code class='argument'>modifiers</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'><span id='p-command_args'></span>Parameter <code class='parameter'>command_args</code></dt>
+<dd></dd><dd class='body--doc'><p>The command name and its command-line arguments. You do not have
+ to worry about quoting them; pike does this for you.</p>
+</dd>
+<dt class='head--doc'><span id='p-modifiers'></span>Parameter <code class='parameter'>modifiers</code></dt>
+<dd></dd><dd class='body--doc'><p>This optional mapping can can contain zero or more of the
+ following parameters:</p>
+<table class='box'><tr><td><code><code class='key'>"callback"</code> : <code class='datatype'>function</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/Process.html'>Process.Process</a></code>:<code class='datatype'>void</code>)</code></td><td><p>Function called when the created process changes state.</p>
+<p>  Note that this function is called in a signal handler context,
+  which means that it may be called by any thread at any time after
+  the child process has changed state, and is thus not only called
+  by the main thread when the main backend is idle. Indeed, you can
+  specify a callback even if your program does not use a backend.</p>
+</td></tr>
+<tr><td><code><code class='key'>"cwd"</code> : <code class='datatype'>string</code></code></td><td><p>Execute the command in another directory than the current
+  directory of this process. Please note that if the command is
+  given is a relative path, it will be relative to this directory
+  rather than the current directory of this process.</p>
+<p>  Note also that the path is relative to the <code class='expr'>"chroot"</code> if used.</p>
+</td></tr>
+<tr><td><code><code class='key'>"chroot"</code> : <code class='datatype'>string</code></code></td><td><p>Chroot to this directory before executing the command.</p>
+<p>   Note that the current directory will be changed to <code class='expr'>"/"</code> in
+   the chroot environment, unless <code class='expr'>"cwd"</code> above has been set.</p>
+</td></tr>
+<tr><td><code><code class='key'>"stdin"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code></code></td><td rowspan='3'><p>These parameters allows you to change the standard input, output
+  and error streams of the newly created process. This is
+  particularly useful in combination with <a class='ms reference' href='../../predef_3A_3A/Stdio/File/pipe.html'>Stdio.File.pipe</a>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"stdout"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code></code></td></tr>
+<tr><td><code><code class='key'>"stderr"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code></code></td></tr>
+<tr><td><code><code class='key'>"env"</code> : <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>)</code></td><td><p>This mapping will become the environment variables for the
+  created process. Normally you will want to only add or change
+  variables which can be achived by getting the environment mapping
+  for this process with <code class='reference unresolved'>getenv</code>. See the examples section.</p>
+</td></tr>
+<tr><td><code><code class='key'>"uid"</code> : <code class='datatype'>int</code>|<code class='datatype'>string</code></code></td><td><p>This parameter changes which user the new process will execute
+  as. Note that the current process must be running as UID 0 to use
+  this option. The uid can be given either as an integer as a
+  string containing the login name of that user.</p>
+<p>  The "gid" and "groups" for the new process will be set to the
+  right values for that user unless overriden by options below.</p>
+<p>  (See <code class='reference unresolved'>setuid</code> and <a class='ms reference' href='../../predef_3A_3A/getpwuid.html'>getpwuid</a> for more info.)</p>
+</td></tr>
+<tr><td><code><code class='key'>"gid"</code> : <code class='datatype'>int</code>|<code class='datatype'>string</code></code></td><td><p>This parameter changes the primary group for the new process.
+  When the new process creates files, they will will be created
+  with this group. The group can either be given as an int or a
+  string containing the name of the group. (See <code class='reference unresolved'>setuid</code>
+  and <a class='ms reference' href='../../predef_3A_3A/getgrgid.html'>getgrgid</a> for more info.)</p>
+</td></tr>
+<tr><td><code><code class='key'>"setsid"</code> : <code class='datatype'>bool</code>|<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code></code></td><td><p>Set this to <code class='expr'>1</code> to create a new session group.
+  It is also possible to set it to a File object, in which
+  case a new session group will be created with this file
+  as the controlling terminal.</p>
+</td></tr>
+<tr><td><code><code class='key'>"setgroups"</code> : <code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>string</code>)</code></td><td><p>This parameter allows you to the set the list of groups that the
+  new process belongs to. It is recommended that if you use this
+  parameter you supply at least one and no more than 16 groups.
+  (Some system only support up to 8...) The groups can be given as
+  gids or as strings with the group names.</p>
+</td></tr>
+<tr><td><code><code class='key'>"noinitgroups"</code> : <code class='datatype'>bool</code></code></td><td><p>This parameter overrides a behaviour of the "uid" parameter. If
+  this parameter is used, the gid and groups of the new process
+  will be inherited from the current process rather than changed to
+  the approperiate values for that uid.</p>
+</td></tr>
+<tr><td><code><code class='key'>"priority"</code> : <code class='datatype'>string</code></code></td><td><p>This sets the priority of the new process, see
+  <a class='ms reference' href='../../predef_3A_3A/Process/create_process/set_priority.html'>set_priority</a> for more info.</p>
+</td></tr>
+<tr><td><code><code class='key'>"nice"</code> : <code class='datatype'>int</code></code></td><td><p>This sets the nice level of the new process; the lower the
+  number, the higher the priority of the process. Note that only
+  UID 0 may use negative numbers.</p>
+</td></tr>
+<tr><td><code><code class='key'>"keep_signals"</code> : <code class='datatype'>bool</code></code></td><td><p>This prevents Pike from restoring all signal handlers to their
+  default values for the new process. Useful to ignore certain
+  signals in the new process.</p>
+</td></tr>
+<tr><td><code><code class='key'>"fds"</code> : <code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code>|<code class='datatype'>int(0..0)</code>)</code></td><td><p>This parameter allows you to map files to filedescriptors 3 and
+  up. The file <code class='expr'>fds[0]</code> will be remapped to fd 3 in the new
+  process, etc.</p>
+</td></tr>
+<tr><td><code><code class='key'>"rlimit"</code> : <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code>)</code></td><td><p>There are two values for each limit, the soft limit and the hard
+  limit. Processes that do not have UID 0 may not raise the hard
+  limit, and the soft limit may never be increased over the hard
+  limit. The indices of the mapping indicate what limit to impose,
+  and the values dictate what the limit should be. (See also
+  <a class='ms reference' href='../../predef_3A_3A/System/setrlimit.html'>System.setrlimit</a>)</p>
+<table class='box'><tr><td><code><code class='key'>"core"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum core file size in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"cpu"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum amount of cpu time used by the process in seconds</p>
+</td></tr>
+<tr><td><code><code class='key'>"data"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum heap (brk, malloc) size in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"fsize"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum size of files created by the process in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"map_mem"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum size of the process's mapped address space (mmap() and
+  heap size) in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"mem"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum size of the process's total amount of available memory
+  (mmap, heap and stack size) in bytes</p>
+</td></tr>
+<tr><td><code><code class='key'>"nofile"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum number of file descriptors the process may create</p>
+</td></tr>
+<tr><td><code><code class='key'>"stack"</code> : <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>limit_value</a></code></code></td><td><p>maximum stack size in bytes</p>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>Process.create_process(({ "/usr/bin/env" }),
+                        (["env" : getenv() + (["TERM":"vt100"]) ]));</p>
+</pre></dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>//! Spawn a new process with the args @[args] and optionally a
+ //! standard input if you provide such a @[Stdio.File] object.
+ //! @returns
+ //!   Returns the new process and a pipe from which you can read
+ //!   its output.
+ array(Process.Process|Stdio.File) spawn(Stdio.File|void stdin, string ... args)
+ {
+   Stdio.File stdout = Stdio.File();
+   mapping opts = ([ "stdout" : stdout-&gt;pipe() ]);
+   if( stdin )
+    opts-&gt;stdin = stdin;
+   return ({ Process.create_process( args, opts ), stdout });
+ }</p>
+</pre></dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>All parameters that accept both string or int input can be
+   noticeably slower using a string instead of an integer; if maximum
+   performance is an issue, please use integers.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>On NT the only supported modifiers are: <code class='expr'>"cwd"</code>,
+   <code class='expr'>"stdin"</code>, <code class='expr'>"stdout"</code>, <code class='expr'>"stderr"</code> and
+   <code class='expr'>"env"</code>. All other modifiers are silently ignored.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Support for <code class='expr'>"callback"</code> was added in Pike 7.7.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Chroot changing directory to <code class='expr'>"/"</code> was added in Pike 7.9.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Process/create_process.html","name":"create_process"};</script>
+<script src='../../../ex/predef_3A_3A/Process/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Process/create_process/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

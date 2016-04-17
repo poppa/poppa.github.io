@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;`%()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/yuv_to_rgb.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;yuv_to_rgb()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/_backtick_26.html" class="next">Image.Image()-&gt;`&amp;() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;`%()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>`%</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;/&#32;<code class='class'>operand</code></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;/&#32;<code class='class'>color</code></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;/&#32;<code class='class'>value</code></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;%&#32;<code class='class'>operand</code></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;%&#32;<code class='class'>color</code></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> res = <code class='class'>Image.Image()</code>&#32;%&#32;<code class='class'>value</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Divides pixel values and creates a new image from the result or
+the rest.</p>
+</dd>
+<dt class='head--doc'><span id='p-operand'></span>Parameter <code class='parameter'>operand</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>the other image to divide with;
+the images must have the same size.</p></dd>
+<dt class='head--doc'><span id='p-color'></span>Parameter <code class='parameter'>color</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-value'></span>Parameter <code class='parameter'>value</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>if specified as color or value, it will act as a whole
+image of that color (or value).</p>
+
+<p></p></dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new image object</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>It isn't possible to do a modulo 256 either. (why?)</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'>
+<p><a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_2D.html'>`-</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_add.html'>`+</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_7C.html'>`|</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_26.html'>`&amp;amp;</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/_backtick_2A.html'>`*</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Layer.html'>Image.Layer</a></p></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/_backtick_25.html","name":"`%"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

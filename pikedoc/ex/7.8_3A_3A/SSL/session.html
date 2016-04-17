@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.session</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/7.8_3A_3A.html'><b class='head'>7.8::</b></a>
+<a href='../../../ex/7.8_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<b class='selected head'>SSL.session</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/7.8_3A_3A/SSL/session/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/7.8_3A_3A/SSL/packet/send.html" class="prev"><span>&#10148;</span> SSL.packet()-&gt;send()</a>
+              <a href="../../../ex/7.8_3A_3A/SSL/session/generate_keys.html" class="next">SSL.session()-&gt;generate_keys() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class SSL.session</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The most important information in a session object is a
+ choice of encryption algorithms and a "master secret" created by
+ keyexchange with a client. Each connection can either do a full key
+ exchange to established a new session, or reuse a previously
+ established session. That is why we have the session abstraction and
+ the session cache. Each session is used by one or more connections, in
+ sequence or simultaneously.</p>
+<p> It is also possible to change to a new session in the middle of a
+ connection.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cert_data</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> SSL.session.<b><span class='variable'>cert_data</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>information about the certificate in use by the peer, such as issuing authority, and verification status.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>certificate_chain</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string</code>) SSL.session.<b><span class='variable'>certificate_chain</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>our certificate chain</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cipher_spec</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../7.8_3A_3A/SSL/Cipher/CipherSpec.html'>.Cipher.CipherSpec</a></code> SSL.session.<b><span class='variable'>cipher_spec</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Information about the encryption method derived from the
+ cipher_suite.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cipher_suite</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.session.<b><span class='variable'>cipher_suite</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Constant defining a choice of keyexchange, encryption and mac
+ algorithm.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>compression_algorithm</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.session.<b><span class='variable'>compression_algorithm</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Always COMPRESSION_null.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>dsa</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../7.8_3A_3A/Crypto/DSA.html'>Crypto.DSA</a></code> SSL.session.<b><span class='variable'>dsa</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The server's dsa private key</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>identity</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> SSL.session.<b><span class='variable'>identity</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Identifies the session to the server</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ke_method</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SSL.session.<b><span class='variable'>ke_method</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Key exchange method, also derived from the cipher_suite.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>master_secret</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> SSL.session.<b><span class='variable'>master_secret</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>48 byte secret shared between the client and the server. Used for
+ deriving the actual keys.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>peer_certificate_chain</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string</code>) SSL.session.<b><span class='variable'>peer_certificate_chain</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>the peer certificate chain</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rsa</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../7.8_3A_3A/Crypto/RSA.html'>Crypto.RSA</a></code> SSL.session.<b><span class='variable'>rsa</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The server's private key</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/7.8_3A_3A/SSL/session.html","name":"session"};</script>
+<script src='../../../ex/7.8_3A_3A/SSL/index.js'></script>
+<script src='../../../ex/7.8_3A_3A/SSL/session/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

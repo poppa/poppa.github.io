@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Mysql.SqlTable()-&gt;update()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql.html'><b class='head'>Mysql</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql/SqlTable.html'><b class='head'>Mysql.SqlTable</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Mysql/SqlTable/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Mysql/SqlTable/select1.html" class="prev"><span>&#10148;</span> Mysql.SqlTable()-&gt;select1()</a>
+              <a href="../../../../ex/predef_3A_3A/Mysql/mysql.html" class="next">Mysql.mysql <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Mysql.SqlTable()-&gt;update()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>update</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>update</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>record</code>, <code class='datatype'>void</code>|<code class='datatype'>int(0..2)</code> <code class='argument'>clear_other_fields</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Updates an existing record. This requires a primary key and that
+ <code class='reference paramref'>record</code> contains values for all primary key columns. If
+ <code class='reference paramref'>record</code> doesn't correspond to any existing record then nothing
+ happens.</p>
+<p> Updating a record normally means that all fields in <code class='reference paramref'>record</code>
+ override those stored in the table row, while all other fields
+ keep their values.</p>
+<p> It's the same for properties (i.e. fields that don't correspond to
+ columns) which are stored in the <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable.html'>prop_col</a> column. If that
+ column needs to be updated then by default the old value is
+ fetched first, which means the update isn't atomic in that case. A
+ property can be removed altogether by giving it the value
+ <a class='ms reference' href='../../../predef_3A_3A/Val.html'>Val.null</a> in <code class='reference paramref'>record</code>.</p>
+<p> If <code class='reference paramref'>clear_other_fields</code> is 1 then all old properties are replaced
+ by the new ones instead of merged with them, which avoids the
+ extra fetch. If <code class='reference paramref'>clear_other_fields</code> is 2 then additionally all
+ unmentioned columns are reset to their default values.</p>
+<p> For more details about the <code class='reference paramref'>record</code> mapping, see <a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable/insert.html'>insert</a>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Mysql/SqlTable/insert_or_update.html'>insert_or_update</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Mysql/SqlTable/update.html","name":"update"};</script>
+<script src='../../../../ex/predef_3A_3A/Mysql/SqlTable/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Mysql/SqlTable/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

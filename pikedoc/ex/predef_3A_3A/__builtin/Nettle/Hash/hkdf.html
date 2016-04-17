@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - __builtin.Nettle.Hash()-&gt;hkdf()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/__builtin.html'><b class='head'>__builtin</b></a>
+<a href='../../../../../ex/predef_3A_3A/__builtin/Nettle.html'><b class='head'>__builtin.Nettle</b></a>
+<a href='../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash.html'><b class='head'>__builtin.Nettle.Hash</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash/hash.html" class="prev"><span>&#10148;</span> __builtin.Nettle.Hash()-&gt;hash()</a>
+              <a href="../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash/hotp.html" class="next">__builtin.Nettle.Hash()-&gt;hotp() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method __builtin.Nettle.Hash()-&gt;hkdf()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>hkdf</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> <b><span class='method'>hkdf</span>(</b><code class='datatype'>string</code> <code class='argument'>password</code>, <code class='datatype'>string</code> <code class='argument'>salt</code>, <code class='datatype'>string</code> <code class='argument'>info</code>, <code class='datatype'>int</code> <code class='argument'>bytes</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>HMAC-based Extract-and-Expand Key Derivation Function, HKDF,
+ <b><a href='http://pike.lysator.liu.se/rfc5869.xml'>RFC 5869</a></b>. This is very similar to <a class='ms reference' href='../../../../predef_3A_3A/__builtin/Nettle/Hash/pbkdf2.html'>pbkdf2</a>, with a few
+ important differences. HKDF can use an "info" string that binds a
+ generated password to a specific use or application (e.g. port
+ number or cipher suite). It does not however support multiple
+ rounds of hashing to add computational cost to brute force
+ attacks.</p>
+</dd>
+<dt class='head--doc'><span id='p-password'></span>Parameter <code class='parameter'>password</code></dt>
+<dd></dd><dd class='body--doc'><p>Password for the keygenerator.</p>
+</dd>
+<dt class='head--doc'><span id='p-salt'></span>Parameter <code class='parameter'>salt</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-info'></span>Parameter <code class='parameter'>info</code></dt>
+<dd></dd><dd class='body--doc'><p>Both the salt and info arguments are optional for the function
+   and can either be 0.</p>
+</dd>
+<dt class='head--doc'><span id='p-bytes'></span>Parameter <code class='parameter'>bytes</code></dt>
+<dd></dd><dd class='body--doc'><p>The number of bytes of output.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the derived key.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/__builtin/Nettle/Hash/pbkdf2.html'>pbkdf2()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/__builtin/Nettle/Hash/hkdf.html","name":"hkdf"};</script>
+<script src='../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/__builtin/Nettle/Hash/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

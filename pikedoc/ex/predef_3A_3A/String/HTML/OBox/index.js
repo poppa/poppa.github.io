@@ -1,0 +1,5 @@
+// Class path String.HTML.OBox
+PikeDoc.registerSymbol('String.HTML.OBox', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/String/HTML/OBox/add_cell.html","name":"add_cell"},{"link":"ex/predef_3A_3A/String/HTML/OBox/add_raw_cell.html","name":"add_raw_cell"},{"link":"ex/predef_3A_3A/String/HTML/OBox/add_row.html","name":"add_row"},{"link":"ex/predef_3A_3A/String/HTML/OBox/add_tagdata_cell.html","name":"add_tagdata_cell"},{"link":"ex/predef_3A_3A/String/HTML/OBox/create.html","name":"create"},{"link":"ex/predef_3A_3A/String/HTML/OBox/new_row.html","name":"new_row"},{"link":"ex/predef_3A_3A/String/HTML/OBox/pad_rows.html","name":"pad_rows"},{"link":"ex/predef_3A_3A/String/HTML/OBox/render.html","name":"render"},{"link":"ex/predef_3A_3A/String/HTML/OBox/set_cell_callback.html","name":"set_cell_callback"},{"link":"ex/predef_3A_3A/String/HTML/OBox/set_extra_args.html","name":"set_extra_args"}])
+.addChildren('operator', [{"link":"ex/predef_3A_3A/String/HTML/OBox/cast.html","name":"cast"}])
+.finish();

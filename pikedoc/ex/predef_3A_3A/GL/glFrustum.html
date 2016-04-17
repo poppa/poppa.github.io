@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glFrustum()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glFrontFace.html" class="prev"><span>&#10148;</span> GL.glFrontFace()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glGenLists.html" class="next">GL.glGenLists() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glFrustum()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glFrustum</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glFrustum</span>(</b><code class='datatype'>float</code> <code class='argument'>left</code>, <code class='datatype'>float</code> <code class='argument'>right</code>, <code class='datatype'>float</code> <code class='argument'>bottom</code>, <code class='datatype'>float</code> <code class='argument'>top</code>, <code class='datatype'>float</code> <code class='argument'>zNear</code>, <code class='datatype'>float</code> <code class='argument'>zFar</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glFrustum.html'>glFrustum</a> describes a perspective matrix that produces a perspective projection.
+The current matrix (see <a class='ms reference' href='../../predef_3A_3A/GL/glMatrixMode.html'>glMatrixMode</a>) is multiplied by this matrix
+and the result replaces the current matrix, as if
+<a class='ms reference' href='../../predef_3A_3A/GL/glMultMatrix.html'>glMultMatrix</a> were called with the following matrix
+as its argument:</p>
+<p>.sp 5
+.ce
+.EQ
+down 130 {left ( ~~ matrix {
+   ccol { {{2 ~ "zNear"} over {"right" - "left"}} above 0 above 0 above 0 }
+   ccol { 0 above {{2 ~ "zNear"} over {"top" - "bottom"}} ~ above 0 above 0 }
+   ccol { A ~~~~ above B ~~~~ above C ~~~~ above -1 ~~~~}
+   ccol { 0 above 0 above D above 0}
+}  ~~~ right )}
+.EN
+.sp
+.ce
+.EQ
+down 130
+{A ~=~ {"right" + "left"} over {"right" - "left"}}
+.EN
+.sp
+.ce
+.EQ
+down 130
+{B ~=~ {"top" + "bottom"} over {"top" - "bottom"}}
+.EN
+.sp
+.ce
+.EQ
+down 130
+{C ~=~ -{{"zFar" + "zNear"} over {"zFar" - "zNear"}}}
+.EN
+.sp
+.ce
+.EQ
+down 130
+{D ~=~ -{{2 ~ "zFar" ~ "zNear"} over {"zFar" - "zNear"}}}
+.EN
+.sp</p>
+<p>Typically, the matrix mode is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_PROJECTION</a>, and
+(<i>left</i>, <i>bottom</i>, -<i>zNear</i>) and (<i>right</i>, <i>top</i>,  -<i>zNear</i>)
+specify the points on the near clipping plane that are mapped
+to the lower left and upper right corners of the window,
+assuming that the eye is located at (0, 0, 0).
+-<i>zFar</i> specifies the location of the far clipping plane.
+Both <i>zNear</i> and <i>zFar</i> must be positive.</p>
+<p>Use <a class='ms reference' href='../../predef_3A_3A/GL/glPushMatrix.html'>glPushMatrix</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glPopMatrix.html'>glPopMatrix</a> to save and restore
+the current matrix stack.</p>
+</dd>
+<dt class='head--doc'><span id='p-left'></span>Parameter <code class='parameter'>left</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify the coordinates for the left and right vertical clipping planes.</p>
+</dd>
+<dt class='head--doc'><span id='p-bottom'></span>Parameter <code class='parameter'>bottom</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify the coordinates for the bottom and top horizontal clipping planes.</p>
+</dd>
+<dt class='head--doc'><span id='p-zNear'></span>Parameter <code class='parameter'>zNear</code></dt>
+<dd></dd><dd class='body--doc'><p>Specify the distances to the near and far depth clipping planes.
+Both distances must be positive.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if <i>zNear</i> or <i>zFar</i> is not positive.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glFrustum.html'>glFrustum</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glFrustum.html","name":"glFrustum"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

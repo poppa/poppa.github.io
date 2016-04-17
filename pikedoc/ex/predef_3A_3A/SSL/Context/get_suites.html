@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.Context()-&gt;get_suites()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<a href='../../../../ex/predef_3A_3A/SSL/Context.html'><b class='head'>SSL.Context</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/SSL/Context/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/SSL/Context/get_signature_algorithms.html" class="prev"><span>&#10148;</span> SSL.Context()-&gt;get_signature_algorithms()</a>
+              <a href="../../../../ex/predef_3A_3A/SSL/Context/get_trusted_issuers.html" class="next">SSL.Context()-&gt;get_trusted_issuers() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method SSL.Context()-&gt;get_suites()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>get_suites</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>int</code>) <b><span class='method'>get_suites</span>(</b><code class='datatype'>int(-1..)</code>|<code class='datatype'>void</code> <code class='argument'>min_keylength</code>, <code class='datatype'>int(0..2)</code>|<code class='datatype'>void</code> <code class='argument'>ke_mode</code>, <code class='datatype'>multiset</code>(<code class='datatype'>int</code>)|<code class='datatype'>void</code> <code class='argument'>blacklisted_ciphers</code>, <code class='datatype'>multiset</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/KeyExchangeType.html'>KeyExchangeType</a></code>)|<code class='datatype'>void</code> <code class='argument'>blacklisted_kes</code>, <code class='datatype'>multiset</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/HashAlgorithm.html'>HashAlgorithm</a></code>)|<code class='datatype'>void</code> <code class='argument'>blacklisted_hashes</code>, <code class='datatype'>multiset</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/SSL/Constants/CipherModes.html'>CipherModes</a></code>)|<code class='datatype'>void</code> <code class='argument'>blacklisted_ciphermodes</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Get the prioritized list of supported cipher suites
+ that satisfy the requirements.</p>
+</dd>
+<dt class='head--doc'><span id='p-min_keylength'></span>Parameter <code class='parameter'>min_keylength</code></dt>
+<dd></dd><dd class='body--doc'><p>Minimum supported effective keylength in bits. Defaults to <code class='expr'>128</code>.
+   Specify <code class='expr'>-1</code> to enable null ciphers.</p>
+</dd>
+<dt class='head--doc'><span id='p-ke_mode'></span>Parameter <code class='parameter'>ke_mode</code></dt>
+<dd></dd><dd class='body--doc'><p>Level of protection for the key exchange.</p>
+<table class='box'><tr><td><code><code class='key'>0</code></code></td><td><p>Require forward secrecy (ephemeral keys).</p>
+</td></tr>
+<tr><td><code><code class='key'>1</code></code></td><td><p>Also allow certificate based key exchanges.</p>
+</td></tr>
+<tr><td><code><code class='key'>2</code></code></td><td><p>Also allow anonymous server key exchange. Note that this
+       allows for man in the middle attacks.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-blacklisted_ciphers'></span>Parameter <code class='parameter'>blacklisted_ciphers</code></dt>
+<dd></dd><dd class='body--doc'><p>Multiset of ciphers that are NOT to be used. By default RC4, DES
+   and export ciphers are blacklisted. An empty multiset needs to
+   be given to unlock these.</p>
+</dd>
+<dt class='head--doc'><span id='p-blacklisted_kes'></span>Parameter <code class='parameter'>blacklisted_kes</code></dt>
+<dd></dd><dd class='body--doc'><p>Multiset of key exchange methods that are NOT to be used.</p>
+</dd>
+<dt class='head--doc'><span id='p-blacklisted_hashes'></span>Parameter <code class='parameter'>blacklisted_hashes</code></dt>
+<dd></dd><dd class='body--doc'><p>Multiset of hash algoriths that are NOT to be used.</p>
+</dd>
+<dt class='head--doc'><span id='p-blacklisted_ciphermodes'></span>Parameter <code class='parameter'>blacklisted_ciphermodes</code></dt>
+<dd></dd><dd class='body--doc'><p>Multiset of cipher modes that are NOT to be used.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The list of suites is also filtered on the current settings of
+   <a class='ms reference' href='../../../predef_3A_3A/SSL/Context.html'>min_version</a> and <a class='ms reference' href='../../../predef_3A_3A/SSL/Context.html'>max_version</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that the effective keylength may differ from
+   the actual keylength for old ciphers where there
+   are known attacks.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/SSL/Context/get_suites.html","name":"get_suites"};</script>
+<script src='../../../../ex/predef_3A_3A/SSL/Context/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/SSL/Context/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - lfun::create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<a href='../../ex/lfun_3A_3A.html'><b class='head'>lfun::</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/lfun_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/lfun_3A_3A/_types.html" class="prev"><span>&#10148;</span> lfun::_types()</a>
+              <a href="../../ex/lfun_3A_3A/destroy.html" class="next">lfun::destroy() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method lfun::create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> lfun:<b><span class='method'>create</span>(</b><code class='datatype'>zero</code> ...  <code class='argument'>args</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Object creation callback.</p>
+<p>   This function is called right after <a class='ms reference' href='../lfun_3A_3A/__INIT.html'>lfun::__INIT()</a>.</p>
+<p>   <code class='reference paramref'>args</code> are the arguments passed when the program was called.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This function can be created implicitly
+   by the compiler using the syntax:</p>
+<pre><code><span class='type'>class</span> Foo<span class='delim'>(</span><span class='type'>int</span> foo<span class='delim'>)</span> <span class='delim'>{</span>
+  <span class='type'>int</span> bar<span class='delim'>;</span>
+<span class='delim'>}</span>
+</code></pre><p>In the above case an implicit <a class='ms reference' href='../lfun_3A_3A/create.html'>lfun::create()</a> is created, and
+   it's equvivalent to:</p>
+<pre><code><span class='type'>class</span> Foo <span class='delim'>{</span>
+  <span class='type'>int</span> foo<span class='delim'>;</span>
+  <span class='type'>int</span> bar<span class='delim'>;</span>
+  <span class='mod'>protected</span> <span class='type'>void</span> create<span class='delim'>(</span><span class='type'>int</span> foo<span class='delim'>)</span>
+  <span class='delim'>{</span>
+    <span class='mod'>local</span>::foo <span class='delim'>=</span> foo<span class='delim'>;</span>
+  <span class='delim'>}</span>
+<span class='delim'>}</span>
+</code></pre>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../lfun_3A_3A/__INIT.html'>lfun::__INIT()</a>, <a class='ms reference' href='../lfun_3A_3A/destroy.html'>lfun::destroy()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/lfun_3A_3A/create.html","name":"create"};</script>
+<script src='../../ex/lfun_3A_3A/index.js'></script>
+<script src='../../ex/lfun_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

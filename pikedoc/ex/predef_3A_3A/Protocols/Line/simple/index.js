@@ -1,0 +1,4 @@
+// Class path Protocols.Line.simple
+PikeDoc.registerSymbol('Protocols.Line.simple', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/Line/simple/close_callback.html","name":"close_callback"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/create.html","name":"create"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/disconnect.html","name":"disconnect"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/do_timeout.html","name":"do_timeout"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/handle_command.html","name":"handle_command"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/read_callback.html","name":"read_callback"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/read_line.html","name":"read_line"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/send.html","name":"send"},{"link":"ex/predef_3A_3A/Protocols/Line/simple/touch_time.html","name":"touch_time"}])
+.finish();

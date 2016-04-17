@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.sslfile()-&gt;close()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/7.8_3A_3A.html'><b class='head'>7.8::</b></a>
+<a href='../../../../ex/7.8_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<a href='../../../../ex/7.8_3A_3A/SSL/sslfile.html'><b class='head'>SSL.sslfile</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/7.8_3A_3A/SSL/sslfile/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/7.8_3A_3A/SSL/sslfile.html" class="prev"><span>&#10148;</span> SSL.sslfile</a>
+              <a href="../../../../ex/7.8_3A_3A/SSL/sslfile/create.html" class="next">SSL.sslfile()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method SSL.sslfile()-&gt;close()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>close</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>close</span>(</b><code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>how</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>clean_close</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>dont_throw</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Close the connection. Both the read and write ends are always
+ closed</p>
+</dd>
+<dt class='head--doc'><span id='p-how'></span>Parameter <code class='parameter'>how</code></dt>
+<dd></dd><dd class='body--doc'><p>This argument is only for <a class='ms reference' href='../../../7.8_3A_3A/Stdio/File.html'>Stdio.File</a> compatibility
+   and must be either <code class='expr'>"rw"</code> or <code class='expr'>0</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-clean_close'></span>Parameter <code class='parameter'>clean_close</code></dt>
+<dd></dd><dd class='body--doc'><p>If set then close messages are exchanged to shut down
+   the SSL connection but not the underlying stream. It may then
+   continue to be used for other communication afterwards. The
+   default is to send a close message and then close the stream
+   without waiting for a response.</p>
+</dd>
+<dt class='head--doc'><span id='p-dont_throw'></span>Parameter <code class='parameter'>dont_throw</code></dt>
+<dd></dd><dd class='body--doc'><p>I/O errors are normally thrown, but that can be turned off with
+   <code class='reference paramref'>dont_throw</code>. In that case <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/errno.html'>errno</a> is set instead and <code class='expr'>0</code> is
+   returned. <code class='expr'>1</code> is always returned otherwise. It's not an error to
+   close an already closed connection.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If a clean close is requested in nonblocking mode then the stream
+ is most likely not closed right away, and the backend is then
+ still needed for a while afterwards to exchange the close packets.
+ <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/is_open.html'>is_open</a> returns 2 in that time window.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>I/O errors from both reading and writing might occur in blocking
+ mode.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If a clean close is requested and data following the close message
+ is received at the same time, then this object will read it and
+ has no way to undo that. That data can be retrieved with <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/read.html'>read</a>
+ afterwards.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/shutdown.html'>shutdown</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/7.8_3A_3A/SSL/sslfile/close.html","name":"close"};</script>
+<script src='../../../../ex/7.8_3A_3A/SSL/sslfile/index.js'></script>
+<script src='../../../../ex/7.8_3A_3A/SSL/sslfile/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+// Class path Sql.sqlite
+PikeDoc.registerSymbol('Sql.sqlite', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Sql/sqlite/ResObj.html","name":"ResObj"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Sql/sqlite/big_query.html","name":"big_query"},{"link":"ex/predef_3A_3A/Sql/sqlite/changes.html","name":"changes"},{"link":"ex/predef_3A_3A/Sql/sqlite/create.html","name":"create"},{"link":"ex/predef_3A_3A/Sql/sqlite/create_db.html","name":"create_db"},{"link":"ex/predef_3A_3A/Sql/sqlite/drop_db.html","name":"drop_db"},{"link":"ex/predef_3A_3A/Sql/sqlite/error.html","name":"error"},{"link":"ex/predef_3A_3A/Sql/sqlite/insert_id.html","name":"insert_id"},{"link":"ex/predef_3A_3A/Sql/sqlite/interrupt.html","name":"interrupt"},{"link":"ex/predef_3A_3A/Sql/sqlite/list_dbs.html","name":"list_dbs"},{"link":"ex/predef_3A_3A/Sql/sqlite/query.html","name":"query"},{"link":"ex/predef_3A_3A/Sql/sqlite/select_db.html","name":"select_db"},{"link":"ex/predef_3A_3A/Sql/sqlite/server_info.html","name":"server_info"},{"link":"ex/predef_3A_3A/Sql/sqlite/total_changes.html","name":"total_changes"}])
+.finish();

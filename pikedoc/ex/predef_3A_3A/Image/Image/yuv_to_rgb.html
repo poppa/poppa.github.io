@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;yuv_to_rgb()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/ysize.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;ysize()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/_backtick_25.html" class="next">Image.Image()-&gt;`%() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;yuv_to_rgb()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>yuv_to_rgb</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>rgb_to_yuv</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>yuv_to_rgb</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Converts RGB data to YUV (YCrCb) data, or the other way around.
+When converting to YUV, the resulting data is stored like this:
+ pixel.r = v (cr); pixel.g = y; pixel.b = u (cb);</p>
+
+<p>When converting to RGB, the input data is asumed to be placed in
+the pixels as above.</p>
+
+<p> <table><tr valign='center'>
+ <td><img height='115' src='../../../../images/predef.Image.Image.rgb_to_yuv.1.png' width='80' /></td>
+ <td><img height='115' src='../../../../images/predef.Image.Image.rgb_to_yuv.2.png' width='80' /></td>
+ <td><img height='115' src='../../../../images/predef.Image.Image.rgb_to_yuv.3.png' width='80' /></td>
+ </tr><tr valign='center'>
+ <td>original</td>
+ <td>-&gt;yuv_to_rgb();</td>
+ <td>-&gt;rgb_to_yuv();</td>
+ </tr><tr valign='center'>
+ <td><img height='67' src='../../../../images/predef.Image.Image.rgb_to_yuv.4.png' width='67' /></td>
+ <td><img height='67' src='../../../../images/predef.Image.Image.rgb_to_yuv.5.png' width='67' /></td>
+ <td><img height='67' src='../../../../images/predef.Image.Image.rgb_to_yuv.6.png' width='67' /></td>
+ </tr><tr valign='center'>
+ <td>tuned box (below)</td>
+ <td>the rainbow (below)</td>
+ <td>same, but rgb_to_yuv()</td>
+ </tr></table></p>
+
+<p>
+RGB to YUB calculation (this follows CCIR.601):
+<pre>
+in = input pixel
+out = destination pixel
+Ey = 0.299*in.r+0.587*in.g+0.114*in.b
+Ecr = 0.713*(in.r - Ey) = 0.500*in.r-0.419*in.g-0.081*in.b
+Ecb = 0.564*(in.b - Ey) = -0.169*in.r-0.331*in.g+0.500*in.b
+out.r=0.875*Ecr+128
+out.g=0.86*Ey+16
+out.b=0.875*Ecb+128
+</pre></p>
+
+<p> Example: Nice rainbow.
+ <pre>
+ object i = Image.Image(200,200);
+ i = i-&gt;tuned_box(0,0, 200,200,
+                  ({ ({ 255,255,128 }), ({ 0,255,128 }),
+                     ({ 255,255,255 }), ({ 0,255,255 })}))
+      -&gt;yuv_to_rgb();
+ </pre></p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new image object</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/yuv_to_rgb.html","name":"yuv_to_rgb"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

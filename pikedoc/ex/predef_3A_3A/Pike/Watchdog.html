@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Pike.Watchdog</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Pike.html'><b class='head'>Pike</b></a>
+<b class='selected head'>Pike.Watchdog</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Pike/Watchdog/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Pike/SelectBackend/_backtick_28_29.html" class="prev"><span>&#10148;</span> Pike.SelectBackend()-&gt;`()()</a>
+              <a href="../../../ex/predef_3A_3A/Pike/Watchdog/add_debug.html" class="next">Pike.Watchdog()-&gt;add_debug() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Pike.Watchdog</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>A Watchdog that ensures that the process is not hung for an
+ extended period of time. The definition of 'hung' is: Has not used
+ the default backend.</p>
+<p> An important and useful side-effect of this class is that the
+ process will start to respond to kill -QUIT by printing a lot of
+ debug information to stderr, including memory usage, and if pike
+ is compiled with profiling, the CPU used since the last time kill
+ -QUIT was called.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Pike.Watchdog</span> <span class='class'>Pike.Watchdog</span><b>(</b><code class='datatype'>int</code> <code class='argument'>t</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a new watchdog, with the intended delay.</p>
+<p> Even though the actual watchdog functionality is currently not
+ available on systems without sigalarm, such as Windows, the
+ functionality can still be triggered by adding probe functions</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Pike/Watchdog/add_probe.html'>add_probe()</a> and <a class='ms reference' href='../../predef_3A_3A/Pike/Watchdog/set_delay.html'>set_delay()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Pike/Watchdog.html","name":"Watchdog"};</script>
+<script src='../../../ex/predef_3A_3A/Pike/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Pike/Watchdog/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

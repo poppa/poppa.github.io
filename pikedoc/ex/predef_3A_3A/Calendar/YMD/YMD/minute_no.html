@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Calendar.YMD.YMD()-&gt;minute_no()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar.html'><b class='head'>Calendar</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar/YMD.html'><b class='head'>Calendar.YMD</b></a>
+<a href='../../../../../ex/predef_3A_3A/Calendar/YMD/YMD.html'><b class='head'>Calendar.YMD.YMD</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Calendar/YMD/YMD/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Calendar/YMD/YMD/minute.html" class="prev"><span>&#10148;</span> Calendar.YMD.YMD()-&gt;minute()</a>
+              <a href="../../../../../ex/predef_3A_3A/Calendar/YMD/YMD/minutes.html" class="next">Calendar.YMD.YMD()-&gt;minutes() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Calendar.YMD.YMD()-&gt;minute_no()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>minute_no</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>float </code></code> <b><span class='method'>fraction_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>hour_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>julian_day</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>leap_year</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>minute_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>month_day</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>month_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>second_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>utc_offset</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>week_day</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>week_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>year_day</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>year_no</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>month_name</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>month_shortname</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>month_day_name</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>week_day_name</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>week_day_shortname</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>week_name</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>year_name</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>tzname</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>tzname_iso</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>int </code></code> <b><span class='method'>unix_time</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Returns the unix time integer corresponding to the start
+of the time range object. (An unix time integer is UTC.)</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Calendar/YMD/YMD/minute_no.html","name":"minute_no"};</script>
+<script src='../../../../../ex/predef_3A_3A/Calendar/YMD/YMD/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Calendar/YMD/YMD/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Pike.low_check_call()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Pike.html'><b class='head'>Pike</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Pike/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Pike/implicit_gc_real_time.html" class="prev"><span>&#10148;</span> Pike.implicit_gc_real_time()</a>
+              <a href="../../../ex/predef_3A_3A/Pike/soft_cast.html" class="next">Pike.soft_cast() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Pike.low_check_call()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>low_check_call</b></span>
+</dt>
+<dd><p><code><code class='type'>type</code> <b><span class='method'>low_check_call</span>(</b><code class='type'>type</code> <code class='argument'>fun_type</code>, <code class='type'>type</code> <code class='argument'>arg_type</code><b>)</b></code><br>
+<code><code class='type'>type</code> <b><span class='method'>low_check_call</span>(</b><code class='type'>type</code> <code class='argument'>fun_type</code>, <code class='type'>type</code> <code class='argument'>arg_type</code>, <code class='datatype'>int</code> <code class='argument'>flags</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Check whether a function of type <code class='reference paramref'>fun_type</code> may be called
+   with a first argument of type <code class='reference paramref'>arg_type</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-flags'></span>Parameter <code class='parameter'>flags</code></dt>
+<dd></dd><dd class='body--doc'><p>The following flags are currently defined:</p>
+<table class='box'><tr><td><code><code class='key'>1</code></code></td><td><p>Strict types. Fail if not all possible values in <code class='reference paramref'>arg_type</code>
+       are valid as the first argument to <code class='reference paramref'>fun_type</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>2</code></code></td><td><p>Last argument. <code class='reference paramref'>arg_type</code> is the last argument to <code class='reference paramref'>fun_type</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>3</code></code></td><td><p>Both strict types and last argument as above.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns a continuation type on success.</p>
+<p>   Returns <tt>0</tt> (zero) on failure.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Pike/low_check_call.html","name":"low_check_call"};</script>
+<script src='../../../ex/predef_3A_3A/Pike/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Pike/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

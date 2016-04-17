@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glEvalCoord()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glEndList.html" class="prev"><span>&#10148;</span> GL.glEndList()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glEvalPoint.html" class="next">GL.glEvalPoint() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glEvalCoord()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glEvalCoord</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glEvalCoord</span>(</b><code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>float</code>|<code class='datatype'>int</code>) <code class='argument'>u</code>, <code class='datatype'>float</code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>v</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> evaluates enabled one-dimensional maps at argument
+<code class='reference paramref'>u</code> or two-dimensional maps using two domain values,
+<code class='reference paramref'>u</code> and <code class='reference paramref'>v</code>.
+To define a map, call <code class='reference unresolved'>glMap1</code> and <code class='reference unresolved'>glMap2</code>; to enable and
+disable it, call <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a>.</p>
+<p>When one of the <a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> commands is issued,
+all currently enabled maps of the indicated dimension are evaluated.
+Then,
+for each enabled map,
+it is as if the corresponding GL command had been issued with the
+computed value.
+That is,
+if <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_INDEX</a> or
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_INDEX</a> is enabled,
+a <a class='ms reference' href='../../predef_3A_3A/GL/glIndex.html'>glIndex</a> command is simulated.
+If <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_COLOR_4</a> or
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_COLOR_4</a> is enabled,
+a <a class='ms reference' href='../../predef_3A_3A/GL/glColor.html'>glColor</a> command is simulated.
+If <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_NORMAL</a> or <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_NORMAL</a> is enabled,
+a normal vector is produced,
+and if any of
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_TEXTURE_COORD_1</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_TEXTURE_COORD_2</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_TEXTURE_COORD_3</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_TEXTURE_COORD_4</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_1</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_2</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_3</a>, or
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_4</a> is enabled, then an appropriate <a class='ms reference' href='../../predef_3A_3A/GL/glTexCoord.html'>glTexCoord</a> command is simulated.</p>
+<p>For color,
+color index,
+normal,
+and texture coordinates the GL uses evaluated values instead of current values for those evaluations
+that are enabled,
+and current values otherwise,
+However,
+the evaluated values do not update the current values.
+Thus, if <a class='ms reference' href='../../predef_3A_3A/GL/glVertex.html'>glVertex</a> commands are interspersed with <a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a>
+commands, the color,
+normal,
+and texture coordinates associated with the <a class='ms reference' href='../../predef_3A_3A/GL/glVertex.html'>glVertex</a> commands are not
+affected by the values generated by the <a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> commands,
+but only by the most recent
+<a class='ms reference' href='../../predef_3A_3A/GL/glColor.html'>glColor</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL/glIndex.html'>glIndex</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL/glNormal.html'>glNormal</a>, and
+<a class='ms reference' href='../../predef_3A_3A/GL/glTexCoord.html'>glTexCoord</a> commands.</p>
+<p>No commands are issued for maps that are not enabled.
+If more than one texture evaluation is enabled for a particular dimension
+(for example, <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_1</a> and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_2</a>),
+then only the evaluation of the map that produces the larger
+number of coordinates
+(in this case, <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_TEXTURE_COORD_2</a>)
+is carried out.
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_VERTEX_4</a> overrides <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP1_VERTEX_3</a>,
+and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_VERTEX_4</a> overrides <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_VERTEX_3</a>,
+in the same manner.
+If neither a three- nor a four-component vertex map is enabled for the
+specified dimension,
+the <a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> command is ignored.</p>
+<p>If you have enabled automatic normal generation,
+by calling <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a> with argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_AUTO_NORMAL</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> generates surface normals analytically,
+regardless of the contents or enabling of the <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_NORMAL</a> map.
+Let
+.sp
+.nf
+    Pp   Pp
+m = -- X --
+    Pu   Pv
+.sp
+.fi</p>
+<p>Then the generated normal  n  is</p>
+<p>n = m over ~ over { ||  m || }</p>
+<p>.sp</p>
+<p>If automatic normal generation is disabled,
+the corresponding normal map <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAP2_NORMAL</a>,
+if enabled,
+is used to produce a normal.
+If neither automatic normal generation nor a normal map is enabled,
+no normal is generated for
+<a class='ms reference' href='../../predef_3A_3A/GL/glEvalCoord.html'>glEvalCoord</a> commands.</p>
+</dd>
+<dt class='head--doc'><span id='p-u'></span>Parameter <code class='parameter'>u</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a value that is the domain coordinate u to the basis function
+defined in a previous <code class='reference unresolved'>glMap1</code> or <code class='reference unresolved'>glMap2</code> command.</p>
+</dd>
+<dt class='head--doc'><span id='p-v'></span>Parameter <code class='parameter'>v</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a value that is the domain coordinate v to the basis function
+defined in a previous <code class='reference unresolved'>glMap2</code> command.</p>
+</dd>
+<dt class='head--doc'><span id='p-u'></span>Parameter <code class='parameter'>u</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a pointer to an array containing
+either one or two domain coordinates.
+The first coordinate is u.
+The second coordinate is v.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glEvalCoord.html","name":"glEvalCoord"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

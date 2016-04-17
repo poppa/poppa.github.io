@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Charset.DecodeError</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Charset.html'><b class='head'>Charset</b></a>
+<b class='selected head'>Charset.DecodeError</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Charset/DecodeError/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Charset.html" class="prev"><span>&#10148;</span> Charset</a>
+              <a href="../../../ex/predef_3A_3A/Charset/Decoder.html" class="next">Charset.Decoder <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Charset.DecodeError</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/Error/Generic.html'>Error.Generic</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>Charset.DecodeError</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Error thrown when decode fails (and no replacement char or
+ replacement callback has been registered).</p>
+</dd><dt class='head--fixme'>FIXME</dt>
+<dd class='body--fixme'><p>This error class is not actually used by this module yet - decode
+ errors are still thrown as untyped error arrays. At this point it
+ exists only for use by other modules.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>charset</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Charset.DecodeError.<b><span class='variable'>charset</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The decoding charset, typically as known to
+ <a class='ms reference' href='../../predef_3A_3A/Charset/decoder.html'>Charset.decoder</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Other code may produce errors of this type. In that case this
+ name is something that <a class='ms reference' href='../../predef_3A_3A/Charset/decoder.html'>Charset.decoder</a> does not accept
+ (unless it implements exactly the same charset), and it should
+ be reasonably certain that <a class='ms reference' href='../../predef_3A_3A/Charset/decoder.html'>Charset.decoder</a> never accepts that
+ name in the future (unless it is extended to implement exactly
+ the same charset).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>err_pos</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Charset.DecodeError.<b><span class='variable'>err_pos</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The failing position in <a class='ms reference' href='../../predef_3A_3A/Charset/DecodeError.html'>err_str</a>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>err_str</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Charset.DecodeError.<b><span class='variable'>err_str</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The string that failed to be decoded.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Generic</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/Error/Generic.html'>Error.Generic</a> : <span class='inherit'>Generic</span></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Charset/DecodeError.html","name":"DecodeError"};</script>
+<script src='../../../ex/predef_3A_3A/Charset/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Charset/DecodeError/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

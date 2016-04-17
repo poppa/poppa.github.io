@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Gmp.mpz</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Gmp.html'><b class='head'>Gmp</b></a>
+<b class='selected head'>Gmp.mpz</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Gmp/mpz/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Gmp/mpq/cast.html" class="prev"><span>&#10148;</span> Gmp.mpq()-&gt;cast()</a>
+              <a href="../../../ex/predef_3A_3A/Gmp/mpz/bin.html" class="next">Gmp.mpz()-&gt;bin() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Gmp.mpz</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Gmp.mpz implements very large integers. In fact,
+ the only limitation on these integers is the available memory.
+ The mpz object implements all the normal integer operations.</p>
+<p> Note that the auto-bignum feature also makes these operations
+ available "in" normal integers. For instance, to calculate the
+ greatest common divisor between <code class='expr'>51</code> and <code class='expr'>85</code>, you can
+ do <code class='expr'>51-&gt;gcd(85)</code>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Gmp.mpz</span> <span class='class'>Gmp.mpz</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Gmp.mpz</span> <span class='class'>Gmp.mpz</span><b>(</b><code class='datatype'>string</code>|<code class='datatype'>int</code>|<code class='datatype'>float</code>|<code class='datatype'>object</code> <code class='argument'>value</code><b>)</b></code><br>
+<code><span class='object'>Gmp.mpz</span> <span class='class'>Gmp.mpz</span><b>(</b><code class='datatype'>string</code> <code class='argument'>value</code>, <code class='datatype'>int(2..62)</code>|<code class='datatype'>int(256..256)</code>|<code class='datatype'>int(-256..-256)</code> <code class='argument'>base</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create and initialize a <a class='ms reference' href='../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a> object.</p>
+</dd>
+<dt class='head--doc'><span id='p-value'></span>Parameter <code class='parameter'>value</code></dt>
+<dd></dd><dd class='body--doc'><p>Initial value. If no value is specified, the object will be initialized
+   to zero.</p>
+</dd>
+<dt class='head--doc'><span id='p-base'></span>Parameter <code class='parameter'>base</code></dt>
+<dd></dd><dd class='body--doc'><p>Base the value is specified in. The default base is base 10. The
+   base can be either a value in the range <tt>[2..36]</tt>
+   (inclusive), in which case the numbers are taken from the ASCII
+   range <tt>0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ</tt>
+   (case-insensitive), in the range <tt>[37..62]</tt> (inclusive), in
+   which case the ASCII range will be case sensitive, or either of
+   the values <code class='expr'>256</code> or <code class='expr'>-256</code>, in which case <a class='ms reference' href='../../predef_3A_3A/Gmp/mpz/create.html'>value</a>
+   is taken to be the unsigned binary representation in network
+   byte order or reversed byte order respectively.</p>
+<p>   Values in base <tt>[2..62]</tt> can be prefixed with <code class='expr'>"+"</code> or
+   <code class='expr'>"-"</code>. If no base is given, values prefixed with
+   <code class='expr'>"0b"</code> or <code class='expr'>"0B"</code> will be interpreted as binary.
+   Values prefixed with <code class='expr'>"0x"</code> or <code class='expr'>"0X"</code> will be
+   interpreted as hexadecimal. Values prefixed with <code class='expr'>"0"</code>
+   will be interpreted as octal.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Leading zeroes in <a class='ms reference' href='../../predef_3A_3A/Gmp/mpz/create.html'>value</a> are not significant when a base is
+   explicitly given. In particular leading NUL characters are not
+   preserved in the base 256 modes.</p>
+<p>   Before GMP 5.0 only bases 2-36 and 256 were supported.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Gmp/mpz.html","name":"mpz"};</script>
+<script src='../../../ex/predef_3A_3A/Gmp/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Gmp/mpz/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

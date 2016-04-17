@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Font</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<b class='selected head'>Image.Font</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Image/Font/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Image/Colortable/cast.html" class="prev"><span>&#10148;</span> Image.Colortable()-&gt;cast()</a>
+              <a href="../../../ex/predef_3A_3A/Image/Font/baseline.html" class="next">Image.Font()-&gt;baseline() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Image.Font</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Short technical documentation on a font file:
+ This object adds the text-drawing and -creation
+ capabilities of the <a class='ms reference' href='../../predef_3A_3A/Image/Image.html'>Image</a> module.</p>
+<p> For simple usage, see <a class='ms reference' href='../../predef_3A_3A/Image/Font/write.html'>write</a> and <a class='ms reference' href='../../predef_3A_3A/Image/Font/load.html'>load</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p><pre>
+	       struct file_head
+	       {
+		  unsigned INT32 cookie;   - 0x464f4e54
+		  unsigned INT32 version;  - 1
+		  unsigned INT32 chars;    - number of chars
+		  unsigned INT32 height;   - height of font
+		  unsigned INT32 baseline; - font baseline
+		  unsigned INT32 o[1];     - position of char_head's
+	       } *fh;
+	       struct char_head
+	       {
+		  unsigned INT32 width;    - width of this character
+		  unsigned INT32 spacing;  - spacing to next character
+		  unsigned char data[1];   - pixmap data (1byte/pixel)
+	       } *ch;
+
+            version 2:
+
+
+            	  On-disk syntax (everything in N.B.O), int is 4 bytes, a byte is 8 bits:
+
+            pos
+            	0   int cookie = 'FONT';     or 0x464f4e54
+            	4   int version = 2;         1 was the old version without the last four chars
+            	8   int numchars;            Always 256 in this version of the dump program
+            12   int height;              in (whole) pixels
+            16   int baseline;            in (whole) pixels
+            20   char direction;          1==right to left, 0 is left to right
+            21   char format;             Font format
+            22   char colortablep;        Colortable format
+            23   char kerningtablep;      Kerning table format
+
+            24   int offsets[numchars];   pointers into the data, realative to &amp;cookie.
+            	    [colortable]
+            	    [kerningtable]
+
+            	  At each offset:
+
+
+            0   int width;               in pixels
+            4   int spacing;             in 1/1000:th of a pixels
+            8   char data[];             Enough data to plot width * font-&gt;height pixels
+            				    Please note that if width is 0, there is no data.
+
+            Font formats:
+            	id type
+            	 0 Raw 8bit data
+            	 1 RLE encoded data,  char length, char data,   70% more compact than raw data
+            	 2 ZLib compressed data                         60% more compact than RLE
+
+            Colortable types:
+            	 0 No colortable		 (the data is an alpha channel)
+            	 1 24bit RGB with alpha         (index-&gt;color, 256*4 bytes, rgba)
+            	 2 8bit Greyscale with alpha    (index-&gt;color, 256*2 bytes)
+
+            Kerningtable types:
+            	 0 No kerning table
+            	 1 numchars*numchars entries, each a signed char with the kerning value
+            	 2 numchar entries, each with a list of kerning pairs, like this:
+            	    int len
+            	    len * (short char, short value)
+ </pre></p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Image/Image.html'>Image</a>, <a class='ms reference' href='../../predef_3A_3A/Image/Image.html'>Image.Image</a></p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Image.Font</span> <span class='class'>Image.Font</span><b>(</b><code class='datatype'>string</code> <code class='argument'>filename</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Loads a font file to this font object.
+  Similar to <a class='ms reference' href='../../predef_3A_3A/Image/Font/load.html'>load()</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Font.html","name":"Font"};</script>
+<script src='../../../ex/predef_3A_3A/Image/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Image/Font/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

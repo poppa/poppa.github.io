@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Debug.describe_program()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Debug.html'><b class='head'>Debug</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Debug/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Debug/describe_encoded_value.html" class="prev"><span>&#10148;</span> Debug.describe_encoded_value()</a>
+              <a href="../../../ex/predef_3A_3A/Debug/disassemble.html" class="next">Debug.disassemble() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Debug.describe_program()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>describe_program</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>string</code>|<code class='type'>type</code>)) <b><span class='method'>describe_program</span>(</b><code class='datatype'>program</code> <code class='argument'>p</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Debug function for showing the symbol table of a program.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns an array of arrays with the following information
+   for each symbol in <code class='reference paramref'>p</code>:</p>
+<table class='box'><tr><td colspan='2'>Array</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>modifiers</code></code></td><td><p>Bitfield with the modifiers for the symbol.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code> <code class='key'>symbol_name</code></code></td><td><p>Name of the symbol.</p>
+</td></tr>
+<tr><td><code><code class='type'>type</code> <code class='key'>value_type</code></code></td><td><p>Value type for the symbol.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>symbol_type</code></code></td><td><p>Type of symbol.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>symbol_offset</code></code></td><td><p>Offset into the code or data area for the symbol.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>inherit_offset</code></code></td><td><p>Offset in the inherit table to the inherit containing
+       the symbol.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>inherit_level</code></code></td><td><p>Depth in the inherit tree for the inherit containing
+       the symbol.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The API for this function is not fixed, and has changed
+   since Pike 7.6. In particular it would make sense to return
+   an array of objects instead, and more information about the
+   symbols might be added.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Debug/describe_program.html","name":"describe_program"};</script>
+<script src='../../../ex/predef_3A_3A/Debug/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Debug/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1533 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GLUT</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<b class='selected head'>GLUT</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/GLUT/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/GLUE/ysize.html" class="prev"><span>&#10148;</span> GLUE.ysize()</a>
+              <a href="../../ex/predef_3A_3A/GLUT/glutAddMenuEntry.html" class="next">GLUT.glutAddMenuEntry() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module GLUT</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ACCUM</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ACCUM</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ACTIVE_ALT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ACTIVE_ALT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ACTIVE_CTRL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ACTIVE_CTRL</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ACTIVE_SHIFT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ACTIVE_SHIFT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ALPHA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ALPHA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_BLUE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_BLUE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_BOTTOM_LEFT_CORNER</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_BOTTOM_LEFT_CORNER</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_BOTTOM_RIGHT_CORNER</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_BOTTOM_RIGHT_CORNER</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_BOTTOM_SIDE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_BOTTOM_SIDE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_CROSSHAIR</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_CROSSHAIR</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_CYCLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_CYCLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_DESTROY</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_DESTROY</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_FULL_CROSSHAIR</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_FULL_CROSSHAIR</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_HELP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_HELP</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_INFO</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_INFO</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_INHERIT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_INHERIT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_LEFT_ARROW</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_LEFT_ARROW</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_LEFT_RIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_LEFT_RIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_LEFT_SIDE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_LEFT_SIDE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_NONE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_NONE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_RIGHT_ARROW</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_RIGHT_ARROW</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_RIGHT_SIDE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_RIGHT_SIDE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_SPRAY</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_SPRAY</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_TEXT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_TEXT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_TOP_LEFT_CORNER</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_TOP_LEFT_CORNER</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_TOP_RIGHT_CORNER</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_TOP_RIGHT_CORNER</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_TOP_SIDE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_TOP_SIDE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_UP_DOWN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_UP_DOWN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_CURSOR_WAIT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_CURSOR_WAIT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DEPTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DEPTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DEVICE_IGNORE_KEY_REPEAT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DEVICE_IGNORE_KEY_REPEAT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DEVICE_KEY_REPEAT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DEVICE_KEY_REPEAT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DISPLAY_MODE_POSSIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DISPLAY_MODE_POSSIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DOUBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DOUBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_DOWN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_DOWN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ELAPSED_TIME</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ELAPSED_TIME</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_ENTERED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_ENTERED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_FULLY_COVERED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_FULLY_COVERED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_FULLY_RETAINED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_FULLY_RETAINED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_ACTIVE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_ACTIVE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_DISPLAY_CHANGED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_DISPLAY_CHANGED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_HEIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_HEIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_PIXEL_DEPTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_PIXEL_DEPTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_POSSIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_POSSIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_REFRESH_RATE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_REFRESH_RATE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GAME_MODE_WIDTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GAME_MODE_WIDTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_GREEN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_GREEN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_DIAL_AND_BUTTON_BOX</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_DIAL_AND_BUTTON_BOX</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_JOYSTICK</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_JOYSTICK</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_KEYBOARD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_KEYBOARD</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_MOUSE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_MOUSE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_OVERLAY</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_OVERLAY</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_SPACEBALL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_SPACEBALL</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HAS_TABLET</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HAS_TABLET</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_HIDDEN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_HIDDEN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INDEX</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INDEX</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INIT_DISPLAY_MODE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INIT_DISPLAY_MODE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INIT_WINDOW_HEIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INIT_WINDOW_HEIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INIT_WINDOW_WIDTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INIT_WINDOW_WIDTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INIT_WINDOW_X</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INIT_WINDOW_X</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_INIT_WINDOW_Y</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_INIT_WINDOW_Y</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_AXES</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_AXES</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_BUTTONS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_BUTTONS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_BUTTON_A</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_BUTTON_A</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_BUTTON_B</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_BUTTON_B</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_BUTTON_C</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_BUTTON_C</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_BUTTON_D</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_BUTTON_D</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_JOYSTICK_POLL_RATE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_JOYSTICK_POLL_RATE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_DOWN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_DOWN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_END</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_END</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F1</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F1</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F10</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F10</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F11</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F11</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F12</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F12</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F2</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F2</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F3</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F3</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F4</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F4</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F5</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F5</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F6</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F6</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F7</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F7</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F8</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F8</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_F9</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_F9</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_HOME</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_HOME</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_INSERT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_INSERT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_LEFT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_LEFT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_PAGE_DOWN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_PAGE_DOWN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_PAGE_UP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_PAGE_UP</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_REPEAT_DEFAULT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_REPEAT_DEFAULT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_REPEAT_OFF</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_REPEAT_OFF</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_REPEAT_ON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_REPEAT_ON</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_RIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_RIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_KEY_UP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_KEY_UP</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_LAYER_IN_USE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_LAYER_IN_USE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_LEFT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_LEFT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_LEFT_BUTTON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_LEFT_BUTTON</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_LUMINANCE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_LUMINANCE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_MENU_IN_USE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_MENU_IN_USE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_MENU_NOT_IN_USE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_MENU_NOT_IN_USE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_MENU_NUM_ITEMS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_MENU_NUM_ITEMS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_MIDDLE_BUTTON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_MIDDLE_BUTTON</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_MULTISAMPLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_MULTISAMPLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NORMAL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NORMAL</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NORMAL_DAMAGED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NORMAL_DAMAGED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NOT_VISIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NOT_VISIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NUM_BUTTON_BOX_BUTTONS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NUM_BUTTON_BOX_BUTTONS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NUM_DIALS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NUM_DIALS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NUM_MOUSE_BUTTONS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NUM_MOUSE_BUTTONS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NUM_SPACEBALL_BUTTONS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NUM_SPACEBALL_BUTTONS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_NUM_TABLET_BUTTONS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_NUM_TABLET_BUTTONS</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_OVERLAY</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_OVERLAY</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_OVERLAY_DAMAGED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_OVERLAY_DAMAGED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_OVERLAY_POSSIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_OVERLAY_POSSIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_OWNS_JOYSTICK</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_OWNS_JOYSTICK</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_PARTIALLY_RETAINED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_PARTIALLY_RETAINED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_RED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_RED</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_RGB</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_RGB</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_RGBA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_RGBA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_RIGHT_BUTTON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_RIGHT_BUTTON</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_SCREEN_HEIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_SCREEN_HEIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_SCREEN_HEIGHT_MM</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_SCREEN_HEIGHT_MM</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_SCREEN_WIDTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_SCREEN_WIDTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_SCREEN_WIDTH_MM</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_SCREEN_WIDTH_MM</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_SINGLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_SINGLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_STENCIL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_STENCIL</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_STEREO</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_STEREO</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_TRANSPARENT_INDEX</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_TRANSPARENT_INDEX</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_UP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_UP</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_HEIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_HEIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_HEIGHT_DELTA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_HEIGHT_DELTA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_IN_USE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_IN_USE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_POSSIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_POSSIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_WIDTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_WIDTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_WIDTH_DELTA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_WIDTH_DELTA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_X</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_X</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_X_DELTA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_X_DELTA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_Y</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_Y</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VIDEO_RESIZE_Y_DELTA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VIDEO_RESIZE_Y_DELTA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_VISIBLE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_VISIBLE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_ACCUM_ALPHA_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_ACCUM_ALPHA_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_ACCUM_BLUE_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_ACCUM_BLUE_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_ACCUM_GREEN_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_ACCUM_GREEN_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_ACCUM_RED_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_ACCUM_RED_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_ALPHA_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_ALPHA_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_BLUE_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_BLUE_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_BUFFER_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_BUFFER_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_COLORMAP_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_COLORMAP_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_CURSOR</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_CURSOR</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_DEPTH_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_DEPTH_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_DOUBLEBUFFER</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_DOUBLEBUFFER</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_FORMAT_ID</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_FORMAT_ID</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_GREEN_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_GREEN_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_HEIGHT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_HEIGHT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_NUM_CHILDREN</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_NUM_CHILDREN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_NUM_SAMPLES</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_NUM_SAMPLES</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_PARENT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_PARENT</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_RED_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_RED_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_RGBA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_RGBA</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_STENCIL_SIZE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_STENCIL_SIZE</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_STEREO</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_STEREO</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_WIDTH</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_WIDTH</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_X</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_X</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>GLUT_WINDOW_Y</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> GLUT.<code class='constant'>GLUT_WINDOW_Y</code></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GLUT.html","name":"GLUT"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/GLUT/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

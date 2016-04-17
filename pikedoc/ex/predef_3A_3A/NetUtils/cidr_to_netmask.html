@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - NetUtils.cidr_to_netmask()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/NetUtils.html'><b class='head'>NetUtils</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/NetUtils/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/NetUtils/broadcast_addresses.html" class="prev"><span>&#10148;</span> NetUtils.broadcast_addresses()</a>
+              <a href="../../../ex/predef_3A_3A/NetUtils/clear_cache.html" class="next">NetUtils.clear_cache() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method NetUtils.cidr_to_netmask()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>cidr_to_netmask</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>int</code>) <b><span class='method'>cidr_to_netmask</span>(</b><code class='datatype'>string</code> <code class='argument'>cidr</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Converts a string with an IP address and mask (in CIDR notation)
+ into a binary IP address and bitmask.</p>
+</dd>
+<dt class='head--doc'><span id='p-cidr'></span>Parameter <code class='parameter'>cidr</code></dt>
+<dd></dd><dd class='body--doc'><p>The CIDR-notation input string.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>An array containing:</p>
+<table class='box'><tr><td colspan='2'>Array</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>ip</code></code></td><td><p>The binary representation of the IP address.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>mask</code></code></td><td><p>The bitmask.</p>
+</td></tr>
+</table><p>Returns 0 if the string could not be parsed.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/NetUtils/cidr_to_netmask.html","name":"cidr_to_netmask"};</script>
+<script src='../../../ex/predef_3A_3A/NetUtils/index.js'></script>
+<script src='../../../ex/predef_3A_3A/NetUtils/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

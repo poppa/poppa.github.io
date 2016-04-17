@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Color</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<b class='selected head'>Image.Color</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Image/Color/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Image/BMP/_decode.html" class="prev"><span>&#10148;</span> Image.BMP._decode()</a>
+              <a href="../../../ex/predef_3A_3A/Image/Color/Color.html" class="next">Image.Color.Color <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Image.Color</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>
+    This module keeps names and easy handling
+    for easy color support. It gives you an easy
+    way to get colors from names.</p>
+
+<p>    A color is here an object, containing color
+    information and methods for conversion, see below.</p>
+
+<p>    <a class='ms reference' href='../../predef_3A_3A/Image/Color.html'>Image.Color</a> can be called to make a color object.
+    <a class='ms reference' href='../../predef_3A_3A/Image/Color.html'>Image.Color()</a> takes the following arguments:
+    <pre>
+    Image.Color(string name)          // "red"
+    Image.Color(string prefix_string) // "lightblue"
+    Image.Color(string hex_name)      // "#ff00ff"
+    Image.Color(string cmyk_string)   // "%17,42,0,19.4"
+    Image.Color(string hsv_string)    // "%@327,90,32"
+    Image.Color(int red, int green, int blue)
+    </pre></p>
+
+<p>    The color names available can be listed by using indices
+    on Image.Color. The colors are available by name directly
+    as <tt>Image.Color.name</tt>, too:
+    <pre>
+    ...Image.Color.red...
+    ...Image.Color.green...
+    or, maybe
+    import Image.Color;
+    ...red...
+    ...green...
+    ...lightgreen...
+    </pre></p>
+
+<p>    Giving red, green and blue values is equal to calling
+    <a class='ms reference' href='../../predef_3A_3A/Image/Color/rgb.html'>Image.Color.rgb</a>().</p>
+
+<p>    The prefix_string method is a form for getting modified
+    colors, it understands all modifiers
+    (<code class='reference unresolved'>light</code>,
+    <code class='reference unresolved'>dark</code>,
+    <code class='reference unresolved'>bright</code>,
+    <code class='reference unresolved'>dull</code> and
+    <code class='reference unresolved'>neon</code>). Simply  use
+    "method"+"color"; (as in <tt>lightgreen</tt>,
+    <tt>dullmagenta</tt>, <tt>lightdullorange</tt>).</p>
+
+<p>    The <tt>hex_name</tt> form is a simple
+    <tt>#rrggbb</tt> form, as in HTML or X-program argument.
+    A shorter form (<tt>#rgb</tt>) is also accepted. This
+    is the inverse to the <a class='ms reference' href='../../predef_3A_3A/Image/Color/Color/hex.html'>Image.Color.Color-&gt;hex</a>()
+    method.</p>
+
+<p>    The <tt>cmyk_string</tt> is a string form of giving
+    <i>cmyk</i> (cyan, magenta, yellow, black) color. These
+    values are floats representing percent.</p>
+
+<p>    The <tt>hsv_string</tt> is another hue, saturation, value
+    representation, but in floats; hue is in degree range (0..360),
+    and saturation and value is given in percent. <i>This is not
+    the same as returned or given to the <a class='ms reference' href='../../predef_3A_3A/Image/Color/hsv.html'>hsv</a>() methods!</i></p>
+
+<p>This table lists all the different named colors available in Image.Color.
+The first column shows the actual color while the five following columns
+demonstrates the modifiers neon, light, dark, bright and dull. The color
+begind the name of the color is produced by calling neon()-&gt;dark()-&gt;dark()-&gt;dark()
+from the color object itself, i.e. Image.Color.mintcream-&gt;neon()-&gt;dark()-&gt;dark()-&gt;dark().</p>
+
+<p><img height='120' src='../../../images/predef.Image.Color.1.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.2.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.3.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.4.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.5.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.6.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.7.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.8.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.9.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.10.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.11.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.12.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.13.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.14.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.15.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.16.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.17.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.18.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.19.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.20.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.21.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.22.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.23.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.24.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.25.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.26.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.27.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.28.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.29.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.30.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.31.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.32.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.33.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.34.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.35.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.36.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.37.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.38.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.39.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.40.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.41.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.42.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.43.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.44.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.45.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.46.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.47.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.48.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.49.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.50.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.51.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.52.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.53.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.54.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.55.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.56.png' width='348' /><br />
+<img height='120' src='../../../images/predef.Image.Color.57.png' width='348' /><br /></p>
+
+<p></p>
+
+<p>
+</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p><tt>Image.Color["something"]</tt> will never(!) generate an error,
+but a zero_type 0, if the color is unknown. This is enough
+to give the error "not present in module", if used
+as <tt>Image.Color.something</tt>, though.</p>
+
+<p>If you are using colors from for instance a webpage, you might
+want to create the color from <a class='ms reference' href='../../predef_3A_3A/Image/Color/guess.html'>Image.Color.guess</a>(),
+since that method is more tolerant for mistakes and errors.</p>
+
+<p><tt>Image.Color</tt>() is case- and space-sensitive.
+Use <a class='ms reference' href='../../predef_3A_3A/Image/Color/guess.html'>Image.Color.guess</a>() to catch all variants.</p>
+
+<p>and subtract with a space (lower_case(x)-" ") to make
+sure you get all variants.</p>
+
+<p></p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'>
+<p><a class='ms reference' href='../../predef_3A_3A/Image/Color/Color/name.html'>Image.Color.Color-&gt;name</a>, <a class='ms reference' href='../../predef_3A_3A/Image/Color/Color/rgb.html'>Image.Color.Color-&gt;rgb</a>, <code class='reference unresolved'>colors</code>, <a class='ms reference' href='../../predef_3A_3A/Image/Color/Color.html'>Image.Color.Color</a>, <a class='ms reference' href='../../predef_3A_3A/Image/Color/guess.html'>Image.Color.guess</a>, <a class='ms reference' href='../../predef_3A_3A/Image/Image.html'>Image</a>, <a class='ms reference' href='../../predef_3A_3A/Image/Colortable.html'>Image.Colortable</a></p></dd></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Color.html","name":"Color"};</script>
+<script src='../../../ex/predef_3A_3A/Image/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Image/Color/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

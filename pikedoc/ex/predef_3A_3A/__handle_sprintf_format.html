@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - __handle_sprintf_format()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/__empty_program.html" class="prev"><span>&#10148;</span> __empty_program()</a>
+              <a href="../../ex/predef_3A_3A/__parse_pike_type.html" class="next">__parse_pike_type() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method __handle_sprintf_format()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>__handle_sprintf_format</b></span>
+</dt>
+<dd><p><code><code class='type'>type</code> <b><span class='method'>__handle_sprintf_format</span>(</b><code class='datatype'>string</code> <code class='argument'>attr</code>, <code class='datatype'>string</code> <code class='argument'>fmt</code>, <code class='type'>type</code> <code class='argument'>arg_type</code>, <code class='type'>type</code> <code class='argument'>cont_type</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Type attribute handler for <code class='expr'>"sprintf_format"</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-attr'></span>Parameter <code class='parameter'>attr</code></dt>
+<dd></dd><dd class='body--doc'><p>Attribute to handle, either <code class='expr'>"sprintf_format"</code>
+   or <code class='expr'>"strict_sprintf_format"</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-fmt'></span>Parameter <code class='parameter'>fmt</code></dt>
+<dd></dd><dd class='body--doc'><p>Sprintf-style formatting string to generate type information from.</p>
+</dd>
+<dt class='head--doc'><span id='p-arg_type'></span>Parameter <code class='parameter'>arg_type</code></dt>
+<dd></dd><dd class='body--doc'><p>Declared type of the <code class='reference paramref'>fmt</code> argument (typically <code class='expr'>string</code>).</p>
+</dd>
+<dt class='head--doc'><span id='p-cont_type'></span>Parameter <code class='parameter'>cont_type</code></dt>
+<dd></dd><dd class='body--doc'><p>Continuation function type after the <code class='reference paramref'>fmt</code> argument. This is
+   scanned for the type attribute <code class='expr'>"sprintf_args"</code> to
+   determine where the remaining arguments to <a class='ms reference' href='../predef_3A_3A/sprintf.html'>sprintf()</a> will
+   come from.</p>
+<p> This function is typically called from
+ <code class='reference unresolved'>PikeCompiler()-&gt;apply_attribute_constant()</code> and is used to perform
+ stricter compile-time argument checking of <a class='ms reference' href='../predef_3A_3A/sprintf.html'>sprintf()</a>-style functions.</p>
+<p> It currently implements two operating modes depending on the value of
+ <code class='reference paramref'>attr</code>:</p>
+<table class='box'><tr><td><code><code class='key'>"strict_sprintf_format"</code></code></td><td><p>The formatting string <code class='reference paramref'>fmt</code> is known to always be passed to
+     <a class='ms reference' href='../predef_3A_3A/sprintf.html'>sprintf()</a>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"sprintf_format"</code></code></td><td><p>The formatting string <code class='reference paramref'>fmt</code> is passed to <a class='ms reference' href='../predef_3A_3A/sprintf.html'>sprintf()</a> only
+     if there are <code class='expr'>"sprintf_args"</code>.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns <code class='reference paramref'>cont_type</code> with <code class='expr'>"sprintf_args"</code> replaced by the
+   arguments required by the <code class='reference paramref'>fmt</code> formatting string, and
+   <code class='expr'>"sprintf_result"</code> replaced by the resulting string type.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><code class='reference unresolved'>PikeCompiler()-&gt;apply_attribute_constant()</code>, <a class='ms reference' href='../predef_3A_3A/sprintf.html'>sprintf()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/__handle_sprintf_format.html","name":"__handle_sprintf_format"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Locale.Language.abstract</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Locale.html'><b class='head'>Locale</b></a>
+<a href='../../../../ex/predef_3A_3A/Locale/Language.html'><b class='head'>Locale.Language</b></a>
+<b class='selected head'>Locale.Language.abstract</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Locale/Language/abstract/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Locale/Language.html" class="prev"><span>&#10148;</span> Locale.Language</a>
+              <a href="../../../../ex/predef_3A_3A/Locale/Language/abstract/date.html" class="next">Locale.Language.abstract()-&gt;date() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Locale.Language.abstract</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='425px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>Locale.Language.abstract</tspan></text>
+<line x1='5' y1='25' x2='5' y2='416' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/cat.html'>Locale.Language.cat</a></text>
+<line x1='4' y1='55' x2='35' y2='55' />
+<text x='40' y='60'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/ces.html'>Locale.Language.ces</a></text>
+<line x1='4' y1='75' x2='35' y2='75' />
+<text x='40' y='80'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/deu.html'>Locale.Language.deu</a></text>
+<line x1='4' y1='95' x2='35' y2='95' />
+<text x='40' y='100'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/eng.html'>Locale.Language.eng</a></text>
+<line x1='4' y1='115' x2='35' y2='115' />
+<text x='40' y='120'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/fin.html'>Locale.Language.fin</a></text>
+<line x1='4' y1='135' x2='35' y2='135' />
+<text x='40' y='140'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/fra.html'>Locale.Language.fra</a></text>
+<line x1='4' y1='155' x2='35' y2='155' />
+<text x='40' y='160'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/hrv.html'>Locale.Language.hrv</a></text>
+<line x1='4' y1='175' x2='35' y2='175' />
+<text x='40' y='180'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/hun.html'>Locale.Language.hun</a></text>
+<line x1='4' y1='195' x2='35' y2='195' />
+<text x='40' y='200'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/ita.html'>Locale.Language.ita</a></text>
+<line x1='4' y1='215' x2='35' y2='215' />
+<text x='40' y='220'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/jpn.html'>Locale.Language.jpn</a></text>
+<line x1='4' y1='235' x2='35' y2='235' />
+<text x='40' y='240'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/mri.html'>Locale.Language.mri</a></text>
+<line x1='4' y1='255' x2='35' y2='255' />
+<text x='40' y='260'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/nld.html'>Locale.Language.nld</a></text>
+<line x1='4' y1='275' x2='35' y2='275' />
+<text x='40' y='280'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/nor.html'>Locale.Language.nor</a></text>
+<line x1='4' y1='295' x2='35' y2='295' />
+<text x='40' y='300'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/pol.html'>Locale.Language.pol</a></text>
+<line x1='4' y1='315' x2='35' y2='315' />
+<text x='40' y='320'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/por.html'>Locale.Language.por</a></text>
+<line x1='4' y1='335' x2='35' y2='335' />
+<text x='40' y='340'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/rus.html'>Locale.Language.rus</a></text>
+<line x1='4' y1='355' x2='35' y2='355' />
+<text x='40' y='360'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/slv.html'>Locale.Language.slv</a></text>
+<line x1='4' y1='375' x2='35' y2='375' />
+<text x='40' y='380'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/spa.html'>Locale.Language.spa</a></text>
+<line x1='4' y1='395' x2='35' y2='395' />
+<text x='40' y='400'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/srp.html'>Locale.Language.srp</a></text>
+<line x1='4' y1='415' x2='35' y2='415' />
+<text x='40' y='420'><a class='ms reference' xlink:href='../../../predef_3A_3A/Locale/Language/swe.html'>Locale.Language.swe</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Abstract language locale class, inherited by all the language
+ locale classes.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>days</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Locale.Language.abstract.<code class='constant'>days</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Array(string) with the days of the week, beginning with Sunday.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>english_name</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>string</code> Locale.Language.abstract.<code class='constant'>english_name</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name of the language in english.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>iso_639_1</b></span>
+</dt>
+<dd><p><code><code class='datatype'><code class='modifier'>optional</code>  constant</code> <code class='datatype'>int</code> Locale.Language.abstract.<code class='constant'>iso_639_1</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>String with the language code in ISO-639-1 (two character code). Note that
+ all languages does not have a ISO-639-1 code.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>iso_639_2</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Locale.Language.abstract.<code class='constant'>iso_639_2</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>String with the language code in ISO-639-2/T (three character code).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>iso_639_2B</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Locale.Language.abstract.<code class='constant'>iso_639_2B</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>String with the language code in ISO-639-2/B (three character code). This
+ is usually the same as the ISO-639-2/T code (<a class='ms reference' href='../../../predef_3A_3A/Locale/Language/abstract.html'>iso_639_2</a>).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>languages</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Locale.Language.abstract.<code class='constant'>languages</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping(string:string) that maps an ISO-639-2/T id code to the
+ name of that language.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>months</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Locale.Language.abstract.<code class='constant'>months</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Array(string) with the months of the year, beginning with January.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>name</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>string</code> Locale.Language.abstract.<code class='constant'>name</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The name of the langauge. E.g. "svenska" for Swedish.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Locale/Language/abstract.html","name":"abstract"};</script>
+<script src='../../../../ex/predef_3A_3A/Locale/Language/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Locale/Language/abstract/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.Tabular()-&gt;compile()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/Tabular.html'><b class='head'>Parser.Tabular</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/Tabular/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/Tabular.html" class="prev"><span>&#10148;</span> Parser.Tabular</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/Tabular/create.html" class="next">Parser.Tabular()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Parser.Tabular()-&gt;compile()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>compile</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>|<code class='datatype'>mapping</code> <b><span class='method'>compile</span>(</b><code class='datatype'>string</code>|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Stdio/File.html'>Stdio.File</a></code>|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Stdio/FILE.html'>Stdio.FILE</a></code> <code class='argument'>input</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Compiles the format description language into a compiled structure
+ that can be fed to <a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/setformat.html'>setformat</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/fetch.html'>fetch</a>, or <a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/create.html'>create</a>.</p>
+<ul>
+<li><p>The format description is case sensitive.</p>
+</li><li><p>The format description starts with a single line containing:
+ <code class='expr'>[Tabular&nbsp;description&nbsp;begin]</code></p>
+</li><li><p>The format description ends with a single line containing:
+ <code class='expr'>[Tabular&nbsp;description&nbsp;end]</code></p>
+</li><li><p>Any lines before the startline are skipped.</p>
+</li><li><p>Any lines after the endline are not consumed.</p>
+</li><li><p>Empty lines are skipped.</p>
+</li><li><p>Comments start after a <code class='expr'>#</code> or <code class='expr'>;</code>.</p>
+</li><li><p>The depth level of a field is indicated by the number of
+ leading spaces or colons at the beginning of the line.</p>
+</li><li><p>The fieldname must not contain any whitespace.</p>
+</li><li><p>An arbitrary number of single character field delimiters can be
+ specified between brackets, e.g. <code class='expr'>[,;]</code> or <code class='expr'>[,]</code> would be
+ for CSV.</p>
+</li><li><p>When field delimiters are being used: in case of CSV type delimiters
+ <code class='expr'>[\t,;&nbsp;]</code> the standard CSV quoting rules apply, in case other
+ delimiters
+ are used, no quoting is supported and the last field on a line should
+ not specify a delimiter, but should specify a 0 fieldwidth instead.</p>
+</li><li><p>A fixed field width can be specified by a plain decimal integer,
+ a value of 0 indicates a field with arbitrary length that extends
+ till the end of the line.</p>
+</li><li><p>A matching regular expression can be enclosed in <code class='expr'>""</code>, it has
+ to match
+ the complete field content and uses <a class='ms reference' href='../../../predef_3A_3A/Regexp/SimpleRegexp.html'>Regexp.SimpleRegexp</a> syntax.</p>
+</li><li><p>On records the following options are supported:</p>
+<dl class='group--doc'><dt>mandatory</dt>
+<dd><p>This record is required.</p>
+</dd>
+<dt>fold</dt>
+<dd><p>Fold this record's contents in the enclosing record.</p>
+</dd>
+<dt>single</dt>
+<dd><p>This record is present at most once.</p>
+</dd>
+</dl></li><li><p>On fields the following options are supported:</p>
+<dl class='group--doc'><dt>drop</dt>
+<dd><p>After reading and matching this field, drop the field content
+   from the resulting mappingstructure.</p>
+</dd>
+</dl></li></ul>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/setformat.html'>setformat()</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/create.html'>create()</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/Tabular/fetch.html'>fetch()</a></p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>Example of the description language:</p>
+<p>[Tabular description begin]
+csv
+:gtz
+::mybankno           [,]
+::transferdate       [,]
+::mutatiesoort       [,]
+::volgnummer         [,]
+::bankno             [,]
+::name               [,]
+::kostenplaats       [,]                     drop
+::amount             [,]
+::afbij              [,]
+::mutatie            [,]
+::reference          [,]
+::valutacode         [,]
+mt940
+:messageheader1                     mandatory
+::exporttime            "0000"               drop
+::CS1                   " "                  drop
+::exportday             "01"                 drop
+::exportaddress      12
+::exportnumber       5  "[0-9]+"
+:messageheader3                     mandatory fold single
+::messagetype           "940"                drop
+::CS1                   " "                  drop
+::messagepriority       "00"                 drop
+:TRN                             fold
+::tag                   ":20:"               drop
+::reference             "GTZPB|MPBZ|INGEB"
+:accountid                     fold
+::tag                   ":25:"               drop
+::accountno          10
+:statementno                     fold
+::tag                   ":28C:"              drop
+::settlementno       0                       drop
+:openingbalance                     mandatory      single
+::tag                   ":60F:"              drop
+::creditdebit        1
+::date               6
+::currency              "EUR"
+::amount             0  "[0-9]+,[0-9][0-9]"
+:statements
+::statementline                     mandatory fold single
+:::tag                  ":61:"               drop
+:::valuedate         6
+:::creditdebit       1
+:::amount               "[0-9]+,[0-9][0-9]"
+:::CS1                  "N"                  drop
+:::transactiontype   3                          # 3 for Postbank, 4 for ING
+:::paymentreference  0
+::informationtoaccountowner                   fold single
+:::tag                  ":86:"               drop
+:::accountno            "[0-9]*( |)"
+:::accountname       0
+::description         fold
+:::description       0  "|[^:].*"
+:closingbalance                     mandatory      single
+::tag                   ":62[FM]:"           drop
+::creditdebit        1
+::date               6
+::currency              "EUR"
+::amount             0  "[0-9]+,[0-9][0-9]"
+:informationtoaccountowner                    fold single
+::tag                   ":86:"               drop
+::debit                 "D"                  drop
+::debitentries       6
+::credit                "C"                  drop
+::creditentries      6
+::debit                 "D"                  drop
+::debitamount           "[0-9]+,[0-9][0-9]"
+::credit                "C"                  drop
+::creditamount          "[0-9]+,[0-9][0-9]"  drop
+::accountname           "(\n[^-:][^\n]*)*"   drop
+:messagetrailer                     mandatory      single
+::start                 "-"
+::end                   "XXX"
+[Tabular description end]</p>
+</pre></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/Tabular/compile.html","name":"compile"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/Tabular/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/Tabular/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

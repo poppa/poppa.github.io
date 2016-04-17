@@ -1,0 +1,5 @@
+// Class path Thread
+PikeDoc.registerSymbol('Thread', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Thread/Condition.html","name":"Condition"},{"link":"ex/predef_3A_3A/Thread/Farm.html","name":"Farm"},{"link":"ex/predef_3A_3A/Thread/Fifo.html","name":"Fifo"},{"link":"ex/predef_3A_3A/Thread/Local.html","name":"Local"},{"link":"ex/predef_3A_3A/Thread/Mutex.html","name":"Mutex"},{"link":"ex/predef_3A_3A/Thread/MutexKey.html","name":"MutexKey"},{"link":"ex/predef_3A_3A/Thread/Queue.html","name":"Queue"},{"link":"ex/predef_3A_3A/Thread/Thread.html","name":"Thread"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Thread/all_threads.html","name":"all_threads"},{"link":"ex/predef_3A_3A/Thread/get_thread_quanta.html","name":"get_thread_quanta"},{"link":"ex/predef_3A_3A/Thread/set_thread_quanta.html","name":"set_thread_quanta"},{"link":"ex/predef_3A_3A/Thread/this_thread.html","name":"this_thread"},{"link":"ex/predef_3A_3A/Thread/thread_set_concurrency.html","name":"thread_set_concurrency"}])
+.finish();

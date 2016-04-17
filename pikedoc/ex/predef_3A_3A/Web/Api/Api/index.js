@@ -1,0 +1,5 @@
+// Class path Web.Api.Api
+PikeDoc.registerSymbol('Web.Api.Api', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Web/Api/Api/Method.html","name":"Method"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Web/Api/Api/call.html","name":"call"},{"link":"ex/predef_3A_3A/Web/Api/Api/close_connections.html","name":"close_connections"},{"link":"ex/predef_3A_3A/Web/Api/Api/create.html","name":"create"},{"link":"ex/predef_3A_3A/Web/Api/Api/default_params.html","name":"default_params"},{"link":"ex/predef_3A_3A/Web/Api/Api/delete.html","name":"delete"},{"link":"ex/predef_3A_3A/Web/Api/Api/get.html","name":"get"},{"link":"ex/predef_3A_3A/Web/Api/Api/get_encoding.html","name":"get_encoding"},{"link":"ex/predef_3A_3A/Web/Api/Api/get_uri.html","name":"get_uri"},{"link":"ex/predef_3A_3A/Web/Api/Api/parse_canonical_url.html","name":"parse_canonical_url"},{"link":"ex/predef_3A_3A/Web/Api/Api/patch.html","name":"patch"},{"link":"ex/predef_3A_3A/Web/Api/Api/post.html","name":"post"},{"link":"ex/predef_3A_3A/Web/Api/Api/put.html","name":"put"},{"link":"ex/predef_3A_3A/Web/Api/Api/unescape_forward_slashes.html","name":"unescape_forward_slashes"}])
+.finish();

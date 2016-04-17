@@ -1,0 +1,4 @@
+// Class path Image.Font
+PikeDoc.registerSymbol('Image.Font', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Image/Font/baseline.html","name":"baseline"},{"link":"ex/predef_3A_3A/Image/Font/center.html","name":"center"},{"link":"ex/predef_3A_3A/Image/Font/create.html","name":"create"},{"link":"ex/predef_3A_3A/Image/Font/height.html","name":"height"},{"link":"ex/predef_3A_3A/Image/Font/left.html","name":"left"},{"link":"ex/predef_3A_3A/Image/Font/load.html","name":"load"},{"link":"ex/predef_3A_3A/Image/Font/right.html","name":"right"},{"link":"ex/predef_3A_3A/Image/Font/set_xspacing_scale.html","name":"set_xspacing_scale"},{"link":"ex/predef_3A_3A/Image/Font/set_yspacing_scale.html","name":"set_yspacing_scale"},{"link":"ex/predef_3A_3A/Image/Font/text_extents.html","name":"text_extents"},{"link":"ex/predef_3A_3A/Image/Font/write.html","name":"write"}])
+.finish();

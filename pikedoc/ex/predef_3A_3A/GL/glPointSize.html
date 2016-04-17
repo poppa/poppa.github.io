@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glPointSize()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glPixelZoom.html" class="prev"><span>&#10148;</span> GL.glPixelZoom()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glPolygonMode.html" class="next">GL.glPolygonMode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glPointSize()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glPointSize</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glPointSize</span>(</b><code class='datatype'>float</code> <code class='argument'>size</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL/glPointSize.html'>glPointSize</a> specifies the rasterized diameter of both aliased and antialiased
+points.
+Using a point size other than 1 has different effects,
+depending on whether point antialiasing is enabled.
+To enable and disable point antialiasing, call
+<a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a> and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a>
+with argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_POINT_SMOOTH</a>. Point antialiasing is initially disabled.</p>
+<p>If point antialiasing is disabled,
+the actual size is determined by rounding the supplied size
+to the nearest integer.
+(If the rounding results in the value 0,
+it is as if the point size were 1.)
+If the rounded size is odd,
+then the center point
+( x ,  y )
+of the pixel fragment that represents the point is computed as
+.sp
+.ce
+(  \(lf ~ x sub w ~ \(rf ~+~ .5 ,  \(lf ~ y sub w ~ \(rf ~+~ .5 )
+.sp
+where w subscripts indicate window coordinates.
+All pixels that lie within the square grid of the rounded size centered at
+( x ,  y )
+make up the fragment.
+If the size is even,
+the center point is
+.sp
+.ce
+(  \(lf ~ x sub w ~+~ .5 ~ \(rf,  \(lf ~ y sub w ~+~ .5 ~ \(rf )
+.sp
+and the rasterized fragment's centers are the half-integer window coordinates
+within the square of the rounded size centered at
+( x ,  y ).
+All pixel fragments produced in rasterizing a nonantialiased point are
+assigned the same associated data,
+that of the vertex corresponding to the point.</p>
+<p>If antialiasing is enabled,
+then point rasterization produces a fragment for each pixel square
+that intersects the region lying within the circle having diameter
+equal to the current point size and centered at the point's
+( x sub w ,  y sub w ).
+The coverage value for each fragment is the window coordinate area
+of the intersection of the circular region with the corresponding pixel square.
+This value is saved and used in the final rasterization step.
+The data associated with each fragment is the data associated with
+the point being rasterized.</p>
+<p>Not all sizes are supported when point antialiasing is enabled.
+If an unsupported size is requested,
+the nearest supported size is used.
+Only size 1 is guaranteed to be supported;
+others depend on the implementation.
+To query the range of supported sizes and the size difference between
+supported sizes within the range, call
+<code class='reference unresolved'>glGet</code> with arguments
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_POINT_SIZE_RANGE</a> and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_POINT_SIZE_GRANULARITY</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-size'></span>Parameter <code class='parameter'>size</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the diameter of rasterized points.
+The initial value is 1.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if <i>size</i> is less than or equal to 0.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glPointSize.html'>glPointSize</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glPointSize.html","name":"glPointSize"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

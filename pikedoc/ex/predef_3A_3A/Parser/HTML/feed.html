@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.HTML()-&gt;feed()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML.html'><b class='head'>Parser.HTML</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/HTML/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/entities.html" class="prev"><span>&#10148;</span> Parser.HTML()-&gt;entities()</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/HTML/feed_insert.html" class="next">Parser.HTML()-&gt;feed_insert() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Parser.HTML()-&gt;feed()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>feed</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>feed</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a></code> <b><span class='method'>feed</span>(</b><code class='datatype'>string</code> <code class='argument'>s</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>do_parse</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Feed new data to the <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML.html'>Parser.HTML</a> object. This will start a scan
+ and may result in callbacks. Note that it's possible that all data
+ fed isn't processed - to do that, call <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/finish.html'>finish()</a>.</p>
+<p> If the function is called without arguments, no data is fed, but
+ the parser is run. If the string argument is followed by a
+ <code class='expr'>0</code>, <code class='expr'>-&gt;feed(s,0);</code>, the string is fed, but the parser
+ isn't run.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the object being called.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/finish.html'>finish</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/read.html'>read</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/HTML/feed_insert.html'>feed_insert</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/HTML/feed.html","name":"feed"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/HTML/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.RCS()-&gt;expand_keywords_for_revision()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/RCS.html'><b class='head'>Parser.RCS</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/RCS/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/RCS/create.html" class="prev"><span>&#10148;</span> Parser.RCS()-&gt;create()</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/RCS/get_contents_for_revision.html" class="next">Parser.RCS()-&gt;get_contents_for_revision() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Parser.RCS()-&gt;expand_keywords_for_revision()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>expand_keywords_for_revision</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> <b><span class='method'>expand_keywords_for_revision</span>(</b><code class='datatype'>string</code>|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>Revision</a></code> <code class='argument'>rev</code>, <code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>text</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>expansion_mode</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Expand keywords and return the resulting text according to the
+ expansion rules set for the file.</p>
+</dd>
+<dt class='head--doc'><span id='p-rev'></span>Parameter <code class='parameter'>rev</code></dt>
+<dd></dd><dd class='body--doc'><p>The revision to apply the expansion for.</p>
+</dd>
+<dt class='head--doc'><span id='p-text'></span>Parameter <code class='parameter'>text</code></dt>
+<dd></dd><dd class='body--doc'><p>If supplied, substitute keywords for that text instead using values that
+   would apply for the given revision. Otherwise, revision <code class='reference paramref'>rev</code> is used.</p>
+</dd>
+<dt class='head--doc'><span id='p-expansion_mode'></span>Parameter <code class='parameter'>expansion_mode</code></dt>
+<dd></dd><dd class='body--doc'><p>Expansion mode</p>
+<table class='box'><tr><td><code><code class='key'>1</code></code></td><td><p>Perform expansion even if the file was checked in as binary.</p>
+</td></tr>
+<tr><td><code><code class='key'>0</code></code></td><td><p>Perform expansion only if the file was checked in as non-binary
+       with expansion enabled.</p>
+</td></tr>
+<tr><td><code><code class='key'>-1</code></code></td><td><p>Perform contraction if the file was checked in as non-binary.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The Log keyword (which lacks sane quoting rules) is not
+   expanded. Keyword expansion rules set in CVSROOT/cvswrappers
+   are ignored. Only implements the <tt>-kkv</tt>, <tt>-ko</tt> and <tt>-kb</tt>
+   expansion modes.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Does not perform any line-ending conversion.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/RCS/expand_keywords_for_revision.html","name":"expand_keywords_for_revision"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/RCS/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/RCS/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

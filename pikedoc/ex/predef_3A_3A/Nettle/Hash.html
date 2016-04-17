@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Nettle.Hash</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Nettle.html'><b class='head'>Nettle</b></a>
+<b class='selected head'>Nettle.Hash</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Nettle/Hash/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Nettle/GOST94/State.html" class="prev"><span>&#10148;</span> Nettle.GOST94()-&gt;State</a>
+              <a href="../../../ex/predef_3A_3A/Nettle/Hash/State.html" class="next">Nettle.Hash()-&gt;State <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Nettle.Hash</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='405px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/__builtin/Nettle/__Hash.html'>__builtin.Nettle.__Hash</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../predef_3A_3A/__builtin/Nettle/Hash.html'>__builtin.Nettle.Hash</a></text>
+<line x1='44' y1='55' x2='75' y2='55' />
+<line x1='45' y1='45' x2='45' y2='56' />
+<text x='80' y='60'><tspan style='font-family:monospace; font-weight:bold;'>Nettle.Hash</tspan></text>
+<line x1='85' y1='65' x2='85' y2='396' />
+<line x1='84' y1='75' x2='115' y2='75' />
+<text x='120' y='80'><a class='ms reference' xlink:href='../../predef_3A_3A/Crypto/Hash.html'>Crypto.Hash</a></text>
+<line x1='84' y1='95' x2='115' y2='95' />
+<text x='120' y='100'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/GOST94.html'>Nettle.GOST94</a></text>
+<line x1='84' y1='115' x2='115' y2='115' />
+<text x='120' y='120'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/MD2.html'>Nettle.MD2</a></text>
+<line x1='84' y1='135' x2='115' y2='135' />
+<text x='120' y='140'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/MD4.html'>Nettle.MD4</a></text>
+<line x1='84' y1='155' x2='115' y2='155' />
+<text x='120' y='160'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/MD5.html'>Nettle.MD5</a></text>
+<line x1='84' y1='175' x2='115' y2='175' />
+<text x='120' y='180'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/RIPEMD160.html'>Nettle.RIPEMD160</a></text>
+<line x1='84' y1='195' x2='115' y2='195' />
+<text x='120' y='200'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA1.html'>Nettle.SHA1</a></text>
+<line x1='84' y1='215' x2='115' y2='215' />
+<text x='120' y='220'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA224.html'>Nettle.SHA224</a></text>
+<line x1='84' y1='235' x2='115' y2='235' />
+<text x='120' y='240'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA256.html'>Nettle.SHA256</a></text>
+<line x1='84' y1='255' x2='115' y2='255' />
+<text x='120' y='260'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA384.html'>Nettle.SHA384</a></text>
+<line x1='84' y1='275' x2='115' y2='275' />
+<text x='120' y='280'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA3_224.html'>Nettle.SHA3_224</a></text>
+<line x1='84' y1='295' x2='115' y2='295' />
+<text x='120' y='300'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA3_256.html'>Nettle.SHA3_256</a></text>
+<line x1='84' y1='315' x2='115' y2='315' />
+<text x='120' y='320'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA3_384.html'>Nettle.SHA3_384</a></text>
+<line x1='84' y1='335' x2='115' y2='335' />
+<text x='120' y='340'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA3_512.html'>Nettle.SHA3_512</a></text>
+<line x1='84' y1='355' x2='115' y2='355' />
+<text x='120' y='360'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA512.html'>Nettle.SHA512</a></text>
+<line x1='84' y1='375' x2='115' y2='375' />
+<text x='120' y='380'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA512_224.html'>Nettle.SHA512_224</a></text>
+<line x1='84' y1='395' x2='115' y2='395' />
+<text x='120' y='400'><a class='ms reference' xlink:href='../../predef_3A_3A/Nettle/SHA512_256.html'>Nettle.SHA512_256</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Represents information about a hash algorithm, such as
+ name, digest size, and internal block size.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Hash</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/__builtin/Nettle/Hash.html'>__builtin.Nettle.Hash</a> : <span class='inherit'>Hash</span></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Nettle/Hash.html","name":"Hash"};</script>
+<script src='../../../ex/predef_3A_3A/Nettle/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Nettle/Hash/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

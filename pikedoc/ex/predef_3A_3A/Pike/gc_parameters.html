@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Pike.gc_parameters()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Pike.html'><b class='head'>Pike</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Pike/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Pike/count_memory.html" class="prev"><span>&#10148;</span> Pike.count_memory()</a>
+              <a href="../../../ex/predef_3A_3A/Pike/get_first_arg_type.html" class="next">Pike.get_first_arg_type() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Pike.gc_parameters()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>gc_parameters</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>float</code>) <b><span class='method'>gc_parameters</span>(</b><code class='datatype'>void</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>params</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set and get various parameters that control the operation of the
+ garbage collector. The passed mapping contains the parameters to
+ set. If a parameter is missing from the mapping, the current value
+ will be filled in instead. The same mapping is returned. Thus an
+ empty mapping, or no argument at all, causes a mapping with all
+ current settings to be returned.</p>
+<p> The following parameters are recognized:</p>
+<table class='box'><tr><td><code><code class='key'>"enabled"</code> : <code class='datatype'>int</code></code></td><td><p>If this is 1 then the gc is enabled as usual. If it's 0 then all
+   automatically scheduled gc runs are disabled and the parameters
+   below have no effect, but explicit runs through the <a class='ms reference' href='../../predef_3A_3A/gc.html'>gc</a>
+   function still works as usual. If it's -1 then the gc is
+   completely disabled so that even explicit <a class='ms reference' href='../../predef_3A_3A/gc.html'>gc</a> calls won't do
+   anything.</p>
+</td></tr>
+<tr><td><code><code class='key'>"garbage_ratio_low"</code> : <code class='datatype'>float</code></code></td><td><p>As long as the gc time is less than time_ratio below, aim to run
+   the gc approximately every time the ratio between the garbage
+   and the total amount of allocated things is this.</p>
+</td></tr>
+<tr><td><code><code class='key'>"time_ratio"</code> : <code class='datatype'>float</code></code></td><td><p>When more than this fraction of the time is spent in the gc, aim
+   for garbage_ratio_high instead of garbage_ratio_low.</p>
+</td></tr>
+<tr><td><code><code class='key'>"garbage_ratio_high"</code> : <code class='datatype'>float</code></code></td><td><p>Upper limit for the garbage ratio - run the gc as often as it
+   takes to keep it below this.</p>
+</td></tr>
+<tr><td><code><code class='key'>"min_gc_time_ratio"</code> : <code class='datatype'>float</code></code></td><td><p>This puts an upper limit on the gc interval, in addition to the
+   factors above. It is specified as the minimum amount of time
+   spent doing gc, as a factor of the total time. The reason for
+   this limit is that the current amount of garbage can only be
+   measured in a gc run, and if the gc starts to run very seldom
+   due to very little garbage, it might get too slow to react to an
+   increase in garbage generation. Set to 0.0 to turn this limit
+   off.</p>
+</td></tr>
+<tr><td><code><code class='key'>"average_slowness"</code> : <code class='datatype'>float</code></code></td><td><p>When predicting the next gc interval, use a decaying average
+   with this slowness factor. It should be a value between 0.0 and
+   1.0 that specifies the weight to give to the old average value.
+   The remaining weight up to 1.0 is given to the last reading.</p>
+</td></tr>
+<tr><td><code><code class='key'>"pre_cb"</code> : <code class='datatype'>function</code>(:<code class='datatype'>void</code>)</code></td><td><p>This function is called when the gc starts.</p>
+</td></tr>
+<tr><td><code><code class='key'>"post_cb"</code> : <code class='datatype'>function</code>(:<code class='datatype'>void</code>)</code></td><td><p>This function is called when the mark and sweep pass of the gc
+   is done.</p>
+</td></tr>
+<tr><td><code><code class='key'>"destruct_cb"</code> : <code class='datatype'>function</code>(<code class='datatype'>object</code>, <code class='datatype'>int</code>, <code class='datatype'>int</code>:<code class='datatype'>void</code>)</code></td><td><p>This function is called once for each object that is part of
+   a cycle just before the gc will destruct it.
+   The arguments are:</p>
+<dl class='group--doc'><dd><p>The object to be destructed.</p>
+</dd>
+<dd><p>The reason for it being destructed. One of:</p>
+<table class='box'><tr><td><code><code class='key'>Object.DESTRUCT_CLEANUP</code></code></td><td><p>Destructed during exit.</p>
+</td></tr>
+<tr><td><code><code class='key'>Object.DESTRUCT_GC</code></code></td><td><p>Destructed during normal implicit or explicit <a class='ms reference' href='../../predef_3A_3A/gc.html'>gc()</a>.</p>
+</td></tr>
+</table></dd>
+<dd><p>The number of references it had.</p>
+</dd>
+</dl></td></tr>
+<tr><td><code><code class='key'>"done_cb"</code> : <code class='datatype'>function</code>(<code class='datatype'>int</code>:<code class='datatype'>void</code>)</code></td><td><p>This function is called when the gc is done and about to exit.
+   The argument is the same value as will be returned by gc().</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/gc.html'>gc</a>, <a class='ms reference' href='../../predef_3A_3A/Debug/gc_status.html'>Debug.gc_status</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Pike/gc_parameters.html","name":"gc_parameters"};</script>
+<script src='../../../ex/predef_3A_3A/Pike/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Pike/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

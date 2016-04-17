@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Web.Auth.OAuth2.Base()-&gt;do_query()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../../style.css'>
+    <script src='../../../../../../site.js'></script>
+    <script src='../../../../../../pike_version.js'></script>
+    <script src='../../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../../ex/predef_3A_3A/Web.html'><b class='head'>Web</b></a>
+<a href='../../../../../../ex/predef_3A_3A/Web/Auth.html'><b class='head'>Web.Auth</b></a>
+<a href='../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2.html'><b class='head'>Web.Auth.OAuth2</b></a>
+<a href='../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base.html'><b class='head'>Web.Auth.OAuth2.Base</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base/decode_access_token_response.html" class="prev"><span>&#10148;</span> Web.Auth.OAuth2.Base()-&gt;decode_access_token_response()</a>
+              <a href="../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base/get_access_type.html" class="next">Web.Auth.OAuth2.Base()-&gt;get_access_type() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Web.Auth.OAuth2.Base()-&gt;do_query()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>do_query</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>string</code> <b><span class='method'>do_query</span>(</b><code class='datatype'>string</code> <code class='argument'>oauth_token_uri</code>, <code class='object resolved'><a class='ms reference' href='../../../../../predef_3A_3A/Web/Auth/Params.html'>Web.Auth.Params</a></code> <code class='argument'>p</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='object resolved'><code class='reference unresolved'>bool</code></code>, <code class='datatype'>string</code>:<code class='datatype'>void</code>) <code class='argument'>async_cb</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Send a request to <code class='reference paramref'>oauth_token_uri</code> with params <code class='reference paramref'>p</code></p>
+</dd>
+<dt class='head--doc'><span id='p-async_cb'></span>Parameter <code class='parameter'>async_cb</code></dt>
+<dd></dd><dd class='body--doc'><p>If given an async request will be made and this function will
+  be called when the request is finished. The first argument
+  passed to the callback will be <code class='expr'>true</code> or <code class='expr'>false</code>
+  depending on if the request was successfull or not. The second
+  argument will be a string. If the request failed it will be an
+  error message. If it succeeded it will be the result as a
+  string encoded with <a class='ms reference' href='../../../../../predef_3A_3A/encode_value.html'>encode_value()</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Auth/OAuth2/Base/do_query.html","name":"do_query"};</script>
+<script src='../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base/index.js'></script>
+<script src='../../../../../../ex/predef_3A_3A/Web/Auth/OAuth2/Base/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

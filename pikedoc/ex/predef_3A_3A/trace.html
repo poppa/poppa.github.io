@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - trace()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/time.html" class="prev"><span>&#10148;</span> time()</a>
+              <a href="../../ex/predef_3A_3A/types.html" class="next">types() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method trace()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>trace</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> <b><span class='method'>trace</span>(</b><code class='datatype'>int</code> <code class='argument'>level</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>facility</code>, <code class='datatype'>void</code>|<code class='datatype'>int</code> <code class='argument'>all_threads</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This function changes the trace level for the subsystem identified
+ by <code class='reference paramref'>facility</code> to <code class='reference paramref'>level</code>. If <code class='reference paramref'>facility</code> is zero or left out, it
+ changes the global trace level which affects all subsystems.</p>
+<p> Enabling tracing causes messages to be printed to stderr. A higher
+ trace level includes the output from all lower levels. The lowest
+ level is zero which disables all trace messages.</p>
+<p> See the <tt>-t</tt> command-line option for more information.</p>
+</dd>
+<dt class='head--doc'><span id='p-level'></span>Parameter <code class='parameter'>level</code></dt>
+<dd></dd><dd class='body--doc'><p>If <code class='reference paramref'>facility</code> is specified then there is typically only one
+   trace level for it, i.e. it's an on-or-off toggle. The global
+   trace levels, when <code class='reference paramref'>facility</code> isn't specified, are:</p>
+<table class='box'><tr><td><code><code class='key'>1</code></code></td><td><p>Trace calls to Pike functions and garbage collector runs.</p>
+</td></tr>
+<tr><td><code><code class='key'>2</code></code></td><td><p>Trace calls to builtin functions.</p>
+</td></tr>
+<tr><td><code><code class='key'>3</code></code></td><td><p>Trace every interpreted opcode.</p>
+</td></tr>
+<tr><td><code><code class='key'>4</code></code></td><td><p>Also trace the opcode arguments.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-facility'></span>Parameter <code class='parameter'>facility</code></dt>
+<dd></dd><dd class='body--doc'><p>Valid facilities are:</p>
+<table class='box'><tr><td><code><code class='key'>"gc"</code></code></td><td><p>Trace the doings of the garbage collector. The setting is
+     never thread local. <code class='reference paramref'>level</code> has two different meanings:</p>
+<dl class='group--doc'><dt>1..2</dt>
+<dd><p>Trace the start and end of each gc run.</p>
+</dd>
+<dt>3..</dt>
+<dd><p>Additionally show info about the collected garbage, to aid
+       hunting down garbage problems. This currently shows gc'd
+       trampolines. Note that the output can be very bulky and is
+       somewhat low-level technical. Also note that pike currently
+       has to be configured with <code class='expr'>--with-rtldebug</code> to enable
+       this.</p>
+</dd>
+</dl></td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-all_threads'></span>Parameter <code class='parameter'>all_threads</code></dt>
+<dd></dd><dd class='body--doc'><p>Trace levels are normally thread local, so changes affect only
+   the current thread. To change the level in all threads, pass a
+   nonzero value in this argument.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>The old trace level in the current thread is returned.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/trace.html","name":"trace"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

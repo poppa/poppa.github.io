@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/copy.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;copy()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/dct.html" class="next">Image.Image()-&gt;dct() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code> <code class='argument'>image</code><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code>, <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Color.html'>Color</a></code> <code class='argument'>color</code><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code>, <code class='datatype'>int</code> <code class='argument'>r</code>, <code class='datatype'>int</code> <code class='argument'>g</code>, <code class='datatype'>int</code> <code class='argument'>b</code><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code>, <code class='datatype'>int</code> <code class='argument'>r</code>, <code class='datatype'>int</code> <code class='argument'>g</code>, <code class='datatype'>int</code> <code class='argument'>b</code>, <code class='datatype'>int</code> <code class='argument'>alpha</code><b>)</b></code><br>
+<code><span class='object'>Image.Image</span> <span class='class'>Image.Image</span><b>(</b><code class='datatype'>int</code> <code class='argument'>xsize</code>, <code class='datatype'>int</code> <code class='argument'>ysize</code>, <code class='datatype'>string</code> <code class='argument'>method</code>, <code class='object resolved'><code class='reference paramref'>method</code></code> <code class='argument'>...</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Initializes a new image object.</p>
+
+<p><table><tr valign='center'>
+<td><img height='115' src='../../../../images/predef.Image.Image.create.1.png' width='80' /></td>
+<td><img height='115' src='../../../../images/predef.Image.Image.create.2.png' width='80' /></td>
+</tr><tr>
+<td>Image.Image<br />(XSIZE,YSIZE)</td>
+<td>Image.Image<br />(XSIZE,YSIZE,255,128,0)</td>
+</tr></table></p>
+
+<p>The image can also be calculated from some special methods,
+for convinience:</p>
+
+<p><pre>
+channel modes; followed by a number of 1-char-per-pixel strings
+or image objects (where red channel will be used),
+or an integer value:
+  "grey" : make a grey image (needs 1 source: grey)
+  "rgb"  : make an rgb image (needs 3 sources: red, green and blue)
+  "cmyk" : make a rgb image from cmyk (cyan, magenta, yellow, black)
+  "adjusted_cmyk" : make a rgb image from cmyk
+           (cyan, magenta, yellow, black) where the colors aren't
+           100% pure (C: 009ee0, M: e2007a, Y: ffec00, K: 1a171b).
+  "raw"  : make an image from a binary string
+ 
+generate modes; all extra arguments is given to the
+generation function. These has the same name as the method:
+  "&lt;ref&gt;test&lt;/ref&gt;,"
+  "&lt;ref&gt;gradients&lt;/ref&gt;"
+  "&lt;ref&gt;noise&lt;/ref&gt;"
+  "&lt;ref&gt;turbulence&lt;/ref&gt;"
+  "&lt;ref&gt;random&lt;/ref&gt;"
+  "&lt;ref&gt;randomgrey&lt;/ref&gt;"
+specials cases:
+  "&lt;ref&gt;tuned_box&lt;/ref&gt;" (coordinates is automatic)
+</pre>
+</p>
+</dd>
+<dt class='head--doc'><span id='p-image'></span>Parameter <code class='parameter'>image</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>Image to clone.</p></dd>
+<dt class='head--doc'><span id='p-xsize'></span>Parameter <code class='parameter'>xsize</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-ysize'></span>Parameter <code class='parameter'>ysize</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>size of (new) image in pixels</p></dd>
+<dt class='head--doc'><span id='p-color'></span>Parameter <code class='parameter'>color</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-r'></span>Parameter <code class='parameter'>r</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-g'></span>Parameter <code class='parameter'>g</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-b'></span>Parameter <code class='parameter'>b</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>background color (will also be current color),
+default color is black</p></dd>
+<dt class='head--doc'><span id='p-alpha'></span>Parameter <code class='parameter'>alpha</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>default alpha channel value</p></dd>
+<dt class='head--doc'>Bugs</dt>
+<dd class='body--doc'>
+
+<p>SIGSEGVS can be caused if the size is too big, due
+to unchecked overflow -
+(xsize*ysize)&amp;MAXINT is small enough to allocate.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'>
+<p><a class='ms reference' href='../../../predef_3A_3A/Image/Image/copy.html'>copy</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image/clone.html'>clone</a>, <a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></p></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

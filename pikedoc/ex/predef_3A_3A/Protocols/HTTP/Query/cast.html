@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.HTTP.Query()-&gt;cast()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP.html'><b class='head'>Protocols.HTTP</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP/Query.html'><b class='head'>Protocols.HTTP.Query</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/HTTP/Query/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/HTTP/Query/_backtick_28_29.html" class="prev"><span>&#10148;</span> Protocols.HTTP.Query()-&gt;`()()</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/HTTP/Session.html" class="next">Protocols.HTTP.Session <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Protocols.HTTP.Query()-&gt;cast()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>cast</b></span>
+</dt>
+<dd><p><code><b>(</b><span class='datatype'><code class='datatype'>array</code></span><b>)</b><span class='class'>Protocols.HTTP.Query</span>()</code></p></dd>
+
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><table class='box'><tr><td colspan='2'>Array</td></tr>
+<tr><td><code><code class='datatype'>mapping</code> <code class='key'>0</code></code></td><td><p>Headers</p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code> <code class='key'>1</code></code></td><td><p>Data</p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code> <code class='key'>2</code></code></td><td><p>Protocol</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>3</code></code></td><td><p>Status</p>
+</td></tr>
+<tr><td><code><code class='datatype'>string</code> <code class='key'>4</code></code></td><td><p>Status description</p>
+</td></tr>
+</table>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>cast</b></span>
+</dt>
+<dd><p><code><b>(</b><span class='datatype'><code class='datatype'>mapping</code></span><b>)</b><span class='class'>Protocols.HTTP.Query</span>()</code></p></dd>
+
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>The header mapping ORed with the following mapping.</p>
+<table class='box'><tr><td><code><code class='key'>"protocol"</code> : <code class='datatype'>string</code></code></td><td><p>The protocol.</p>
+</td></tr>
+<tr><td><code><code class='key'>"status"</code> : <code class='datatype'>int</code></code></td><td><p>The status code.</p>
+</td></tr>
+<tr><td><code><code class='key'>"status_desc"</code> : <code class='datatype'>string</code></code></td><td><p>The status description.</p>
+</td></tr>
+<tr><td><code><code class='key'>"data"</code> : <code class='datatype'>string</code></code></td><td><p>The returned data.</p>
+</td></tr>
+</table>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>cast</b></span>
+</dt>
+<dd><p><code><b>(</b><span class='datatype'><code class='datatype'>string</code></span><b>)</b><span class='class'>Protocols.HTTP.Query</span>()</code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Gives back the answer as a string.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/HTTP/Query/cast.html","name":"cast"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/HTTP/Query/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/HTTP/Query/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

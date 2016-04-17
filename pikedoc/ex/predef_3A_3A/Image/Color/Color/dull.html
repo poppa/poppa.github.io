@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Color.Color()-&gt;dull()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../../ex/predef_3A_3A/Image/Color.html'><b class='head'>Image.Color</b></a>
+<a href='../../../../../ex/predef_3A_3A/Image/Color/Color.html'><b class='head'>Image.Color.Color</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Image/Color/Color/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Image/Color/Color/dark.html" class="prev"><span>&#10148;</span> Image.Color.Color()-&gt;dark()</a>
+              <a href="../../../../../ex/predef_3A_3A/Image/Color/Color/grey.html" class="next">Image.Color.Color()-&gt;grey() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Color.Color()-&gt;dull()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>dull</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>light</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>dark</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>neon</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>bright</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>dull</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Color modification methods. These returns
+a new color.
+<table>
+<tr><th>method</th><th width='50%'>effect</th>
+<th>h</th><th>s</th><th>v</th><th>as</th></tr>
+<tr><td>light </td><td>raise light level</td><td>±0</td><td> ±0</td><td>+50</td>
+<td><img height='20' src='../../../../../images/predef.Image.Color.Color.light.1.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.2.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.3.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.4.png' width='20' /></td></tr>
+ 
+<tr><td>dark  </td><td>lower light level</td><td>±0</td><td> ±0</td><td>-50</td>
+<td><img height='20' src='../../../../../images/predef.Image.Color.Color.light.5.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.6.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.7.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.8.png' width='20' /></td></tr>
+ 
+<tr><td>bright</td><td>brighter color   </td><td>±0</td><td>+50</td><td>+50</td>
+<td><img height='20' src='../../../../../images/predef.Image.Color.Color.light.9.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.10.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.11.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.12.png' width='20' /></td></tr>
+ 
+<tr><td>dull  </td><td>greyer color     </td><td>±0</td><td>-50</td><td>-50</td>
+<td><img height='20' src='../../../../../images/predef.Image.Color.Color.light.13.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.14.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.15.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.16.png' width='20' /></td></tr>
+ 
+<tr><td>neon  </td><td>set to extreme   </td><td>±0</td><td>max</td><td>max</td>
+<td><img height='20' src='../../../../../images/predef.Image.Color.Color.light.17.png' width='20' />
+<img height='20' src='../../../../../images/predef.Image.Color.Color.light.18.png' width='20' /></td></tr>
+ 
+</table></p>
+
+<p><a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/light.html'>light</a> and <a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/dark.html'>dark</a> lower/highers saturation
+when value is min-/maximised respective.
+</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new color object</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>The opposites may not always take each other out.
+The color is maximised at white and black levels,
+so, for instance
+<a class='ms reference' href='../../../../predef_3A_3A/Image/Color.html'>Image.Color</a>.white-&gt;<a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/light.html'>light</a>()-&gt;<a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/dark.html'>dark</a>()
+doesn't give the white color back, but the equal to
+<a class='ms reference' href='../../../../predef_3A_3A/Image/Color.html'>Image.Color</a>.white-&gt;<a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/dark.html'>dark</a>(), since
+white can't get any <a class='ms reference' href='../../../../predef_3A_3A/Image/Color/Color/light.html'>light</a>er.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Color/Color/dull.html","name":"dull"};</script>
+<script src='../../../../../ex/predef_3A_3A/Image/Color/Color/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Image/Color/Color/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

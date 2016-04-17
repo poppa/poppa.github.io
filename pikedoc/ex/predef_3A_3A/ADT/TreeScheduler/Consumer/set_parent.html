@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - ADT.TreeScheduler()-&gt;Consumer()-&gt;set_parent()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT.html'><b class='head'>ADT</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT/TreeScheduler.html'><b class='head'>ADT.TreeScheduler</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer.html'><b class='head'>ADT.TreeScheduler()-&gt;Consumer</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer/reparent_siblings.html" class="prev"><span>&#10148;</span> ADT.TreeScheduler()-&gt;Consumer()-&gt;reparent_siblings()</a>
+              <a href="../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer/update_quanta.html" class="next">ADT.TreeScheduler()-&gt;Consumer()-&gt;update_quanta() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method ADT.TreeScheduler()-&gt;Consumer()-&gt;set_parent()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_parent</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>set_parent</span>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer.html'>Consumer</a></code> <code class='argument'>new_parent</code>, <code class='datatype'>int</code>|<code class='datatype'>float</code> <code class='argument'>weight</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Change to a new parent.</p>
+</dd>
+<dt class='head--doc'><span id='p-new_parent'></span>Parameter <code class='parameter'>new_parent</code></dt>
+<dd></dd><dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer.html'>Consumer</a> this object depends on. We will only
+   get returned by <a class='ms reference' href='../../../../predef_3A_3A/ADT/Scheduler/get.html'>get()</a> when <code class='reference paramref'>new_parent</code> is
+   inactive (ie <a class='ms reference' href='../../../../predef_3A_3A/ADT/Scheduler/remove.html'>remove</a>d).</p>
+</dd>
+<dt class='head--doc'><span id='p-weight'></span>Parameter <code class='parameter'>weight</code></dt>
+<dd></dd><dd class='body--doc'><p>New weight.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If <code class='reference paramref'>new_parent</code> depends on us, it will be moved
+   to take our place in depending on our old parent.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>To perform the exclusive mode reparent from <b><a href='http://pike.lysator.liu.se/rfc7540.xml'>RFC 7540</a></b>
+   figure 5, call <a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer/reparent_siblings.html'>reparent_siblings()</a> after this function.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer/detach.html'>detach()</a>, <a class='ms reference' href='../../../../predef_3A_3A/ADT/Scheduler/remove.html'>remove()</a>, <a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer/create.html'>create()</a>, <a class='ms reference' href='../../../../predef_3A_3A/ADT/TreeScheduler/Consumer/reparent_siblings.html'>reparent_siblings()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/ADT/TreeScheduler/Consumer/set_parent.html","name":"set_parent"};</script>
+<script src='../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/ADT/TreeScheduler/Consumer/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

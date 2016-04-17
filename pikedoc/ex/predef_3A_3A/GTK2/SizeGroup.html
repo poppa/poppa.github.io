@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.SizeGroup</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<b class='selected head'>GTK2.SizeGroup</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GTK2/SizeGroup/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GTK2/Settings/create.html" class="prev"><span>&#10148;</span> GTK2.Settings()-&gt;create()</a>
+              <a href="../../../ex/predef_3A_3A/GTK2/SizeGroup/add_widget.html" class="next">GTK2.SizeGroup()-&gt;add_widget() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class GTK2.SizeGroup</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/G/Object.html'>GTK2.G.Object</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>GTK2.SizeGroup</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Provides a mechanism for grouping a number of widgets together so they all
+ request the same amount of space.  This is typically usefull when you want
+ a column of widgets to have the same size, but you can't use a W(Table)
+ widget.</p>
+<p> In detail, the size requiest for each widget in a GTK2.SizeGroup is the
+ maximum of the sizes that would have been requested for each widget in the
+ size group if they were not in the size group.  The mode of the size group
+ (see set_mode() determines whether this applies to the horizontal size, the
+ vertical size, or both sizes.</p>
+<p> Note that size groups only affect the amount of space requested, not the
+ size that the widgets finally receive.  If you want the widgets in a
+ GTK2.SizeGroup to actually be the same size, you need to pack them in such
+ a way that they get the size they request and not more.  For example, if
+ you are packing your widgets into a table, you would not include the
+ GTK2.FILL flag.</p>
+<p> GTK2.SizeGroup objects are referenced by each widget in the size group, so
+ one you have added all widgets to a GTK2.SizeGroup, you can drop the initial
+ reference to the size group.  If the widgets in the size group are
+ subsequently destroyed, then they will be removed from the size group; when
+ allow idgets have been removed, the size group will be freed.</p>
+<p> Widgets can be part of multiple size groups; GTK+ will compute the
+ horizontal size of a widget from the horizontal requisition of all widgets
+ that can be reached from the widget by a chain of size groups of type
+ GTK2.SIZE_GROUP_HORIZONTAL or GTK2.SIZE_GROUP_BOTH, and the vertical size
+ from the vertical requisition of all widgets that can be reached from the
+ widget by a chain of size groups of type GTK2.SIZE_GROUP_VERTICAL or
+ GTK2.SIZE_GROUP_BOTH.
+ Properties:
+ int mode
+    The directions in which the size group effects the requested sizes of
+    its componenent widgets.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Object</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/GTK2/G/Object.html'>G.Object</a> : <span class='inherit'>Object</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>GTK2.SizeGroup</span> <span class='class'>GTK2.SizeGroup</span><b>(</b><code class='datatype'>int</code>|<code class='datatype'>mapping</code> <code class='argument'>mode_or_props</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a new group.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/SizeGroup.html","name":"SizeGroup"};</script>
+<script src='../../../ex/predef_3A_3A/GTK2/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GTK2/SizeGroup/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

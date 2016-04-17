@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.Bittorrent.DHT()-&gt;GetPeers</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/Bittorrent.html'><b class='head'>Protocols.Bittorrent</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT.html'><b class='head'>Protocols.Bittorrent.DHT</b></a>
+<b class='selected head'>Protocols.Bittorrent.DHT()-&gt;GetPeers</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT/GetPeers/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT/FindNode/generate_query.html" class="prev"><span>&#10148;</span> Protocols.Bittorrent.DHT()-&gt;FindNode()-&gt;generate_query()</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT/GetPeers/done.html" class="next">Protocols.Bittorrent.DHT()-&gt;GetPeers()-&gt;done() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.Bittorrent.DHT()-&gt;GetPeers</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../../../predef_3A_3A/Protocols/Bittorrent/DHT/DHTOperation.html'>Protocols.Bittorrent.DHT.DHTOperation</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>Protocols.Bittorrent.DHT.GetPeers</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The GetPeers class is used to initiate queries to the DHT where
+ peers for a hash is desired. Upon completion, the done_db will be
+ called with the GetPeers instance as the first argument and the
+ done_cb_args as the following arguments.</p>
+<p> The done_cb function is expected to examine the results array to
+ find out what the result of the query actually contains. For this
+ query, the result array will be an array with two elements; the
+ first one containing any responses from nodes that knows of peers
+ and the second one will contain the closest nodes to the target
+ hash that we saw during the query.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>closest_nodes</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code> Protocols.Bittorrent.DHT.GetPeers.<b><span class='variable'>closest_nodes</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Sorted array of the closest K nodes we've seen in the query.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>desired_results</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.Bittorrent.DHT.GetPeers.<b><span class='variable'>desired_results</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Override the default number of desired results</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>DHTOperation</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../../../predef_3A_3A/Protocols/Bittorrent/DHT/DHTOperation.html'>DHTOperation</a> : <span class='inherit'>DHTOperation</span></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/Bittorrent/DHT/GetPeers.html","name":"GetPeers"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/Bittorrent/DHT/GetPeers/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

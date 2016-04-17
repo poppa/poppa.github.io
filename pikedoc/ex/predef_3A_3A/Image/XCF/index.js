@@ -1,0 +1,6 @@
+// Class path Image.XCF
+PikeDoc.registerSymbol('Image.XCF', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Image/XCF/Channel.html","name":"Channel"},{"link":"ex/predef_3A_3A/Image/XCF/GimpImage.html","name":"GimpImage"},{"link":"ex/predef_3A_3A/Image/XCF/Guide.html","name":"Guide"},{"link":"ex/predef_3A_3A/Image/XCF/Hierarchy.html","name":"Hierarchy"},{"link":"ex/predef_3A_3A/Image/XCF/Layer.html","name":"Layer"},{"link":"ex/predef_3A_3A/Image/XCF/LayerMask.html","name":"LayerMask"},{"link":"ex/predef_3A_3A/Image/XCF/Parasite.html","name":"Parasite"},{"link":"ex/predef_3A_3A/Image/XCF/Path.html","name":"Path"},{"link":"ex/predef_3A_3A/Image/XCF/PathPoint.html","name":"PathPoint"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Image/XCF/___decode.html","name":"___decode"},{"link":"ex/predef_3A_3A/Image/XCF/__decode.html","name":"__decode"},{"link":"ex/predef_3A_3A/Image/XCF/decode.html","name":"decode"},{"link":"ex/predef_3A_3A/Image/XCF/decode_header.html","name":"decode_header"},{"link":"ex/predef_3A_3A/Image/XCF/decode_layers.html","name":"decode_layers"},{"link":"ex/predef_3A_3A/Image/XCF/translate_mode.html","name":"translate_mode"}])
+.addChildren('operator', [{"link":"ex/predef_3A_3A/Image/XCF/_decode.html","name":"_decode"}])
+.finish();

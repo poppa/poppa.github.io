@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.DNS.async_client</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/7.8_3A_3A.html'><b class='head'>7.8::</b></a>
+<a href='../../../../ex/7.8_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/7.8_3A_3A/Protocols/DNS.html'><b class='head'>Protocols.DNS</b></a>
+<b class='selected head'>Protocols.DNS.async_client</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/7.8_3A_3A/Protocols/DNS/async_client/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/7.8_3A_3A/Protocols/DNS.html" class="prev"><span>&#10148;</span> Protocols.DNS</a>
+              <a href="../../../../ex/7.8_3A_3A/Protocols/DNS/async_client/create.html" class="next">Protocols.DNS.async_client()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.DNS.async_client</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='125px'>
+<text x='0' y='20'><tspan style='font-family:monospace;'>_Stdio.UDP</tspan></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../predef_3A_3A/Stdio/UDP.html'>predef::Stdio.UDP</a></text>
+<text x='80' y='60'><a class='ms reference' xlink:href='../../../predef_3A_3A/Protocols/DNS/protocol.html'>predef::Protocols.DNS.protocol</a></text>
+<line x1='84' y1='75' x2='115' y2='75' />
+<line x1='85' y1='65' x2='85' y2='76' />
+<text x='120' y='80'><a class='ms reference' xlink:href='../../../predef_3A_3A/Protocols/DNS/client.html'>predef::Protocols.DNS.client</a></text>
+<line x1='44' y1='95' x2='155' y2='95' />
+<line x1='45' y1='45' x2='45' y2='96' />
+<line x1='125' y1='85' x2='125' y2='96' />
+<text x='160' y='100'><a class='ms reference' xlink:href='../../../predef_3A_3A/Protocols/DNS/async_client.html'>predef::Protocols.DNS.async_client</a></text>
+<line x1='164' y1='115' x2='195' y2='115' />
+<line x1='165' y1='105' x2='165' y2='116' />
+<text x='200' y='120'><tspan style='font-family:monospace; font-weight:bold;'>7.8::Protocols.DNS.async_client</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Pike 7.8 compatibility version of <a class='ms reference' href='../../../predef_3A_3A/Protocols/DNS/async_client.html'>Protocols.DNS.async_client</a>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>async_client</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../../predef_3A_3A/Protocols/DNS/async_client.html'>DNS::async_client</a> : <span class='inherit'>async_client</span></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Based on the current Protocols.DNS.server.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Protocols.DNS.async_client</span> <span class='class'>Protocols.DNS.async_client</span><b>(</b><code class='datatype'>void</code>|<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>server</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>domain</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>create() used to be visible.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Protocols/DNS/async_client/create.html'>::create()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/7.8_3A_3A/Protocols/DNS/async_client.html","name":"async_client"};</script>
+<script src='../../../../ex/7.8_3A_3A/Protocols/DNS/index.js'></script>
+<script src='../../../../ex/7.8_3A_3A/Protocols/DNS/async_client/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

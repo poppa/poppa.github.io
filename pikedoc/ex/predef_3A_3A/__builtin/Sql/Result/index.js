@@ -1,0 +1,4 @@
+// Class path __builtin.Sql.Result
+PikeDoc.registerSymbol('__builtin.Sql.Result', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/__builtin/Sql/Result/create.html","name":"create"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/eof.html","name":"eof"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/fetch_fields.html","name":"fetch_fields"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/fetch_json_result.html","name":"fetch_json_result"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/fetch_row.html","name":"fetch_row"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/next_result.html","name":"next_result"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/num_fields.html","name":"num_fields"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/num_rows.html","name":"num_rows"},{"link":"ex/predef_3A_3A/__builtin/Sql/Result/seek.html","name":"seek"}])
+.finish();

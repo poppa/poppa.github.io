@@ -1,0 +1,4 @@
+// Class path Remote.Connection
+PikeDoc.registerSymbol('Remote.Connection', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Remote/Connection/add_close_callback.html","name":"add_close_callback"},{"link":"ex/predef_3A_3A/Remote/Connection/call_async.html","name":"call_async"},{"link":"ex/predef_3A_3A/Remote/Connection/call_sync.html","name":"call_sync"},{"link":"ex/predef_3A_3A/Remote/Connection/close.html","name":"close"},{"link":"ex/predef_3A_3A/Remote/Connection/connect.html","name":"connect"},{"link":"ex/predef_3A_3A/Remote/Connection/create.html","name":"create"},{"link":"ex/predef_3A_3A/Remote/Connection/error_message.html","name":"error_message"},{"link":"ex/predef_3A_3A/Remote/Connection/get_named_object.html","name":"get_named_object"},{"link":"ex/predef_3A_3A/Remote/Connection/remove_close_callback.html","name":"remove_close_callback"},{"link":"ex/predef_3A_3A/Remote/Connection/start_server.html","name":"start_server"}])
+.finish();

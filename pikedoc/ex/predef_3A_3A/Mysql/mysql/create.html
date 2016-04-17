@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Mysql.mysql()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql.html'><b class='head'>Mysql</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql/mysql.html'><b class='head'>Mysql.mysql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Mysql/mysql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Mysql/mysql/binary_data.html" class="prev"><span>&#10148;</span> Mysql.mysql()-&gt;binary_data()</a>
+              <a href="../../../../ex/predef_3A_3A/Mysql/mysql/create_db.html" class="next">Mysql.mysql()-&gt;create_db() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Mysql.mysql()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code><b>)</b></code><br>
+<code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>database</code><b>)</b></code><br>
+<code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>database</code>, <code class='datatype'>string</code> <code class='argument'>user</code><b>)</b></code><br>
+<code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>database</code>, <code class='datatype'>string</code> <code class='argument'>user</code>, <code class='datatype'>string</code> <code class='argument'>password</code><b>)</b></code><br>
+<code><span class='object'>Mysql.mysql</span> <span class='class'>Mysql.mysql</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>string</code> <code class='argument'>database</code>, <code class='datatype'>string</code> <code class='argument'>user</code>, <code class='datatype'>string</code> <code class='argument'>password</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>|<code class='datatype'>int</code>) <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Connect to a Mysql database.</p>
+<p> To access the Mysql database, you must first connect to it. This is
+ done with this function.</p>
+</dd>
+<dt class='head--doc'><span id='p-host'></span>Parameter <code class='parameter'>host</code></dt>
+<dd></dd><dd class='body--doc'><p>If you give no argument, or give <code class='expr'>""</code> as <code class='reference paramref'>host</code> it will connect
+   with a UNIX-domain socket, which can be a big performance gain.</p>
+</dd>
+<dt class='head--doc'><span id='p-options'></span>Parameter <code class='parameter'>options</code></dt>
+<dd></dd><dd class='body--doc'><p>This optional mapping can contain zero or more of the following
+   parameters:</p>
+<table class='box'><tr><td><code><code class='key'>"init_command"</code> : <code class='datatype'>string</code></code></td><td><p>Command to execute on connect.</p>
+</td></tr>
+<tr><td><code><code class='key'>"timeout"</code> : <code class='datatype'>int</code></code></td><td><p>Timeout in seconds.</p>
+</td></tr>
+<tr><td><code><code class='key'>"compress"</code> : <code class='datatype'>bool</code></code></td><td><p>Enable compressed protocol.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_config_file"</code> : <code class='datatype'>string</code></code></td><td><p>Change config file from <code class='expr'>"my.cnf"</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_group"</code> : <code class='datatype'>string</code></code></td><td><p>Specify additional group to read from config file.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_named_pipe"</code> : <code class='datatype'>bool</code></code></td><td><p>Use named pipe to connect to server.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_local_infile"</code> : <code class='datatype'>bool</code></code></td><td><p>Enable use of LOCAL INFILE (security).</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_charset_dir"</code> : <code class='datatype'>string</code></code></td><td><p>Change charset directory.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mysql_charset_name"</code> : <code class='datatype'>string</code></code></td><td><p>Set connection charset - see <code class='reference unresolved'>set_charset</code> for details. The
+       default is <code class='expr'>"latin1"</code>. As opposed to <code class='reference unresolved'>set_charset</code>,
+       this way of specifying the connection charset doesn't
+       require MySQL 4.1.0.</p>
+</td></tr>
+<tr><td><code><code class='key'>"unicode_decode_mode"</code> : <code class='datatype'>int</code></code></td><td><p>Enable unicode decode mode for the connection if nonzero. In
+       this mode non-binary string results are automatically
+       converted to (possibly wide) unicode strings. An error is
+       thrown if the server doesn't support this. See
+       <code class='reference unresolved'>set_unicode_decode_mode</code>.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ssl_key"</code> : <code class='datatype'>string</code></code></td><td><p>Path to SSL-key for use in SSL-communication.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ssl_cert"</code> : <code class='datatype'>string</code></code></td><td><p>Path to SSL-cert for use in SSL-communication.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ssl_ca"</code> : <code class='datatype'>string</code></code></td><td><p>Path to SSL-CA for use in SSL-communication.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ssl_capath"</code> : <code class='datatype'>string</code></code></td><td><p>Path to SSL-CAPATH for use in SSL-communication.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ssl_cipher"</code> : <code class='datatype'>string</code></code></td><td><p>FIXME</p>
+</td></tr>
+<tr><td><code><code class='key'>"connect_options"</code> : <code class='datatype'>int</code></code></td><td><p>Options used when connecting to the server. See mysql documentation
+       for more information.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Some options may not be implemented. Unimplemented options are
+   silently ignored.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>To use SSL-connections, set the SSL-parameters correctly. They correspond
+   to the parameters given to the mysql-client with the same name so make
+   sure that the mysql-client works with SSL and set these parameters to
+   the same values and everything should work. If SSL-options are loaded
+   from a config-file, one may set the connect_options to include
+   CLIENT_SSL.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If Pike has been built with an old MySQL client lib then it
+   might not be possible to specify some charsets that the server
+   supports with the <code class='expr'>"mysql_charset_name"</code> option. In such
+   cases it's possible that <code class='reference unresolved'>set_charset</code> works better (provided
+   the server is 4.1 or newer).</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Mysql/mysql/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/Mysql/mysql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Mysql/mysql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Window()-&gt;get_position()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/Window.html'><b class='head'>GTK2.Window</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/Window/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/Window/get_opacity.html" class="prev"><span>&#10148;</span> GTK2.Window()-&gt;get_opacity()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/Window/get_resizable.html" class="next">GTK2.Window()-&gt;get_resizable() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.Window()-&gt;get_position()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>get_position</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> <b><span class='method'>get_position</span>(</b><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This function returns the position you need to pass to move() to keep this
+ window in its current position.  This means that the meaning of the
+ returned value varies with window gravity.</p>
+<p> If you haven't changed the window gravity, its gravity will be
+ GDK2.GRAVITY_NORTH_WEST.  This means that get_position() gets the position
+ of the top-left corner of the window manager frame for the window.  move()
+ sets the position of this same top-left corner.</p>
+<p> get_position() is not 100% reliable because X does not specify a way to
+ obtain the geometry of the decorations placed on a window by the window
+ manager.  Thus GTK+ is using a "best guess" that works with most window
+ managers.</p>
+<p> Moreover, nearly all window managers are historically broken with respect
+ to their handling of window gravity.  So moving a window to its current
+ position as returned by get_position() tends to result in moving the window
+ slightly.  Window managers are slowly getting better over time.</p>
+<p> If a window has gravity GDK2.GRAVITY_STATIC the window manager frame is not
+ relevant, and thus get_position() will always produc accurate results.
+ However you can't use static gravity to do things like place a window in a
+ corner of the screen, because static gravity ignores the window manager
+ decorations.</p>
+<p> If you are saving and restoring your application's window positions, you
+ should know that it's impossible for applications to do this without
+ getting it somewhat wrong because applications do not have sufficient
+ knowledge of window manager state.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Window/get_position.html","name":"get_position"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Window/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/Window/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

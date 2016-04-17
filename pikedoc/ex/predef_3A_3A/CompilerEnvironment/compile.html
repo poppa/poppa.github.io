@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - CompilerEnvironment()-&gt;compile()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/CompilerEnvironment.html'><b class='head'>CompilerEnvironment</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/CompilerEnvironment/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/CompilerEnvironment/PikeCompiler/resolv.html" class="prev"><span>&#10148;</span> CompilerEnvironment()-&gt;PikeCompiler()-&gt;resolv()</a>
+              <a href="../../../ex/predef_3A_3A/CompilerEnvironment/get_compilation_handler.html" class="next">CompilerEnvironment()-&gt;get_compilation_handler() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method CompilerEnvironment()-&gt;compile()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>compile</b></span>
+</dt>
+<dd><p><code><code class='datatype'>program</code> <b><span class='method'>compile</span>(</b><code class='datatype'>string</code> <code class='argument'>source</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/CompilationHandler.html'>CompilationHandler</a></code>|<code class='datatype'>void</code> <code class='argument'>handler</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>major</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>minor</code>, <code class='datatype'>program</code>|<code class='datatype'>void</code> <code class='argument'>target</code>, <code class='datatype'>object</code>|<code class='datatype'>void</code> <code class='argument'>placeholder</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Compile a string to a program.</p>
+<p>   This function takes a piece of Pike code as a string and
+   compiles it into a clonable program.</p>
+<p>   The optional argument <code class='reference paramref'>handler</code> is used to specify an alternative
+   error handler. If it is not specified the current master object will
+   be used.</p>
+<p>   The optional arguments <code class='reference paramref'>major</code> and <code class='reference paramref'>minor</code> are used to tell the
+   compiler to attempt to be compatible with Pike <code class='reference paramref'>major</code>.<code class='reference paramref'>minor</code>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This function essentially performs</p>
+<pre><code><span class='type'>program</span> compile<span class='delim'>(</span><span class='type'>mixed</span> ... args<span class='delim'>)</span>
+    <span class='delim'>{</span>
+      <span class='lang'>return</span> PikeCompiler<span class='delim'>(</span>@args<span class='delim'>)</span>-&gt;compile<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>;</span>
+    <span class='delim'>}</span>
+</code></pre>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that <code class='reference paramref'>source</code> must contain the complete source for a program.
+   It is not possible to compile a single expression or statement.</p>
+<p>   Also note that <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/compile.html'>compile()</a> does not preprocess the program.
+   To preprocess the program you can use <a class='ms reference' href='../../predef_3A_3A/compile_string.html'>compile_string()</a> or
+   call the preprocessor manually by calling <a class='ms reference' href='../../predef_3A_3A/cpp.html'>cpp()</a>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/compile_string.html'>compile_string()</a>, <a class='ms reference' href='../../predef_3A_3A/compile_file.html'>compile_file()</a>, <a class='ms reference' href='../../predef_3A_3A/cpp.html'>cpp()</a>, <a class='ms reference' href='../../predef_3A_3A/master.html'>master()</a>,
+   <a class='ms reference' href='../../predef_3A_3A/CompilationHandler.html'>CompilationHandler</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/CompilerEnvironment/compile.html","name":"compile"};</script>
+<script src='../../../ex/predef_3A_3A/CompilerEnvironment/index.js'></script>
+<script src='../../../ex/predef_3A_3A/CompilerEnvironment/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

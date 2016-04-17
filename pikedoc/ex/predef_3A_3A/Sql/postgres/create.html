@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.postgres()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql/postgres.html'><b class='head'>Sql.postgres</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Sql/postgres/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Sql/postgres/big_query.html" class="prev"><span>&#10148;</span> Sql.postgres()-&gt;big_query()</a>
+              <a href="../../../../ex/predef_3A_3A/Sql/postgres/create_db.html" class="next">Sql.postgres()-&gt;create_db() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Sql.postgres()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Sql.postgres</span> <span class='class'>Sql.postgres</span><b>(</b><b>)</b></code><br>
+<code><span class='object'>Sql.postgres</span> <span class='class'>Sql.postgres</span><b>(</b><code class='datatype'>string</code> <code class='argument'>host</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>database</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>user</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>password</code>, <code class='datatype'>void</code>|<code class='datatype'>mapping</code> <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>With no arguments, this function initializes (reinitializes if a
+ connection had been previously set up) a connection to the
+ Postgres backend. Since Postgres requires a database to be
+ selected, it will try to connect to the default database. The
+ connection may fail however for a variety of reasons, in this case
+ the most likely of all is because you don't have enough authority
+ to connect to that database. So use of this particular syntax is
+ discouraged.</p>
+<p> The host argument can have the syntax <code class='expr'>"hostname"</code> or
+ <code class='expr'>"hostname:portname"</code>. This allows to specify the TCP/IP
+ port to connect to. If it is <code class='expr'>0</code> or <code class='expr'>""</code>, it will try
+ to connect to localhost, default port.</p>
+<p> The database argument specifies the database to connect to. If
+ <code class='expr'>0</code> or <code class='expr'>""</code>, it will try to connect to the specified
+ database.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Notice that this function <b>can</b> raise exceptions if the db
+ server doesn't respond, if the database doesn't exist or is not
+ accessible by you.</p>
+<p> You don't need bothering about syncronizing the connection to the database:
+ it is automatically closed (and the database is sync-ed) when the
+ object is destroyed.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Sql/pgsql.html'>Sql.pgsql</a>, <a class='ms reference' href='../../../predef_3A_3A/Postgres/postgres.html'>Postgres.postgres</a>, <a class='ms reference' href='../../../predef_3A_3A/Sql/Sql.html'>Sql.Sql</a>, <a class='ms reference' href='../../../predef_3A_3A/Sql/postgres/select_db.html'>postgres-&gt;select_db</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/postgres/create.html","name":"create"};</script>
+<script src='../../../../ex/predef_3A_3A/Sql/postgres/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Sql/postgres/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

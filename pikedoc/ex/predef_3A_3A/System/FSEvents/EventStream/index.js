@@ -1,0 +1,4 @@
+// Class path System.FSEvents.EventStream
+PikeDoc.registerSymbol('System.FSEvents.EventStream', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/add_path.html","name":"add_path"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/create.html","name":"create"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/flush_async.html","name":"flush_async"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/flush_sync.html","name":"flush_sync"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/is_started.html","name":"is_started"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/set_callback.html","name":"set_callback"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/start.html","name":"start"},{"link":"ex/predef_3A_3A/System/FSEvents/EventStream/stop.html","name":"stop"}])
+.finish();

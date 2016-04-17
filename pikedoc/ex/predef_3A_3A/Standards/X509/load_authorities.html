@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.X509.load_authorities()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<a href='../../../../ex/predef_3A_3A/Standards/X509.html'><b class='head'>Standards.X509</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Standards/X509/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Standards/X509/decode_certificate.html" class="prev"><span>&#10148;</span> Standards.X509.decode_certificate()</a>
+              <a href="../../../../ex/predef_3A_3A/Standards/X509/make_extension.html" class="next">Standards.X509.make_extension() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Standards.X509.load_authorities()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>load_authorities</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Standards/X509/Verifier.html'>Verifier</a></code>)) <b><span class='method'>load_authorities</span>(</b><code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>)|<code class='datatype'>void</code> <code class='argument'>root_cert_dirs</code>, <code class='datatype'>bool</code>|<code class='datatype'>void</code> <code class='argument'>cache</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Convenience function for loading known root certificates.</p>
+</dd>
+<dt class='head--doc'><span id='p-root_cert_dirs'></span>Parameter <code class='parameter'>root_cert_dirs</code></dt>
+<dd></dd><dd class='body--doc'><p>Directory/directories containing the PEM-encoded root certificates
+   to load. Defaults to a rather long list of directories, including
+   <code class='expr'>"/etc/ssl/certs"</code>, <code class='expr'>"/etc/pki/tls/certs"</code> and
+   <code class='expr'>"/System/Library/OpenSSL/certs"</code>, which seem to be the most
+   common locations.</p>
+</dd>
+<dt class='head--doc'><span id='p-cache'></span>Parameter <code class='parameter'>cache</code></dt>
+<dd></dd><dd class='body--doc'><p>A flag to control if the answer should be given from an internal
+   cache or always scan the directories. If a cache is used, it
+   will refresh when any certificate expires (which typically is
+   measured in years) or when asked for in unchached mode.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns a mapping from DER-encoded issuer to <a class='ms reference' href='../../../predef_3A_3A/Standards/X509/Verifier.html'>Verifier</a>s
+   compatible with eg <a class='ms reference' href='../../../predef_3A_3A/Standards/X509/verify_certificate.html'>verify_certificate()</a></p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If a certificate directory contains a file named
+   <code class='expr'>"ca-certificates.crt"</code>, it is assumed to
+   contain a concatenation of all the certificates
+   in the directory.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Standards/X509/verify_certificate.html'>verify_certificate()</a>, <a class='ms reference' href='../../../predef_3A_3A/Standards/X509/verify_certificate_chain.html'>verify_certificate_chain()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/X509/load_authorities.html","name":"load_authorities"};</script>
+<script src='../../../../ex/predef_3A_3A/Standards/X509/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Standards/X509/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

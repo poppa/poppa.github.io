@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Tools.Standalone.git_export_autodoc</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Tools.html'><b class='head'>Tools</b></a>
+<a href='../../../../ex/predef_3A_3A/Tools/Standalone.html'><b class='head'>Tools.Standalone</b></a>
+<b class='selected head'>Tools.Standalone.git_export_autodoc</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Tools/Standalone/git_export_autodoc/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Tools/Standalone/forkd/ForkStream.html" class="prev"><span>&#10148;</span> Tools.Standalone.forkd()-&gt;ForkStream</a>
+              <a href="../../../../ex/predef_3A_3A/Tools/Standalone/git_export_autodoc/get_version.html" class="next">Tools.Standalone.git_export_autodoc()-&gt;get_version() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Tools.Standalone.git_export_autodoc</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Tool for converting the Pike git repository to
+ a corresponding git repository containing the
+ extracted autodoc.xml and documentation.</p>
+<p> It supports incremental operation, so that it
+ can be used to keep track with the source.</p>
+<p> Typical use:
+ <tt>pike -x git_export_autodoc -v --git-dir=Autodoc.git</tt></p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>autodoc_hash</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Tools.Standalone.git_export_autodoc.<b><span class='variable'>autodoc_hash</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from doc commit sha1 or export reference to
+ sha1 for the autodoc.xml blob.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>doc_refs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Tools.Standalone.git_export_autodoc.<b><span class='variable'>doc_refs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from doc reference to doc commit sha1 or export reference.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>doc_to_parents</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>array</code>(<code class='datatype'>string</code>)) Tools.Standalone.git_export_autodoc.<b><span class='variable'>doc_to_parents</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from doc commit sha1 or export reference to
+ array of same for its direct parents.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>doc_to_src</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>array</code>(<code class='datatype'>string</code>)) Tools.Standalone.git_export_autodoc.<b><span class='variable'>doc_to_src</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from doc commit sha1 or export reference
+ to the corresponding list of source commit sha1s.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>refdoc_hash</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Tools.Standalone.git_export_autodoc.<b><span class='variable'>refdoc_hash</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from source commit to refdoc sha1.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rev_refs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>multiset</code>(<code class='datatype'>string</code>)) Tools.Standalone.git_export_autodoc.<b><span class='variable'>rev_refs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Lookup from source commit sha1 to the corresponding references (if any).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>src_refs</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Tools.Standalone.git_export_autodoc.<b><span class='variable'>src_refs</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from source reference to source commit sha1.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>src_to_doc</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) Tools.Standalone.git_export_autodoc.<b><span class='variable'>src_to_doc</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping from source commit sha1 to doc commit sha1 or export reference.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Tools/Standalone/git_export_autodoc.html","name":"git_export_autodoc"};</script>
+<script src='../../../../ex/predef_3A_3A/Tools/Standalone/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Tools/Standalone/git_export_autodoc/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

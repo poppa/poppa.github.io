@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Calendar.Timezone</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Calendar.html'><b class='head'>Calendar</b></a>
+<b class='selected head'>Calendar.Timezone</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Calendar/Timezone/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Calendar/TimeRanges/TimeRange/_backtick_7C.html" class="prev"><span>&#10148;</span> Calendar.TimeRanges.TimeRange()-&gt;`|()</a>
+              <a href="../../../ex/predef_3A_3A/Calendar/YMD.html" class="next">Calendar.YMD <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Calendar.Timezone</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>
+This module contains all the predefined timezones.
+Index it with whatever timezone you want to use.</p>
+
+<p>Example:
+<tt>Calendar.Calendar my_cal=
+    Calendar.ISO-&gt;set_timezone(Calendar.Timezone["Europe/Stockholm"]);
+</tt></p>
+
+<p>A simpler way of selecting timezones might be
+to just give the string to
+<code class='reference unresolved'>set_timezone</code>;
+<code class='reference unresolved'>it</code> indexes by itself:</p>
+
+<p><tt>Calendar.Calendar my_cal=
+    Calendar.ISO-&gt;set_timezone("Europe/Stockholm");
+</tt>
+</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>Do not confuse this module with <code class='reference unresolved'>Ruleset.Timezone</code>,
+which is the base class of a timezone object.</p>
+
+<p><tt>"CET"</tt> and some other standard abbreviations work too,
+but not all of them (due to more then one country using them).</p>
+
+<p>Do not call <code class='reference unresolved'>set_timezone</code>
+too often, but remember the result if possible. It might take
+some time to initialize a timezone object.</p>
+
+<p>There are about 504 timezones with 127 different daylight
+saving rules. Most of them historic.</p>
+
+<p>The timezone information comes from
+<a href='ftp://elsie.nci.nih.gov/pub'>ftp://elsie.nci.nih.gov/pub/</a>
+and are not made up from scratch. Timezone bugs may be reported
+to the timezone mailing list,
+<a href='mailto:tz@elsie.nci.nih.gov'>tz@elsie.nci.nih.gov</a>,
+preferable with a <tt>cc</tt> to
+<a href='mailto:mirar+pike@mirar.org'>mirar+pike@mirar.org</a>. /Mirar
+</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'>
+<p><a class='ms reference' href='../../predef_3A_3A/Calendar/TZnames.html'>TZnames</a></p></dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>locale</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Calendar.Timezone.<code class='constant'>locale</code> = <code class='value'><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Calendar/Rule/Timezone.html'>Rule.Timezone</a></code></code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>This contains the local timezone, found from
+various parts of the system, if possible.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>localtime</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Calendar.Timezone.<code class='constant'>localtime</code> = <code class='value'><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Calendar/Rule/Timezone.html'>Rule.Timezone</a></code></code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>This is a special timezone, that uses <a class='ms reference' href='../../predef_3A_3A/Calendar/Timezone.html'>localtime</a>()
+and <code class='reference unresolved'>tzname</code>
+to find out what current offset and timezone string to use.</p>
+
+<p><a class='ms reference' href='../../predef_3A_3A/Calendar/Timezone.html'>locale</a> uses this if there is no other
+way of finding a better timezone to use.</p>
+
+<p>This timezone is limited by <a class='ms reference' href='../../predef_3A_3A/Calendar/Timezone.html'>localtime</a> and
+libc to the range of <tt>time_t</tt>,
+which is a MAXINT on most systems - 13 Dec 1901 20:45:52
+to 19 Jan 2038 3:14:07, UTC.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Calendar/Timezone.html","name":"Timezone"};</script>
+<script src='../../../ex/predef_3A_3A/Calendar/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Calendar/Timezone/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

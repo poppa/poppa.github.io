@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.DNS.tcp_client()-&gt;do_sync_query()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/DNS.html'><b class='head'>Protocols.DNS</b></a>
+<a href='../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_client.html'><b class='head'>Protocols.DNS.tcp_client</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_client/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_client.html" class="prev"><span>&#10148;</span> Protocols.DNS.tcp_client</a>
+              <a href="../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_server.html" class="next">Protocols.DNS.tcp_server <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Protocols.DNS.tcp_client()-&gt;do_sync_query()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>do_sync_query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> <b><span class='method'>do_sync_query</span>(</b><code class='datatype'>string</code> <code class='argument'>s</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Perform a synchronous DNS query.</p>
+</dd>
+<dt class='head--doc'><span id='p-s'></span>Parameter <code class='parameter'>s</code></dt>
+<dd></dd><dd class='body--doc'><p>Result of <a class='ms reference' href='../../../../predef_3A_3A/Protocols/DNS/protocol/mkquery.html'>Protocols.DNS.protocol.mkquery</a></p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>mapping containing query result or 0 on failure/timeout</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><pre><code>// Perform a hostname lookup, results stored in r->an
+    object d=Protocols.DNS.tcp_client();
+    mapping r=d->do_sync_query(d->mkquery("pike.lysator.liu.se", C_IN, T_A));</code></pre>
+</pre></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/DNS/tcp_client/do_sync_query.html","name":"do_sync_query"};</script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_client/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Protocols/DNS/tcp_client/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

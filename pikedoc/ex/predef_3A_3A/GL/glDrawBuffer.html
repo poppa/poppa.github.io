@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glDrawBuffer()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glDrawArrays.html" class="prev"><span>&#10148;</span> GL.glDrawArrays()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glDrawPixels.html" class="next">GL.glDrawPixels() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glDrawBuffer()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glDrawBuffer</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glDrawBuffer</span>(</b><code class='datatype'>int</code> <code class='argument'>mode</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>When colors are written to the frame buffer,
+they are written into the color buffers specified by <a class='ms reference' href='../../predef_3A_3A/GL/glDrawBuffer.html'>glDrawBuffer</a>.
+The specifications are as follows:</p>
+<p><table class='box'>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_NONE</a>
+</td><td>No color buffers are written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_LEFT</a>
+</td><td>Only the front left color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_RIGHT</a>
+</td><td>Only the front right color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK_LEFT</a>
+</td><td>Only the back left color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK_RIGHT</a>
+</td><td>Only the back right color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT</a>
+</td><td>Only the front left and front right color buffers are written.
+If there is no front right color buffer,
+only the front left color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK</a>
+</td><td>Only the back left and back right color buffers are written.
+If there is no back right color buffer,
+only the back left color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LEFT</a>
+</td><td>Only the front left and back left color buffers are written.
+If there is no back left color buffer,
+only the front left color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_RIGHT</a>
+</td><td>Only the front right and back right color buffers are written.
+If there is no back right color buffer,
+only the front right color buffer is written.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_AND_BACK</a>
+</td><td>All the front and back color buffers
+(front left, front right, back left, back right)
+are written.
+If there are no back color buffers,
+only the front left and front right color buffers are written.
+If there are no right color buffers,
+only the front left and back left color buffers are written.
+If there are no right or back color buffers,
+only the front left color buffer is written.
+</td></tr>
+<tr><td>GL_AUX<i>i</i>
+</td><td>Only auxiliary color buffer <i>i</i> is written.
+</td></tr>
+</table>
+</p>
+<p>If more than one color buffer is selected for drawing,
+then blending or logical operations are computed and applied independently
+for each color buffer and can produce different results in each buffer.</p>
+<p>Monoscopic contexts include only
+.I left
+buffers, and stereoscopic contexts include both
+.I left
+and
+.I right
+buffers.
+Likewise, single-buffered contexts include only
+.I front
+buffers, and double-buffered contexts include both
+.I front
+and
+.I back
+buffers.
+The context is selected at GL initialization.</p>
+</dd>
+<dt class='head--doc'><span id='p-mode'></span>Parameter <code class='parameter'>mode</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies up to four color buffers to be drawn into.
+Symbolic constants
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_NONE</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_LEFT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_RIGHT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK_LEFT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK_RIGHT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LEFT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_RIGHT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT_AND_BACK</a>, and
+GL_AUX<i>i</i>,
+where <i>i</i> is between 0 and ``<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_AUX_BUFFERS</a>'' -1,
+are accepted (<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_AUX_BUFFERS</a> is not the upper limit; use <code class='reference unresolved'>glGet</code>
+to query the number of available aux buffers.)
+The initial value is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FRONT</a> for single-buffered contexts,
+and <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BACK</a> for double-buffered contexts.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>mode</i> is not an accepted value.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if none of the buffers indicated
+by <i>mode</i> exists.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glDrawBuffer.html'>glDrawBuffer</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glDrawBuffer.html","name":"glDrawBuffer"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

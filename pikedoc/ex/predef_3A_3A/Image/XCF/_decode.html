@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.XCF._decode()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/XCF.html'><b class='head'>Image.XCF</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/XCF/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/XCF/translate_mode.html" class="prev"><span>&#10148;</span> Image.XCF.translate_mode()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/XFace.html" class="next">Image.XFace <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.XCF._decode()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>_decode</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>mapping </code></code> <b><span class='method'>_decode</span>(</b><code class='datatype'>string</code>|<code class='datatype'>object</code> <code class='argument'>data</code>, <code class='datatype'>mapping</code>|<code class='datatype'>void</code> <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>  Decodes a XCF image to a mapping, with at least an
+'image' and possibly an 'alpha' object. Data is either a XCF image, or
+ a XCF.GimpImage object structure (as received from __decode)</p>
+
+<p><pre> Supported options
+ ([
+    "background":({r,g,b})||Image.Color object
+    "draw_all_layers":1,
+         Draw invisible layers as well
+ 
+    "draw_guides":1,
+         Draw the guides
+ 
+    "draw_selection":1,
+          Mark the selection using an overlay
+ 
+    "ignore_unknown_layer_modes":1
+          Do not asume 'Normal' for unknown layer modes.
+ 
+    "mark_layers":1,
+         Draw an outline around all (drawn) layers
+ 
+    "mark_layer_names":Image.Font object,
+         Write the name of all layers using the font object,
+ 
+    "mark_active_layer":1,
+         Draw an outline around the active layer
+  ])</pre>
+</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>Throws upon error in data. For more information, see Image.XCF.__decode</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>_decode</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code>|<code class='datatype'>string</code>) <b><span class='method'>_decode</span>(</b><code class='datatype'>string</code> <code class='argument'>gimp_image_data</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)|<code class='datatype'>void</code> <code class='argument'>opts</code><b>)</b></code><br>
+<code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code>|<code class='datatype'>string</code>) <b><span class='method'>_decode</span>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/XCF/GimpImage.html'>GimpImage</a></code> <code class='argument'>gimp_image</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)|<code class='datatype'>void</code> <code class='argument'>opts</code><b>)</b></code><br>
+<code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code>|<code class='datatype'>string</code>) <b><span class='method'>_decode</span>(</b><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) <code class='argument'>gimp_image_chunks</code>, <code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)|<code class='datatype'>void</code> <code class='argument'>opts</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Decode the image data given as the first argument. If it is a
+ string, it is a gimp image file.</p>
+<p> If it is a mapping it is the value you get when calling <a class='ms reference' href='../../../predef_3A_3A/Image/XCF/___decode.html'>___decode()</a></p>
+<p> The options can contain one or more of these options:</p>
+<table class='box'><tr><td><code><code class='key'>"draw_all_layers"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>If included, all layers will be decoded, even the non-visible ones.</p>
+</td></tr>
+<tr><td><code><code class='key'>"shrink_fact"</code> : <code class='datatype'>int</code></code></td><td><p>Shrink the image by a factor of X. Useful for previews.</p>
+</td></tr>
+<tr><td><code><code class='key'>"draw_guides"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>If true, draw the vertical and horizontal guides</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_layers"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>If true, draw boxes around layers</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_layer_names"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>If true, draw layer names in the image</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_active_layer"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>If true, highlight the active layer</p>
+</td></tr>
+</table><p>The return value has this format:</p>
+<table class='box'><tr><td><code><code class='key'>"type"</code> : <code class='datatype'>string</code></code></td><td><p>"image/x-gimp-image"</p>
+</td></tr>
+<tr><td><code><code class='key'>"img"</code> : <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code></code></td><td><p>The image</p>
+</td></tr>
+<tr><td><code><code class='key'>"alpha"</code> : <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code></code></td><td><p>The alpha channel</p>
+</td></tr>
+</table>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/XCF/_decode.html","name":"_decode"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/XCF/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/XCF/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

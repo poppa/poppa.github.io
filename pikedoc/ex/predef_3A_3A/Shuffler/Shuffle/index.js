@@ -1,0 +1,4 @@
+// Class path Shuffler.Shuffle
+PikeDoc.registerSymbol('Shuffler.Shuffle', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Shuffler/Shuffle/add_source.html","name":"add_source"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/create.html","name":"create"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/pause.html","name":"pause"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/sent_data.html","name":"sent_data"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/set_done_callback.html","name":"set_done_callback"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/set_request_arg.html","name":"set_request_arg"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/set_throttler.html","name":"set_throttler"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/start.html","name":"start"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/state.html","name":"state"},{"link":"ex/predef_3A_3A/Shuffler/Shuffle/stop.html","name":"stop"}])
+.finish();

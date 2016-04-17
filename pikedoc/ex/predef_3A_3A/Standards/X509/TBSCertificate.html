@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.X509.TBSCertificate</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<a href='../../../../ex/predef_3A_3A/Standards/X509.html'><b class='head'>Standards.X509</b></a>
+<b class='selected head'>Standards.X509.TBSCertificate</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Standards/X509/TBSCertificate/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Standards/X509/SubjectId.html" class="prev"><span>&#10148;</span> Standards.X509.SubjectId</a>
+              <a href="../../../../ex/predef_3A_3A/Standards/X509/TBSCertificate/init.html" class="next">Standards.X509.TBSCertificate()-&gt;init() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Standards.X509.TBSCertificate</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='85px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../../predef_3A_3A/Standards/ASN1/Types/Object.html'>Standards.ASN1.Types.Object</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../predef_3A_3A/Standards/ASN1/Types/Compound.html'>Standards.ASN1.Types.Compound</a></text>
+<line x1='44' y1='55' x2='75' y2='55' />
+<line x1='45' y1='45' x2='45' y2='56' />
+<text x='80' y='60'><a class='ms reference' xlink:href='../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Standards.ASN1.Types.Sequence</a></text>
+<line x1='84' y1='75' x2='115' y2='75' />
+<line x1='85' y1='65' x2='85' y2='76' />
+<text x='120' y='80'><tspan style='font-family:monospace; font-weight:bold;'>Standards.X509.TBSCertificate</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Represents a TBSCertificate.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Was not compatible with <a class='ms reference' href='../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Standards.ASN1.Types.Sequence</a>
+   prior to Pike 8.0.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>algorithm</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>algorithm</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Algorithm Identifier.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>critical</b></span>
+</dt>
+<dd><p><code><code class='datatype'>multiset</code> Standards.X509.TBSCertificate.<b><span class='variable'>critical</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Read only</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>der</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>der</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_authorityKeyIdentifier</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_authorityKeyIdentifier</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set if the certificate contains a valid authorityKeyIdentifier
+ extension. <b><a href='http://pike.lysator.liu.se/rfc3280.xml#4.2.1.1'>RFC 3280 section 4.2.1.1</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_authorityKeyIdentifier_authorityCertSerialNumber</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_authorityKeyIdentifier_authorityCertSerialNumber</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set to the CertificateSerialNumber, if set in the extension.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_authorityKeyIdentifier_keyIdentifier</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_authorityKeyIdentifier_keyIdentifier</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set to the KeyIdentifier, if set in the extension.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_basicConstraints</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_basicConstraints</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set if the certificate contains a valid basicConstraints
+ extension. <b><a href='http://pike.lysator.liu.se/rfc3280.xml#4.2.1.10'>RFC 3280 section 4.2.1.10</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_basicConstraints_cA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_basicConstraints_cA</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>If set, the certificate may be used as a CA certificate, i.e.
+ sign other certificates.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_basicConstraints_pathLenConstraint</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_basicConstraints_pathLenConstraint</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The maximum number of certificates that may follow this
+ certificate in a certificate chain. <code class='expr'>0</code> in case no limit
+ is imposed. Note that this variable is off by one compared to
+ the <b><a href='http://pike.lysator.liu.se/rfc3280.xml'>RFC 3280</a></b> definition, which only counts intermediate
+ certificates (i.e. 0 intermediates means this variable would be
+ 1, as in one following certificate).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_extKeyUsage</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Standards/ASN1/Types/Identifier.html'>Identifier</a></code>) Standards.X509.TBSCertificate.<b><span class='variable'>ext_extKeyUsage</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set to the list of extended key usages from anyExtendedKeyUsage,
+ if the certificate contains the extKeyUsage extensions. These
+ Identifier objects are typically found in
+ <code class='reference unresolved'>.PKCS.Identifiers.reverse_kp_ids</code>. <b><a href='http://pike.lysator.liu.se/rfc3280.xml#4.2.1.13'>RFC 3280 section 4.2.1.13</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_keyUsage</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>keyUsage</code></code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_keyUsage</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set to the value of the KeyUsage if the certificate contains the
+ keyUsage extension. <b><a href='http://pike.lysator.liu.se/rfc3280.xml#4.2.1.3'>RFC 3280 section 4.2.1.3</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ext_subjectKeyIdentifier</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.X509.TBSCertificate.<b><span class='variable'>ext_subjectKeyIdentifier</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set to the value of the SubjectKeyIdentifier if the certificate
+ contains the subjectKeyIdentifier
+ extension. <b><a href='http://pike.lysator.liu.se/rfc3280.xml#4.2.1.2'>RFC 3280 section 4.2.1.2</a></b>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>extensions</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Standards/ASN1/Types/Identifier.html'>Identifier</a></code>:<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Object.html'>Object</a></code>) Standards.X509.TBSCertificate.<b><span class='variable'>extensions</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Read only</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>hash</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Crypto/Hash.html'>Crypto.Hash</a></code> Standards.X509.TBSCertificate.<b><span class='variable'>hash</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Algorithm hash if known and supported.
+ Otherwise <a class='ms reference' href='../../../predef_3A_3A.html'>UNDEFINED</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Read only</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Sequence</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../../predef_3A_3A/Standards/ASN1/Types/Sequence.html'>Sequence</a> : <span class='inherit'>Sequence</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>internal_critical</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>multiset</code> Standards.X509.TBSCertificate.<b><span class='variable'>internal_critical</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>internal_extensions</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>mapping</code>(<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Standards/ASN1/Types/Identifier.html'>Identifier</a></code>:<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Object.html'>Object</a></code>) Standards.X509.TBSCertificate.<b><span class='variable'>internal_extensions</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>issuer</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>issuer</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Certificate issuer.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>issuer_id</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>issuer_id</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>keyinfo</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>keyinfo</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>not_after</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>not_after</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>not_before</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>not_before</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>public_key</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>public_key</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>raw_extensions</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>raw_extensions</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The raw ASN.1 objects from which <a class='ms reference' href='../../../predef_3A_3A/Standards/X509/TBSCertificate.html'>extensions</a> and <a class='ms reference' href='../../../predef_3A_3A/Standards/X509/TBSCertificate.html'>critical</a>
+ have been generated.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>serial</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>serial</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>subject</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>subject</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>subject_id</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>subject_id</span></b></code></p></dd>
+
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>optional</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>validity</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>validity</span></b></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>version</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> Standards.X509.TBSCertificate.<b><span class='variable'>version</span></b></code></p></dd>
+</dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/X509/TBSCertificate.html","name":"TBSCertificate"};</script>
+<script src='../../../../ex/predef_3A_3A/Standards/X509/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Standards/X509/TBSCertificate/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

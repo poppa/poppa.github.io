@@ -1,0 +1,4 @@
+// Class path __builtin.Nettle
+PikeDoc.registerSymbol('__builtin.Nettle', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/__builtin/Nettle/AE.html","name":"AE"},{"link":"ex/predef_3A_3A/__builtin/Nettle/AEAD.html","name":"AEAD"},{"link":"ex/predef_3A_3A/__builtin/Nettle/BlockCipher.html","name":"BlockCipher"},{"link":"ex/predef_3A_3A/__builtin/Nettle/Cipher.html","name":"Cipher"},{"link":"ex/predef_3A_3A/__builtin/Nettle/DH_Params.html","name":"DH_Params"},{"link":"ex/predef_3A_3A/__builtin/Nettle/ECC_Curve.html","name":"ECC_Curve"},{"link":"ex/predef_3A_3A/__builtin/Nettle/Hash.html","name":"Hash"},{"link":"ex/predef_3A_3A/__builtin/Nettle/MAC.html","name":"MAC"},{"link":"ex/predef_3A_3A/__builtin/Nettle/Sign.html","name":"Sign"},{"link":"ex/predef_3A_3A/__builtin/Nettle/__Hash.html","name":"__Hash"}])
+.finish();

@@ -1,0 +1,572 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.TELNET.Telopts</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols/TELNET.html'><b class='head'>Protocols.TELNET</b></a>
+<b class='selected head'>Protocols.TELNET.Telopts</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Protocols/TELNET/Telopts/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Protocols/TELNET/TelnetCodes.html" class="prev"><span>&#10148;</span> Protocols.TELNET.TelnetCodes</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/TELNET/protocol.html" class="next">Protocols.TELNET.protocol <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.TELNET.Telopts</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Table of TELNET options.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_3270REGIME</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_3270REGIME</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>3270 regime</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_AUTHENTICATION</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_AUTHENTICATION</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Authenticate</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_BINARY</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_BINARY</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>8-bit data path</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_BM</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_BM</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>byte macro</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_DET</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_DET</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>data entry terminal</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_ECHO</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_ECHO</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>echo</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_ENCRYPT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_ENCRYPT</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Encryption option</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_EOR</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_EOR</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>end or record</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_EXOPL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_EXOPL</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>extended-options-list</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_LFLOW</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_LFLOW</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>remote flow control</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_LINEMODE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_LINEMODE</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Linemode option</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_LOGOUT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_LOGOUT</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>force logout</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAMS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAMS</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>approximate message size</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOCRD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOCRD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about CR disposition</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOFFD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOFFD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about formfeed disposition</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOHTD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOHTD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about horizontal tab disposition</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOHTS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOHTS</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about horizontal tabstops</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOL</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOL</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about output line width</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOLFD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOLFD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about output LF disposition</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOP</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about output page size</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOVTD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOVTD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about vertical tab disposition</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAOVTS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAOVTS</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>negotiate about vertical tab stops</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NAWS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NAWS</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>window size</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_NEW_ENVIRON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_NEW_ENVIRON</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>New - Environment variables</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_OLD_ENVIRON</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_OLD_ENVIRON</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Old - Environment variables</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_OUTMRK</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_OUTMRK</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>output marking</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_RCP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_RCP</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>prepare to reconnect</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_RCTE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_RCTE</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>remote controlled transmission and echo</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_SGA</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_SGA</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>suppress go ahead</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_SNDLOC</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_SNDLOC</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>send location</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_STATUS</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_STATUS</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>give status</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_SUPDUP</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_SUPDUP</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>supdup protocol</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_SUPDUPOUTPUT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_SUPDUPOUTPUT</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>supdup output</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_TM</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_TM</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>timing mark</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_TSPEED</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_TSPEED</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>terminal speed</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_TTYLOC</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_TTYLOC</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>terminal location number</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_TTYPE</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_TTYPE</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>terminal type</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_TUID</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_TUID</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>TACACS user identification</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_X3PAD</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_X3PAD</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>X.3 PAD</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_XASCII</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_XASCII</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>extended ascic character set</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TELOPT_XDISPLOC</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>int</code> Protocols.TELNET.Telopts.<code class='constant'>TELOPT_XDISPLOC</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>X Display Location</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/TELNET/Telopts.html","name":"Telopts"};</script>
+<script src='../../../../ex/predef_3A_3A/Protocols/TELNET/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Protocols/TELNET/Telopts/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

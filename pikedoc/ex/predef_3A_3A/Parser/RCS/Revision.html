@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Parser.RCS()-&gt;Revision</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser.html'><b class='head'>Parser</b></a>
+<a href='../../../../ex/predef_3A_3A/Parser/RCS.html'><b class='head'>Parser.RCS</b></a>
+<b class='selected head'>Parser.RCS()-&gt;Revision</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Parser/RCS/Revision/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Parser/RCS/DeltatextIterator/_backtick_add_eq.html" class="prev"><span>&#10148;</span> Parser.RCS()-&gt;DeltatextIterator()-&gt;`+=()</a>
+              <a href="../../../../ex/predef_3A_3A/Parser/RCS/create.html" class="next">Parser.RCS()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Parser.RCS()-&gt;Revision</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>All data tied to a particular revision of the file.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>added</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Parser.RCS.Revision.<b><span class='variable'>added</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The number of lines that were added from the previous revision
+ to make this revision (for the initial revision too).</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>lines</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>removed</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ancestor</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>ancestor</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The revision of the ancestor of this revision, or <code class='expr'>0</code> if this was
+ the initial revision.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>next</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>author</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>author</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The userid of the user that committed the revision.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>branch</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>branch</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The branch name on which this revision was committed (calculated
+ according to how cvs manages branches).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>branches</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>string</code>) Parser.RCS.Revision.<b><span class='variable'>branches</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>When there are branches from this revision, an array with the
+ first revision number for each of the branches, otherwise <code class='expr'>0</code>.</p>
+<p> Follow the <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>next</a> fields to get to the branch head.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>lines</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Parser.RCS.Revision.<b><span class='variable'>lines</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The number of lines this revision contained, altogether (not of
+ particular interest for binary files).</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>added</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>removed</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>log</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>log</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The log message associated with the revision.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>next</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>next</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The revision that succeeds this revision, or <code class='expr'>0</code> if none exists
+ (ie if this is the HEAD of the trunk or of a branch).</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>ancestor</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rcs_next</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>rcs_next</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The revision stored next in the RCS file, or <code class='expr'>0</code> if none exists.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This field is straight from the RCS file, and has somewhat weird
+   semantics. Usually you will want to use one of the derived fields
+   <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>next</a> or <code class='reference unresolved'>prev</code> or possibly <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>rcs_prev</a>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>next</a>, <code class='reference unresolved'>prev</code>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>rcs_prev</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rcs_prev</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>rcs_prev</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The revision that this revision is based on,
+ or <code class='expr'>0</code> if it is the HEAD.</p>
+<p> This is the reverse pointer of <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>rcs_next</a> and <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>branches</a>, and
+ is used by <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision()</a> when applying the deltas
+ to set <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>text</a>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>rcs_next</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rcs_text</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>rcs_text</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The raw delta as stored in the RCS file.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>text</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision()</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>removed</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Parser.RCS.Revision.<b><span class='variable'>removed</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The number of lines that were removed from the previous revision
+ to make this revision.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>lines</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>added</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>revision</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>revision</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The revision number (i e
+ <code class='expr'>rcs_file-&gt;revisions["1.1"]-&gt;revision&nbsp;==&nbsp;"1.1"</code>).</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>state</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>state</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The state of the revision - typically <code class='expr'>"Exp"</code> or <code class='expr'>"dead"</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>text</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Parser.RCS.Revision.<b><span class='variable'>text</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The text as committed or <code class='expr'>0</code> if
+ <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision()</a> hasn't been called for this revision
+ yet.</p>
+<p> Typically you don't access this field directly, but use
+ <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision()</a> to retrieve it.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/get_contents_for_revision.html'>get_contents_for_revision()</a>, <a class='ms reference' href='../../../predef_3A_3A/Parser/RCS/Revision.html'>rcs_text</a></p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>time</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>Calendar.TimeRange</code></code> Parser.RCS.Revision.<b><span class='variable'>time</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The (UTC) date and time when the revision was committed (second
+ precision).</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Parser/RCS/Revision.html","name":"Revision"};</script>
+<script src='../../../../ex/predef_3A_3A/Parser/RCS/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Parser/RCS/Revision/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

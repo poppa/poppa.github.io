@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Mysql.mysql()-&gt;list_fields()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql.html'><b class='head'>Mysql</b></a>
+<a href='../../../../ex/predef_3A_3A/Mysql/mysql.html'><b class='head'>Mysql.mysql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Mysql/mysql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Mysql/mysql/list_dbs.html" class="prev"><span>&#10148;</span> Mysql.mysql()-&gt;list_dbs()</a>
+              <a href="../../../../ex/predef_3A_3A/Mysql/mysql/list_processes.html" class="next">Mysql.mysql()-&gt;list_processes() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Mysql.mysql()-&gt;list_fields()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>list_fields</b></span>
+</dt>
+<dd><p><code><code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)) <b><span class='method'>list_fields</span>(</b><code class='datatype'>string</code> <code class='argument'>table</code><b>)</b></code><br>
+<code><code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>)) <b><span class='method'>list_fields</span>(</b><code class='datatype'>string</code> <code class='argument'>table</code>, <code class='datatype'>string</code> <code class='argument'>wild</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>List all fields.</p>
+<p> Returns an array of mappings with information about the fields in the
+ table named <code class='reference paramref'>table</code>. If the argument <code class='reference paramref'>wild</code> is given, only those
+ fields matching it will be returned</p>
+<p> The mappings contain the following entries:</p>
+<table class='box'><tr><td><code><code class='key'>"name"</code> : <code class='datatype'>string</code></code></td><td><p>The name of the field.</p>
+</td></tr>
+<tr><td><code><code class='key'>"table"</code> : <code class='datatype'>string</code></code></td><td><p>The name of the table.</p>
+</td></tr>
+<tr><td><code><code class='key'>"default"</code> : <code class='datatype'>string</code></code></td><td><p>The default value for the field.</p>
+</td></tr>
+<tr><td><code><code class='key'>"type"</code> : <code class='datatype'>string</code></code></td><td><p>The SQL type of the field.</p>
+</td></tr>
+<tr><td><code><code class='key'>"length"</code> : <code class='datatype'>int</code></code></td><td><p>The length of the longest possible value that can be stored in
+	the field. Note that this measures the display length in
+	string form.</p>
+</td></tr>
+<tr><td><code><code class='key'>"flags"</code> : <code class='datatype'>multiset</code>(<code class='datatype'>string</code>)</code></td><td><p>Some flags.</p>
+</td></tr>
+<tr><td><code><code class='key'>decimals</code> : <code class='datatype'>int</code></code></td><td><p>The number of decimalplaces.</p>
+</td></tr>
+</table><p>The type of the field can be any of:
+   <code class='expr'>"decimal"</code>, <code class='expr'>"char"</code>, <code class='expr'>"short"</code>, <code class='expr'>"long"</code>,
+   <code class='expr'>"float"</code>, <code class='expr'>"double"</code>, <code class='expr'>"null"</code>, <code class='expr'>"time"</code>,
+   <code class='expr'>"longlong"</code>, <code class='expr'>"int24"</code>, <code class='expr'>"tiny&nbsp;blob"</code>,
+   <code class='expr'>"medium&nbsp;blob"</code>,
+   <code class='expr'>"long&nbsp;blob"</code>, <code class='expr'>"var&nbsp;string"</code>, <code class='expr'>"string"</code> or
+   <code class='expr'>"unknown"</code>.</p>
+<p> The flags multiset can contain any of:</p>
+<table class='box'><tr><td><code><code class='key'>"primary_key"</code></code></td><td><p>This field is part of the primary key for this table.</p>
+</td></tr>
+<tr><td><code><code class='key'>"unique"</code></code></td><td><p>This field is part of a unique key for this table.</p>
+</td></tr>
+<tr><td><code><code class='key'>"multiple_key"</code></code></td><td><p>This field is part of a nonunique key for this table.</p>
+</td></tr>
+<tr><td><code><code class='key'>"not_null"</code></code></td><td><p>This field cannot be NULL.</p>
+</td></tr>
+<tr><td><code><code class='key'>"blob"</code></code></td><td><p>This field is a BLOB or TEXT.</p>
+</td></tr>
+<tr><td><code><code class='key'>"auto_increment"</code></code></td><td><p>This field has the AUTO_INCREMENT attribute.</p>
+</td></tr>
+<tr><td><code><code class='key'>"zerofill"</code></code></td><td><p>This Field has the ZEROFILL attribute.</p>
+</td></tr>
+<tr><td><code><code class='key'>"binary"</code></code></td><td><p>This Field has the BINARY attribute.</p>
+</td></tr>
+<tr><td><code><code class='key'>"enum"</code></code></td><td><p>This Field is an ENUM.</p>
+</td></tr>
+<tr><td><code><code class='key'>"set"</code></code></td><td><p>This Field is a SET.</p>
+</td></tr>
+<tr><td><code><code class='key'>"unsigned"</code></code></td><td><p>This Field has the UNSIGNED attribute.</p>
+</td></tr>
+<tr><td><code><code class='key'>"numeric"</code></code></td><td><p>This Field is numeric.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Michael Widenius recomends use of the following query instead:
+   <tt>show fields in 'table' like "wild"</tt>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Mysql/mysql/list_dbs.html'>list_dbs()</a>, <a class='ms reference' href='../../../predef_3A_3A/Mysql/mysql/list_tables.html'>list_tables()</a>, <a class='ms reference' href='../../../predef_3A_3A/Mysql/mysql/list_processes.html'>list_processes()</a>,
+   <a class='ms reference' href='../../../predef_3A_3A/Mysql/mysql/Result/fetch_field.html'>Mysql.mysql()-&gt;Result()-&gt;fetch_field()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Mysql/mysql/list_fields.html","name":"list_fields"};</script>
+<script src='../../../../ex/predef_3A_3A/Mysql/mysql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Mysql/mysql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

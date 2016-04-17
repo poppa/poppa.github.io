@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;outline_mask()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/outline.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;outline()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/paste.html" class="next">Image.Image()-&gt;paste() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;outline_mask()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>outline_mask</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><code class='datatype'>int</code> <code class='argument'>olr</code>, <code class='datatype'>int</code> <code class='argument'>olg</code>, <code class='datatype'>int</code> <code class='argument'>olb</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><code class='datatype'>int</code> <code class='argument'>olr</code>, <code class='datatype'>int</code> <code class='argument'>olg</code>, <code class='datatype'>int</code> <code class='argument'>olb</code>, <code class='datatype'>int</code> <code class='argument'>bkgr</code>, <code class='datatype'>int</code> <code class='argument'>bkgg</code>, <code class='datatype'>int</code> <code class='argument'>bkgb</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) <code class='argument'>mask</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) <code class='argument'>mask</code>, <code class='datatype'>int</code> <code class='argument'>olr</code>, <code class='datatype'>int</code> <code class='argument'>olg</code>, <code class='datatype'>int</code> <code class='argument'>olb</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) <code class='argument'>mask</code>, <code class='datatype'>int</code> <code class='argument'>olr</code>, <code class='datatype'>int</code> <code class='argument'>olg</code>, <code class='datatype'>int</code> <code class='argument'>olb</code>, <code class='datatype'>int</code> <code class='argument'>bkgr</code>, <code class='datatype'>int</code> <code class='argument'>bkgg</code>, <code class='datatype'>int</code> <code class='argument'>bkgb</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline_mask</span>(</b><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline_mask</span>(</b><code class='datatype'>int</code> <code class='argument'>bkgr</code>, <code class='datatype'>int</code> <code class='argument'>bkgg</code>, <code class='datatype'>int</code> <code class='argument'>bkgb</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline_mask</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) <code class='argument'>mask</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>outline_mask</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>)) <code class='argument'>mask</code>, <code class='datatype'>int</code> <code class='argument'>bkgr</code>, <code class='datatype'>int</code> <code class='argument'>bkgg</code>, <code class='datatype'>int</code> <code class='argument'>bkgb</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Makes an outline of this image, ie paints with the
+given color around the non-background pixels.</p>
+
+<p>Default is to paint above, below, to the left and the right of
+these pixels.</p>
+
+<p>You can also run your own outline mask.</p>
+
+<p>The outline_mask function gives the calculated outline as an
+alpha channel image of white and black instead.</p>
+
+<p><table><tr valign='center'>
+<td><img height='115' src='../../../../images/predef.Image.Image.outline.1.png' width='80' /></td>
+<td><img height='115' src='../../../../images/predef.Image.Image.outline.2.png' width='80' /></td>
+<td><img height='115' src='../../../../images/predef.Image.Image.outline.3.png' width='80' /></td>
+</tr><tr>
+<td>original</td>
+<td>masked<br />through<br />threshold</td>
+<td>...and<br />outlined<br />with red</td>
+</tr></table></p>
+
+<p></p>
+</dd>
+<dt class='head--doc'><span id='p-mask'></span>Parameter <code class='parameter'>mask</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>mask matrix. Default is <tt>({({0,1,0}),({1,1,1}),({0,1,0})})</tt>.</p></dd>
+<dt class='head--doc'><span id='p-olr'></span>Parameter <code class='parameter'>olr</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-olg'></span>Parameter <code class='parameter'>olg</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-olb'></span>Parameter <code class='parameter'>olb</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>outline color. Default is current.</p></dd>
+<dt class='head--doc'><span id='p-bkgr'></span>Parameter <code class='parameter'>bkgr</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-bkgg'></span>Parameter <code class='parameter'>bkgg</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-bkgb'></span>Parameter <code class='parameter'>bkgb</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>background color (what color to outline to);
+default is color of pixel 0,0.</p></dd>
+<dt class='head--doc'><span id='p-div'></span>Parameter <code class='parameter'>div</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>division factor, default is 1.0.
+</p></dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new image object</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>no antialias!</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/outline_mask.html","name":"outline_mask"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

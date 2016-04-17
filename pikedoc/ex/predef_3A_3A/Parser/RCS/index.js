@@ -1,0 +1,5 @@
+// Class path Parser.RCS
+PikeDoc.registerSymbol('Parser.RCS', PikeDoc.isInline)
+.addChildren('class', [{"link":"ex/predef_3A_3A/Parser/RCS/DeltatextIterator.html","name":"DeltatextIterator"},{"link":"ex/predef_3A_3A/Parser/RCS/Revision.html","name":"Revision"}])
+.addChildren('method', [{"link":"ex/predef_3A_3A/Parser/RCS/create.html","name":"create"},{"link":"ex/predef_3A_3A/Parser/RCS/expand_keywords_for_revision.html","name":"expand_keywords_for_revision"},{"link":"ex/predef_3A_3A/Parser/RCS/get_contents_for_revision.html","name":"get_contents_for_revision"},{"link":"ex/predef_3A_3A/Parser/RCS/parse.html","name":"parse"},{"link":"ex/predef_3A_3A/Parser/RCS/parse_admin_section.html","name":"parse_admin_section"},{"link":"ex/predef_3A_3A/Parser/RCS/parse_delta_sections.html","name":"parse_delta_sections"},{"link":"ex/predef_3A_3A/Parser/RCS/parse_deltatext_sections.html","name":"parse_deltatext_sections"},{"link":"ex/predef_3A_3A/Parser/RCS/tokenize.html","name":"tokenize"}])
+.finish();

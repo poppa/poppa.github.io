@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Web.Api</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Web.html'><b class='head'>Web</b></a>
+<b class='selected head'>Web.Api</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Web/Api/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Web/RDFS/add_subPropertyOf.html" class="prev"><span>&#10148;</span> Web.RDFS()-&gt;add_subPropertyOf()</a>
+              <a href="../../../ex/predef_3A_3A/Web/Api/Api.html" class="next">Web.Api.Api <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Web.Api</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The <tt>Web.Api</tt> has modules and classes for communicating with various
+ <tt>(RESTful)</tt> web api's such as <a class='ms reference' href='../../predef_3A_3A/Web/Api/Facebook.html'>Web.Api.Facebook</a>,
+ <a class='ms reference' href='../../predef_3A_3A/Web/Api/Instagram.html'>Web.Api.Instagram</a>, <a class='ms reference' href='../../predef_3A_3A/Web/Api/Twitter.html'>Web.Api.Twitter</a> etc.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><pre><code><span class='type'>string</span> api_key <span class='delim'>=</span> <span class='string'>"......"</span><span class='delim'>;</span>
+<span class='type'>string</span> api_secret <span class='delim'>=</span> <span class='string'>"......."</span><span class='delim'>;</span>
+<span class='type'>string</span> redirect_uri <span class='delim'>=</span> <span class='string'>"http://localhost/insta/"</span><span class='delim'>;</span>
+
+<span class='ns'>Web</span><span class='delim'>.</span>Api<span class='delim'>.</span>Instagram api<span class='delim'>;</span>
+
+<span class='type'>string</span> cookie_file <span class='delim'>=</span> <span class='string'>"my-cookie.txt"</span><span class='delim'>;</span>
+
+<span class='type'>int</span> main<span class='delim'>(</span><span class='type'>int</span> argc<span class='delim'>,</span> <span class='type'>array</span><span class='delim'>(</span><span class='type'>string</span><span class='delim'>)</span> argv<span class='delim'>)</span>
+<span class='delim'>{</span>
+  api <span class='delim'>=</span> <span class='ns'>Web</span><span class='delim'>.</span>Api<span class='delim'>.</span>Instagram<span class='delim'>(</span>api_key<span class='delim'>,</span> api_secret<span class='delim'>,</span> redirect_uri<span class='delim'>)</span><span class='delim'>;</span>
+
+  <span class='comment'>// If a stored authentication cookie exists, populate the auth object.</span>
+  <span class='lang'>if</span> <span class='delim'>(</span><span class='ns'>Stdio</span><span class='delim'>.</span>exist<span class='delim'>(</span>cookie_file<span class='delim'>)</span><span class='delim'>)</span> <span class='delim'>{</span>
+    api-&gt;auth-&gt;set_from_cookie<span class='delim'>(</span><span class='ns'>Stdio</span><span class='delim'>.</span>read_file<span class='delim'>(</span>cookie_file<span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+  <span class='delim'>}</span>
+
+  <span class='lang'>if</span> <span class='delim'>(</span><span class='delim'>!</span>api-&gt;auth-&gt;is_authenticated<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>)</span> <span class='delim'>{</span>
+    <span class='comment'>// A cookie existed but the authentication has expired</span>
+    <span class='lang'>if</span> <span class='delim'>(</span>api-&gt;auth-&gt;is_renewable<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>)</span> <span class='delim'>{</span>
+      write<span class='delim'>(</span><span class='string'>"Trying to refresh token..."</span><span class='delim'>)</span><span class='delim'>;</span>
+      <span class='lang'>if</span> <span class='delim'>(</span><span class='type'>string</span> data <span class='delim'>=</span> api-&gt;auth-&gt;refresh_token<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>)</span>
+        <span class='ns'>Stdio</span><span class='delim'>.</span>write_file<span class='delim'>(</span>cookie_file<span class='delim'>,</span> data<span class='delim'>)</span><span class='delim'>;</span>
+        write<span class='delim'>(</span><span class='string'>"done ok!\n"</span><span class='delim'>)</span><span class='delim'>;</span>
+      <span class='delim'>}</span>
+      <span class='lang'>else</span> <span class='delim'>{</span>
+        werror<span class='delim'>(</span><span class='string'>"failed!\n"</span><span class='delim'>)</span><span class='delim'>;</span>
+      <span class='delim'>}</span>
+    <span class='delim'>}</span>
+    <span class='comment'>// No previous authentication exists. Create a new one...</span>
+    <span class='lang'>else</span> <span class='delim'>{</span>
+      <span class='comment'>// Get the uri to the authentication endpoint</span>
+      <span class='type'>string</span> uri <span class='delim'>=</span> api-&gt;auth-&gt;get_auth_uri<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>;</span>
+
+      write<span class='delim'>(</span><span class='string'>"Opening \"%s\" in browser.\nCopy the contents of the address "</span>
+            <span class='string'>"bar and paste here: "</span><span class='delim'>,</span> <span class='ns'>Standards</span><span class='delim'>.</span>URI<span class='delim'>(</span>uri<span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+
+      sleep<span class='delim'>(</span>2<span class='delim'>)</span><span class='delim'>;</span>
+
+      <span class='comment'>// For Mac</span>
+      <span class='ns'>Process</span><span class='delim'>.</span>create_process<span class='delim'>(</span><span class='delim'>(</span><span class='delim'>{</span> <span class='string'>"open"</span><span class='delim'>,</span> uri <span class='delim'>}</span><span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+
+      <span class='type'>string</span> resp <span class='delim'>=</span> <span class='ns'>Stdio</span><span class='delim'>.</span>Readline<span class='delim'>(</span><span class='delim'>)</span>-&gt;read<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>;</span>
+      <span class='type'>mapping</span> p <span class='delim'>=</span> <span class='ns'>Web</span><span class='delim'>.</span>Auth<span class='delim'>.</span>query_to_mapping<span class='delim'>(</span><span class='ns'>Standards</span><span class='delim'>.</span>URI<span class='delim'>(</span>resp<span class='delim'>)</span>-&gt;query<span class='delim'>)</span><span class='delim'>;</span>
+
+      <span class='type'>string</span> code<span class='delim'>;</span>
+
+      <span class='comment'>// If the auth object is OAuth and not OAuth2 this step is required.</span>
+      <span class='comment'>// Instagram is OAuth2, but Twitter is OAuth1</span>
+      <span class='lang'>if</span> <span class='delim'>(</span>p-&gt;oauth_token<span class='delim'>)</span> <span class='delim'>{</span>
+        auth-&gt;set_authentication<span class='delim'>(</span>p-&gt;oauth_token<span class='delim'>)</span><span class='delim'>;</span>
+        code <span class='delim'>=</span> p-&gt;oauth_verifier<span class='delim'>;</span>
+      <span class='delim'>}</span>
+      <span class='lang'>else</span> <span class='delim'>{</span>
+        code <span class='delim'>=</span> p-&gt;code<span class='delim'>;</span>
+      <span class='delim'>}</span>
+
+      <span class='comment'>// Now, get an access token</span>
+      <span class='lang'>if</span> <span class='delim'>(</span><span class='type'>string</span> data <span class='delim'>=</span> auth-&gt;request_access_token<span class='delim'>(</span>code<span class='delim'>)</span><span class='delim'>)</span> <span class='delim'>{</span>
+        <span class='ns'>Stdio</span><span class='delim'>.</span>write_file<span class='delim'>(</span>cookie<span class='delim'>,</span> data<span class='delim'>)</span><span class='delim'>;</span>
+      <span class='delim'>}</span>
+      <span class='lang'>else</span> <span class='delim'>{</span>
+        werror<span class='delim'>(</span><span class='string'>"Failed getting an access token. Aborting!\n"</span><span class='delim'>)</span><span class='delim'>;</span>
+        <span class='lang'>return</span> 1<span class='delim'>;</span>
+      <span class='delim'>}</span>
+    <span class='delim'>}</span>
+  <span class='delim'>}</span>
+
+  <span class='lang'>if</span> <span class='delim'>(</span>api-&gt;auth-&gt;is_authenticated<span class='delim'>(</span><span class='delim'>)</span><span class='delim'>)</span> <span class='delim'>{</span>
+    <span class='comment'>// No UID (arg1) means get the authenticated users stuff</span>
+    <span class='comment'>// No additional params (arg2)</span>
+    <span class='comment'>// Run async (arg3)</span>
+    <span class='type'>mapping</span> m <span class='delim'>=</span> api-&gt;users-&gt;recent<span class='delim'>(</span>0<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='lang'>lambda</span><span class='delim'>(</span><span class='type'>mixed</span> m<span class='delim'>)</span> <span class='delim'>{</span>
+      werror<span class='delim'>(</span><span class='string'>"Insta: %O\n"</span><span class='delim'>,</span> m<span class='delim'>)</span><span class='delim'>;</span>
+      exit<span class='delim'>(</span>0<span class='delim'>)</span><span class='delim'>;</span>
+    <span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+
+    <span class='lang'>return</span> <span class='delim'>-</span>1<span class='delim'>;</span>
+  <span class='delim'>}</span>
+  <span class='lang'>else</span> <span class='delim'>{</span>
+    werror<span class='delim'>(</span><span class='string'>"No authentication was aquired!\n"</span><span class='delim'>)</span><span class='delim'>;</span>
+    <span class='lang'>return</span> 1<span class='delim'>;</span>
+  <span class='delim'>}</span>
+<span class='delim'>}</span>
+</code></pre>
+</pre></dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>USER_AGENT</b></span>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> <code class='datatype'>string</code> Web.Api.<code class='constant'>USER_AGENT</code></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Default user agent in HTTP calls</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Api.html","name":"Api"};</script>
+<script src='../../../ex/predef_3A_3A/Web/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Web/Api/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

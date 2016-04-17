@@ -1,0 +1,5 @@
+// Class path ADT
+PikeDoc.registerSymbol('ADT', PikeDoc.isInline)
+.addChildren('module', [{"link":"ex/predef_3A_3A/ADT/CritBit.html","name":"CritBit"},{"link":"ex/predef_3A_3A/ADT/Relation.html","name":"Relation"},{"link":"ex/predef_3A_3A/ADT/Table.html","name":"Table"}])
+.addChildren('class', [{"link":"ex/predef_3A_3A/ADT/BitBuffer.html","name":"BitBuffer"},{"link":"ex/predef_3A_3A/ADT/CircularList.html","name":"CircularList"},{"link":"ex/predef_3A_3A/ADT/Heap.html","name":"Heap"},{"link":"ex/predef_3A_3A/ADT/History.html","name":"History"},{"link":"ex/predef_3A_3A/ADT/List.html","name":"List"},{"link":"ex/predef_3A_3A/ADT/Priority_queue.html","name":"Priority_queue"},{"link":"ex/predef_3A_3A/ADT/Queue.html","name":"Queue"},{"link":"ex/predef_3A_3A/ADT/Scheduler.html","name":"Scheduler"},{"link":"ex/predef_3A_3A/ADT/Sequence.html","name":"Sequence"},{"link":"ex/predef_3A_3A/ADT/Set.html","name":"Set"},{"link":"ex/predef_3A_3A/ADT/Stack.html","name":"Stack"},{"link":"ex/predef_3A_3A/ADT/Struct.html","name":"Struct"},{"link":"ex/predef_3A_3A/ADT/TreeScheduler.html","name":"TreeScheduler"},{"link":"ex/predef_3A_3A/ADT/struct.html","name":"struct"}])
+.finish();

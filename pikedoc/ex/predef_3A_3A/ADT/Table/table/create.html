@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - ADT.Table.table()-&gt;create()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT.html'><b class='head'>ADT</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT/Table.html'><b class='head'>ADT.Table</b></a>
+<a href='../../../../../ex/predef_3A_3A/ADT/Table/table.html'><b class='head'>ADT.Table.table</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/ADT/Table/table/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/ADT/Table/table/col.html" class="prev"><span>&#10148;</span> ADT.Table.table()-&gt;col()</a>
+              <a href="../../../../../ex/predef_3A_3A/ADT/Table/table/decode.html" class="next">ADT.Table.table()-&gt;decode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method ADT.Table.table()-&gt;create()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>ADT.Table.table</span> <span class='class'>ADT.Table.table</span><b>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>) <code class='argument'>table</code>, <code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>column_names</code>, <code class='datatype'>array</code>(<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>))|<code class='datatype'>void</code> <code class='argument'>column_types</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The <a class='ms reference' href='../../../../predef_3A_3A/ADT/Table/table.html'>ADT.Table.table</a> class takes two or three arguments:</p>
+</dd>
+<dt class='head--doc'><span id='p-table'></span>Parameter <code class='parameter'>table</code></dt>
+<dd></dd><dd class='body--doc'><p>The first argument is a two-dimensional array consisting of
+   one array of columns per row. All rows must have the same
+   number of columns as specified in <code class='reference paramref'>column_names</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-column_names'></span>Parameter <code class='parameter'>column_names</code></dt>
+<dd></dd><dd class='body--doc'><p>This argument is an array of column names associated with each
+   column in the table. References by column name are case insensitive.
+   The case used in <code class='reference paramref'>column_names</code> will be used when the table is
+   displayed. A column can also be referred to by its position,
+   starting from zero.</p>
+</dd>
+<dt class='head--doc'><span id='p-column_types'></span>Parameter <code class='parameter'>column_types</code></dt>
+<dd></dd><dd class='body--doc'><p>This is an optional array of mappings. The column type
+   information is only used when displaying the table. Currently, only the
+   keyword <code class='expr'>"type"</code> is recognized. The type can be specified as
+   <code class='expr'>"text"</code> or <code class='expr'>"num"</code> (numerical). Text columns are left
+   adjusted, whereas numerical columns are right adjusted. If a mapping
+   in the array is 0 (zero), it will be assumed to be a text column.
+   If <code class='reference paramref'>column_types</code> is omitted, all columns will displayed as text.</p>
+<p>   See <a class='ms reference' href='../../../../predef_3A_3A/ADT/Table/ASCII/encode.html'>ADT.Table.ASCII.encode()</a> on how to display a table.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/ADT/Table/ASCII/encode.html'>ADT.Table.ASCII.encode()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/ADT/Table/table/create.html","name":"create"};</script>
+<script src='../../../../../ex/predef_3A_3A/ADT/Table/table/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/ADT/Table/table/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

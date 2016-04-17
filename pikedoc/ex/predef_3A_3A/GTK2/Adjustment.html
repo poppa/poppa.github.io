@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.Adjustment</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<b class='selected head'>GTK2.Adjustment</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GTK2/Adjustment/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GTK2/Activatable/set_use_action_appearance.html" class="prev"><span>&#10148;</span> GTK2.Activatable()-&gt;set_use_action_appearance()</a>
+              <a href="../../../ex/predef_3A_3A/GTK2/Adjustment/changed.html" class="next">GTK2.Adjustment()-&gt;changed() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class GTK2.Adjustment</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='105px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/G/Object.html'>GTK2.G.Object</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/G/InitiallyUnowned.html'>GTK2.G.InitiallyUnowned</a></text>
+<line x1='44' y1='55' x2='75' y2='55' />
+<line x1='45' y1='45' x2='45' y2='56' />
+<text x='80' y='60'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Object.html'>GTK2.Object</a></text>
+<line x1='84' y1='75' x2='115' y2='75' />
+<line x1='85' y1='65' x2='85' y2='76' />
+<text x='120' y='80'><a class='ms reference' xlink:href='../../predef_3A_3A/GTK2/Data.html'>GTK2.Data</a></text>
+<line x1='124' y1='95' x2='155' y2='95' />
+<line x1='125' y1='85' x2='125' y2='96' />
+<text x='160' y='100'><tspan style='font-family:monospace; font-weight:bold;'>GTK2.Adjustment</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The GTK2.Adjustment object represents a value which has an associated
+ lower and upper bound, together with step and page increments, and
+ a page size. It is used within several GTK2+ widgets, including
+ GtkSpinButton, GtkViewport, and GtkRange (which is a base class for
+ GtkHScrollbar, GtkVScrollbar, GtkHScale, and GtkVScale).</p>
+<p> The GtkAdjustment object does not update the value itself. Instead
+ it is left up to the owner of the GtkAdjustment to control the
+ value.</p>
+<p> The owner of the GtkAdjustment typically calls the value_changed()
+ and changed() functions after changing the value or its
+ bounds. This results in the emission of the "value_changed" or
+ "changed" signal respectively.</p>
+<p> Properties:
+ float lower
+ float page-increment
+ float page-size
+ float step-increment
+ float upper
+ float value</p>
+<p>  Signals:
+ <b>changed</b>
+ The adjustment changed in some way</p>
+<p> <b>value_changed</b>
+ The value changed</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Data</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/GTK2/Data.html'>GTK2.Data</a> : <span class='inherit'>Data</span></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>GTK2.Adjustment</span> <span class='class'>GTK2.Adjustment</span><b>(</b><code class='datatype'>float</code>|<code class='datatype'>mapping</code> <code class='argument'>value_or_props</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>lower</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>upper</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>step_increment</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>page_increment</code>, <code class='datatype'>float</code>|<code class='datatype'>void</code> <code class='argument'>page_size</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The value argument is the initial value you want to give to the
+ adjustment, usually corresponding to the topmost or leftmost
+ position of an adjustable widget. The lower argument specifies the
+ lowest value which the adjustment can hold. The step_increment
+ argument specifies the "smaller" of the two increments by which
+ the user can change the value, while the page_increment is the
+ "larger" one. The page_size argument usually corresponds somehow
+ to the visible area of a panning widget. The upper argument is
+ used to represent the bottom most or right most coordinate in a
+ panning widget's child. Therefore it is not always the largest
+ number that value can take, since the page_size of such widgets is
+ usually non-zero.</p>
+<p> All values are optional, they default to 0.0.
+ For most widgets the unit is pixels.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/Adjustment.html","name":"Adjustment"};</script>
+<script src='../../../ex/predef_3A_3A/GTK2/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GTK2/Adjustment/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+// Class path GTK2.Gnome2IconSelection
+PikeDoc.registerSymbol('GTK2.Gnome2IconSelection', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/add_defaults.html","name":"add_defaults"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/add_directory.html","name":"add_directory"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/clear.html","name":"clear"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/create.html","name":"create"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/get_box.html","name":"get_box"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/get_icon.html","name":"get_icon"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/select_icon.html","name":"select_icon"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/show_icons.html","name":"show_icons"},{"link":"ex/predef_3A_3A/GTK2/Gnome2IconSelection/stop_loading.html","name":"stop_loading"}])
+.finish();

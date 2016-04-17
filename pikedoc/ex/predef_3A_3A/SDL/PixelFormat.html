@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SDL.PixelFormat</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/SDL.html'><b class='head'>SDL</b></a>
+<b class='selected head'>SDL.PixelFormat</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/SDL/PixelFormat/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/SDL/Music/volume.html" class="prev"><span>&#10148;</span> SDL.Music()-&gt;volume()</a>
+              <a href="../../../ex/predef_3A_3A/SDL/PixelFormat/get_rgb.html" class="next">SDL.PixelFormat()-&gt;get_rgb() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class SDL.PixelFormat</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This describes the format of the pixel data stored at the pixels field
+ of a <a class='ms reference' href='../../predef_3A_3A/SDL/Surface.html'>SDL.Surface</a>. Every surface stores a <a class='ms reference' href='../../predef_3A_3A/SDL/PixelFormat.html'>PixelFormat</a> in the format
+ field.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rloss</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>gloss</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bloss</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>aloss</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>rloss</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>gloss</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>bloss</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>aloss</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Precision loss of each color component.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>alpha</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>alpha</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Overall surface alpha value.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rmask</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>gmask</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bmask</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>amask</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>rmask</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>gmask</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>bmask</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>amask</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Binary mask used to retrieve individual color values.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rshift</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>gshift</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bshift</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>ashift</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>rshift</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>gshift</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>bshift</span></b></code><br>
+<code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>ashift</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Binary left shift of each color component in the pixel value.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bits_per_pixel</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>bits_per_pixel</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The number of bits used to represent each pixel in a
+   surface. Usually 8, 16, 24 or 32.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>bytes_per_pixel</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>bytes_per_pixel</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The number of bytes used to represent each pixel in a
+   surface. Usually one to four.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>colorkey</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> SDL.PixelFormat.<b><span class='variable'>colorkey</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Pixel value of transparent pixels.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/SDL/PixelFormat.html","name":"PixelFormat"};</script>
+<script src='../../../ex/predef_3A_3A/SDL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/SDL/PixelFormat/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

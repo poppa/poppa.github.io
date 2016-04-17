@@ -1,0 +1,5 @@
+// Class path 8.0::
+PikeDoc.registerSymbol('8.0::', PikeDoc.isInline)
+.addChildren('module', [{"link":"ex/8.0_3A_3A/ADT.html","name":"ADT"},{"link":"ex/8.0_3A_3A/Crypto.html","name":"Crypto"},{"link":"ex/8.0_3A_3A/Locale.html","name":"Locale"},{"link":"ex/8.0_3A_3A/Protocols.html","name":"Protocols"},{"link":"ex/8.0_3A_3A/SSL.html","name":"SSL"},{"link":"ex/8.0_3A_3A/Standards.html","name":"Standards"},{"link":"ex/8.0_3A_3A/Thread.html","name":"Thread"},{"link":"ex/8.0_3A_3A/Tools.html","name":"Tools"}])
+.addChildren('method', [{"link":"ex/8.0_3A_3A/_assembler_debug.html","name":"_assembler_debug"},{"link":"ex/8.0_3A_3A/_debug.html","name":"_debug"},{"link":"ex/8.0_3A_3A/_dump_program_tables.html","name":"_dump_program_tables"},{"link":"ex/8.0_3A_3A/_map_all_objects.html","name":"_map_all_objects"},{"link":"ex/8.0_3A_3A/_next.html","name":"_next"},{"link":"ex/8.0_3A_3A/_optimizer_debug.html","name":"_optimizer_debug"},{"link":"ex/8.0_3A_3A/_prev.html","name":"_prev"},{"link":"ex/8.0_3A_3A/_refs.html","name":"_refs"},{"link":"ex/8.0_3A_3A/next_object.html","name":"next_object"}])
+.finish();

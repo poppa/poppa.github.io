@@ -1,0 +1,4 @@
+// Class path Protocols.Bittorrent.Generator
+PikeDoc.registerSymbol('Protocols.Bittorrent.Generator', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/add.html","name":"add"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/add_announce.html","name":"add_announce"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/add_directory_tree.html","name":"add_directory_tree"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/add_file.html","name":"add_file"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/build_sha1s.html","name":"build_sha1s"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/create.html","name":"create"},{"link":"ex/predef_3A_3A/Protocols/Bittorrent/Generator/digest.html","name":"digest"}])
+.finish();

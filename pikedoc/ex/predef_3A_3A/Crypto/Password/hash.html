@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Crypto.Password.hash()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Crypto.html'><b class='head'>Crypto</b></a>
+<a href='../../../../ex/predef_3A_3A/Crypto/Password.html'><b class='head'>Crypto.Password</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Crypto/Password/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Crypto/Password.html" class="prev"><span>&#10148;</span> Crypto.Password</a>
+              <a href="../../../../ex/predef_3A_3A/Crypto/Password/verify.html" class="next">Crypto.Password.verify() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Crypto.Password.hash()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>hash</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string(7bit)</code> <b><span class='method'>hash</span>(</b><code class='datatype'>string(8bit)</code> <code class='argument'>password</code>, <code class='datatype'>string(7bit)</code>|<code class='datatype'>void</code> <code class='argument'>scheme</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>rounds</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Generate a hash of <code class='reference paramref'>password</code> suitable for <a class='ms reference' href='../../../predef_3A_3A/Crypto/Password/verify.html'>verify()</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-password'></span>Parameter <code class='parameter'>password</code></dt>
+<dd></dd><dd class='body--doc'><p>Password to hash.</p>
+</dd>
+<dt class='head--doc'><span id='p-scheme'></span>Parameter <code class='parameter'>scheme</code></dt>
+<dd></dd><dd class='body--doc'><p>Password hashing scheme. If not specified the strongest available
+   will be used.</p>
+<p>   If an unsupported scheme is specified an error will be thrown.</p>
+<p>   Supported schemes are:</p>
+<p>   Crypt(3C)-style:</p>
+<table class='box'><tr><td><code><code class='key'>UNDEFINED</code></code></td><td rowspan='3'><p>Use the strongest crypt(3C)-style hash that is supported.</p>
+</td></tr>
+<tr><td><code><code class='key'>"crypt"</code></code></td></tr>
+<tr><td><code><code class='key'>"{crypt}"</code></code></td></tr>
+<tr><td><code><code class='key'>"6"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/crypt_hash.html'>SHA512.crypt_hash()</a> with 96 bits of salt and a default
+       of <code class='expr'>5000</code> rounds.</p>
+</td></tr>
+<tr><td><code><code class='key'>"$6$"</code></code></td></tr>
+<tr><td><code><code class='key'>"5"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/crypt_hash.html'>SHA256.crypt_hash()</a> with 96 bits of salt and a default
+       of <code class='expr'>5000</code> rounds.</p>
+</td></tr>
+<tr><td><code><code class='key'>"$5$"</code></code></td></tr>
+<tr><td><code><code class='key'>"1"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Crypto/MD5/crypt_hash.html'>MD5.crypt_hash()</a> with 48 bits of salt and <code class='expr'>1000</code> rounds.</p>
+</td></tr>
+<tr><td><code><code class='key'>"$1$"</code></code></td></tr>
+<tr><td><code><code class='key'>""</code></code></td><td><p><a class='ms reference' href='../../../predef_3A_3A/crypt.html'>crypt()</a> with 12 bits of salt.</p>
+</td></tr>
+</table><p>LDAP (<b><a href='http://pike.lysator.liu.se/rfc2307.xml'>RFC 2307</a></b>)-style. Don't use these if you can avoid it,
+   since they are suspectible to attacks. In particular avoid
+   the unsalted variants at all costs:</p>
+<table class='box'><tr><td><code><code class='key'>"ssha"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/hash.html'>SHA1.hash()</a> with 96 bits of salt appended to the password.</p>
+</td></tr>
+<tr><td><code><code class='key'>"{ssha}"</code></code></td></tr>
+<tr><td><code><code class='key'>"smd5"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/hash.html'>MD5.hash()</a> with 96 bits of salt appended to the password.</p>
+</td></tr>
+<tr><td><code><code class='key'>"{smd5}"</code></code></td></tr>
+<tr><td><code><code class='key'>"sha"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/hash.html'>SHA1.hash()</a> without any salt.</p>
+</td></tr>
+<tr><td><code><code class='key'>"{sha}"</code></code></td></tr>
+<tr><td><code><code class='key'>"md5"</code></code></td><td rowspan='2'><p><a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/hash.html'>MD5.hash()</a> without any salt.</p>
+</td></tr>
+<tr><td><code><code class='key'>"{md5}"</code></code></td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-rounds'></span>Parameter <code class='parameter'>rounds</code></dt>
+<dd></dd><dd class='body--doc'><p>The number of rounds to use in parameterized schemes. If not
+   specified the scheme specific default will be used.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns a string suitable for <a class='ms reference' href='../../../predef_3A_3A/Crypto/Password/verify.html'>verify()</a>. This means that
+   the hashes will be prepended with the suitable markers.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that the availability of <a class='ms reference' href='../../../predef_3A_3A/Crypto/SHA512.html'>SHA512</a> depends on the version
+   of <a class='ms reference' href='../../../predef_3A_3A/Nettle.html'>Nettle</a> that Pike has been compiled with.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This function was added in Pike 7.8.755.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Crypto/Password/verify.html'>verify()</a>, <a class='ms reference' href='../../../predef_3A_3A/crypt.html'>crypt()</a>, <a class='ms reference' href='../../../predef_3A_3A/Nettle/crypt_md5.html'>Nettle.crypt_md5()</a>,
+   <a class='ms reference' href='../../../predef_3A_3A/Nettle/Hash/crypt_hash.html'>Nettle.Hash()-&gt;crypt_hash()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Crypto/Password/hash.html","name":"hash"};</script>
+<script src='../../../../ex/predef_3A_3A/Crypto/Password/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Crypto/Password/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Process.run()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Process.html'><b class='head'>Process</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Process/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Process/popen.html" class="prev"><span>&#10148;</span> Process.popen()</a>
+              <a href="../../../ex/predef_3A_3A/Process/search_path.html" class="next">Process.search_path() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Process.run()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>run</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> <b><span class='method'>run</span>(</b><code class='datatype'>string</code>|<code class='datatype'>array</code>(<code class='datatype'>string</code>) <code class='argument'>cmd</code>, <code class='datatype'>void</code>|<code class='datatype'>mapping</code> <code class='argument'>modifiers</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Easy and lazy way of using <a class='ms reference' href='../../predef_3A_3A/Process/Process.html'>Process.Process</a> that runs a process
+ and returns a mapping with the output and exit code without
+ having to make sure you read nonblocking yourself.</p>
+</dd>
+<dt class='head--doc'><span id='p-args'></span>Parameter <code class='parameter'>args</code></dt>
+<dd></dd><dd class='body--doc'><p>Either a command line array, as the command_args
+   argument to <a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>create_process()</a>, or a string that
+   will be splitted into a command line array by
+   calling <a class='ms reference' href='../../predef_3A_3A/Process/split_quoted_string.html'>split_quoted_string()</a> in an operating
+   system dependant mode.</p>
+</dd>
+<dt class='head--doc'><span id='p-modifiers'></span>Parameter <code class='parameter'>modifiers</code></dt>
+<dd></dd><dd class='body--doc'><p>It takes all the modifiers <a class='ms reference' href='../../predef_3A_3A/Process/Process.html'>Process.Process</a> accepts, with
+   the exception of stdout and stderr. Each must be either absent, or
+   a function accepting a string; if present, the functions will be called
+   whenever output is made on the corresponding stream, otherwise the data
+   will be collected and returned in the result mapping.</p>
+<p>   If <code class='expr'>modifiers-&gt;stdin</code> is set to a string it will automatically be
+   converted to a pipe that is fed to stdin of the started process.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Process/Process.html'>Process.Process</a> <a class='ms reference' href='../../predef_3A_3A/Process/create_process.html'>create_process</a></p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><table class='box'><tr><td><code><code class='key'>"stdout"</code> : <code class='datatype'>string</code></code></td><td><p>Everything the process wrote on stdout, unless a stdout function was
+       provided.</p>
+</td></tr>
+<tr><td><code><code class='key'>"stderr"</code> : <code class='datatype'>string</code></code></td><td><p>Everything the process wrote on stderr, similarly.</p>
+</td></tr>
+<tr><td><code><code class='key'>"exitcode"</code> : <code class='datatype'>int</code></code></td><td><p>The process' exitcode.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>As the entire output of stderr and stdout is stored in the
+   returned mapping it could potentially grow until memory runs out.
+   It is therefore advisable to set up rlimits if the output has a
+   potential to be very large, or else provide functions to handle
+   partial data.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>Process.run( ({ "ls", "-l" }) );
+   Process.run( ({ "ls", "-l" }), ([ "cwd":"/etc" ]) );
+   Process.run( "ls -l" );
+   Process.run( "awk -F: '{print $2}'", ([ "stdin":"foo:2\nbar:17\n" ]) );</p>
+</pre></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Process/run.html","name":"run"};</script>
+<script src='../../../ex/predef_3A_3A/Process/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Process/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - map()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../style.css'>
+    <script src='../../site.js'></script>
+    <script src='../../pike_version.js'></script>
+    <script src='../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../index.html'><b class='top head'>Top</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../ex/predef_3A_3A/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../ex/predef_3A_3A/m_delete.html" class="prev"><span>&#10148;</span> m_delete()</a>
+              <a href="../../ex/predef_3A_3A/mappingp.html" class="next">mappingp() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method map()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>map</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mixed</code> <b><span class='method'>map</span>(</b><code class='datatype'>mixed</code> <code class='argument'>arr</code>, <code class='datatype'>void</code>|<code class='datatype'>mixed</code> <code class='argument'>fun</code>, <code class='datatype'>mixed</code> ...  <code class='argument'>extra</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Applies <code class='reference paramref'>fun</code> to the elements in <code class='reference paramref'>arr</code> and collects the results.</p>
+<p>   <code class='reference paramref'>arr</code> is treated as a set of elements, as follows:</p>
+<dl class='group--doc'><dt>array</dt>
+<dt>multiset</dt>
+<dt>string</dt>
+<dd><p><code class='reference paramref'>fun</code> is applied in order to each element. The results are
+       collected, also in order, to a value of the same type as
+       <code class='reference paramref'>arr</code>, which is returned.</p>
+</dd>
+<dt>mapping</dt>
+<dd><p><code class='reference paramref'>fun</code> is applied to the values, and each result is assigned
+       to the same index in a new mapping, which is returned.</p>
+</dd>
+<dt>program</dt>
+<dd><p>The program is treated as a mapping containing the
+       identifiers that are indexable from it and their values.</p>
+</dd>
+<dt>object</dt>
+<dd><p>If there is a <a class='ms reference' href='../lfun_3A_3A/cast.html'>lfun::cast</a> method in the object, it's
+       called to try to cast the object to an array, a mapping, or
+       a multiset, in that order, which is then handled as
+       described above.</p>
+</dd>
+</dl><p><code class='reference paramref'>fun</code> is applied in different ways depending on its type:</p>
+<dl class='group--doc'><dt>function</dt>
+<dd><p><code class='reference paramref'>fun</code> is called for each element. It gets the current
+       element as the first argument and <code class='reference paramref'>extra</code> as the rest. The
+       result of the call is collected.</p>
+</dd>
+<dt>object</dt>
+<dd><p><code class='reference paramref'>fun</code> is used as a function like above, i.e. the
+       <a class='ms reference' href='../lfun_3A_3A/_backtick_28_29.html'>lfun::`()</a> method in it is called.</p>
+</dd>
+<dt>multiset</dt>
+<dt>mapping</dt>
+<dd><p><code class='reference paramref'>fun</code> is indexed with each element. The result of that is
+       collected.</p>
+</dd>
+<dt>"zero or left out"</dt>
+<dd><p>Each element that is callable is called with <code class='reference paramref'>extra</code> as
+       arguments. The result of the calls are collected. Elements
+       that aren't callable gets zero as result.</p>
+</dd>
+<dt>string</dt>
+<dd><p>Each element is indexed with the given string. If the result
+       of that is zero then a zero is collected, otherwise it's
+       called with <code class='reference paramref'>extra</code> as arguments and the result of that
+       call is collected.</p>
+<p>       This is typically used when <code class='reference paramref'>arr</code> is a collection of
+       objects, and <code class='reference paramref'>fun</code> is the name of some function in them.</p>
+</dd>
+</dl>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The function is never destructive on <code class='reference paramref'>arr</code>.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/filter.html'>filter()</a>, <a class='ms reference' href='../predef_3A_3A/enumerate.html'>enumerate()</a>, <code class='reference unresolved'>foreach()</code></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/map.html","name":"map"};</script>
+<script src='../../ex/predef_3A_3A/index.js'></script>
+<script src='../../ex/predef_3A_3A/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

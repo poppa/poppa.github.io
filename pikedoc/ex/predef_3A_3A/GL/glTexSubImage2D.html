@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glTexSubImage2D()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glTexParameter.html" class="prev"><span>&#10148;</span> GL.glTexParameter()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glTranslate.html" class="next">GL.glTranslate() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glTexSubImage2D()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glTexSubImage2D</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glTexSubImage2D</span>(</b><code class='datatype'>int</code> <code class='argument'>target</code>, <code class='datatype'>int</code> <code class='argument'>level</code>, <code class='datatype'>int</code> <code class='argument'>xoffset</code>, <code class='datatype'>int</code> <code class='argument'>yoffset</code>, <code class='datatype'>object</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>object</code>) <code class='argument'>width</code>, <code class='datatype'>object</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>object</code>) <code class='argument'>height</code>, <code class='datatype'>object</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>object</code>) <code class='argument'>format</code>, <code class='datatype'>object</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>object</code>) <code class='argument'>type</code>, <code class='datatype'>array</code>(<code class='datatype'>object</code>|<code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>object</code>)) <code class='argument'>pixels</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Texturing maps a portion of a specified texture image
+onto each graphical primitive for which texturing is enabled.
+To enable and disable two-dimensional texturing, call <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a>
+and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a> with argument <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glTexSubImage2D.html'>glTexSubImage2D</a> redefines a contiguous subregion of an existing two-dimensional
+texture image.
+The texels referenced by <i>pixels</i> replace the portion of the
+existing texture array with x indices <i>xoffset</i> and "xoffset"~+~"width"~-~1,
+inclusive,
+and y indices <i>yoffset</i> and "yoffset"~+~"height"~-~1, inclusive.
+This region may not include any texels outside the range of the
+texture array as it was originally specified.
+It is not an error to specify a subtexture with zero width or height, but
+such a specification has no effect.</p>
+</dd>
+<dt class='head--doc'><span id='p-target'></span>Parameter <code class='parameter'>target</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the target texture.
+Must be <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-level'></span>Parameter <code class='parameter'>level</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the level-of-detail number.
+Level 0 is the base image level.
+Level <i>n</i> is the <i>n</i>th mipmap reduction image.</p>
+</dd>
+<dt class='head--doc'><span id='p-xoffset'></span>Parameter <code class='parameter'>xoffset</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a texel offset in the x direction within the texture array.</p>
+</dd>
+<dt class='head--doc'><span id='p-yoffset'></span>Parameter <code class='parameter'>yoffset</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a texel offset in the y direction within the texture array.</p>
+</dd>
+<dt class='head--doc'><span id='p-width'></span>Parameter <code class='parameter'>width</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the width of the texture subimage.</p>
+</dd>
+<dt class='head--doc'><span id='p-height'></span>Parameter <code class='parameter'>height</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the height of the texture subimage.</p>
+</dd>
+<dt class='head--doc'><span id='p-format'></span>Parameter <code class='parameter'>format</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the format of the pixel data.
+The following symbolic values are accepted:
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_COLOR_INDEX</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_RED</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_GREEN</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BLUE</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_ALPHA</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_RGB</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_RGBA</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LUMINANCE</a>, and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_LUMINANCE_ALPHA</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-type'></span>Parameter <code class='parameter'>type</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the data type of the pixel data.
+The following symbolic values are accepted:
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_UNSIGNED_BYTE</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BYTE</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BITMAP</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_UNSIGNED_SHORT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_SHORT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_UNSIGNED_INT</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INT</a>, and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_FLOAT</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-pixels'></span>Parameter <code class='parameter'>pixels</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies a pointer to the image data in memory.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>target</i> is not <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_2D</a>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if the texture array has not
+been defined by a previous <a class='ms reference' href='../../predef_3A_3A/GL/glTexImage2D.html'>glTexImage2D</a> operation.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if <i>level</i> is less than 0.
+.P
+P
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> may be generated if <i>level</i> is greater
+than log sub 2<i>max</i>,
+where <i>max</i> is the returned value of <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_MAX_TEXTURE_SIZE</a>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if "xoffset" ~&lt;~ ~-b,
+("xoffset"~+~"width") ~&gt;~ (w~-~b),
+"yoffset" ~&lt;~ ~-b, or ("yoffset" ~+~ "height") ~&gt;~ (h~-~b).
+Where w is the <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_WIDTH</a>,
+h is the <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_TEXTURE_HEIGHT</a>, and b is the border width
+of the texture image being modified.
+Note that w and h include twice the border width.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_VALUE</a> is generated if <i>width</i> or <i>height</i> is less than 0.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>format</i> is not an accepted
+format constant.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>type</i> is not a type constant.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>type</i> is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_BITMAP</a> and
+<i>format</i> is not <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_COLOR_INDEX</a>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glTexSubImage2D.html'>glTexSubImage2D</a> is executed
+between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a> and the corresponding
+execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glTexSubImage2D.html","name":"glTexSubImage2D"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

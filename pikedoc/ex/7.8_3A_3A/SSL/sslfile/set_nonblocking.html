@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SSL.sslfile()-&gt;set_nonblocking()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/7.8_3A_3A.html'><b class='head'>7.8::</b></a>
+<a href='../../../../ex/7.8_3A_3A/SSL.html'><b class='head'>SSL</b></a>
+<a href='../../../../ex/7.8_3A_3A/SSL/sslfile.html'><b class='head'>SSL.sslfile</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/7.8_3A_3A/SSL/sslfile/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/7.8_3A_3A/SSL/sslfile/set_id.html" class="prev"><span>&#10148;</span> SSL.sslfile()-&gt;set_id()</a>
+              <a href="../../../../ex/7.8_3A_3A/SSL/sslfile/set_nonblocking_keep_callbacks.html" class="next">SSL.sslfile()-&gt;set_nonblocking_keep_callbacks() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method SSL.sslfile()-&gt;set_nonblocking()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_nonblocking</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>set_nonblocking</span>(</b><code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code>:<code class='datatype'>int</code>) <code class='argument'>read</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>write</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>close</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>read_oob</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>write_oob</code>, <code class='datatype'>void</code>|<code class='datatype'>function</code>(<code class='datatype'>void</code>|<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>accept</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Set the stream in nonblocking mode, installing the specified
+ callbacks. The alert callback isn't touched.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Prior to version 7.5.12, this function didn't set the accept
+ callback.</p>
+</dd>
+<dt class='head--doc'>Bugs</dt>
+<dd class='body--doc'><p><code class='reference paramref'>read_oob</code> and <code class='reference paramref'>write_oob</code> are currently ignored.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/set_callbacks.html'>set_callbacks</a>, <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/query_callbacks.html'>query_callbacks</a>, <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/set_nonblocking_keep_callbacks.html'>set_nonblocking_keep_callbacks</a>,
+   <a class='ms reference' href='../../../7.8_3A_3A/SSL/sslfile/set_blocking.html'>set_blocking</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/7.8_3A_3A/SSL/sslfile/set_nonblocking.html","name":"set_nonblocking"};</script>
+<script src='../../../../ex/7.8_3A_3A/SSL/sslfile/index.js'></script>
+<script src='../../../../ex/7.8_3A_3A/SSL/sslfile/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

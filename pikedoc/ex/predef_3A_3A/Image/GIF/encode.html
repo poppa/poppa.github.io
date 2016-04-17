@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.GIF.encode()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/GIF.html'><b class='head'>Image.GIF</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/GIF/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/GIF/decode_map.html" class="prev"><span>&#10148;</span> Image.GIF.decode_map()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/GIF/encode_trans.html" class="next">Image.GIF.encode_trans() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.GIF.encode()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>encode</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>int</code> <code class='argument'>colors</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>colortable</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>int</code> <code class='argument'>tr_r</code>, <code class='datatype'>int</code> <code class='argument'>tr_g</code>, <code class='datatype'>int</code> <code class='argument'>tr_b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>int</code> <code class='argument'>colors</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>int</code> <code class='argument'>colors</code>, <code class='datatype'>int</code> <code class='argument'>tr_r</code>, <code class='datatype'>int</code> <code class='argument'>tr_g</code>, <code class='datatype'>int</code> <code class='argument'>tr_b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>int</code> <code class='argument'>colors</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code>, <code class='datatype'>int</code> <code class='argument'>tr_r</code>, <code class='datatype'>int</code> <code class='argument'>tr_g</code>, <code class='datatype'>int</code> <code class='argument'>tr_b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>colortable</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>colortable</code>, <code class='datatype'>int</code> <code class='argument'>tr_r</code>, <code class='datatype'>int</code> <code class='argument'>tr_g</code>, <code class='datatype'>int</code> <code class='argument'>tr_b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>colortable</code>, <code class='datatype'>object</code> <code class='argument'>alpha</code>, <code class='datatype'>int</code> <code class='argument'>a_r</code>, <code class='datatype'>int</code> <code class='argument'>a_g</code>, <code class='datatype'>int</code> <code class='argument'>a_b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>string </code></code> <b><span class='method'>encode_trans</span>(</b><code class='datatype'>object</code> <code class='argument'>img</code>, <code class='datatype'>object</code> <code class='argument'>colortable</code>, <code class='datatype'>int</code> <code class='argument'>transp_index</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>Create a complete GIF file.</p>
+
+<p>The latter (<a class='ms reference' href='../../../predef_3A_3A/Image/GIF/encode_trans.html'>encode_trans</a>) functions
+add transparency capabilities.</p>
+
+<p>Example:
+<pre>
+img=&lt;ref&gt;Image.Image&lt;/ref&gt;([...]);
+[...] // make your very-nice image
+write(&lt;ref&gt;Image.GIF.encode&lt;/ref&gt;(img)); // write it as GIF on stdout
+</pre>
+</p>
+</dd>
+<dt class='head--doc'><span id='p-img'></span>Parameter <code class='parameter'>img</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>The image which to encode.</p></dd>
+<dt class='head--doc'><span id='p-colors'></span>Parameter <code class='parameter'>colors</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-colortable'></span>Parameter <code class='parameter'>colortable</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>These arguments decides what colors the image should
+be encoded with. If a number is given, a colortable
+with be created with (at most) that amount of colors.
+Default is '256' (GIF maximum amount of colors).</p></dd>
+<dt class='head--doc'><span id='p-alpha'></span>Parameter <code class='parameter'>alpha</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>Alpha channel image (defining what is transparent); black
+color indicates transparency. GIF has only transparent
+or nontransparent (no real alpha channel).
+You can always dither a transparency channel:
+<tt>Image.Colortable(my_alpha, ({({0,0,0}),({255,255,255})}))<br />
+    -&gt;full()<br />-&gt;floyd_steinberg()<br />-&gt;map(my_alpha)</tt></p></dd>
+<dt class='head--doc'><span id='p-tr_r'></span>Parameter <code class='parameter'>tr_r</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-tr_g'></span>Parameter <code class='parameter'>tr_g</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-tr_b'></span>Parameter <code class='parameter'>tr_b</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>Use this (or the color closest to this) color as transparent
+pixels.</p></dd>
+<dt class='head--doc'><span id='p-a_r'></span>Parameter <code class='parameter'>a_r</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-a_g'></span>Parameter <code class='parameter'>a_g</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-a_b'></span>Parameter <code class='parameter'>a_b</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>Encode transparent pixels (given by alpha channel image)
+to have this color. This option is for making GIFs for
+the decoders that doesn't support transparency.</p></dd>
+<dt class='head--doc'><span id='p-transp_index'></span>Parameter <code class='parameter'>transp_index</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>Use this color no in the colortable as transparent color.
+</p></dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p>For advanced users:
+<pre>Image.GIF.encode_trans(img,colortable,alpha);</pre>
+is equivalent of using
+<pre>Image.GIF.header_block(img-&gt;xsize(),img-&gt;ysize(),colortable)+
+Image.GIF.render_block(img,colortable,0,0,0,alpha)+
+Image.GIF.end_block();</pre>
+and is actually implemented that way.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/GIF/encode.html","name":"encode"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/GIF/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/GIF/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

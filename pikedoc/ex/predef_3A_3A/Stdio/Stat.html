@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Stdio.Stat</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Stdio.html'><b class='head'>Stdio</b></a>
+<b class='selected head'>Stdio.Stat</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Stdio/Stat/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Stdio/Readline/write.html" class="prev"><span>&#10148;</span> Stdio.Readline()-&gt;write()</a>
+              <a href="../../../ex/predef_3A_3A/Stdio/Stat/create.html" class="next">Stdio.Stat()-&gt;create() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Stdio.Stat</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This object is used to represent file status information
+   from e.g. <a class='ms reference' href='../../predef_3A_3A/file_stat.html'>file_stat()</a>.</p>
+<p>   It contains the following items usually found in a C <tt>struct
+   stat</tt>:</p>
+<dl class='group--doc'><dt>mode</dt>
+<dd><p>File mode (see <tt>mknod(2)</tt>).</p>
+</dd>
+<dt>size</dt>
+<dd><p>File size in bytes.</p>
+</dd>
+<dt>uid</dt>
+<dd><p>User ID of the file's owner.</p>
+</dd>
+<dt>gid</dt>
+<dd><p>Group ID of the file's owner.</p>
+</dd>
+<dt>atime</dt>
+<dd><p>Time of last access in seconds since 00:00:00 UTC, 1970-01-01.</p>
+</dd>
+<dt>mtime</dt>
+<dd><p>Time of last data modification.</p>
+</dd>
+<dt>ctime</dt>
+<dd><p>Time of last file status change.</p>
+</dd>
+<dt>atime_nsec</dt>
+<dd><p>Time of last access in nanoseconds, added to atime to get
+       sub-second time</p>
+</dd>
+<dt>mtime_nsec</dt>
+<dd><p>Time of last modification in nanoseconds, added to mtime to get
+       sub-second time</p>
+</dd>
+<dt>ctime_nsec</dt>
+<dd><p>Time of last file status change in nanoseconds, added to ctime to
+       get sub-second time</p>
+</dd>
+<dt>ino</dt>
+<dd><p>Inode number.</p>
+</dd>
+<dt>nlink</dt>
+<dd><p>Number of links.</p>
+</dd>
+<dt>dev</dt>
+<dd><p>ID of the device containing a directory entry for this file.</p>
+</dd>
+<dt>rdev</dt>
+<dd><p>ID of the device.</p>
+</dd>
+</dl><p>It also contains some items that correspond to the C <tt>IS*</tt> macros:</p>
+<dl class='group--doc'><dt>isreg</dt>
+<dd><p>Set if the file is a regular file.</p>
+</dd>
+<dt>isdir</dt>
+<dd><p>Set if the file is a directory.</p>
+</dd>
+<dt>islnk</dt>
+<dd><p>Set if the file is a symbolic link. Note that symbolic links
+       are normally followed by the stat functions, so this might
+       only be set if you turn that off, e.g. by giving a nonzero
+       second argument to <a class='ms reference' href='../../predef_3A_3A/file_stat.html'>file_stat()</a>.</p>
+</dd>
+<dt>isfifo</dt>
+<dd><p>Set if the file is a FIFO (aka named pipe).</p>
+</dd>
+<dt>issock</dt>
+<dd><p>Set if the file is a socket.</p>
+</dd>
+<dt>ischr</dt>
+<dd><p>Set if the file is a character device.</p>
+</dd>
+<dt>isblk</dt>
+<dd><p>Set if the file is a block device.</p>
+</dd>
+</dl><p>There are also some items that provide alternative representations
+   of the above:</p>
+<dl class='group--doc'><dt>type</dt>
+<dd><p>The type as a string, can be any of <code class='expr'>"reg"</code>,
+       <code class='expr'>"dir"</code>, <code class='expr'>"lnk"</code>, <code class='expr'>"fifo"</code>, <code class='expr'>"sock"</code>,
+       <code class='expr'>"chr"</code>, <code class='expr'>"blk"</code>, and <code class='expr'>"unknown"</code>.</p>
+</dd>
+<dt>mode_string</dt>
+<dd><p>The file mode encoded as a string in <tt>ls -l</tt> style, e.g.
+       <code class='expr'>"drwxr-xr-x"</code>.</p>
+</dd>
+</dl><p>Note that some items might not exist or have meaningful values
+   on some platforms.</p>
+<p>   Additionally, the object may be initialized from or casted to an
+   <code class='expr'>array</code> on the form of a 'traditional' LPC stat-array, and
+   it's also possible to index the object directly with integers as
+   if it were such an array. The stat-array has this format:</p>
+<table class='box'><tr><td colspan='2'>Array</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>0</code></code></td><td><p>File mode, same as <tt>mode</tt>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>1</code></code></td><td><p>If zero or greater, the file is a regular file and this is
+       its size in bytes. If less than zero it gives the type:
+       -2=directory, -3=symlink and -4=device.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>2</code></code></td><td><p>Time of last access, same as <tt>atime</tt>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>3</code></code></td><td><p>Time of last data modification, same as <tt>mtime</tt>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>4</code></code></td><td><p>Time of last file status change, same as <tt>ctime</tt>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>5</code></code></td><td><p>User ID of the file's owner, same as <tt>uid</tt>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>int</code> <code class='key'>6</code></code></td><td><p>Group ID of the file's owner, same as <tt>gid</tt>.</p>
+</td></tr>
+</table><p>It's possible to modify the stat struct by assigning values to
+   the items. They essentially work as variables, although some of
+   them affect others, e.g. setting <code class='expr'>isdir</code> clears <code class='expr'>isreg</code>
+   and setting <code class='expr'>mode_string</code> changes many of the other items.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Stdio.Stat</span> <span class='class'>Stdio.Stat</span><b>(</b><code class='datatype'>void</code>|<code class='datatype'>object</code>|<code class='datatype'>array</code> <code class='argument'>stat</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>A new <a class='ms reference' href='../../predef_3A_3A/Stdio/Stat.html'>Stdio.Stat</a> object can be initialized in two ways:</p>
+<ul>
+<li><p><a class='ms reference' href='../../predef_3A_3A/Stdio/Stat/create.html'>stat</a> is an object, typically another <a class='ms reference' href='../../predef_3A_3A/Stdio/Stat.html'>Stdio.Stat</a>. The
+     stat info is copied from the object by getting the values of
+     <code class='expr'>mode</code>, <code class='expr'>size</code>, <code class='expr'>atime</code>, <code class='expr'>mtime</code>,
+     <code class='expr'>ctime</code>, <code class='expr'>uid</code>, <code class='expr'>gid</code>, <code class='expr'>dev</code>, <code class='expr'>ino</code>,
+     <code class='expr'>nlink</code>, and <code class='expr'>rdev</code>.</p>
+</li><li><p><a class='ms reference' href='../../predef_3A_3A/Stdio/Stat/create.html'>stat</a> is a seven element array on the 'traditional' LPC
+     stat-array form (see the class doc).</p>
+</li></ul></dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Stdio/Stat.html","name":"Stat"};</script>
+<script src='../../../ex/predef_3A_3A/Stdio/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Stdio/Stat/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

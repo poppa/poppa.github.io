@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - CompilerEnvironment()-&gt;PikeCompiler</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/CompilerEnvironment.html'><b class='head'>CompilerEnvironment</b></a>
+<b class='selected head'>CompilerEnvironment()-&gt;PikeCompiler</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/CompilerEnvironment/PikeCompiler/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/CompilerEnvironment.html" class="prev"><span>&#10148;</span> CompilerEnvironment</a>
+              <a href="../../../ex/predef_3A_3A/CompilerEnvironment/PikeCompiler/CompilerState.html" class="next">CompilerEnvironment()-&gt;PikeCompiler()-&gt;CompilerState <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class CompilerEnvironment()-&gt;PikeCompiler</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The Pike compiler.</p>
+<p>   An object of this class compiles a single string
+   of Pike code.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>CompilerEnvironment.PikeCompiler</span> <span class='class'>CompilerEnvironment.PikeCompiler</span><b>(</b><code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>source</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/CompilationHandler.html'>CompilationHandler</a></code>|<code class='datatype'>void</code> <code class='argument'>handler</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>major</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>minor</code>, <code class='datatype'>program</code>|<code class='datatype'>void</code> <code class='argument'>target</code>, <code class='datatype'>object</code>|<code class='datatype'>void</code> <code class='argument'>placeholder</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Create a PikeCompiler object for a source string.</p>
+<p>   This function takes a piece of Pike code as a string and
+   initializes a compiler object accordingly.</p>
+</dd>
+<dt class='head--doc'><span id='p-source'></span>Parameter <code class='parameter'>source</code></dt>
+<dd></dd><dd class='body--doc'><p>Source code to compile.</p>
+</dd>
+<dt class='head--doc'><span id='p-handler'></span>Parameter <code class='parameter'>handler</code></dt>
+<dd></dd><dd class='body--doc'><p>The optional argument <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>handler</a> is used to specify an alternative
+   error handler. If it is not specified the current master object
+   at compile time will be used.</p>
+</dd>
+<dt class='head--doc'><span id='p-major'></span>Parameter <code class='parameter'>major</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-minor'></span>Parameter <code class='parameter'>minor</code></dt>
+<dd></dd><dd class='body--doc'><p>The optional arguments <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>major</a> and <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>minor</a> are used to tell the
+   compiler to attempt to be compatible with Pike <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>major</a>.<a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>minor</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-target'></span>Parameter <code class='parameter'>target</code></dt>
+<dd></dd><dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/__empty_program.html'>__empty_program()</a> program to fill in. The virgin program
+   returned by <a class='ms reference' href='../../predef_3A_3A/__empty_program.html'>__empty_program()</a> will be modified and returned
+   by <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/compile.html'>compile()</a> on success.</p>
+</dd>
+<dt class='head--doc'><span id='p-placeholder'></span>Parameter <code class='parameter'>placeholder</code></dt>
+<dd></dd><dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A.html'>__null_program()</a> placeholder object to fill in. The object
+   will be modified into an instance of the resulting program
+   on successfull compile. Note that <a class='ms reference' href='../../lfun_3A_3A/create.html'>lfun::create()</a> in the
+   program will be called without any arguments.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>source</a> must contain the complete source for a program.
+   It is not possible to compile a single expression or statement.</p>
+<p>   Also note that no preprocessing is performed.
+   To preprocess the program you can use <a class='ms reference' href='../../predef_3A_3A/compile_string.html'>compile_string()</a> or
+   call the preprocessor manually by calling <a class='ms reference' href='../../predef_3A_3A/cpp.html'>cpp()</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Note that all references to <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>target</a> and <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>placeholder</a> should
+   removed if <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/compile.html'>compile()</a> failes. On failure the <a class='ms reference' href='../../predef_3A_3A/CompilerEnvironment/PikeCompiler/create.html'>placeholder</a>
+   object will be destructed.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/compile_string.html'>compile_string()</a>, <a class='ms reference' href='../../predef_3A_3A/compile_file.html'>compile_file()</a>, <a class='ms reference' href='../../predef_3A_3A/cpp.html'>cpp()</a>, <a class='ms reference' href='../../predef_3A_3A/master.html'>master()</a>,
+   <a class='ms reference' href='../../predef_3A_3A/CompilationHandler.html'>CompilationHandler</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/CompilerEnvironment/PikeCompiler.html","name":"PikeCompiler"};</script>
+<script src='../../../ex/predef_3A_3A/CompilerEnvironment/index.js'></script>
+<script src='../../../ex/predef_3A_3A/CompilerEnvironment/PikeCompiler/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

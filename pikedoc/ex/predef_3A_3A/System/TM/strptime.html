@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - System.TM()-&gt;strptime()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/System.html'><b class='head'>System</b></a>
+<a href='../../../../ex/predef_3A_3A/System/TM.html'><b class='head'>System.TM</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/System/TM/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/System/TM/strftime.html" class="prev"><span>&#10148;</span> System.TM()-&gt;strftime()</a>
+              <a href="../../../../ex/predef_3A_3A/System/TM/unix_time.html" class="next">System.TM()-&gt;unix_time() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method System.TM()-&gt;strptime()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>strptime</b></span>
+</dt>
+<dd><p><code><code class='datatype'>bool</code> <b><span class='method'>strptime</span>(</b><code class='datatype'>string(1..255)</code> <code class='argument'>format</code>, <code class='datatype'>string(1..255)</code> <code class='argument'>data</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Parse the given <code class='reference paramref'>data</code> using the format in <code class='reference paramref'>format</code> as a date.</p>
+<dl class='group--doc'><dt>%%</dt>
+<dd><p>The % character.</p>
+</dd>
+<dt>%a or %A</dt>
+<dd><p>The weekday name according to the C locale, in abbreviated
+     form or the full name.</p>
+</dd>
+<dt>%b or %B or %h</dt>
+<dd><p>The month name according to the C locale, in abbreviated form
+     or the full name.</p>
+</dd>
+<dt>%c</dt>
+<dd><p>The date and time representation for the C locale.</p>
+</dd>
+<dt>%C</dt>
+<dd><p>The century number (0-99).</p>
+</dd>
+<dt>%d or %e</dt>
+<dd><p>The day of month (1-31).</p>
+</dd>
+<dt>%D</dt>
+<dd><p>Equivalent to %m/%d/%y.</p>
+</dd>
+<dt>%H</dt>
+<dd><p>The hour (0-23).</p>
+</dd>
+<dt>%I</dt>
+<dd><p>The hour on a 12-hour clock (1-12).</p>
+</dd>
+<dt>%j</dt>
+<dd><p>The day number in the year (1-366).</p>
+</dd>
+<dt>%m</dt>
+<dd><p>The month number (1-12).</p>
+</dd>
+<dt>%M</dt>
+<dd><p>The minute (0-59).</p>
+</dd>
+<dt>%n</dt>
+<dd><p>Arbitrary whitespace.</p>
+</dd>
+<dt>%p</dt>
+<dd><p>The C locale's equivalent of AM or PM.</p>
+</dd>
+<dt>%R</dt>
+<dd><p>Equivalent to %H:%M.</p>
+</dd>
+<dt>%S</dt>
+<dd><p>The second (0-60; 60 may occur for leap seconds;
+     earlier also 61 was allowed).</p>
+</dd>
+<dt>%t</dt>
+<dd><p>Arbitrary whitespace.</p>
+</dd>
+<dt>%T</dt>
+<dd><p>Equivalent to %H:%M:%S.</p>
+</dd>
+<dt>%U</dt>
+<dd><p>The week number with Sunday the first day of the week (0-53).</p>
+</dd>
+<dt>%w</dt>
+<dd><p>The weekday number (0-6) with Sunday = 0.</p>
+</dd>
+<dt>%W</dt>
+<dd><p>The week number with Monday the first day of the week (0-53).</p>
+</dd>
+<dt>%x</dt>
+<dd><p>The date, using the C locale's date format.</p>
+</dd>
+<dt>%X</dt>
+<dd><p>The time, using the C locale's time format.</p>
+</dd>
+<dt>%y</dt>
+<dd><p>The year within century (0-99).  When a century is not
+     otherwise specified, values in the range 69-99 refer to years
+     in the twentieth century (1969-1999); values in the range
+     00-68 refer to years in the twenty-first century (2000-2068).</p>
+</dd>
+<dt>%Y</dt>
+<dd><p>The year, including century (for example, 1991).</p>
+</dd>
+</dl>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/System/TM/strptime.html","name":"strptime"};</script>
+<script src='../../../../ex/predef_3A_3A/System/TM/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/System/TM/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

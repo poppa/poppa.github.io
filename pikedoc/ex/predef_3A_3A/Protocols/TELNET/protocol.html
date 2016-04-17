@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Protocols.TELNET.protocol</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols/TELNET.html'><b class='head'>Protocols.TELNET</b></a>
+<b class='selected head'>Protocols.TELNET.protocol</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Protocols/TELNET/protocol/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Protocols/TELNET/Telopts.html" class="prev"><span>&#10148;</span> Protocols.TELNET.Telopts</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/TELNET/protocol/call_read_cb.html" class="next">Protocols.TELNET.protocol()-&gt;call_read_cb() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Protocols.TELNET.protocol</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>Protocols.TELNET.protocol</tspan></text>
+<line x1='5' y1='25' x2='5' y2='36' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../../predef_3A_3A/Protocols/TELNET/LineMode.html'>Protocols.TELNET.LineMode</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Implementation of the TELNET protocol.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>cb</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>mapping</code> Protocols.TELNET.protocol.<b><span class='variable'>cb</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Mapping containing extra callbacks.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>close_cb</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>function</code>(<code class='datatype'>mixed</code>|<code class='datatype'>void</code>:<code class='datatype'>void</code>) Protocols.TELNET.protocol.<b><span class='variable'>close_cb</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Close callback.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>done</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>int</code> Protocols.TELNET.protocol.<b><span class='variable'>done</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Indicates that connection should be closed</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>fd</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>object</code> Protocols.TELNET.protocol.<b><span class='variable'>fd</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The connection.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>id</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>mixed</code> Protocols.TELNET.protocol.<b><span class='variable'>id</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Value to send to the callbacks.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>remote_options</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>local_options</b></span><br>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>array</code>(<code class='datatype'>int</code>) Protocols.TELNET.protocol.<b><span class='variable'>remote_options</span></b></code><br>
+<code><code class='modifier'>protected</code>  <code class='datatype'>array</code>(<code class='datatype'>int</code>) Protocols.TELNET.protocol.<b><span class='variable'>local_options</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Negotiation states of all WILL/WON'T options.
+ See <b><a href='http://pike.lysator.liu.se/rfc1143.xml'>RFC 1143</a></b> for a description of the states.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>nonblocking_write</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>int</code> Protocols.TELNET.protocol.<b><span class='variable'>nonblocking_write</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Tells if we have set the nonblocking write callback or not.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>read_cb</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='datatype'>string</code>:<code class='datatype'>void</code>) Protocols.TELNET.protocol.<b><span class='variable'>read_cb</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Read callback.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>synch</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>int</code> Protocols.TELNET.protocol.<b><span class='variable'>synch</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Indicates whether we are in synch-mode or not.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>to_send</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>string</code> Protocols.TELNET.protocol.<b><span class='variable'>to_send</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Data queued to be sent.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>write_cb</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>function</code>(<code class='datatype'>mixed</code>|<code class='datatype'>void</code>:<code class='datatype'>string</code>) Protocols.TELNET.protocol.<b><span class='variable'>write_cb</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Write callback.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Protocols.TELNET.protocol</span> <span class='class'>Protocols.TELNET.protocol</span><b>(</b><code class='datatype'>object</code> <code class='argument'>f</code>, <code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='datatype'>string</code>:<code class='datatype'>void</code>) <code class='argument'>r_cb</code>, <code class='datatype'>function</code>(<code class='datatype'>mixed</code>|<code class='datatype'>void</code>:<code class='datatype'>string</code>) <code class='argument'>w_cb</code>, <code class='datatype'>function</code>(<code class='datatype'>mixed</code>|<code class='datatype'>void</code>:<code class='datatype'>void</code>) <code class='argument'>c_cb</code>, <code class='datatype'>mapping</code> <code class='argument'>callbacks</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>new_id</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Creates a TELNET protocol handler, and sets its callbacks.</p>
+</dd>
+<dt class='head--doc'><span id='p-f'></span>Parameter <code class='parameter'>f</code></dt>
+<dd></dd><dd class='body--doc'><p>File to use for the connection.</p>
+</dd>
+<dt class='head--doc'><span id='p-r_cb'></span>Parameter <code class='parameter'>r_cb</code></dt>
+<dd></dd><dd class='body--doc'><p>Function to call when data has arrived.</p>
+</dd>
+<dt class='head--doc'><span id='p-w_cb'></span>Parameter <code class='parameter'>w_cb</code></dt>
+<dd></dd><dd class='body--doc'><p>Function to call when the send buffer is empty.</p>
+</dd>
+<dt class='head--doc'><span id='p-c_cb'></span>Parameter <code class='parameter'>c_cb</code></dt>
+<dd></dd><dd class='body--doc'><p>Function to call when the connection is closed.</p>
+</dd>
+<dt class='head--doc'><span id='p-callbacks'></span>Parameter <code class='parameter'>callbacks</code></dt>
+<dd></dd><dd class='body--doc'><p>Mapping with callbacks for the various TELNET commands.</p>
+</dd>
+<dt class='head--doc'><span id='p-new_id'></span>Parameter <code class='parameter'>new_id</code></dt>
+<dd></dd><dd class='body--doc'><p>Value to send to the various callbacks.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/TELNET/protocol.html","name":"protocol"};</script>
+<script src='../../../../ex/predef_3A_3A/Protocols/TELNET/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Protocols/TELNET/protocol/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

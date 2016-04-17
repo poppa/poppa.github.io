@@ -1,0 +1,5 @@
+// Class path Web.Auth.Param
+PikeDoc.registerSymbol('Web.Auth.Param', PikeDoc.isInline)
+.addChildren('method', [{"link":"ex/predef_3A_3A/Web/Auth/Param/create.html","name":"create"},{"link":"ex/predef_3A_3A/Web/Auth/Param/get_name.html","name":"get_name"},{"link":"ex/predef_3A_3A/Web/Auth/Param/get_value.html","name":"get_value"},{"link":"ex/predef_3A_3A/Web/Auth/Param/low_set_value.html","name":"low_set_value"},{"link":"ex/predef_3A_3A/Web/Auth/Param/name_value.html","name":"name_value"},{"link":"ex/predef_3A_3A/Web/Auth/Param/name_value_encoded.html","name":"name_value_encoded"},{"link":"ex/predef_3A_3A/Web/Auth/Param/set_name.html","name":"set_name"},{"link":"ex/predef_3A_3A/Web/Auth/Param/set_value.html","name":"set_value"}])
+.addChildren('operator', [{"link":"ex/predef_3A_3A/Web/Auth/Param/_sprintf.html","name":"_sprintf"},{"link":"ex/predef_3A_3A/Web/Auth/Param/_backtick_3C.html","name":"`<"},{"link":"ex/predef_3A_3A/Web/Auth/Param/_backtick_eq_eq.html","name":"`=="},{"link":"ex/predef_3A_3A/Web/Auth/Param/_backtick_3E.html","name":"`>"}])
+.finish();

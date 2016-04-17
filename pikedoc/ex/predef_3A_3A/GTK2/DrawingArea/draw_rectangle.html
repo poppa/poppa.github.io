@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GTK2.DrawingArea()-&gt;draw_rectangle()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2.html'><b class='head'>GTK2</b></a>
+<a href='../../../../ex/predef_3A_3A/GTK2/DrawingArea.html'><b class='head'>GTK2.DrawingArea</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/GTK2/DrawingArea/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/GTK2/DrawingArea/draw_point.html" class="prev"><span>&#10148;</span> GTK2.DrawingArea()-&gt;draw_point()</a>
+              <a href="../../../../ex/predef_3A_3A/GTK2/DrawingArea/draw_text.html" class="next">GTK2.DrawingArea()-&gt;draw_text() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GTK2.DrawingArea()-&gt;draw_rectangle()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>draw_rectangle</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/DrawingArea.html'>GTK2.DrawingArea</a></code> <b><span class='method'>draw_rectangle</span>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/GTK2/GdkGC.html'>GTK2.GdkGC</a></code> <code class='argument'>gc</code>, <code class='datatype'>int</code> <code class='argument'>filledp</code>, <code class='datatype'>int</code> <code class='argument'>x1</code>, <code class='datatype'>int</code> <code class='argument'>y1</code>, <code class='datatype'>int</code> <code class='argument'>x2</code>, <code class='datatype'>int</code> <code class='argument'>y2</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>img_begin
+  w = GTK2.DrawingArea()-&gt;set_size_request(100,100);
+ delay:  g = GDK2.GC(w)-&gt;set_foreground( GDK2.Color(255,0,0) );
+ delay: for(int x = 0; x&lt;10; x++) w-&gt;draw_rectangle(g,0,x*10,0,100-x*10,99);
+ img_end
+ img_begin
+ w = GTK2.DrawingArea()-&gt;set_size_request(100,100);
+ delay:   g = GDK2.GC(w);
+ delay:  for(int x = 0; x&lt;30; x++) {
+ delay:   g-&gt;set_foreground(GDK2.Color(random(255),random(255),random(255)) );
+ delay:   w-&gt;draw_rectangle(g,1,x*10,0,100-x*10,99);
+ delay: }
+ img_end</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GTK2/DrawingArea/draw_rectangle.html","name":"draw_rectangle"};</script>
+<script src='../../../../ex/predef_3A_3A/GTK2/DrawingArea/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/GTK2/DrawingArea/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

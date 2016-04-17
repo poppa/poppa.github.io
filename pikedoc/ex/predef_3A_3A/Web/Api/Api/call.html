@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Web.Api.Api()-&gt;call()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Web.html'><b class='head'>Web</b></a>
+<a href='../../../../../ex/predef_3A_3A/Web/Api.html'><b class='head'>Web.Api</b></a>
+<a href='../../../../../ex/predef_3A_3A/Web/Api/Api.html'><b class='head'>Web.Api.Api</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Web/Api/Api/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Web/Api/Api/Method/create.html" class="prev"><span>&#10148;</span> Web.Api.Api()-&gt;Method()-&gt;create()</a>
+              <a href="../../../../../ex/predef_3A_3A/Web/Api/Api/close_connections.html" class="next">Web.Api.Api()-&gt;close_connections() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Web.Api.Api()-&gt;call()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>call</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mixed</code> <b><span class='method'>call</span>(</b><code class='datatype'>string</code> <code class='argument'>api_method</code>, <code class='datatype'>void</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Api/Api.html'>ParamsArg</a></code> <code class='argument'>params</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>http_method</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>data</code>, <code class='datatype'>void</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Api/Api.html'>Callback</a></code> <code class='argument'>cb</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Calls a remote API method.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>An exception is thrown if the response status code is other than
+  <code class='expr'>200</code>, <code class='expr'>301</code> or <code class='expr'>302</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-api_method'></span>Parameter <code class='parameter'>api_method</code></dt>
+<dd></dd><dd class='body--doc'><p>The remote API method to call!
+  This should be a Fully Qualified Domain Name</p>
+</dd>
+<dt class='head--doc'><span id='p-params'></span>Parameter <code class='parameter'>params</code></dt>
+<dd></dd><dd class='body--doc'><p>Additional params to send in the request</p>
+</dd>
+<dt class='head--doc'><span id='p-http_method'></span>Parameter <code class='parameter'>http_method</code></dt>
+<dd></dd><dd class='body--doc'><p>HTTP method to use. <code class='expr'>GET</code> is default</p>
+</dd>
+<dt class='head--doc'><span id='p-data'></span>Parameter <code class='parameter'>data</code></dt>
+<dd></dd><dd class='body--doc'><p>Inline data to send in a <code class='expr'>POST</code> request for instance.</p>
+</dd>
+<dt class='head--doc'><span id='p-cb'></span>Parameter <code class='parameter'>cb</code></dt>
+<dd></dd><dd class='body--doc'><p>Callback function to get into in async mode</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>If JSON is available the JSON response from servie will be decoded
+  and returned. If not, the raw response (e.g a JSON string) will be
+  returned. The exception to this is if the status code in the response is a
+  <code class='expr'>30x</code> (a redirect), then the response headers mapping will be
+  returned.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Api/Api/call.html","name":"call"};</script>
+<script src='../../../../../ex/predef_3A_3A/Web/Api/Api/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Web/Api/Api/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

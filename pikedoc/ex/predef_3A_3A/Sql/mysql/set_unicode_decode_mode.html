@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.mysql()-&gt;set_unicode_decode_mode()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql/mysql.html'><b class='head'>Sql.mysql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Sql/mysql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Sql/mysql/set_charset.html" class="prev"><span>&#10148;</span> Sql.mysql()-&gt;set_charset()</a>
+              <a href="../../../../ex/predef_3A_3A/Sql/mysql/set_unicode_encode_mode.html" class="next">Sql.mysql()-&gt;set_unicode_encode_mode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Sql.mysql()-&gt;set_unicode_decode_mode()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_unicode_decode_mode</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>set_unicode_decode_mode</span>(</b><code class='datatype'>int</code> <code class='argument'>enable</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Enable or disable unicode decode mode.</p>
+<p> In this mode, if the server supports UTF-8 then non-binary text
+ strings in results are automatically decoded to (possibly wide)
+ unicode strings. Not enabled by default.</p>
+<p> The statement "<code class='expr'>SET&nbsp;character_set_results&nbsp;=&nbsp;utf8</code>" is sent
+ to the server to enable the mode. When the mode is disabled,
+ "<code class='expr'>SET&nbsp;character_set_results&nbsp;=&nbsp;xxx</code>" is sent, where
+ <code class='expr'>xxx</code> is the connection charset that <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/get_charset.html'>get_charset</a> returns.</p>
+</dd>
+<dt class='head--doc'><span id='p-enable'></span>Parameter <code class='parameter'>enable</code></dt>
+<dd></dd><dd class='body--doc'><p>Nonzero enables this feature, zero disables it.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>Throws an exception if the server doesn't support this, i.e. if
+   the statement above fails. The MySQL system variable
+   <code class='expr'>character_set_results</code> was added in MySQL 4.1.1.</p>
+<p>   An error is also thrown if Pike has been compiled with a MySQL
+   client library older than 4.1.0, which lack the necessary
+   support for this.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_encode_mode.html'>set_unicode_encode_mode</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/mysql/set_unicode_decode_mode.html","name":"set_unicode_decode_mode"};</script>
+<script src='../../../../ex/predef_3A_3A/Sql/mysql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Sql/mysql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

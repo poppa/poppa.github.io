@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.PSD._decode()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/PSD.html'><b class='head'>Image.PSD</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/PSD/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/PSD/translate_mode.html" class="prev"><span>&#10148;</span> Image.PSD.translate_mode()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/PVR.html" class="next">Image.PVR <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.PSD._decode()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>_decode</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code> <b><span class='method'>_decode</span>(</b><code class='datatype'>string</code>|<code class='datatype'>mapping</code> <code class='argument'>data</code>, <code class='datatype'>mapping</code>|<code class='datatype'>void</code> <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Decodes a PSD image to a mapping, with at least an
+ 'image' and possibly an 'alpha' object. Data is either a PSD image, or
+ a mapping (as received from <a class='ms reference' href='../../../predef_3A_3A/Image/PSD/__decode.html'>__decode</a>)</p>
+</dd>
+<dt class='head--doc'><span id='p-options'></span>Parameter <code class='parameter'>options</code></dt>
+<dd></dd><dd class='body--doc'><table class='box'><tr><td><code><code class='key'>"background"</code> : <code class='datatype'>array</code>(<code class='datatype'>int</code>)|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Color.html'>Image.Color</a></code></code></td><td><p>Sets the background to the given color. Arrays should be in
+     the format ({r,g,b}).</p>
+</td></tr>
+<tr><td><code><code class='key'>"draw_all_layers"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Draw invisible layers as well.</p>
+</td></tr>
+<tr><td><code><code class='key'>"draw_guides"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Draw the guides.</p>
+</td></tr>
+<tr><td><code><code class='key'>"draw_selection"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Mark the selection using an overlay.</p>
+</td></tr>
+<tr><td><code><code class='key'>"ignore_unknown_layer_modes"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Do not asume 'Normal' for unknown layer modes.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_layers"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Draw an outline around all (drawn) layers.</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_layer_names"</code> : <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Font.html'>Image.Font</a></code></code></td><td><p>Write the name of all layers using the font object,</p>
+</td></tr>
+<tr><td><code><code class='key'>"mark_active_layer"</code> : <code class='object resolved'><code class='reference unresolved'>bool</code></code></code></td><td><p>Draw an outline around the active layer</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><table class='box'><tr><td><code><code class='key'>"image"</code> : <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code></code></td><td><p>The image object.</p>
+</td></tr>
+<tr><td><code><code class='key'>"alpha"</code> : <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Image/Image.html'>Image.Image</a></code></code></td><td><p>The alpha channel image object.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Throws upon error in data. For more information, see <a class='ms reference' href='../../../predef_3A_3A/Image/PSD/__decode.html'>__decode</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/PSD/_decode.html","name":"_decode"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/PSD/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/PSD/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

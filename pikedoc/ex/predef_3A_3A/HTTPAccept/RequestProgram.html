@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - HTTPAccept.RequestProgram</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/HTTPAccept.html'><b class='head'>HTTPAccept</b></a>
+<b class='selected head'>HTTPAccept.RequestProgram</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/HTTPAccept/RequestProgram/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/HTTPAccept/Loop/logp.html" class="prev"><span>&#10148;</span> HTTPAccept.Loop()-&gt;logp()</a>
+              <a href="../../../ex/predef_3A_3A/HTTPAccept/RequestProgram/output.html" class="next">HTTPAccept.RequestProgram()-&gt;output() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class HTTPAccept.RequestProgram</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>client</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>client</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The user agent</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>data</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>data</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Any payload that arrived with the request</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>headers</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>array</code>(<code class='datatype'>string</code>)) HTTPAccept.RequestProgram.<b><span class='variable'>headers</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>All received headers</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>method</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>method</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The method (GET, PUT etc)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>my_fd</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/NonblockingStream.html'>Stdio.NonblockingStream</a></code> HTTPAccept.RequestProgram.<b><span class='variable'>my_fd</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The filedescriptor for this request.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>not_query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>not_query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The part of the URL before the first '?'.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>pragma</b></span>
+</dt>
+<dd><p><code><code class='datatype'>multiset</code>(<code class='datatype'>string</code>) HTTPAccept.RequestProgram.<b><span class='variable'>pragma</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Tokenized pragma headers</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>prot</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>prot</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The protocol part of the request. As an example "HTTP/1.1"</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The part of the URL after the first '?'</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>raw</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>raw</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The full request</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>raw_url</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>raw_url</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The raw URL received, the part after the method and before the protocol.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>referer</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>referer</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The referer header</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>remoteaddr</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>remoteaddr</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The remote address</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rest_query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>rest_query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The part of the URL after the first '?' that does not seem to be query variables.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>since</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> HTTPAccept.RequestProgram.<b><span class='variable'>since</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The get-if-not-modified, if set.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>time</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> HTTPAccept.RequestProgram.<b><span class='variable'>time</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The time_t when the request arrived to the server</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>variables</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>) HTTPAccept.RequestProgram.<b><span class='variable'>variables</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Parsed query variables</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/HTTPAccept/RequestProgram.html","name":"RequestProgram"};</script>
+<script src='../../../ex/predef_3A_3A/HTTPAccept/index.js'></script>
+<script src='../../../ex/predef_3A_3A/HTTPAccept/RequestProgram/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

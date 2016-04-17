@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Sql.mysql()-&gt;set_charset()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql.html'><b class='head'>Sql</b></a>
+<a href='../../../../ex/predef_3A_3A/Sql/mysql.html'><b class='head'>Sql.mysql</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Sql/mysql/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Sql/mysql/quote.html" class="prev"><span>&#10148;</span> Sql.mysql()-&gt;quote()</a>
+              <a href="../../../../ex/predef_3A_3A/Sql/mysql/set_unicode_decode_mode.html" class="next">Sql.mysql()-&gt;set_unicode_decode_mode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Sql.mysql()-&gt;set_charset()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_charset</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>set_charset</span>(</b><code class='datatype'>string</code> <code class='argument'>charset</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Changes the connection charset. Works similar to sending the query
+ <code class='expr'>SET&nbsp;NAMES&nbsp;<code&nbsp;class='reference&nbsp;paramref'>charset</code></code> but also records the charset on the
+ client side so that various client functions work correctly.</p>
+<p> <code class='reference paramref'>charset</code> is a MySQL charset name or the special value
+ <code class='expr'>"unicode"</code> (see below). You can use <code class='expr'>SHOW&nbsp;CHARACTER
+&nbsp;SET</code> to get a list of valid charsets.</p>
+<p> Specifying <code class='expr'>"unicode"</code> as charset is the same as
+ <code class='expr'>"utf8"</code> except that unicode encode and decode modes are
+ enabled too. Briefly, this means that you can send queries as
+ unencoded unicode strings and will get back non-binary text
+ results as unencoded unicode strings. See
+ <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_encode_mode.html'>set_unicode_encode_mode</a> and <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_decode_mode.html'>set_unicode_decode_mode</a> for
+ further details.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>Throws an exception if the server doesn't support this, i.e. if
+   the statement <code class='expr'>SET&nbsp;NAMES</code> fails. Support for it was added
+   in MySQL 4.1.0.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If <code class='reference paramref'>charset</code> is <code class='expr'>"latin1"</code> and unicode encode mode is
+   enabled (the default) then <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/big_query.html'>big_query</a> can send wide unicode
+   queries transparently if the server supports UTF-8. See
+   <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_encode_mode.html'>set_unicode_encode_mode</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>If unicode decode mode is already enabled (see
+   <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_decode_mode.html'>set_unicode_decode_mode</a>) then this function won't affect the
+   result charset (i.e. the MySQL system variable
+   <code class='expr'>character_set_results</code>).</p>
+<p>   Actually, a query <code class='expr'>SET&nbsp;character_set_results&nbsp;=&nbsp;utf8</code> will
+   be sent immediately after setting the charset as above if
+   unicode decode mode is enabled and <code class='reference paramref'>charset</code> isn't
+   <code class='expr'>"utf8"</code>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>You should always use either this function or the
+   <code class='expr'>"mysql_charset_name"</code> option to <a class='ms reference' href='../../../predef_3A_3A/Mysql/mysql/create.html'>create</a> to set the
+   connection charset, or more specifically the charset that the
+   server expects queries to have (i.e. the MySQL system variable
+   <code class='expr'>character_set_client</code>). Otherwise <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/big_query.html'>big_query</a> might not
+   work correctly.</p>
+<p>   Afterwards you may change the system variable
+   <code class='expr'>character_set_connection</code>, and also
+   <code class='expr'>character_set_results</code> if unicode decode mode isn't
+   enabled.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The MySQL <code class='expr'>latin1</code> charset is close to Windows
+   <code class='expr'>cp1252</code>. The difference from ISO-8859-1 is a bunch of
+   printable chars in the range <code class='expr'>0x80..0x9f</code> (which contains
+   control chars in ISO-8859-1). For instance, the euro currency
+   sign is <code class='expr'>0x80</code>.</p>
+<p>   You can use the <code class='expr'>mysql-latin1</code> encoding in the <a class='ms reference' href='../../../predef_3A_3A/Charset.html'>Charset</a>
+   module to do conversions, or just use the special
+   <code class='expr'>"unicode"</code> charset instead.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/get_charset.html'>get_charset</a>, <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_encode_mode.html'>set_unicode_encode_mode</a>, <a class='ms reference' href='../../../predef_3A_3A/Sql/mysql/set_unicode_decode_mode.html'>set_unicode_decode_mode</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/mysql/set_charset.html","name":"set_charset"};</script>
+<script src='../../../../ex/predef_3A_3A/Sql/mysql/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Sql/mysql/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

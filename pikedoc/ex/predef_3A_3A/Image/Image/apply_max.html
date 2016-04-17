@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Image.Image()-&gt;apply_max()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Image.html'><b class='head'>Image</b></a>
+<a href='../../../../ex/predef_3A_3A/Image/Image.html'><b class='head'>Image.Image</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Image/Image/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Image/Image/apply_matrix.html" class="prev"><span>&#10148;</span> Image.Image()-&gt;apply_matrix()</a>
+              <a href="../../../../ex/predef_3A_3A/Image/Image/autocrop.html" class="next">Image.Image()-&gt;autocrop() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Image.Image()-&gt;apply_max()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>apply_max</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>apply_max</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>int</code>))) <code class='argument'>matrix</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>apply_max</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>int</code>))) <code class='argument'>matrix</code>, <code class='datatype'>int</code> <code class='argument'>r</code>, <code class='datatype'>int</code> <code class='argument'>g</code>, <code class='datatype'>int</code> <code class='argument'>b</code><b>)</b></code><br>
+<code><code class='object resolved'><code class='reference unresolved'>object </code></code> <b><span class='method'>apply_max</span>(</b><code class='datatype'>array</code>(<code class='datatype'>array</code>(<code class='datatype'>int</code>|<code class='datatype'>array</code>(<code class='datatype'>int</code>))) <code class='argument'>matrix</code>, <code class='datatype'>int</code> <code class='argument'>r</code>, <code class='datatype'>int</code> <code class='argument'>g</code>, <code class='datatype'>int</code> <code class='argument'>b</code>, <code class='datatype'>int</code>|<code class='datatype'>float</code> <code class='argument'>div</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'>
+
+<p>This is the same as apply_matrix, but it uses the maximum
+instead.</p>
+
+<p>This function is not very fast.
+</p>
+</dd>
+<dt class='head--doc'><span id='p-array'></span>Parameter <code class='parameter'>array</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>the matrix; innermost is a value or an array with red, green, blue
+values for red, green, blue separation.</p></dd>
+<dt class='head--doc'><span id='p-r'></span>Parameter <code class='parameter'>r</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-g'></span>Parameter <code class='parameter'>g</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-b'></span>Parameter <code class='parameter'>b</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>base level of result, default is zero</p></dd>
+<dt class='head--doc'><span id='p-div'></span>Parameter <code class='parameter'>div</code></dt>
+<dd></dd><dd class='body--doc'>
+<p>division factor, default is 1.0.</p></dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'>
+
+<p>the new image object</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'>
+
+<p><b>experimental status</b>; may not be exact the same
+output in later versions</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Image/Image/apply_max.html","name":"apply_max"};</script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Image/Image/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

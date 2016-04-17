@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.URI</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<b class='selected head'>Standards.URI</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/Standards/URI/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/Standards.html" class="prev"><span>&#10148;</span> Standards</a>
+              <a href="../../../ex/predef_3A_3A/Standards/URI/add_query_variable.html" class="next">Standards.URI()-&gt;add_query_variable() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Class Standards.URI</h1>
+            
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><tspan style='font-family:monospace; font-weight:bold;'>Standards.URI</tspan></text>
+<line x1='5' y1='25' x2='5' y2='36' />
+<line x1='4' y1='35' x2='35' y2='35' />
+<text x='40' y='40'><a class='ms reference' xlink:href='../../predef_3A_3A/Protocols/HTTP/Session/SessionURL.html'>Protocols.HTTP.Session.SessionURL</a></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This class implements URI parsing and resolving of relative references to
+ absolute form, as defined in <b><a href='http://pike.lysator.liu.se/rfc2396.xml'>RFC 2396</a></b> and <b><a href='http://pike.lysator.liu.se/rfc3986.xml'>RFC 3986</a></b>.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>authority</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>authority</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Authority component of URI (formerly called net_loc, from <b><a href='http://pike.lysator.liu.se/rfc2396.xml'>RFC 2396</a></b>
+ known as authority)</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>base_uri</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards.html'>this_program</a></code> Standards.URI.<b><span class='variable'>base_uri</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The base URI object, if present</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>fragment</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>fragment</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The fragment part of URI. May be 0 if not present.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>host</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>user</b></span><br>
+<span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>password</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>host</span></b></code><br>
+<code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>user</span></b></code><br>
+<code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>password</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Certain classes of URI (e.g. URL) may have these defined</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>path</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>path</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Path component of URI. May be empty, but not undefined.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>port</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Standards.URI.<b><span class='variable'>port</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>If no port number is present in URI, but the scheme used has a
+ default port number, this number is put here.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>query</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>query</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Query component of URI. May be 0 if not present.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>scheme</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Standards.URI.<b><span class='variable'>scheme</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Scheme component of URI</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards/URI.html'>URI</a></code> <code class='argument'>uri</code><b>)</b></code><br>
+<code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards/URI.html'>URI</a></code> <code class='argument'>uri</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards/URI.html'>URI</a></code> <code class='argument'>base_uri</code><b>)</b></code><br>
+<code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards/URI.html'>URI</a></code> <code class='argument'>uri</code>, <code class='datatype'>string</code> <code class='argument'>base_uri</code><b>)</b></code><br>
+<code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='datatype'>string</code> <code class='argument'>uri</code><b>)</b></code><br>
+<code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='datatype'>string</code> <code class='argument'>uri</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Standards/URI.html'>URI</a></code> <code class='argument'>base_uri</code><b>)</b></code><br>
+<code><span class='object'>Standards.URI</span> <span class='class'>Standards.URI</span><b>(</b><code class='datatype'>string</code> <code class='argument'>uri</code>, <code class='datatype'>string</code> <code class='argument'>base_uri</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'><span id='p-base_uri'></span>Parameter <code class='parameter'>base_uri</code></dt>
+<dd></dd><dd class='body--doc'><p>When supplied, will root the URI a the given location. This is
+   needed to correctly verify relative URIs, but may be left out otherwise.
+   If left out, and uri is a relative URI, an error is thrown.</p>
+</dd>
+<dt class='head--doc'><span id='p-uri'></span>Parameter <code class='parameter'>uri</code></dt>
+<dd></dd><dd class='body--doc'><p>When uri is another URI object, the created
+   URI will inherit all properties of the supplied uri
+   except, of course, for its base_uri.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>An exception is thrown if the <a class='ms reference' href='../../predef_3A_3A/Standards/URI/create.html'>uri</a> is a relative URI or only a
+   fragment, and missing a <a class='ms reference' href='../../predef_3A_3A/Standards/URI/create.html'>base_uri</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/URI.html","name":"URI"};</script>
+<script src='../../../ex/predef_3A_3A/Standards/index.js'></script>
+<script src='../../../ex/predef_3A_3A/Standards/URI/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - SDL.update_rect()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/SDL.html'><b class='head'>SDL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/SDL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/SDL/toggle_fullscreen.html" class="prev"><span>&#10148;</span> SDL.toggle_fullscreen()</a>
+              <a href="../../../ex/predef_3A_3A/SDL/video_driver_name.html" class="next">SDL.video_driver_name() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method SDL.update_rect()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>update_rect</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>update_rect</span>(</b><code class='datatype'>int</code> <code class='argument'>x</code>, <code class='datatype'>int</code> <code class='argument'>y</code>, <code class='datatype'>int</code> <code class='argument'>w</code>, <code class='datatype'>int</code> <code class='argument'>h</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/SDL/Surface.html'>SDL.Surface</a></code>|<code class='datatype'>void</code> <code class='argument'>screen</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Makes sure the given area is updated on the given screen.  The
+ rectangle must be confined within the screen boundaries (no clipping
+ is done).</p>
+<p> If 'x', 'y', 'w' and 'h' are all 0, <a class='ms reference' href='../../predef_3A_3A/SDL/update_rect.html'>SDL.update_rect()</a> will update
+ the entire screen.</p>
+<p> This function should not be called while <code class='reference paramref'>screen</code> is locked.</p>
+</dd>
+<dt class='head--doc'><span id='p-x'></span>Parameter <code class='parameter'>x</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-y'></span>Parameter <code class='parameter'>y</code></dt>
+<dd></dd><dd class='body--doc'><p>Top left corner of the rectangle to update.</p>
+</dd>
+<dt class='head--doc'><span id='p-w'></span>Parameter <code class='parameter'>w</code></dt>
+<dd></dd>
+<dt class='head--doc'><span id='p-h'></span>Parameter <code class='parameter'>h</code></dt>
+<dd></dd><dd class='body--doc'><p>Width and height of the rectangle to update.</p>
+</dd>
+<dt class='head--doc'><span id='p-screen'></span>Parameter <code class='parameter'>screen</code></dt>
+<dd></dd><dd class='body--doc'><p>The screen object to flip. If missing, the default screen is used.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/SDL/flip.html'>SDL.flip()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/SDL/update_rect.html","name":"update_rect"};</script>
+<script src='../../../ex/predef_3A_3A/SDL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/SDL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Standards.ASN1.Decode.der_decode()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../../../style.css'>
+    <script src='../../../../../site.js'></script>
+    <script src='../../../../../pike_version.js'></script>
+    <script src='../../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards.html'><b class='head'>Standards</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards/ASN1.html'><b class='head'>Standards.ASN1</b></a>
+<a href='../../../../../ex/predef_3A_3A/Standards/ASN1/Decode.html'><b class='head'>Standards.ASN1.Decode</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../../ex/predef_3A_3A/Standards/ASN1/Decode/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../../ex/predef_3A_3A/Standards/ASN1/Decode/Primitive/get_der_content.html" class="prev"><span>&#10148;</span> Standards.ASN1.Decode.Primitive()-&gt;get_der_content()</a>
+              <a href="../../../../../ex/predef_3A_3A/Standards/ASN1/Decode/secure_der_decode.html" class="next">Standards.ASN1.Decode.secure_der_decode() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Standards.ASN1.Decode.der_decode()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>der_decode</b></span>
+</dt>
+<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types/Object.html'>.Types.Object</a></code> <b><span class='method'>der_decode</span>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a></code> <code class='argument'>data</code>, <code class='datatype'>mapping</code>(<code class='datatype'>int</code>:<code class='datatype'>program</code>) <code class='argument'>types</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'><span id='p-data'></span>Parameter <code class='parameter'>data</code></dt>
+<dd></dd><dd class='body--doc'><p>An instance of Stdio.Buffer containing the DER encoded data.</p>
+</dd>
+<dt class='head--doc'><span id='p-types'></span>Parameter <code class='parameter'>types</code></dt>
+<dd></dd><dd class='body--doc'><p>A mapping from combined tag numbers to classes from or derived
+   from <a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types.html'>Standards.ASN1.Types</a>. Combined tag numbers may be
+   generated using <a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types/make_combined_tag.html'>Standards.ASN1.Types.make_combined_tag</a>.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>An object from <a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Types.html'>Standards.ASN1.Types</a> or, either
+   <a class='ms reference' href='../../../../predef_3A_3A/Standards/ASN1/Decode/Primitive.html'>Standards.ASN1.Decode.Primitive</a> or
+   <code class='reference unresolved'>Standards.ASN1.Decode.constructed</code>, if the type is unknown.
+   Throws an exception if the data could not be decoded.</p>
+</dd><dt class='head--fixme'>FIXME</dt>
+<dd class='body--fixme'><p>Handling of implicit and explicit ASN.1 tagging, as well as
+   other context dependence, is next to non_existant.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/ASN1/Decode/der_decode.html","name":"der_decode"};</script>
+<script src='../../../../../ex/predef_3A_3A/Standards/ASN1/Decode/index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Standards/ASN1/Decode/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

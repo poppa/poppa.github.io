@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - GL.glStencilOp()</title>
+    <!-- 178 -->
+    <link rel='stylesheet' href='../../../style.css'>
+    <script src='../../../site.js'></script>
+    <script src='../../../pike_version.js'></script>
+    <script src='../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../ex/predef_3A_3A/GL.html'><b class='head'>GL</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../ex/predef_3A_3A/GL/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../ex/predef_3A_3A/GL/glStencilMask.html" class="prev"><span>&#10148;</span> GL.glStencilMask()</a>
+              <a href="../../../ex/predef_3A_3A/GL/glTexCoord.html" class="next">GL.glTexCoord() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method GL.glStencilOp()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>glStencilOp</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>glStencilOp</span>(</b><code class='datatype'>int</code> <code class='argument'>fail</code>, <code class='datatype'>int</code> <code class='argument'>zfail</code>, <code class='datatype'>int</code> <code class='argument'>zpass</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Stenciling,
+like depth-buffering,
+enables and disables drawing on a per-pixel basis.
+You draw into the stencil planes using GL drawing primitives,
+then render geometry and images,
+using the stencil planes to mask out portions of the screen.
+Stenciling is typically used in multipass rendering algorithms
+to achieve special effects,
+such as decals,
+outlining,
+and constructive solid geometry rendering.</p>
+<p>The stencil test conditionally eliminates a pixel based on the outcome
+of a comparison between the value in the stencil buffer and a
+reference value. To enable and disable the test, call <a class='ms reference' href='../../predef_3A_3A/GL/glEnable.html'>glEnable</a>
+and <a class='ms reference' href='../../predef_3A_3A/GL/glDisable.html'>glDisable</a> with argument
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_STENCIL_TEST</a>; to control it, call <a class='ms reference' href='../../predef_3A_3A/GL/glStencilFunc.html'>glStencilFunc</a>.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glStencilOp.html'>glStencilOp</a> takes three arguments that indicate what happens
+to the stored stencil value while stenciling is enabled.
+If the stencil test fails,
+no change is made to the pixel's color or depth buffers,
+and <i>fail</i> specifies what happens to the stencil buffer contents.
+The following six actions are possible.</p>
+<p><table class='box'>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_KEEP</a>
+</td><td>Keeps the current value.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_ZERO</a>
+</td><td>Sets the stencil buffer value to 0.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_REPLACE</a>
+</td><td>Sets the stencil buffer value to <i>ref</i>,
+as specified by <a class='ms reference' href='../../predef_3A_3A/GL/glStencilFunc.html'>glStencilFunc</a>.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INCR</a>
+</td><td>Increments the current stencil buffer value.
+Clamps to the maximum representable unsigned value.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_DECR</a>
+</td><td>Decrements the current stencil buffer value.
+Clamps to 0.
+</td></tr>
+<tr><td><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVERT</a>
+</td><td>Bitwise inverts the current stencil buffer value.
+</td></tr>
+</table>
+</p>
+<p>Stencil buffer values are treated as unsigned integers.
+When incremented and decremented,
+values are clamped to 0 and 2 sup n - 1,
+where n is the value returned by querying <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_STENCIL_BITS</a>.</p>
+<p>The other two arguments to <a class='ms reference' href='../../predef_3A_3A/GL/glStencilOp.html'>glStencilOp</a> specify stencil buffer actions
+that depend on whether subsequent depth buffer tests succeed (<i>zpass</i>)
+or fail (<i>zfail</i>) (see</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL/glDepthFunc.html'>glDepthFunc</a>).
+The actions are specified using the same six symbolic constants as <i>fail</i>.
+Note that <i>zfail</i> is ignored when there is no depth buffer,
+or when the depth buffer is not enabled.
+In these cases, <i>fail</i> and <i>zpass</i> specify stencil action when the
+stencil test fails and passes,
+respectively.</p>
+</dd>
+<dt class='head--doc'><span id='p-fail'></span>Parameter <code class='parameter'>fail</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the action to take when the stencil test fails.
+Six symbolic constants are accepted:
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_KEEP</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_ZERO</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_REPLACE</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INCR</a>,
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_DECR</a>, and
+<a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVERT</a>. The initial value is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_KEEP</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-zfail'></span>Parameter <code class='parameter'>zfail</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the stencil action when the stencil test passes,
+but the depth test fails.
+<i>zfail</i> accepts the same symbolic constants as <i>fail</i>. The initial value
+is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_KEEP</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-zpass'></span>Parameter <code class='parameter'>zpass</code></dt>
+<dd></dd><dd class='body--doc'><p>Specifies the stencil action when both the stencil test and the depth
+test pass, or when the stencil test passes and either there is no
+depth buffer or depth testing is not enabled.
+<i>zpass</i> accepts the same symbolic constants as <i>fail</i>. The initial value
+is <a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_KEEP</a>.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_ENUM</a> is generated if <i>fail</i>,
+<i>zfail</i>, or <i>zpass</i> is any value other than the six defined constant values.</p>
+<p><a class='ms reference' href='../../predef_3A_3A/GL.html'>GL_INVALID_OPERATION</a> is generated if <a class='ms reference' href='../../predef_3A_3A/GL/glStencilOp.html'>glStencilOp</a>
+is executed between the execution of <a class='ms reference' href='../../predef_3A_3A/GL/glBegin.html'>glBegin</a>
+and the corresponding execution of <a class='ms reference' href='../../predef_3A_3A/GL/glEnd.html'>glEnd</a>.</p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/GL/glStencilOp.html","name":"glStencilOp"};</script>
+<script src='../../../ex/predef_3A_3A/GL/index.js'></script>
+<script src='../../../ex/predef_3A_3A/GL/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -3,8 +3,8 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Charset.encoder()</title>
-    <!-- 178 -->
+    <title>Pike Reference Manual - Charset.Encoder</title>
+    <!-- 220-->
     <link rel='stylesheet' href='../../../style.css'>
     <script src='../../../site.js'></script>
     <script src='../../../pike_version.js'></script>
@@ -34,10 +34,11 @@ svg a { fill:#0768b2; text-decoration: underline; }
           <div class="inner" id="navbar">
             <a href='../../../index.html'><b class='top head'>Top</b></a>
 <a href='../../../ex/predef_3A_3A/Charset.html'><b class='head'>Charset</b></a>
+<b class='selected head'>Charset.Encoder</b>
 <script></script>
 <noscript>
 <div class='sidebar'>
-<a href='../../../ex/predef_3A_3A/Charset/index.html'><b>Symbol index</b></a><br />
+<a href='../../../ex/predef_3A_3A/Charset/Encoder/index.html'><b>Symbol index</b></a><br />
 </div>
 </noscript>
 
@@ -48,51 +49,53 @@ svg a { fill:#0768b2; text-decoration: underline; }
         <div class="navbox">
           <nav>
             <div class="sidebar">
-              <a href="../../../ex/predef_3A_3A/Charset/encode_error.html" class="prev"><span>&#10148;</span> Charset.encode_error()</a>
-              <a href="../../../ex/predef_3A_3A/Charset/encoder_from_mib.html" class="next">Charset.encoder_from_mib() <span>&#10148;</span></a>
+              <a href="../../../ex/predef_3A_3A/Charset/EncodeError.html" class="prev"><span>&#10148;</span> Charset.EncodeError</a>
+              <a href="../../../ex/predef_3A_3A/Charset/Encoder/set_replacement_callback.html" class="next">Charset.Encoder()-&gt;set_replacement_callback() <span>&#10148;</span></a>
             </div>
           </nav>
         </div>
         <div class="contentbox">
           <article>
-            <h1>Method Charset.encoder()</h1>
+            <h1>Class Charset.Encoder</h1>
             
+<dt class='head--doc'>Inheritance graph</dt>
+<div class='inheritance-graph'><svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' width='100%' height='45px'>
+<text x='0' y='20'><a class='ms reference' xlink:href='../../predef_3A_3A/Charset/Decoder.html'>Charset.Decoder</a></text>
+<line x1='4' y1='35' x2='35' y2='35' />
+<line x1='5' y1='25' x2='5' y2='36' />
+<text x='40' y='40'><tspan style='font-family:monospace; font-weight:bold;'>Charset.Encoder</tspan></text>
+</svg></div>
+<dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Virtual base class for charset encoders.</p>
+</dd></dl>
 
 <hr />
 <dl class='group--doc'>
-<dt class='head--type'><span class='homogen--type'>Method</span>
-<span class='homogen--name'><b>encoder</b></span>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>charset</b></span>
 </dt>
-<dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Charset/Encoder.html'>Encoder</a></code> <b><span class='method'>encoder</span>(</b><code class='datatype'>string</code> <code class='argument'>name</code>, <code class='datatype'>string</code>|<code class='datatype'>void</code> <code class='argument'>replacement</code>, <code class='datatype'>function</code>(<code class='datatype'>string</code>:<code class='datatype'>string</code>)|<code class='datatype'>void</code> <code class='argument'>repcb</code><b>)</b></code></p></dd>
+<dd><p><code><code class='datatype'>string</code> Charset.Encoder.<b><span class='variable'>charset</span></b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Returns a charset encoder object.</p>
+<dd class='body--doc'><p>Name of the charset - giving this name to <a class='ms reference' href='../../predef_3A_3A/Charset/encoder.html'>encoder</a> returns
+ an instance of the same class as this one.</p>
 </dd>
-<dt class='head--doc'><span id='p-name'></span>Parameter <code class='parameter'>name</code></dt>
-<dd></dd><dd class='body--doc'><p>The name of the character set to encode to. Supported charsets
-   include (not all supported charsets are enumerable):
-   "iso_8859-1:1987", "iso_8859-1:1998", "iso-8859-1", "iso-ir-100",
-   "latin1", "l1", "ansi_x3.4-1968", "iso_646.irv:1991", "iso646-us",
-   "iso-ir-6", "us", "us-ascii", "ascii", "cp367", "ibm367", "cp819",
-   "ibm819", "iso-2022" (of various kinds), "utf-7", "utf-8" and
-   various encodings as described by <b><a href='http://pike.lysator.liu.se/rfc1345.xml'>RFC 1345</a></b>.</p>
-</dd>
-<dt class='head--doc'><span id='p-replacement'></span>Parameter <code class='parameter'>replacement</code></dt>
-<dd></dd><dd class='body--doc'><p>The string to use for characters that cannot be represented in
-   the charset. It's used when <code class='reference paramref'>repcb</code> is not given or when it returns
-   zero. If no replacement string is given then an error is thrown
-   instead.</p>
-</dd>
-<dt class='head--doc'><span id='p-repcb'></span>Parameter <code class='parameter'>repcb</code></dt>
-<dd></dd><dd class='body--doc'><p>A function to call for every character that cannot be
-   represented in the charset. If specified it's called with one
-   argument - a string containing the character in question. If it
-   returns a string then that one will replace the character in the
-   output. If it returns something else then the <code class='reference paramref'>replacement</code>
-   argument will be used to decide what to do.</p>
-</dd>
-<dt class='head--doc'>Throws</dt>
-<dd class='body--doc'><p>If the asked-for <code class='reference paramref'>name</code> was not supported, an error is thrown.</p>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>This is not necessarily the same name that was actually given to
+ <a class='ms reference' href='../../predef_3A_3A/Charset/encoder.html'>encoder</a> to produce this object.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Inherit</span>
+<span class='homogen--name'><b>Decoder</b></span>
+</dt>
+<dd><p><code><span class='datatype'>inherit </span><a class='ms reference' href='../../predef_3A_3A/Charset/Decoder.html'>Decoder</a> : <span class='inherit'>Decoder</span></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>An encoder only differs from a decoder in that it has an extra function.</p>
 </dd></dl>
 
           </article>
@@ -102,9 +105,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
     <footer>
       <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
     </footer>
-    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Charset/encoder.html","name":"encoder"};</script>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Charset/Encoder.html","name":"Encoder"};</script>
 <script src='../../../ex/predef_3A_3A/Charset/index.js'></script>
-<script src='../../../ex/predef_3A_3A/Charset/load_index.js'></script>
+<script src='../../../ex/predef_3A_3A/Charset/Encoder/load_index.js'></script>
     <script>
       // Tell PikeDoc that next actions are from loaded scripts
       PikeDoc.isInline = false;

@@ -3,8 +3,8 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Web.Auth.OAuth.request()</title>
-    <!-- 178 -->
+    <title>Pike Reference Manual - Web.Auth.OAuth.Request</title>
+    <!-- 220-->
     <link rel='stylesheet' href='../../../../../style.css'>
     <script src='../../../../../site.js'></script>
     <script src='../../../../../pike_version.js'></script>
@@ -36,10 +36,11 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <a href='../../../../../ex/predef_3A_3A/Web.html'><b class='head'>Web</b></a>
 <a href='../../../../../ex/predef_3A_3A/Web/Auth.html'><b class='head'>Web.Auth</b></a>
 <a href='../../../../../ex/predef_3A_3A/Web/Auth/OAuth.html'><b class='head'>Web.Auth.OAuth</b></a>
+<b class='selected head'>Web.Auth.OAuth.Request</b>
 <script></script>
 <noscript>
 <div class='sidebar'>
-<a href='../../../../../ex/predef_3A_3A/Web/Auth/OAuth/index.html'><b>Symbol index</b></a><br />
+<a href='../../../../../ex/predef_3A_3A/Web/Auth/OAuth/Request/index.html'><b>Symbol index</b></a><br />
 </div>
 </noscript>
 
@@ -50,31 +51,86 @@ svg a { fill:#0768b2; text-decoration: underline; }
         <div class="navbox">
           <nav>
             <div class="sidebar">
-              <a href="../../../../../ex/predef_3A_3A/Web/Auth/OAuth/query_to_params.html" class="prev"><span>&#10148;</span> Web.Auth.OAuth.query_to_params()</a>
-              <a href="../../../../../ex/predef_3A_3A/Web/Auth/OAuth2.html" class="next">Web.Auth.OAuth2 <span>&#10148;</span></a>
+              <a href="../../../../../ex/predef_3A_3A/Web/Auth/OAuth/Params/cast.html" class="prev"><span>&#10148;</span> Web.Auth.OAuth.Params()-&gt;cast()</a>
+              <a href="../../../../../ex/predef_3A_3A/Web/Auth/OAuth/Request/add_param.html" class="next">Web.Auth.OAuth.Request()-&gt;add_param() <span>&#10148;</span></a>
             </div>
           </nav>
         </div>
         <div class="contentbox">
           <article>
-            <h1>Method Web.Auth.OAuth.request()</h1>
-            
+            <h1>Class Web.Auth.OAuth.Request</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Class for building a signed request and querying the remote
+ service.</p>
+</dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>base_string</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>string</code> Web.Auth.OAuth.Request.<b><span class='variable'>base_string</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The signature basestring.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>method</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='datatype'>string</code> Web.Auth.OAuth.Request.<b><span class='variable'>method</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>String representation of the HTTP method.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>params</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Params.html'>Params</a></code> Web.Auth.OAuth.Request.<b><span class='variable'>params</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The parameters to send.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>uri</b></span>
+</dt>
+<dd><p><code><code class='modifier'>protected</code>  <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/URI.html'>Standards.URI</a></code> Web.Auth.OAuth.Request.<b><span class='variable'>uri</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>The remote endpoint.</p>
+</dd></dl>
+
 
 <hr />
 <dl class='group--doc'>
 <dt class='head--type'><span class='homogen--type'>Method</span>
-<span class='homogen--name'><b>request</b></span>
+<span class='homogen--name'><b>create</b></span>
 </dt>
-<dd><p><code><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Request.html'>Request</a></code> <b><span class='method'>request</span>(</b><code class='datatype'>string</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/URI.html'>Standards.URI</a></code> <code class='argument'>uri</code>, <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Consumer.html'>Consumer</a></code> <code class='argument'>consumer</code>, <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Token.html'>Token</a></code> <code class='argument'>token</code>, <code class='datatype'>void</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Params.html'>Params</a></code> <code class='argument'>params</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code> <code class='argument'>http_method</code><b>)</b></code></p></dd>
+<dd><p><code><span class='object'>Web.Auth.OAuth.Request</span> <span class='class'>Web.Auth.OAuth.Request</span><b>(</b><code class='datatype'>string</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Standards/URI.html'>Standards.URI</a></code> <code class='argument'>uri</code>, <code class='datatype'>string</code> <code class='argument'>http_method</code>, <code class='datatype'>void</code>|<code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Params.html'>Params</a></code> <code class='argument'>params</code><b>)</b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Helper method to create a <a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Request.html'>Request</a> object.</p>
+<dd class='body--doc'><p>Creates a new <a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/Request.html'>Request.</a></p>
 </dd>
-<dt class='head--doc'>Throws</dt>
-<dd class='body--doc'><p>An error if <code class='reference paramref'>consumer</code> is null.</p>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../../predef_3A_3A/Web/Auth/OAuth/request.html'>request()</a></p>
+</dd>
+<dt class='head--doc'><span id='p-uri'></span>Parameter <code class='parameter'>uri</code></dt>
+<dd></dd><dd class='body--doc'><p>The uri to request.</p>
 </dd>
 <dt class='head--doc'><span id='p-http_method'></span>Parameter <code class='parameter'>http_method</code></dt>
-<dd></dd><dd class='body--doc'><p>Defaults to GET.</p>
+<dd></dd><dd class='body--doc'><p>The HTTP method to use. Either <code class='expr'>"GET"</code> or <code class='expr'>"POST"</code>.</p>
 </dd></dl>
 
           </article>
@@ -84,9 +140,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
     <footer>
       <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
     </footer>
-    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Auth/OAuth/request.html","name":"request"};</script>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request.html","name":"Request"};</script>
 <script src='../../../../../ex/predef_3A_3A/Web/Auth/OAuth/index.js'></script>
-<script src='../../../../../ex/predef_3A_3A/Web/Auth/OAuth/load_index.js'></script>
+<script src='../../../../../ex/predef_3A_3A/Web/Auth/OAuth/Request/load_index.js'></script>
     <script>
       // Tell PikeDoc that next actions are from loaded scripts
       PikeDoc.isInline = false;

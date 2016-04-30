@@ -5,7 +5,7 @@
 var PikeDoc = null;
 
 if (!window.console) {
-  window.console = {log:function(){},error:function(){}};
+  window.console = { log: function(){}, error: function(){} };
 }
 
 /*
@@ -23,13 +23,15 @@ var stickyScrollBreak = 70,
     navbar, innerNavbar,
     // Content wrapper, HTMLElement
     content,
+    // The page footer
+    footer,
     // The height of the navbar
     navbarHeight,
     // The height of the window
     windowHeight,
     // The height of the header
     headerHeight,
-    // The heaigh of the footer
+    // The height of the footer
     footerHeight,
     // The menu hamburger when in mobile mode
     burger,
@@ -66,7 +68,8 @@ function onPageLoad() {
   maybeHideNavbox();
   navbar       = document.getElementsByClassName('navbar')[0];
   content      = document.getElementsByClassName('content')[0];
-  footerHeight = document.getElementsByTagName('footer')[0].offsetHeight;
+  footer       = document.getElementsByTagName('footer')[0];
+  footerHeight = footer.offsetHeight;
   windowHeight = window.outerHeight;
   headerHeight = document.getElementsByTagName('header')[0].offsetHeight;
   navbarHeight = windowHeight - content.offsetTop - footerHeight;
@@ -110,8 +113,7 @@ function onPageScroll() {
     }
     // ... or else set to sticky.
     iAmSticky = true;
-    content.style.minHeight = (windowHeight - headerHeight -
-                               footerHeight + 5) + 'px';
+    content.style.minHeight = (windowHeight - headerHeight) + 'px';
     navbar.classList.add('sticky');
   }
   // If scrollY is less than the sticky position ...
@@ -204,7 +206,10 @@ if (document.addEventListener) {
 // During a session each generated menu is cached locally in a sessionStorage
 // (if available). This one handles that.
 var cacheFactory = (function() {
-  var cache = window.sessionStorage;
+  // Don't use cache if the page isn't served through a server.
+  // The cache seems buggy as hell when the pages are view directly from
+  // the file system.
+  var cache = document.location.hostname && window.sessionStorage;
   var m, isChecked = false;
 
   function init() {
@@ -212,30 +217,36 @@ var cacheFactory = (function() {
       return true;
     }
 
+    if (!cache) {
+      return false;
+    }
+
     if (isChecked && !m) {
       return false;
     }
 
-    if (cache) {
-      m = cache.getItem(PikeDoc.current.link);
-      isChecked = true;
-      if (m) {
-        m = JSON.parse(m);
-        return validateDate(m.time);
-      }
-      return false;
-    }
-
+    m = cache.getItem(PikeDoc.current.link);
     isChecked = true;
 
+    if (m) {
+      m = JSON.parse(m);
+      var ok = validateDate(m.time);
+      if (!ok) {
+        isChecked = false;
+        cache.removeItem(PikeDoc.current.link);
+      }
+      return ok;
+    }
     return false;
+
   }
 
   function validateDate(time) {
     var t = PikeDoc.PUBDATE;
+    // window.console.log('PUBDATE: ', t);
     if (!t) {
       t = new Date();
-      t.setTime(t.getTime() - (3600*1000)*48);
+      t.setTime(t.getTime() - (3600*1000)*24);
       return t < new Date(time);
     }
 
@@ -261,8 +272,12 @@ var cacheFactory = (function() {
   }
 
   function setMenu() {
-    if (m) {
+    if (m && validateDate(m.time)) {
+      //window.console.log('Set menu');
       innerNavbar.innerHTML = m.value;
+      requestAnimationFrame(function() {
+        innerNavbar.querySelector('.sidebar').classList.remove('init');
+      });
     }
   }
 
@@ -419,7 +434,7 @@ PikeDoc = (function() {
     }
     var s = new Symbol(name);
     symbols.push(s);
-    // console.log('   + Register symbol: ', name);
+    //window.console.log('   + Register symbol: ', name);
     symbolsMap[name] = s;
     return s;
   }
@@ -446,7 +461,9 @@ PikeDoc = (function() {
 
   var jsMap = {};
   var scriptQueue = 0;
+
   function loadScript(link, namespace, inherits) {
+    //window.console.log('load: ', link);
     if (cacheFactory.hasCache()) {
       return;
     }
@@ -455,6 +472,7 @@ PikeDoc = (function() {
 
     // Already loaded
     if (jsMap[link]) {
+      //window.console.log('Already loaded: ', link);
       return;
     }
 
@@ -498,8 +516,9 @@ PikeDoc = (function() {
   }
 
   function lowNavbar(container, heading, nodes, suffix) {
-    if (!nodes || !nodes.length)
+    if (!nodes || !nodes.length) {
       return;
+    }
 
     var curlnk = PikeDoc.current.link;
     var adjlnk = helpers.adjustLink;
@@ -521,6 +540,14 @@ PikeDoc = (function() {
         tnode = tmp;
       }
 
+      if (n.modifiers) {
+        n.modifiers.forEach(function(mod) {
+          if (n.name !== 'create') {
+            tnode.classList.add('mod-' + mod);
+          }
+        });
+      }
+
       div.appendChild(tnode);
     });
 
@@ -530,7 +557,19 @@ PikeDoc = (function() {
 
   /* Render the left navigation bar. */
   function navbar() {
-    var s = createElem('div', { class: 'sidebar' });
+    var s = createElem('div', { class: 'sidebar init' });
+    // If the cache already has set the menu, then clear it. The cache is
+    // almost certainly run before this method.
+    var old = innerNavbar.querySelectorAll('.sidebar');
+    var i, tmp;
+    if (old.length) {
+      // window.console.log('Clear cached menu and regenerate', old);
+      for (i = 0; i < old.length; i++) {
+        tmp = old[i];
+        tmp.parentNode.removeChild(tmp);
+      }
+    }
+
     innerNavbar.appendChild(s);
 
     lowNavbar(s, 'Modules',    types.module,    '');
@@ -547,9 +586,12 @@ PikeDoc = (function() {
   }
 
   function maybeRenderNavbar() {
-    // window.console.log('maybeRenderNavbar(', isAllLoaded, isDomReady, scriptQueue, ')');
+    //window.console.log('maybeRenderNavbar(', isAllLoaded, isDomReady, scriptQueue, ')');
     if (isAllLoaded && isDomReady && scriptQueue === 0) {
       navbar();
+      requestAnimationFrame(function() {
+        innerNavbar.querySelector('.sidebar').classList.remove('init');
+      });
     }
   }
 
@@ -579,8 +621,15 @@ PikeDoc = (function() {
 
       s.parentNode.insertBefore(el, s);
 
+      var el2 = createElem('script', {
+        src: '/assets/js/local/disqus.min.js',
+        async: true
+      });
+
+      s.parentNode.insertBefore(el2, s);
+
       var f = createElem('link', {
-        href: '/assets/img/favicon.png?v=2',
+        href: '/assets/img/favicon.png',
         rel: 'shortcut icon'
       });
 

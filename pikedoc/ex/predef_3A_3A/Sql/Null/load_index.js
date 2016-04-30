@@ -1,6 +1,3 @@
-// Indirect loader of the symbol index for Sql.null.
+// Indirect loader of the symbol index for Sql.Null.
 
-// Inherit __builtin.Sql.Connection.
-PikeDoc.loadScript("ex/predef_3A_3A/__builtin/Sql/Connection/load_index.js", "__builtin.Sql.Connection");
-
-PikeDoc.loadScript("ex/predef_3A_3A/Sql/null/index.js", false, ["__builtin.Sql.Connection"]);
+PikeDoc.loadScript("ex/predef_3A_3A/Sql/Null/index.js", true, null);

@@ -1,6 +1,3 @@
-// Indirect loader of the symbol index for ADT.struct.
+// Indirect loader of the symbol index for ADT.Struct.
 
-// Inherit Stdio.Buffer.
-PikeDoc.loadScript("ex/predef_3A_3A/Stdio/Buffer/load_index.js", "Stdio.Buffer");
-
-PikeDoc.loadScript("ex/predef_3A_3A/ADT/struct/index.js", false, ["Stdio.Buffer"]);
+PikeDoc.loadScript("ex/predef_3A_3A/ADT/Struct/index.js", true, null);

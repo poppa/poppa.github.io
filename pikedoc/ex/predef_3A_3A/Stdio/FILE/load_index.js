@@ -1,6 +1,6 @@
-// Indirect loader of the symbol index for Stdio.File.
+// Indirect loader of the symbol index for Stdio.FILE.
 
-// Inherit Stdio.Fd.
-PikeDoc.loadScript("ex/predef_3A_3A/Stdio/Fd/load_index.js", "Stdio.Fd");
+// Inherit Stdio.File.
+PikeDoc.loadScript("ex/predef_3A_3A/Stdio/File/load_index.js", "Stdio.File");
 
-PikeDoc.loadScript("ex/predef_3A_3A/Stdio/File/index.js", false, ["Stdio.Fd"]);
+PikeDoc.loadScript("ex/predef_3A_3A/Stdio/FILE/index.js", false, ["Stdio.File"]);

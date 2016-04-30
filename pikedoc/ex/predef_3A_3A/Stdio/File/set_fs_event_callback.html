@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Pike Reference Manual - Stdio.File()-&gt;set_fs_event_callback()</title>
+    <!-- 220-->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../pike_version.js'></script>
+    <script src='../../../../timestamp.js'></script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version"></strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Stdio.html'><b class='head'>Stdio</b></a>
+<a href='../../../../ex/predef_3A_3A/Stdio/File.html'><b class='head'>Stdio.File</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Stdio/File/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Stdio/File/set_close_callback.html" class="prev"><span>&#10148;</span> Stdio.File()-&gt;set_close_callback()</a>
+              <a href="../../../../ex/predef_3A_3A/Stdio/File/set_id.html" class="next">Stdio.File()-&gt;set_id() <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Stdio.File()-&gt;set_fs_event_callback()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>set_fs_event_callback</b></span>
+</dt>
+<dd><p><code><code class='datatype'>void</code> <b><span class='method'>set_read_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='datatype'>string</code>:<code class='datatype'>int</code>) <code class='argument'>read_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_read_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Stdio/Buffer.html'>Buffer</a></code>:<code class='datatype'>int</code>) <code class='argument'>read_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_write_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>write_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_write_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Stdio/Buffer.html'>Buffer</a></code>:<code class='datatype'>int</code>) <code class='argument'>write_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_read_oob_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='datatype'>string</code>:<code class='datatype'>int</code>) <code class='argument'>read_oob_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_write_oob_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>write_oob_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_close_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>:<code class='datatype'>int</code>) <code class='argument'>close_cb</code><b>)</b></code><br>
+<code><code class='datatype'>void</code> <b><span class='method'>set_fs_event_callback</span>(</b><code class='datatype'>function</code>(<code class='datatype'>mixed</code>, <code class='datatype'>int</code>:<code class='datatype'>int</code>) <code class='argument'>fs_event_cb</code>, <code class='datatype'>int</code> <code class='argument'>event_mask</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>These functions set the various callbacks, which will be called
+ when various events occur on the stream. A zero as argument will
+ remove the callback.</p>
+<p> A <a class='ms reference' href='../../../predef_3A_3A/Pike.html'>Pike.Backend</a> object is responsible for calling the
+ callbacks. It requires a thread to be waiting in it to execute
+ the calls. That means that only one of the callbacks will be
+ running at a time, so you don't need mutexes between them.</p>
+<p> Unless you've specified otherwise with the <a class='ms reference' href='../../../predef_3A_3A/Stdio/Fd/set_backend.html'>set_backend</a>
+ function, the default backend <a class='ms reference' href='../../../predef_3A_3A/Pike/DefaultBackend.html'>Pike.DefaultBackend</a> will be
+ used. It's normally activated by returning <code class='expr'>-1</code> from the
+ <tt>main</tt> function and will then execute in the main thread.</p>
+<ul>
+<li><p>When data arrives on the stream, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_read_callback.html'>read_cb</a> will be called with
+   some or all of that data as the second argument.</p>
+<p>   If the file is in buffer mode, the second argument will be a Buffer.</p>
+<p>   This will always be the same buffer, so data you do not use in
+   one read callback can be simply left in the buffer, when new
+   data arrives it will be appended</p>
+</li><li><p>When the stream has buffer space over for writing, <code class='reference unresolved'>write_cb</code>
+   will be called so that you can write more data to it.</p>
+<p>   This callback is also called after the remote end of a socket
+   connection has closed the write direction. An attempt to write
+   data to it in that case will generate a <code class='reference unresolved'>System.EPIPE</code> errno.
+   If the remote end has closed both directions simultaneously
+   (the usual case), Pike will first attempt to call <code class='reference unresolved'>close_cb</code>,
+   then this callback (unless <code class='reference unresolved'>close_cb</code> has closed the stream).</p>
+<p>   If the file is in buffer mode, the second argument will be a Buffer.</p>
+<p>   You should add data to write to this buffer.</p>
+</li><li><p>When out-of-band data arrives on the stream, <code class='reference unresolved'>read_oob_cb</code>
+   will be called with some or all of that data as the second
+   argument.</p>
+</li><li><p>When the stream allows out-of-band data to be sent,
+   <code class='reference unresolved'>write_oob_cb</code> will be called so that you can write more
+   out-of-band data to it.</p>
+<p>   If the OS doesn't separate the write events for normal and
+   out-of-band data, Pike will try to call <code class='reference unresolved'>write_oob_cb</code> first.
+   If it doesn't write anything, then <code class='reference unresolved'>write_cb</code> will be tried.
+   This also means that <code class='reference unresolved'>write_oob_cb</code> might get called when the
+   remote end of a connection has closed the write direction.</p>
+</li><li><p>When an error or an end-of-stream in the read direction
+   occurs, <code class='reference unresolved'>close_cb</code> will be called. <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/errno.html'>errno</a> will return the
+   error, or zero in the case of an end-of-stream.</p>
+<p>   The name of this callback is rather unfortunate since it
+   really has nothing to do with a close: The stream is still
+   open when <code class='reference unresolved'>close_cb</code> is called (you might not be able to read
+   and/or write to it, but you can still use things like
+   <a class='ms reference' href='../../../predef_3A_3A/Stdio/Fd/query_address.html'>query_address</a>, and the underlying file descriptor is still
+   allocated). Also, this callback will not be called for a local
+   close, neither by a call to <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/close.html'>close</a> or by destructing this
+   object.</p>
+<p>   Also, <code class='reference unresolved'>close_cb</code> will not be called if a remote close only
+   occurs in the write direction; that is handled by <code class='reference unresolved'>write_cb</code>
+   (or possibly <code class='reference unresolved'>write_oob_cb</code>).</p>
+<p>   Events to <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_read_callback.html'>read_cb</a> and <code class='reference unresolved'>close_cb</code> will be automatically
+   deregistered if an end-of-stream occurs, and all events in the
+   case of an error. I.e. there won't be any more calls to the
+   callbacks unless they are reinstalled. This doesn't affect the
+   callback settings - <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_read_callback.html'>query_read_callback</a> et al will still
+   return the installed callbacks.</p>
+</li></ul><p>If the stream is a socket performing a nonblocking connect (see
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/open_socket.html'>open_socket</a> and <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/connect.html'>connect</a>), a connection failure will call
+ <code class='reference unresolved'>close_cb</code>, and a successful connect will call either
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_read_callback.html'>read_cb</a> or <code class='reference unresolved'>write_cb</code> as above.</p>
+<p> All callbacks will receive the <tt>id</tt> set by <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_id.html'>set_id</a> as
+ first argument.</p>
+<p> If a callback returns <code class='expr'>-1</code>, no other callback or call out
+ will be called by the backend in that round. I.e. the caller of
+ the backend will get control back right away. For the default
+ backend that means it will immediately start another round and
+ check files and call outs anew.</p>
+</dd>
+<dt class='head--doc'><span id='p-event_mask'></span>Parameter <code class='parameter'>event_mask</code></dt>
+<dd></dd><dd class='body--doc'><p>An event mask specifing bitwise OR of one or more event types to
+  monitor, selected from <a class='ms reference' href='../../../predef_3A_3A/Stdio.html'>Stdio.NOTE_WRITE</a> and friends.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>These functions do not set the file nonblocking.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Callbacks are also set by <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_callbacks.html'>set_callbacks</a> and
+   <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_nonblocking.html'>set_nonblocking()</a>.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>After a callback has been called, it's disabled until it has
+ accessed the stream accordingly, i.e. the <code class='reference unresolved'>write_cb</code> callback
+ is disabled after it's been called until something has been
+ written with <a class='ms reference' href='../../../predef_3A_3A/Stdio/Fd/write.html'>write</a>, and the <code class='reference unresolved'>write_oob_cb</code> callback is
+ likewise disabled until something has been written with
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/Fd/write_oob.html'>write_oob</a>. Since the data already has been read when the read
+ callbacks are called, this effect is not noticeable for them.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Installing callbacks means that you will start doing I/O on the
+ stream from the thread running the backend. If you are running
+ these set functions from another thread you must be prepared
+ that the callbacks can be called immediately by the backend
+ thread, so it might not be safe to continue using the stream in
+ this thread.</p>
+<p> Because of that, it's useful to talk about "callback mode" when
+ any callback is installed. In callback mode the stream should be
+ seen as "bound" to the backend thread. For instance, it's only
+ the backend thread that reliably can end callback mode before
+ the stream is "handed over" to another thread.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Callback mode has nothing to do with nonblocking mode - although
+ the two often are used together they don't have to be.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>The file object will stay referenced from the backend object as
+ long as there are callbacks that can receive events.</p>
+</dd>
+<dt class='head--doc'>Bugs</dt>
+<dd class='body--doc'><p>Setting a close callback without a read callback currently only
+ works when there's no risk of getting more data on the stream.
+ Otherwise the close callback will be silently deregistered if
+ data arrives.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>fs_event callbacks only trigger on systems that support these events.
+ Currently, this includes systems that use kqueue, such as Mac OS X,
+ and various flavours of BSD.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_callbacks.html'>set_callbacks</a>, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_nonblocking.html'>set_nonblocking()</a>, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/set_id.html'>set_id()</a>,
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/Fd/set_backend.html'>set_backend</a>, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_read_callback.html'>query_read_callback</a>, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_write_callback.html'>query_write_callback</a>,
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_read_oob_callback.html'>query_read_oob_callback</a>, <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_write_oob_callback.html'>query_write_oob_callback</a>,
+ <a class='ms reference' href='../../../predef_3A_3A/Stdio/File/query_close_callback.html'>query_close_callback</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Stdio/File/set_fs_event_callback.html","name":"set_fs_event_callback"};</script>
+<script src='../../../../ex/predef_3A_3A/Stdio/File/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Stdio/File/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

@@ -24,6 +24,7 @@
 
       win.off('scroll');
       setTimeout(() => {
+        checkScroll();
         win.on('scroll', checkScroll);
       }, 500);
 
@@ -37,6 +38,7 @@
 
       win.off('scroll');
       setTimeout(() => {
+        checkScroll();
         win.on('scroll', checkScroll);
       }, 500);
       scrollState = 1;

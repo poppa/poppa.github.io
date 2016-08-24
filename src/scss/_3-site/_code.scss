@@ -1,0 +1,62 @@
+body {
+  counter-reset: lines;
+}
+code {
+  font-size: 15px;
+  color: #930;
+}
+pre {
+  font-size: 1.6rem;
+  white-space: pre;
+  div {
+    min-height: 18px;
+  }
+  code {
+    padding: $spacing-unit;
+    background: #f6f6f6;
+    display: block;
+    color: #222;
+    font-size: 14px;
+    overflow: auto;
+    border-radius: $border-radius;
+    .comment { color: #999; }
+    .type { color: #00007B; font-weight: bold; }
+    .string { color: #037F00; }
+    .macro { color: #B04700; font-weight: bold; }
+    .lang, .const, .mod { color: #863069; font-weight: bold; }
+    .const { color: #0000ff; }
+    .delim { color: #00008e; }
+    .ns { font-weight: bold; }
+    .nested {
+      opacity: .7; transition: opacity .2s ease-in;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  &.lineno {
+    padding: 0px;
+    div {
+      padding: 0px 0;
+      &:nth-child(odd) { background: #f6f6f6; }
+      &:nth-child(even) { background: #f0f0f0; }
+      &:before {
+        background: #eaeaea;
+        color: #999;
+        margin-right: 1.5rem;
+
+        padding: 3px 10px;
+        counter-increment: lines;
+        content: counter(lines);
+        text-align: right;
+        min-width: 50px;
+        display: inline-block;
+      }
+      &:hover {
+        &:before {
+          background: #e1e1e1;
+          color: #444;
+        }
+      }
+    }
+  }
+}

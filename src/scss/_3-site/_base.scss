@@ -7,6 +7,12 @@ html, body {
 body {
   @include font-size($base-font-size);
   font-family: 'source sans pro', arial, sans-serif;
+
+  &.article {
+    header + .container {
+      padding-top: $spacing-unit;
+    }
+  }
 }
 
 a {
@@ -75,7 +81,7 @@ header {
 
   &.scrolled {
     border-bottom: 1px solid rgba(0,0,0,.2);
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .8);
     box-shadow: 0px 3px 12px rgba(0,0,0,.1);
     h1 {
       img {

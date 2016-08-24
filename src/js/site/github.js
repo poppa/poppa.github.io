@@ -108,7 +108,6 @@
       more.insertAfter(t);
 
       more.on('click', function() {
-
         t.find('li.hidden').addClass('transition').removeClass('hidden');
         window.requestAnimationFrame(() => {
           t.find('li.transition').removeClass('transition');

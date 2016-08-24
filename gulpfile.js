@@ -41,6 +41,7 @@ let gulp       = require('gulp'),
   sourcemaps   = require('gulp-sourcemaps'),
   // svgsprite    = require('gulp-svg-sprite'),
   uglify       = require('gulp-uglify'),
+  exec         = require('child_process').execSync,
   gutil        = require('gulp-util');
 
 let HTML_HEADER, HTML_FOOTER;
@@ -185,11 +186,144 @@ gulp.task('font', () => {
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
  |                                                                           |
- *    Mardown/template                                                       *
+ *    Markdown/template                                                      *
  |                                                                           |
  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 
 let datafiles = [ DATA + '/**/*.html' ];
+
+const parseAttr = (s) => {
+  let m = s.match(/([-\w]+)=?(['"]?)(.*?)\2/g);
+  if (m) {
+    let o = {};
+    m.forEach(x => {
+      let a = x.split('=');
+      if (a.length > 1 && (a[1][0] == '\'' || a[1][0] == '"')) {
+        a[1] = a[1].substring(1, a[1].length-1);
+      }
+      o[a[0]] = a[1];
+    });
+
+    return o;
+  }
+};
+
+
+// Check for metadata comment. Must be the first thing in a .md file
+// to be recognized.
+//
+// <!--
+//   { "title": "Some page title" }
+// -->
+const readMetadata = (fileOrCont, isConent) => {
+  if (!isConent) {
+    fileOrCont = fs.readFileSync(fileOrCont, 'utf-8');
+  }
+
+  let reg = /^<!--\s+(.[\s\S]+)\n-->/;
+  let m = fileOrCont.match(reg);
+  let obj = {};
+
+  if (m) {
+    obj = JSON.parse(m[1]);
+    return obj;
+  }
+};
+
+const replaceString = (s, o) => {
+  Object.keys(o).forEach(name => {
+    s = s.replace('${' + name + '}', o[name]);
+  });
+
+  return s;
+};
+
+const makeArchive = (c) => {
+  // let m = c.match(/<list (.*?)\/?>/);
+  let m = c.match(/<list (.*?)\/?>\s*(.[\s\S]+)\s*<\/list>/);
+
+  if (m && m.length >= 3) {
+    let attr = parseAttr(m[1]);
+    let stub = m[2];
+
+    if (attr && attr.path) {
+      let abspath = SRC + '/data' + attr.path;
+      let files = getDirWithMetadata(abspath);
+
+      files.sort((a, b) => {
+        return a.created === b.created ? 0 : a.created > b.created ? -1 : 1;
+      });
+
+      if (attr.type) {
+        files = files.filter(a => {
+          if (a.type && a.type === attr.type) {
+            return a;
+          }
+        });
+      }
+
+      let out = '';
+      let plen = (SRC + '/data').length;
+
+      files.forEach(f => {
+        f.path = f.path.substring(plen);
+        out += replaceString(stub, f);
+      });
+
+      out = `<ul class='archive list'>${out}</ul>`;
+
+      return c.replace(m[0], out);
+    }
+  }
+  return c;
+};
+
+const parseIsoDate = (d) => {
+  try {
+    let date = new Date(Date.parse(d));
+    return date;
+  }
+  catch (e) {
+    return 0;
+  }
+};
+
+const getDirWithMetadata = (path) => {
+  if (path[path.length-1] === '/') {
+    path = path.substring(0, path.length-1);
+  }
+
+  let ret = [];
+  let files = fs.readdirSync(path, 'utf-8');
+
+  files.forEach(p => {
+    let fp = path + '/' + p;
+    let st = fs.statSync(path + '/' + p);
+
+    if (st.isDirectory()) {
+      ret = ret.concat(getDirWithMetadata(fp));
+    }
+    else {
+      let o = readMetadata(fp);
+
+      if (o) {
+        o.path     = fp;
+        o.name     = p;
+        o.created  = st.ctime;
+        o.modified = st.mtime;
+
+        if (o.pubdate) {
+          o.created = parseIsoDate(o.pubdate);
+        }
+
+        ret.push(o);
+      }
+    }
+  });
+
+  return ret;
+};
+
 
 gulp.task('htmlmin', function() {
   gutil.log('Run HTML minify...');
@@ -199,6 +333,11 @@ gulp.task('htmlmin', function() {
     spare: true,
     empty: true,
     quotes: true
+  };
+
+  const quoteArg = function(a) {
+    return '"' + a.replace(/\\/g, '\\\\')
+                  .replace(/"/g, '\\"') + '"';
   };
 
   return gulp.src(datafiles)
@@ -212,21 +351,41 @@ gulp.task('htmlmin', function() {
       // -->
       let reg = /^<!--\s+(.[\s\S]+)\n-->/;
       let m = content.match(reg);
-      let obj = {};
+      let obj = readMetadata(content, true) || {};
 
-      if (m) {
-        // gutil.log('Meta  header: ', m);
-        obj = JSON.parse(m[1]);
-        content = content.replace(reg, '');
-        gutil.log('obj: ', obj);
-      }
+      // Look for code blocks
+      reg = /<<<([\w\d]+)?\s*([\s\S]*?)>>>/g;
+      let newCont = content;
+
+      do {
+        m = reg.exec(content);
+
+        if (!m) {
+          break;
+        }
+
+        if (m[1] === 'pike') {
+          let code = quoteArg(m[2]);
+          let res = exec('src/bin/pike2html.pike ' + code);
+          m[2] = '<pre><code>' + res.toString().trim() + '</code></pre>';
+        }
+        else {
+          m[2] = '<pre><code>' + m[2].trim() + '</code></pre>';
+        }
+        newCont = newCont.replace(m[0], m[2]);
+      } while (m);
+
+      content = newCont;
+
+      content = makeArchive(content);
 
       if (!obj.noconcat) {
         content = HTML_HEADER + content + HTML_FOOTER;
       }
       else {
-        gutil.log('Skip header nd footer');
+        gutil.log('Skip header and footer');
       }
+
 
       Object.keys(obj).forEach((k) => {
         content = content.replace('${' + k + '}', obj[k]);

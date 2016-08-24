@@ -55,7 +55,7 @@
 
         va.addClass('opening');
 
-        // setTimeout(() => {
+        setTimeout(() => {
           va.append(loader);
           loader.fadeIn('fast');
           $.get('portfolio/' + href)
@@ -76,7 +76,7 @@
             window.console.error('Error: ', err);
             cont.empty().removeClass('closing opening');
           });
-        // }, animIntval);
+        }, animIntval);
 
         requestAnimationFrame(() => {
           va.removeClass(clrs.join(' ')).addClass(color||clrs[0]);

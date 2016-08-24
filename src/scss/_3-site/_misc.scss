@@ -322,3 +322,8 @@ a.profile {
     }
   }
 }
+
+.pubdate {
+  @include font-size($txt-xxs);
+  color: #999;
+}

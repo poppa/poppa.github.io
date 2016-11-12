@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Stdio.Fd()-&gt;set_keepalive()</title>
-    <!-- 220-->
+    <title>Stdio.Fd()-&gt;set_keepalive() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -50,7 +50,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
           <nav>
             <div class="sidebar">
               <a href="../../../../ex/predef_3A_3A/Stdio/Fd/set_close_on_exec.html" class="prev"><span>&#10148;</span> Stdio.Fd()-&gt;set_close_on_exec()</a>
-              <a href="../../../../ex/predef_3A_3A/Stdio/Fd/set_nonblocking.html" class="next">Stdio.Fd()-&gt;set_nonblocking() <span>&#10148;</span></a>
+              <a href="../../../../ex/predef_3A_3A/Stdio/Fd/set_nodelay.html" class="next">Stdio.Fd()-&gt;set_nodelay() <span>&#10148;</span></a>
             </div>
           </nav>
         </div>
@@ -65,14 +65,19 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <span class='homogen--name'><b>set_keepalive</b></span>
 </dt>
 <dd><p><code><code class='datatype'>bool</code> <b><span class='method'>set_keepalive</span>(</b><code class='datatype'>bool</code> <code class='argument'>on_off</code><b>)</b></code></p></dd>
-</dl>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Equivalent to setsockopt(Stdio.SO_KEEPALIVE, on_off), but will set errno
+ if SO_KEEPALIVE is not supported, rather than issuing a compilation error
+ for the missing constant.</p>
+</dd></dl>
 
           </article>
         </div>
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Stdio/Fd/set_keepalive.html","name":"set_keepalive"};</script>
 <script src='../../../../ex/predef_3A_3A/Stdio/Fd/index.js'></script>

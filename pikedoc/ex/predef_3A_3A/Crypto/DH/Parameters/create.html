@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Crypto.DH.Parameters()-&gt;create()</title>
-    <!-- 220-->
+    <title>Crypto.DH.Parameters()-&gt;create() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../../style.css'>
     <script src='../../../../../site.js'></script>
-    <script src='../../../../../pike_version.js'></script>
-    <script src='../../../../../timestamp.js'></script>
+    <script src='../../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -51,7 +51,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
           <nav>
             <div class="sidebar">
               <a href="../../../../../ex/predef_3A_3A/Crypto/DH/Parameters.html" class="prev"><span>&#10148;</span> Crypto.DH.Parameters</a>
-              <a href="../../../../../ex/predef_3A_3A/Crypto/DH/Parameters/validate.html" class="next">Crypto.DH.Parameters()-&gt;validate() <span>&#10148;</span></a>
+              <a href="../../../../../ex/predef_3A_3A/Crypto/DH/Parameters/generate_keypair.html" class="next">Crypto.DH.Parameters()-&gt;generate_keypair() <span>&#10148;</span></a>
             </div>
           </nav>
         </div>
@@ -65,7 +65,28 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dt class='head--type'><span class='homogen--type'>Method</span>
 <span class='homogen--name'><b>create</b></span>
 </dt>
-<dd><p><code><span class='object'>Crypto.DH.Parameters</span> <span class='class'>Crypto.DH.Parameters</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Crypto/DSA/State.html'>Crypto.DSA.State</a></code> <code class='argument'>dsa</code><b>)</b></code></p></dd>
+<dd><p><code><span class='object'>Crypto.DH.Parameters</span> <span class='class'>Crypto.DH.Parameters</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code>|<code class='datatype'>int</code> <code class='argument'>p</code>, <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>g</code>, <code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Gmp/mpz.html'>Gmp.mpz</a></code>|<code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>q</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Initialize the set of Diffie-Hellman parameters.</p>
+</dd>
+<dt class='head--doc'><span id='p-p'></span>Parameter <code class='parameter'>p</code></dt>
+<dd></dd><dd class='body--doc'><p>The prime for the group.</p>
+</dd>
+<dt class='head--doc'><span id='p-g'></span>Parameter <code class='parameter'>g</code></dt>
+<dd></dd><dd class='body--doc'><p>The generator for the group. Defaults to <code class='expr'>2</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-q'></span>Parameter <code class='parameter'>q</code></dt>
+<dd></dd><dd class='body--doc'><p>The order of the group. Defaults to <code class='expr'>(p-1)/2</code>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Crypto.DH.Parameters</span> <span class='class'>Crypto.DH.Parameters</span><b>(</b><code class='object resolved'><code class='reference unresolved'>DSA_State</code></code> <code class='argument'>dsa</code><b>)</b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
 <dd class='body--doc'><p>Initialize the set of Diffie-Hellman parameters.</p>
@@ -74,12 +95,27 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dd></dd><dd class='body--doc'><p>Copy the parameters from this object.</p>
 </dd></dl>
 
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>create</b></span>
+</dt>
+<dd><p><code><span class='object'>Crypto.DH.Parameters</span> <span class='class'>Crypto.DH.Parameters</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../../predef_3A_3A/Crypto/DH/Parameters.html'>this_program</a></code> <code class='argument'>other</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Initialize the set of Diffie-Hellman parameters.</p>
+</dd>
+<dt class='head--doc'><span id='p-other'></span>Parameter <code class='parameter'>other</code></dt>
+<dd></dd><dd class='body--doc'><p>Copy the parameters from this object.</p>
+</dd></dl>
+
           </article>
         </div>
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Crypto/DH/Parameters/create.html","name":"create"};</script>
 <script src='../../../../../ex/predef_3A_3A/Crypto/DH/Parameters/index.js'></script>

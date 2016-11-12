@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Standards.MsgPack</title>
-    <!-- 220-->
+    <title>Standards.MsgPack - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../style.css'>
     <script src='../../../site.js'></script>
-    <script src='../../../pike_version.js'></script>
-    <script src='../../../timestamp.js'></script>
+    <script src='../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -59,12 +59,16 @@ svg a { fill:#0768b2; text-decoration: underline; }
             <h1>Module Standards.MsgPack</h1>
             <dl class='group--doc'>
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Tools for handling the MsgPack data format. MsgPack is a binary serialization format with applications
- similar to JSON. However, MsgPack is more versatile and is able to serialize arbitrary objects using an
- extension format. The following table shows how some special Pike data types are encoded in the MsgPack
- format. All basic types, namely <code class='expr'>int</code>, <code class='expr'>string</code>, <code class='expr'>float</code>, <code class='expr'>array</code> and
- <code class='expr'>mapping</code> are mapped onto their natural MsgPack counterparts. Note that the encoder does not
- use all integer and floating point lengths and in particular integers are never encoded as unsigned.</p>
+<dd class='body--doc'><p>Tools for handling the MsgPack data format. MsgPack is a binary
+ serialization format with applications similar to JSON. However,
+ MsgPack is more versatile and is able to serialize arbitrary
+ objects using an extension format. The following table shows how
+ some special Pike data types are encoded in the MsgPack
+ format. All basic types, namely <code class='expr'>int</code>, <code class='expr'>string</code>,
+ <code class='expr'>float</code>, <code class='expr'>array</code> and <code class='expr'>mapping</code> are mapped onto
+ their natural MsgPack counterparts. Note that the encoder does not
+ use all integer and floating point lengths and in particular
+ integers are never encoded as unsigned.</p>
 <ul>
 <li><b>binary</b><p><a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a></p>
 </li><li><b>nil</b><p><a class='ms reference' href='../../predef_3A_3A/Val.html'>Val.null</a></p>
@@ -81,9 +85,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dd><p><code><code class='datatype'>typedef</code> <code class='datatype'>function</code>(<code class='datatype'>int(-127..128)</code>, <code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a></code>:<code class='datatype'>mixed</code>) Standards.MsgPack.<code class='typedef'>decode_handler</code></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Function prototype for decode extension handlers. The first argument
- is the extension type identifier. The second argument is a <a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a> containing
- the payload.</p>
+<dd class='body--doc'><p>Function prototype for decode extension handlers. The first
+ argument is the extension type identifier. The second argument is
+ a <a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a> containing the payload.</p>
 </dd>
 <dt class='head--doc'>See also</dt>
 <dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/decode.html'>decode</a>, <a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/decode_from.html'>decode_from</a></p>
@@ -98,9 +102,10 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dd><p><code><code class='datatype'>typedef</code> <code class='datatype'>function</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a></code>, <code class='datatype'>mixed</code>:<code class='datatype'>void</code>) Standards.MsgPack.<code class='typedef'>encode_handler</code></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Function prototype for encode extension handlers. The first argument is
- the <a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a>, the second the value to encode. Use <a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/add_extension_header.html'>add_extension_header</a> to
- generate the correct extension header.</p>
+<dd class='body--doc'><p>Function prototype for encode extension handlers. The first
+ argument is the <a class='ms reference' href='../../predef_3A_3A/Stdio/Buffer.html'>Stdio.Buffer</a>, the second the value to
+ encode. Use <a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/add_extension_header.html'>add_extension_header</a> to generate the correct
+ extension header.</p>
 </dd>
 <dt class='head--doc'>See also</dt>
 <dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/decode.html'>decode</a>, <a class='ms reference' href='../../predef_3A_3A/Standards/MsgPack/decode_from.html'>decode_from</a></p>
@@ -111,7 +116,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Standards/MsgPack.html","name":"MsgPack"};</script>
 <script src='../../../ex/predef_3A_3A/Standards/index.js'></script>

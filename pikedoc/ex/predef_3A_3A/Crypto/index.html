@@ -3,18 +3,18 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Crypto</title>
-    <!-- 220-->
+    <title>Crypto - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../style.css'>
     <script src='../../../site.js'></script>
-    <script src='../../../pike_version.js'></script>
-    <script src='../../../timestamp.js'></script>
+    <script src='../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     
   </head>
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -43,6 +43,7 @@
 <a href='../../../ex/predef_3A_3A/Crypto/DES3.html'><b>DES3</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/DH.html'><b>DH</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/DSA.html'><b>DSA</b></a>
+<a href='../../../ex/predef_3A_3A/Crypto/ECC.html'><b>ECC</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/GOST94.html'><b>GOST94</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/IDEA.html'><b>IDEA</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/Koremutake.html'><b>Koremutake</b></a>
@@ -50,6 +51,8 @@
 <a href='../../../ex/predef_3A_3A/Crypto/MD4.html'><b>MD4</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/MD5.html'><b>MD5</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/NT.html'><b>NT</b></a>
+<a href='../../../ex/predef_3A_3A/Crypto/NTLM.html'><b>NTLM</b></a>
+<a href='../../../ex/predef_3A_3A/Crypto/None.html'><b>None</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/PGP.html'><b>PGP</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/Password.html'><b>Password</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/RIPEMD160.html'><b>RIPEMD160</b></a>
@@ -71,6 +74,7 @@
 </div></div>
 <b class='head'>Classes</b>
 <div class='sidebar'><div style='margin-left:0.5em;'>
+<a href='../../../ex/predef_3A_3A/Crypto/AE.html'><b>AE</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/AEAD.html'><b>AEAD</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/BlockCipher.html'><b>BlockCipher</b></a>
 <a href='../../../ex/predef_3A_3A/Crypto/BlockCipher16.html'><b>BlockCipher16</b></a>
@@ -102,6 +106,7 @@
             <nav><ul class='multicol'>
 <li><a href='../../../ex/predef_3A_3A/Crypto/make_crypt_md5.html'>make_crypt_md5()</a></li>
 <li><a href='../../../ex/predef_3A_3A/Crypto/rot13.html'>rot13()</a></li>
+<li><a href='../../../ex/predef_3A_3A/Crypto/siphash24.html'>siphash24()</a></li>
 <li><a href='../../../ex/predef_3A_3A/Crypto/verify_crypt_md5.html'>verify_crypt_md5()</a></li>
 </ul></nav>
           </article>
@@ -109,7 +114,7 @@
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     
     <script>

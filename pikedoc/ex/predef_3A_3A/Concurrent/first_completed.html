@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Concurrent.first_completed()</title>
-    <!-- 220-->
+    <title>Concurrent.first_completed() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../style.css'>
     <script src='../../../site.js'></script>
-    <script src='../../../pike_version.js'></script>
-    <script src='../../../timestamp.js'></script>
+    <script src='../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -48,7 +48,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
         <div class="navbox">
           <nav>
             <div class="sidebar">
-              <a href="../../../ex/predef_3A_3A/Concurrent/Promise/success.html" class="prev"><span>&#10148;</span> Concurrent.Promise()-&gt;success()</a>
+              <a href="../../../ex/predef_3A_3A/Concurrent/all.html" class="prev"><span>&#10148;</span> Concurrent.all()</a>
               <a href="../../../ex/predef_3A_3A/Concurrent/fold.html" class="next">Concurrent.fold() <span>&#10148;</span></a>
             </div>
           </nav>
@@ -65,9 +65,12 @@ svg a { fill:#0768b2; text-decoration: underline; }
 </dt>
 <dd><p><code><code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Concurrent/Future.html'>Future</a></code> <b><span class='method'>first_completed</span>(</b><code class='datatype'>array</code>(<code class='object resolved'><a class='ms reference' href='../../predef_3A_3A/Concurrent/Future.html'>Future</a></code>) <code class='argument'>futures</code><b>)</b></code></p></dd>
 
-<dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Return a <a class='ms reference' href='../../predef_3A_3A/Concurrent/Future.html'>Future</a> that represents the first
- of the <code class='reference paramref'>futures</code> that completes.</p>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>A <a class='ms reference' href='../../predef_3A_3A/Concurrent/Future.html'>Future</a> that represents the first
+ of the <code class='expr'>futures</code> that completes.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../predef_3A_3A/Concurrent/race.html'>race()</a></p>
 </dd></dl>
 
           </article>
@@ -75,7 +78,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Concurrent/first_completed.html","name":"first_completed"};</script>
 <script src='../../../ex/predef_3A_3A/Concurrent/index.js'></script>

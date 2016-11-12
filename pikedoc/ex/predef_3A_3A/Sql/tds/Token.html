@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Sql.tds()-&gt;Token</title>
-    <!-- 220-->
+    <title>Sql.tds()-&gt;Token - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -62,12 +62,162 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dt class='head--doc'>Description</dt>
 <dd class='body--doc'><p>Tokens that may occur in the answers from the server.</p>
 </dd></dl>
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS5_PARAMFMT2_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_LANGUAGE_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ORDERBY2_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ROWFMT2_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_LOGOUT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_RETURNSTATUS_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_PROCID_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS7_RESULT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS7_COMPUTE_RESULT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_COLNAME_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_COLFMT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DYNAMIC2_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_TABNAME_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_COLINFO_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_OPTIONCMD_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_COMPUTE_NAMES_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_COMPUTE_RESULT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ORDERBY_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ERROR_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_INFO_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_PARAM_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_LOGINACK_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CONTROL_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ROW_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CMP_ROW_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS5_PARAMS_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CAPABILITY_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ENVCHANGE_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_EED_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DBRPC_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS5_DYNAMIC_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS5_PARAMFMT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_AUTH_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_RESULT_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DONE_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DONEPROC_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DONEINPROC_TOKEN</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS5_PARAMFMT2_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_LANGUAGE_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ORDERBY2_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ROWFMT2_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_LOGOUT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_RETURNSTATUS_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_PROCID_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS7_RESULT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS7_COMPUTE_RESULT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_COLNAME_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_COLFMT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DYNAMIC2_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_TABNAME_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_COLINFO_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_OPTIONCMD_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_COMPUTE_NAMES_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_COMPUTE_RESULT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ORDERBY_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ERROR_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_INFO_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_PARAM_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_LOGINACK_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CONTROL_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ROW_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CMP_ROW_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS5_PARAMS_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CAPABILITY_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ENVCHANGE_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_EED_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DBRPC_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS5_DYNAMIC_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS5_PARAMFMT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_AUTH_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_RESULT_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DONE_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DONEPROC_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DONEINPROC_TOKEN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CURCLOSE_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CURFETCH_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CURINFO_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CUROPEN_TOKEN</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_CURDECLARE_TOKEN</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CURCLOSE_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CURFETCH_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CURINFO_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CUROPEN_TOKEN</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_CURDECLARE_TOKEN</code></code></p></dd>
+</dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_ERROR</b></span><br>
+<span class='homogen--type'>Constant</span>
+<span class='homogen--name'><b>TDS_DONT_RETURN</b></span><br>
+</dt>
+<dd><p><code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_ERROR</code></code><br>
+<code><code class='datatype'>constant</code> Sql.tds.<code class='constant'>TDS_DONT_RETURN</code></code></p></dd>
+</dl>
+
           </article>
         </div>
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Sql/tds/Token.html","name":"Token"};</script>
 <script src='../../../../ex/predef_3A_3A/Sql/tds/index.js'></script>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Protocols.EngineIO.farm() - Pike Reference Manual</title>
+    <!-- 221-->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols/EngineIO.html'><b class='head'>Protocols.EngineIO</b></a>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Protocols/EngineIO/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Protocols/EngineIO/Socket/write.html" class="prev"><span>&#10148;</span> Protocols.EngineIO.Socket()-&gt;write()</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/HTTP.html" class="next">Protocols.HTTP <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Method Protocols.EngineIO.farm()</h1>
+            
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Method</span>
+<span class='homogen--name'><b>farm</b></span>
+</dt>
+<dd><p><code><code class='modifier'>final</code>  <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/EngineIO/Socket.html'>Socket</a></code> <b><span class='method'>farm</span>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/Request.html'>Protocols.WebSocket.Request</a></code> <code class='argument'>req</code>, <code class='datatype'>void</code>|<code class='datatype'>mapping</code> <code class='argument'>options</code><b>)</b></code></p></dd>
+
+<dt class='head--doc'><span id='p-options'></span>Parameter <code class='parameter'>options</code></dt>
+<dd></dd><dd class='body--doc'><p>Optional options to override the defaults.
+ This parameter is passed down as is to the underlying
+  <a class='ms reference' href='../../../predef_3A_3A/Protocols/EngineIO/Socket.html'>Socket</a>.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><p>Sample minimal implementation of an EngineIO server farm:</p>
+<pre><code><span class='type'>void</span> echo<span class='delim'>(</span><span class='type'>mixed</span> id<span class='delim'>,</span> <span class='type'>string</span><span class='delim'>|</span><span class='ns'>Stdio</span><span class='delim'>.</span>Buffer msg<span class='delim'>)</span> <span class='delim'>{</span>
+  id-&gt;write<span class='delim'>(</span>msg<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span>
+
+<span class='type'>void</span> wsrequest<span class='delim'>(</span><span class='type'>array</span><span class='delim'>(</span><span class='type'>string</span><span class='delim'>)</span> protocols<span class='delim'>,</span> <span class='type'>object</span> req<span class='delim'>)</span> <span class='delim'>{</span>
+  httprequest<span class='delim'>(</span>req<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span>
+
+<span class='type'>void</span> httprequest<span class='delim'>(</span><span class='type'>object</span> req<span class='delim'>)</span>
+<span class='delim'>{</span> <span class='lang'>switch</span> <span class='delim'>(</span>req<span class='delim'>.</span>not_query<span class='delim'>)</span>
+  <span class='delim'>{</span> <span class='lang'>case</span> <span class='string'>"/engine.io/"</span><span class='delim'>:</span>
+      <span class='ns'>Protocols</span><span class='delim'>.</span>EngineIO<span class='delim'>.</span>Socket client <span class='delim'>=</span> <span class='ns'>Protocols</span><span class='delim'>.</span>EngineIO<span class='delim'>.</span>farm<span class='delim'>(</span>req<span class='delim'>)</span><span class='delim'>;</span>
+      <span class='lang'>if</span> <span class='delim'>(</span>client<span class='delim'>)</span> <span class='delim'>{</span>
+        client<span class='delim'>.</span>set_callbacks<span class='delim'>(</span>echo<span class='delim'>)</span><span class='delim'>;</span>
+        client<span class='delim'>.</span>write<span class='delim'>(</span><span class='string'>"Hello world!"</span><span class='delim'>)</span><span class='delim'>;</span>
+      <span class='delim'>}</span>
+      <span class='lang'>break</span><span class='delim'>;</span>
+  <span class='delim'>}</span>
+<span class='delim'>}</span>
+
+<span class='type'>int</span> main<span class='delim'>(</span><span class='type'>int</span> argc<span class='delim'>,</span> <span class='type'>array</span><span class='delim'>(</span><span class='type'>string</span><span class='delim'>)</span> argv<span class='delim'>)</span>
+<span class='delim'>{</span> <span class='ns'>Protocols</span><span class='delim'>.</span>WebSocket<span class='delim'>.</span>Port<span class='delim'>(</span>httprequest<span class='delim'>,</span> wsrequest<span class='delim'>,</span> 80<span class='delim'>)</span><span class='delim'>;</span>
+  <span class='lang'>return</span> <span class='delim'>-</span>1<span class='delim'>;</span>
+<span class='delim'>}</span>
+</code></pre>
+</pre></dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Protocols/EngineIO/Socket/create.html'>Socket.create()</a></p>
+</dd></dl>
+
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/EngineIO/farm.html","name":"farm"};</script>
+<script src='../../../../ex/predef_3A_3A/Protocols/EngineIO/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Protocols/EngineIO/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

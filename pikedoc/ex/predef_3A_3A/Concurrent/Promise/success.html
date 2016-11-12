@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Concurrent.Promise()-&gt;success()</title>
-    <!-- 220-->
+    <title>Concurrent.Promise()-&gt;success() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -50,7 +50,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
           <nav>
             <div class="sidebar">
               <a href="../../../../ex/predef_3A_3A/Concurrent/Promise/future.html" class="prev"><span>&#10148;</span> Concurrent.Promise()-&gt;future()</a>
-              <a href="../../../../ex/predef_3A_3A/Concurrent/first_completed.html" class="next">Concurrent.first_completed() <span>&#10148;</span></a>
+              <a href="../../../../ex/predef_3A_3A/Concurrent/Promise/try_failure.html" class="next">Concurrent.Promise()-&gt;try_failure() <span>&#10148;</span></a>
             </div>
           </nav>
         </div>
@@ -67,7 +67,19 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dd><p><code><code class='datatype'>void</code> <b><span class='method'>success</span>(</b><code class='datatype'>mixed</code> <code class='argument'>value</code><b>)</b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Fulfill the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Future</a> value.</p>
+<dd class='body--doc'><p>Fulfill the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Future</a>.</p>
+</dd>
+<dt class='head--doc'><span id='p-value'></span>Parameter <code class='parameter'>value</code></dt>
+<dd></dd><dd class='body--doc'><p>Result of the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Future</a>.</p>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>Throws an error if the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Future</a> already has been fulfilled
+   or failed.</p>
+<p> Mark the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Future</a> as fulfilled, and schedule the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future/on_success.html'>on_success()</a>
+ callbacks to be called as soon as possible.</p>
+</dd>
+<dt class='head--doc'>See also</dt>
+<dd class='body--doc'><p><a class='ms reference' href='../../../predef_3A_3A/Concurrent/Promise/try_success.html'>try_success()</a>, <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Promise/try_failure.html'>try_failure()</a>, <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Promise/failure.html'>failure()</a>, <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future/on_success.html'>on_success()</a></p>
 </dd></dl>
 
           </article>
@@ -75,7 +87,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Concurrent/Promise/success.html","name":"success"};</script>
 <script src='../../../../ex/predef_3A_3A/Concurrent/Promise/index.js'></script>

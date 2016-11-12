@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <title>Protocols.HTTP.Promise - Pike Reference Manual</title>
+    <!-- 221-->
+    <link rel='stylesheet' href='../../../../style.css'>
+    <script src='../../../../site.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
+    <style type='text/css'>
+svg line { stroke:#343434; stroke-width:2; }
+svg text { fill:#343434; }
+svg a { fill:#0768b2; text-decoration: underline; }
+</style>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
+        <div id="burger">&#9776;</div><!-- Hamburger icon -->
+        <h1>
+          <a href="http://pike.lysator.liu.se/" class="logo">
+            <span>Pike programming language</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div id="page">
+      <div class="navbar">
+        <nav>
+          <div class="inner" id="navbar">
+            <a href='../../../../index.html'><b class='top head'>Top</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols.html'><b class='head'>Protocols</b></a>
+<a href='../../../../ex/predef_3A_3A/Protocols/HTTP.html'><b class='head'>Protocols.HTTP</b></a>
+<b class='selected head'>Protocols.HTTP.Promise</b>
+<script></script>
+<noscript>
+<div class='sidebar'>
+<a href='../../../../ex/predef_3A_3A/Protocols/HTTP/Promise/index.html'><b>Symbol index</b></a><br />
+</div>
+</noscript>
+
+          </div>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="navbox">
+          <nav>
+            <div class="sidebar">
+              <a href="../../../../ex/predef_3A_3A/Protocols/HTTP/Session/set_http_cookie.html" class="prev"><span>&#10148;</span> Protocols.HTTP.Session()-&gt;set_http_cookie()</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/HTTP/Promise/Arguments.html" class="next">Protocols.HTTP.Promise.Arguments <span>&#10148;</span></a>
+            </div>
+          </nav>
+        </div>
+        <div class="contentbox">
+          <article>
+            <h1>Module Protocols.HTTP.Promise</h1>
+            <dl class='group--doc'>
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>This HTTP client module utilises the <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Promise.html'>Concurrent.Promise</a> and
+ <a class='ms reference' href='../../../predef_3A_3A/Concurrent/Future.html'>Concurrent.Future</a> classes and only does asynchronous calls.</p>
+</dd>
+<dt class='head--doc'>Example</dt>
+<dd class='example'><pre><pre><code><span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Arguments a1<span class='delim'>,</span> a2<span class='delim'>;</span>
+
+a1 <span class='delim'>=</span> <span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Arguments<span class='delim'>(</span><span class='delim'>(</span><span class='delim'>[</span>
+  <span class='string'>"extra_args"</span> <span class='delim'>:</span> <span class='delim'>(</span><span class='delim'>{</span> <span class='string'>"Extra arg for Roxen request"</span> <span class='delim'>}</span><span class='delim'>)</span><span class='delim'>,</span>
+  <span class='string'>"headers"</span>    <span class='delim'>:</span> <span class='delim'>(</span><span class='delim'>[</span> <span class='string'>"User-Agent"</span> <span class='delim'>:</span> <span class='string'>"My Special HTTP Client"</span> <span class='delim'>]</span><span class='delim'>)</span>
+<span class='delim'>]</span><span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+
+a2 <span class='delim'>=</span> <span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Arguments<span class='delim'>(</span><span class='delim'>(</span><span class='delim'>[</span>
+  <span class='string'>"variables"</span> <span class='delim'>:</span> <span class='delim'>(</span><span class='delim'>[</span> <span class='string'>"q"</span> <span class='delim'>:</span> <span class='string'>"Pike programming language"</span> <span class='delim'>]</span><span class='delim'>)</span><span class='delim'>,</span>
+  <span class='string'>"maxtime"</span>   <span class='delim'>:</span> 10
+<span class='delim'>]</span><span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+
+<span class='ns'>Concurrent</span><span class='delim'>.</span>Future q1 <span class='delim'>=</span> <span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>get_url<span class='delim'>(</span><span class='string'>"http://www.roxen.com"</span><span class='delim'>,</span> a1<span class='delim'>)</span><span class='delim'>;</span>
+<span class='ns'>Concurrent</span><span class='delim'>.</span>Future q2 <span class='delim'>=</span> <span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>get_url<span class='delim'>(</span><span class='string'>"http://www.google.com"</span><span class='delim'>,</span> a2<span class='delim'>)</span><span class='delim'>;</span>
+
+<span class='type'>array</span><span class='delim'>(</span><span class='ns'>Concurrent</span><span class='delim'>.</span>Future<span class='delim'>)</span> all <span class='delim'>=</span> <span class='delim'>(</span><span class='delim'>{</span> q1<span class='delim'>,</span> q2 <span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+
+<span class='comment'>/*
+  To get a callback for each of the requests
+*/</span>
+
+all-&gt;on_success<span class='delim'>(</span><span class='lang'>lambda</span> <span class='delim'>(</span><span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Success ok_resp<span class='delim'>)</span> <span class='delim'>{</span>
+  werror<span class='delim'>(</span><span class='string'>"Got successful response for %O\n"</span><span class='delim'>,</span> ok_resp-&gt;host<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+all-&gt;on_failure<span class='delim'>(</span><span class='lang'>lambda</span> <span class='delim'>(</span><span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Failure failed_resp<span class='delim'>)</span> <span class='delim'>{</span>
+  werror<span class='delim'>(</span><span class='string'>"Request for %O failed!\n"</span><span class='delim'>,</span> failed_resp-&gt;host<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+
+<span class='comment'>/*
+  To get a callback when all of the requests are done. In this case
+  on_failure will be called if any of the request fails.
+*/</span>
+
+<span class='ns'>Concurrent</span><span class='delim'>.</span>Future all2 <span class='delim'>=</span> <span class='ns'>Concurrent</span><span class='delim'>.</span>results<span class='delim'>(</span>all<span class='delim'>)</span><span class='delim'>;</span>
+
+all2-&gt;on_success<span class='delim'>(</span><span class='lang'>lambda</span> <span class='delim'>(</span><span class='type'>array</span><span class='delim'>(</span><span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Success<span class='delim'>)</span> ok_resp<span class='delim'>)</span> <span class='delim'>{</span>
+  werror<span class='delim'>(</span><span class='string'>"All request were successful: %O\n"</span><span class='delim'>,</span> ok_resp<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+all-&gt;on_failure<span class='delim'>(</span><span class='lang'>lambda</span> <span class='delim'>(</span><span class='ns'>Protocols</span><span class='delim'>.</span>HTTP<span class='delim'>.</span>Promise<span class='delim'>.</span>Failure failed_resp<span class='delim'>)</span> <span class='delim'>{</span>
+  werror<span class='delim'>(</span><span class='string'>"The request to %O failed.\n"</span><span class='delim'>,</span> failed_resp-&gt;host<span class='delim'>)</span><span class='delim'>;</span>
+<span class='delim'>}</span><span class='delim'>)</span><span class='delim'>;</span>
+</code></pre>
+</pre></dd></dl>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
+    </footer>
+    <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/HTTP/Promise.html","name":"Promise"};</script>
+<script src='../../../../ex/predef_3A_3A/Protocols/HTTP/index.js'></script>
+<script src='../../../../ex/predef_3A_3A/Protocols/HTTP/Promise/load_index.js'></script>
+    <script>
+      // Tell PikeDoc that next actions are from loaded scripts
+      PikeDoc.isInline = false;
+    </script>
+  </body>
+</html>

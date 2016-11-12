@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - `[..]()</title>
-    <!-- 220-->
+    <title>`[..]() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../style.css'>
     <script src='../../site.js'></script>
-    <script src='../../pike_version.js'></script>
-    <script src='../../timestamp.js'></script>
+    <script src='../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -79,15 +79,16 @@ svg a { fill:#0768b2; text-decoration: underline; }
    insignificant.</p>
 <p>   The relation between <code class='expr'>[..]</code> expressions and this function
    is therefore as follows:</p>
-<pre><code>a[i..j]    <=>	`[..] (a, i, Pike.INDEX_FROM_BEG, j, Pike.INDEX_FROM_BEG)
-    a[i..<j]   <=>	`[..] (a, i, Pike.INDEX_FROM_BEG, j, Pike.INDEX_FROM_END)
-    a[i..]     <=>	`[..] (a, i, Pike.INDEX_FROM_BEG, 0, Pike.OPEN_BOUND)
-    a[<i..j]   <=>	`[..] (a, i, Pike.INDEX_FROM_END, j, Pike.INDEX_FROM_BEG)
-    a[<i..<j]  <=>	`[..] (a, i, Pike.INDEX_FROM_END, j, Pike.INDEX_FROM_END)
-    a[<i..]    <=>	`[..] (a, i, Pike.INDEX_FROM_END, 0, Pike.OPEN_BOUND)
-    a[..j]     <=>	`[..] (a, 0, Pike.OPEN_BOUND, j, Pike.INDEX_FROM_BEG)
-    a[..<j]    <=>	`[..] (a, 0, Pike.OPEN_BOUND, j, Pike.INDEX_FROM_END)
-    a[..]      <=>	`[..] (a, 0, Pike.OPEN_BOUND, 0, Pike.OPEN_BOUND)</code></pre><p>The subrange is specified as follows by the two bounds:</p>
+<pre><code>a<span class='delim'>[</span>i..j<span class='delim'>]</span>    &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>)</span>
+    a<span class='delim'>[</span>i..<span class='delim'>&lt;</span>j<span class='delim'>]</span>   &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>)</span>
+    a<span class='delim'>[</span>i..<span class='delim'>]</span>     &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>)</span>
+    a<span class='delim'>[</span><span class='delim'>&lt;</span>i..j<span class='delim'>]</span>   &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>)</span>
+    a<span class='delim'>[</span><span class='delim'>&lt;</span>i..<span class='delim'>&lt;</span>j<span class='delim'>]</span>  &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>)</span>
+    a<span class='delim'>[</span><span class='delim'>&lt;</span>i..<span class='delim'>]</span>    &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> i<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>)</span>
+    a<span class='delim'>[</span>..j<span class='delim'>]</span>     &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_BEG<span class='delim'>)</span>
+    a<span class='delim'>[</span>..<span class='delim'>&lt;</span>j<span class='delim'>]</span>    &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>,</span> j<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>INDEX_FROM_END<span class='delim'>)</span>
+    a<span class='delim'>[</span>..<span class='delim'>]</span>      &lt;=<span class='delim'>&gt;</span>	`[..] <span class='delim'>(</span>a<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>,</span> 0<span class='delim'>,</span> <span class='ns'>Pike</span><span class='delim'>.</span>OPEN_BOUND<span class='delim'>)</span>
+</code></pre><p>The subrange is specified as follows by the two bounds:</p>
 <ul>
 <li><p>If the lower bound refers to an index before the lowest
        allowable (typically zero) then it's taken as an open bound
@@ -157,7 +158,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/_backtick_5B.._5D.html","name":"`[..]"};</script>
 <script src='../../ex/predef_3A_3A/index.js'></script>

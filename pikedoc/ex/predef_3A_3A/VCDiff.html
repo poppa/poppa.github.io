@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - VCDiff</title>
-    <!-- 220-->
+    <title>VCDiff - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../style.css'>
     <script src='../../site.js'></script>
-    <script src='../../pike_version.js'></script>
-    <script src='../../timestamp.js'></script>
+    <script src='../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -63,17 +63,18 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <p> Encoding and decoding relies on a common string that the differences are
  computed against - this string is called the dictionary.</p>
 <p> Basic usage:</p>
-<pre><code>string dict = "abcdef";
-  VCDiff.Encoder encoder = VCDiff.Encoder (dict);
-  string encoded = encoder->encode ("abcdefghijklmnopqrstuvwxyz");
-  VCDiff.Decoder decoder = VCDiff.Decoder (dict);
-  string decoded = decoder->decode (encoded);</code></pre></dd></dl>
+<pre><code><span class='type'>string</span> dict <span class='delim'>=</span> <span class='string'>"abcdef"</span><span class='delim'>;</span>
+  <span class='ns'>VCDiff</span><span class='delim'>.</span>Encoder encoder <span class='delim'>=</span> <span class='ns'>VCDiff</span><span class='delim'>.</span>Encoder <span class='delim'>(</span>dict<span class='delim'>)</span><span class='delim'>;</span>
+  <span class='type'>string</span> encoded <span class='delim'>=</span> encoder-&gt;encode <span class='delim'>(</span><span class='string'>"abcdefghijklmnopqrstuvwxyz"</span><span class='delim'>)</span><span class='delim'>;</span>
+  <span class='ns'>VCDiff</span><span class='delim'>.</span>Decoder decoder <span class='delim'>=</span> <span class='ns'>VCDiff</span><span class='delim'>.</span>Decoder <span class='delim'>(</span>dict<span class='delim'>)</span><span class='delim'>;</span>
+  <span class='type'>string</span> decoded <span class='delim'>=</span> decoder-&gt;decode <span class='delim'>(</span>encoded<span class='delim'>)</span><span class='delim'>;</span>
+</code></pre></dd></dl>
           </article>
         </div>
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/VCDiff.html","name":"VCDiff"};</script>
 <script src='../../ex/predef_3A_3A/index.js'></script>

@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Protocols.WebSocket.Frame</title>
-    <!-- 220-->
+    <title>Protocols.WebSocket.Frame - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -50,7 +50,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
         <div class="navbox">
           <nav>
             <div class="sidebar">
-              <a href="../../../../ex/predef_3A_3A/Protocols/WebSocket/Connection/set_id.html" class="prev"><span>&#10148;</span> Protocols.WebSocket.Connection()-&gt;set_id()</a>
+              <a href="../../../../ex/predef_3A_3A/Protocols/WebSocket/Extension/send.html" class="prev"><span>&#10148;</span> Protocols.WebSocket.Extension()-&gt;send()</a>
               <a href="../../../../ex/predef_3A_3A/Protocols/WebSocket/Frame/create.html" class="next">Protocols.WebSocket.Frame()-&gt;create() <span>&#10148;</span></a>
             </div>
           </nav>
@@ -59,6 +59,15 @@ svg a { fill:#0768b2; text-decoration: underline; }
           <article>
             <h1>Class Protocols.WebSocket.Frame</h1>
             
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>close_reason</b></span>
+</dt>
+<dd><p><code><code class='datatype'>string</code> Protocols.WebSocket.Frame.<b><span class='variable'>close_reason</span></b></code></p></dd>
+</dl>
+
 
 <hr />
 <dl class='group--doc'>
@@ -98,12 +107,38 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <hr />
 <dl class='group--doc'>
 <dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>options</b></span>
+</dt>
+<dd><p><code><code class='datatype'>mapping</code>(<code class='datatype'>string</code>:<code class='datatype'>mixed</code>) Protocols.WebSocket.Frame.<b><span class='variable'>options</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Generic options for this frame.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
 <span class='homogen--name'><b>reason</b></span>
 </dt>
 <dd><p><code><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/CLOSE_STATUS.html'>CLOSE_STATUS</a></code> Protocols.WebSocket.Frame.<b><span class='variable'>reason</span></b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
 <dd class='body--doc'><p>Only exists for frames of type <a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/FRAME.html'>FRAME_CLOSE</a>.</p>
+</dd></dl>
+
+
+<hr />
+<dl class='group--doc'>
+<dt class='head--type'><span class='homogen--type'>Variable</span>
+<span class='homogen--name'><b>rsv</b></span>
+</dt>
+<dd><p><code><code class='datatype'>int</code> Protocols.WebSocket.Frame.<b><span class='variable'>rsv</span></b></code></p></dd>
+
+<dt class='head--doc'>Description</dt>
+<dd class='body--doc'><p>Three reserved extension bits.  Binary-and with <code class='expr'>RSV1</code>,
+ <code class='expr'>RSV2</code> or <code class='expr'>RSV3</code> to single out the corresponding
+ extension.  Typically <code class='expr'>RSV1</code> is set for compressed frames.</p>
 </dd></dl>
 
 
@@ -125,8 +160,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <span class='homogen--name'><b>create</b></span>
 </dt>
 <dd><p><code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/FRAME.html'>FRAME</a></code> <code class='argument'>opcode</code>, <code class='datatype'>void</code>|<code class='datatype'>string</code>|<code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/CLOSE_STATUS.html'>CLOSE_STATUS</a></code><b>)</b></code><br>
-<code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_TEXT</code>, <code class='datatype'>string</code> <code class='argument'>text</code><b>)</b></code><br>
-<code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_BINARY</code>, <code class='datatype'>string(8bit)</code> <code class='argument'>data</code><b>)</b></code><br>
+<code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_TEXT</code>, <code class='datatype'>string</code> <code class='argument'>text</code>, <code class='datatype'>void</code>|<code class='datatype'>bool</code> <code class='argument'>fin</code><b>)</b></code><br>
+<code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_BINARY</code>, <code class='datatype'>string(8bit)</code> <code class='argument'>data</code>, <code class='datatype'>void</code>|<code class='datatype'>bool</code> <code class='argument'>fin</code><b>)</b></code><br>
+<code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_CONTINUATION</code>, <code class='datatype'>string(8bit)</code> <code class='argument'>data</code>, <code class='datatype'>void</code>|<code class='datatype'>bool</code> <code class='argument'>fin</code><b>)</b></code><br>
 <code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_CLOSE</code>, <code class='object resolved'><a class='ms reference' href='../../../predef_3A_3A/Protocols/WebSocket/CLOSE_STATUS.html'>CLOSE_STATUS</a></code> <code class='argument'>reason</code><b>)</b></code><br>
 <code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_PING</code>, <code class='datatype'>string(8bit)</code> <code class='argument'>data</code><b>)</b></code><br>
 <code><span class='object'>Protocols.WebSocket.Frame</span> <span class='class'>Protocols.WebSocket.Frame</span><b>(</b><code class='argument'>FRAME_PONG</code>, <code class='datatype'>string(8bit)</code> <code class='argument'>data</code><b>)</b></code></p></dd>
@@ -137,7 +173,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/WebSocket/Frame.html","name":"Frame"};</script>
 <script src='../../../../ex/predef_3A_3A/Protocols/WebSocket/index.js'></script>

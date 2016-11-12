@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Protocols.LDAP</title>
-    <!-- 220-->
+    <title>Protocols.LDAP - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../style.css'>
     <script src='../../../site.js'></script>
-    <script src='../../../pike_version.js'></script>
-    <script src='../../../timestamp.js'></script>
+    <script src='../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -99,8 +99,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dt class='head--doc'>Description</dt>
 <dd class='body--doc'><p>Constants for Microsoft AD Well-Known Object GUIDs. These are e.g.
  used in LDAP URLs:</p>
-<pre><code>"ldap://server/<WKGUID=" + Protocols.LDAP.GUID_USERS_CONTAINER +
-  ",dc=my,dc=domain,dc=com>"</code></pre>
+<pre><code><span class='string'>"ldap://server/&lt;WKGUID="</span> <span class='delim'>+</span> <span class='ns'>Protocols</span><span class='delim'>.</span>LDAP<span class='delim'>.</span>GUID_USERS_CONTAINER <span class='delim'>+</span>
+  <span class='string'>",dc=my,dc=domain,dc=com&gt;"</span>
+</code></pre>
 </dd></dl>
 
 
@@ -835,7 +836,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Protocols/LDAP.html","name":"LDAP"};</script>
 <script src='../../../ex/predef_3A_3A/Protocols/index.js'></script>

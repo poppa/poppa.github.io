@@ -3,18 +3,18 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - SSL.File</title>
-    <!-- 220-->
+    <title>SSL.File - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     
   </head>
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -56,6 +56,7 @@
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/errno.html'>errno()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/get_peer_certificate_info.html'>get_peer_certificate_info()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/get_peer_certificates.html'>get_peer_certificates()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/get_server_name.html'>get_server_name()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/internal_poll.html'>internal_poll()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/is_open.html'>is_open()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/linger.html'>linger()</a></li>
@@ -64,6 +65,7 @@
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_alert_callback.html'>query_alert_callback()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_application_protocol.html'>query_application_protocol()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_backend.html'>query_backend()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/query_buffer_mode.html'>query_buffer_mode()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_callbacks.html'>query_callbacks()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_close_callback.html'>query_close_callback()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/query_connection.html'>query_connection()</a></li>
@@ -82,6 +84,7 @@
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_backend.html'>set_backend()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_blocking.html'>set_blocking()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_blocking_keep_callbacks.html'>set_blocking_keep_callbacks()</a></li>
+<li><a href='../../../../ex/predef_3A_3A/SSL/File/set_buffer_mode.html'>set_buffer_mode()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_callbacks.html'>set_callbacks()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_close_callback.html'>set_close_callback()</a></li>
 <li><a href='../../../../ex/predef_3A_3A/SSL/File/set_id.html'>set_id()</a></li>
@@ -97,7 +100,7 @@
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     
     <script>

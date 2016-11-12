@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - Stdio.UDP()-&gt;send()</title>
-    <!-- 220-->
+    <title>Stdio.UDP()-&gt;send() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../style.css'>
     <script src='../../../../site.js'></script>
-    <script src='../../../../pike_version.js'></script>
-    <script src='../../../../timestamp.js'></script>
+    <script src='../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -74,7 +74,25 @@ svg a { fill:#0768b2; text-decoration: underline; }
  2 for don't route flag.</p>
 </dd>
 <dt class='head--doc'>Returns</dt>
-<dd class='body--doc'><p>The number of bytes that were actually written.</p>
+<dd class='body--doc'><table class='box'><tr><td><code><code class='key'>(0..)</code></code></td><td><p>The number of bytes that were actually written.</p>
+</td></tr>
+<tr><td><code><code class='key'>(..-1)</code></code></td><td><p>Failed to send the <code class='reference paramref'>message</code>. Check <a class='ms reference' href='../../../predef_3A_3A/Stdio/UDP/errno.html'>errno()</a> for
+       the cause. Common causes are:</p>
+<table class='box'><tr><td><code><code class='key'>System.EMSGSIZE</code></code></td><td><p>The <code class='reference paramref'>message</code> is too large to send unfragmented.</p>
+</td></tr>
+<tr><td><code><code class='key'>System.EWOULDBLOCK</code></code></td><td><p>The send buffers are full.</p>
+</td></tr>
+</table></td></tr>
+</table>
+</dd>
+<dt class='head--doc'>Throws</dt>
+<dd class='body--doc'><p>Throws errors on invalid arguments and uninitialized object.</p>
+</dd>
+<dt class='head--doc'>Note</dt>
+<dd class='body--doc'><p>Versions of Pike prior to 8.1.5 threw errors also on EMSGSIZE
+   (<code class='expr'>"Too&nbsp;big&nbsp;message"</code>) and EWOULDBLOCK
+  .(<code class='expr'>"Message&nbsp;would&nbsp;block."</code>). These versions of Pike also
+   did not update the object errno on this function failing.</p>
 </dd></dl>
 
           </article>
@@ -82,7 +100,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/Stdio/UDP/send.html","name":"send"};</script>
 <script src='../../../../ex/predef_3A_3A/Stdio/UDP/index.js'></script>

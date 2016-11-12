@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - search()</title>
-    <!-- 220-->
+    <title>search() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../style.css'>
     <script src='../../site.js'></script>
-    <script src='../../pike_version.js'></script>
-    <script src='../../timestamp.js'></script>
+    <script src='../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -65,14 +65,14 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dd><p><code><code class='datatype'>int</code> <b><span class='method'>search</span>(</b><code class='datatype'>string</code> <code class='argument'>haystack</code>, <code class='datatype'>string</code>|<code class='datatype'>int</code> <code class='argument'>needle</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>start</code><b>)</b></code><br>
 <code><code class='datatype'>int</code> <b><span class='method'>search</span>(</b><code class='datatype'>array</code> <code class='argument'>haystack</code>, <code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>int</code>|<code class='datatype'>void</code> <code class='argument'>start</code><b>)</b></code><br>
 <code><code class='datatype'>mixed</code> <b><span class='method'>search</span>(</b><code class='datatype'>mapping</code> <code class='argument'>haystack</code>, <code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>start</code><b>)</b></code><br>
-<code><code class='datatype'>mixed</code> <b><span class='method'>search</span>(</b><code class='datatype'>object</code> <code class='argument'>haystack</code>, <code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>start</code><b>)</b></code></p></dd>
+<code><code class='datatype'>mixed</code> <b><span class='method'>search</span>(</b><code class='datatype'>object</code> <code class='argument'>haystack</code>, <code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>start</code>, <code class='datatype'>mixed</code> ...  <code class='argument'>extra_args</code><b>)</b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
-<dd class='body--doc'><p>Search for <code class='reference paramref'>needle</code> in <code class='reference paramref'>haystack</code>. Return the position of <code class='reference paramref'>needle</code> in
-   <code class='reference paramref'>haystack</code> or <code class='expr'>-1</code> if not found.</p>
-<p>   If the optional argument <code class='reference paramref'>start</code> is present search is started at
-   this position.</p>
-<code>haystack</code> can have any of the following types:<br /><table class='box'><tr><td><code><code class='datatype'>string</code></code></td><td><p>When <code class='reference paramref'>haystack</code> is a string <code class='reference paramref'>needle</code> must be a string or an int,
+<dd class='body--doc'><p>Search for <code class='reference paramref'>needle</code> in <code class='reference paramref'>haystack</code>.</p>
+</dd>
+<dt class='head--doc'><span id='p-haystack'></span>Parameter <code class='parameter'>haystack</code></dt>
+<dd></dd><dd class='body--doc'><p>Item to search in. This can be one of:</p>
+<table class='box'><tr><td><code><code class='datatype'>string</code></code></td><td><p>When <code class='reference paramref'>haystack</code> is a string <code class='reference paramref'>needle</code> must be a string or an int,
        and the first occurrence of the string or int is returned.</p>
 </td></tr>
 <tr><td><code><code class='datatype'>array</code></code></td><td><p>When <code class='reference paramref'>haystack</code> is an array, <code class='reference paramref'>needle</code> is compared only to
@@ -80,12 +80,11 @@ svg a { fill:#0768b2; text-decoration: underline; }
 </td></tr>
 <tr><td><code><code class='datatype'>mapping</code></code></td><td><p>When <code class='reference paramref'>haystack</code> is a mapping, <a class='ms reference' href='../predef_3A_3A/search.html'>search()</a> tries to find the index
        connected to the data <code class='reference paramref'>needle</code>. That is, it tries to lookup the
-       mapping backwards. If <code class='reference paramref'>needle</code> isn't present in the mapping, zero
-       is returned, and zero_type() will return 1 for this zero.</p>
+       mapping backwards.</p>
 </td></tr>
 <tr><td><code><code class='datatype'>object</code></code></td><td><p>When <code class='reference paramref'>haystack</code> is an object implementing <a class='ms reference' href='../lfun_3A_3A/_search.html'>lfun::_search()</a>,
-       the result of calling <a class='ms reference' href='../lfun_3A_3A/_search.html'>lfun::_search()</a> with <code class='reference paramref'>needle</code> will
-       be returned.</p>
+       the result of calling <a class='ms reference' href='../lfun_3A_3A/_search.html'>lfun::_search()</a> with <code class='reference paramref'>needle</code>, <code class='reference paramref'>start</code>
+       and any <code class='reference paramref'>extra_args</code> will be returned.</p>
 <p>       If <code class='reference paramref'>haystack</code> is an object that doesn't implement <a class='ms reference' href='../lfun_3A_3A/_search.html'>lfun::_search()</a>
        it is assumed to be an <a class='ms reference' href='../predef_3A_3A/Iterator.html'>Iterator</a>, and implement
        <a class='ms reference' href='../predef_3A_3A/Iterator/_index.html'>Iterator()-&gt;index()</a>, <a class='ms reference' href='../predef_3A_3A/Iterator/value.html'>Iterator()-&gt;value()</a>, and
@@ -93,8 +92,22 @@ svg a { fill:#0768b2; text-decoration: underline; }
        elements with <a class='ms reference' href='../predef_3A_3A/_backtick_eq_eq.html'>`==()</a> until a match with <code class='reference paramref'>needle</code> is found.
        If <code class='reference paramref'>needle</code> is found <code class='reference paramref'>haystack</code> will be advanced to the element,
        and the iterator index will be returned. If <code class='reference paramref'>needle</code> is not
-       found, <code class='reference paramref'>haystack</code> will be advanced to the end (and will thus
-       evaluate to false), and a zero with zero_type 1 will be returned.</p>
+       found, <code class='reference paramref'>haystack</code> will be advanced to the end.</p>
+</td></tr>
+</table>
+</dd>
+<dt class='head--doc'><span id='p-start'></span>Parameter <code class='parameter'>start</code></dt>
+<dd></dd><dd class='body--doc'><p>If the optional argument <code class='reference paramref'>start</code> is present search is started at
+   this position. This has no effect on mappings.</p>
+</dd>
+<dt class='head--doc'>Returns</dt>
+<dd class='body--doc'><p>Returns the position of <code class='reference paramref'>needle</code> in <code class='reference paramref'>haystack</code> if found.</p>
+<p>   If not found the returned value depends on the type of <code class='reference paramref'>haystack</code>:</p>
+<table class='box'><tr><td><code><code class='datatype'>string</code>|<code class='datatype'>array</code></code></td><td><p><code class='expr'>-1</code>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>mapping</code>|<code class='object resolved'><a class='ms reference' href='../predef_3A_3A/Iterator.html'>Iterator</a></code></code></td><td><p><a class='ms reference' href='../predef_3A_3A.html'>UNDEFINED</a>.</p>
+</td></tr>
+<tr><td><code><code class='datatype'>object</code></code></td><td><p>The value returned by <a class='ms reference' href='../lfun_3A_3A/_search.html'>lfun::_search()</a>.</p>
 </td></tr>
 </table>
 </dd>
@@ -117,7 +130,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/search.html","name":"search"};</script>
 <script src='../../ex/predef_3A_3A/index.js'></script>

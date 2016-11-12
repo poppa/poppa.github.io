@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - __builtin.Sql.Connection()-&gt;big_query()</title>
-    <!-- 220-->
+    <title>__builtin.Sql.Connection()-&gt;big_query() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../../../../style.css'>
     <script src='../../../../../site.js'></script>
-    <script src='../../../../../pike_version.js'></script>
-    <script src='../../../../../timestamp.js'></script>
+    <script src='../../../../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -121,8 +121,9 @@ svg a { fill:#0768b2; text-decoration: underline; }
    Each index in the mapping corresponds to one such variable, and the
    value for that index is substituted (quoted) into the query wherever
    the variable is used.</p>
-<pre><code>res = query("SELECT foo FROM bar WHERE gazonk=:baz",
-            ([":baz":"value"]));</code></pre><p>Binary values (BLOBs) may need to be placed in multisets.</p>
+<pre><code>res <span class='delim'>=</span> query<span class='delim'>(</span><span class='string'>"SELECT foo FROM bar WHERE gazonk=:baz"</span><span class='delim'>,</span>
+            <span class='delim'>(</span><span class='delim'>[</span><span class='string'>":baz"</span><span class='delim'>:</span><span class='string'>"value"</span><span class='delim'>]</span><span class='delim'>)</span><span class='delim'>)</span><span class='delim'>;</span>
+</code></pre><p>Binary values (BLOBs) may need to be placed in multisets.</p>
 </dd>
 <dt class='head--doc'>Returns</dt>
 <dd class='body--doc'><p>The result is returned as an <a class='ms reference' href='../../../../predef_3A_3A/Sql/sql_result.html'>Sql.sql_result</a> object in untyped
@@ -169,7 +170,8 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dt class='head--doc'><span id='p-extraargs'></span>Parameter <code class='parameter'>extraargs</code></dt>
 <dd></dd><dd class='body--doc'><p>Arguments as you would use in sprintf. They are automatically
    quoted.</p>
-<pre><code>res = query("select foo from bar where gazonk=%s","value");</code></pre><p>The result is returned as an <a class='ms reference' href='../../../../predef_3A_3A/Sql/sql_result.html'>Sql.sql_result</a> object in untyped
+<pre><code>res <span class='delim'>=</span> query<span class='delim'>(</span><span class='string'>"select foo from bar where gazonk=%s"</span><span class='delim'>,</span><span class='string'>"value"</span><span class='delim'>)</span><span class='delim'>;</span>
+</code></pre><p>The result is returned as an <a class='ms reference' href='../../../../predef_3A_3A/Sql/sql_result.html'>Sql.sql_result</a> object in untyped
  mode. This allows for having some more info about the result as
  well as processing the result in a streaming fashion, although the
  result itself wasn't obtained streamingly from the server. Returns
@@ -193,7 +195,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/__builtin/Sql/Connection/big_query.html","name":"big_query"};</script>
 <script src='../../../../../ex/predef_3A_3A/__builtin/Sql/Connection/index.js'></script>

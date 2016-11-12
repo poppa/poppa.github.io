@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - lfun::_search()</title>
-    <!-- 220-->
+    <title>lfun::_search() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../style.css'>
     <script src='../../site.js'></script>
-    <script src='../../pike_version.js'></script>
-    <script src='../../timestamp.js'></script>
+    <script src='../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -63,10 +63,21 @@ svg a { fill:#0768b2; text-decoration: underline; }
 <dt class='head--type'><span class='homogen--type'>Method</span>
 <span class='homogen--name'><b>_search</b></span>
 </dt>
-<dd><p><code><code class='datatype'>mixed</code> <b><span class='method'>_search</span>(</b><code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>start</code><b>)</b></code></p></dd>
+<dd><p><code><code class='datatype'>mixed</code> <b><span class='method'>_search</span>(</b><code class='datatype'>mixed</code> <code class='argument'>needle</code>, <code class='datatype'>mixed</code>|<code class='datatype'>void</code> <code class='argument'>start</code>, <code class='datatype'>mixed</code> ...  <code class='argument'>extra_args</code><b>)</b></code></p></dd>
 
 <dt class='head--doc'>Description</dt>
 <dd class='body--doc'><p>Search callback.</p>
+<p>   The arguments are sent straight from <code class='reference unresolved'>search()</code>, and are
+   as follows:</p>
+</dd>
+<dt class='head--doc'><span id='p-needle'></span>Parameter <code class='parameter'>needle</code></dt>
+<dd></dd><dd class='body--doc'><p>Value to search for.</p>
+</dd>
+<dt class='head--doc'><span id='p-start'></span>Parameter <code class='parameter'>start</code></dt>
+<dd></dd><dd class='body--doc'><p>The first position to search.</p>
+</dd>
+<dt class='head--doc'><span id='p-extra_args'></span>Parameter <code class='parameter'>extra_args</code></dt>
+<dd></dd><dd class='body--doc'><p>Optional extra arguments as passed to <code class='reference unresolved'>search()</code>.</p>
 </dd>
 <dt class='head--doc'>See also</dt>
 <dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/search.html'>search()</a></p>
@@ -77,7 +88,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/lfun_3A_3A/_search.html","name":"_search"};</script>
 <script src='../../ex/lfun_3A_3A/index.js'></script>

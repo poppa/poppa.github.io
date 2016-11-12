@@ -3,12 +3,12 @@
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
-    <title>Pike Reference Manual - hash()</title>
-    <!-- 220-->
+    <title>hash() - Pike Reference Manual</title>
+    <!-- 221-->
     <link rel='stylesheet' href='../../style.css'>
     <script src='../../site.js'></script>
-    <script src='../../pike_version.js'></script>
-    <script src='../../timestamp.js'></script>
+    <script src='../../constants.js'></script>
+    <script>PikeDoc.NO_DYNAMIC = false;</script>
     <style type='text/css'>
 svg line { stroke:#343434; stroke-width:2; }
 svg text { fill:#343434; }
@@ -19,7 +19,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
   <body>
     <header>
       <div class="header">
-        <div id="version"><strong data-id="version"></strong></div>
+        <div id="version"><strong data-id="version">Pike v8.1 release 6</strong></div>
         <div id="burger">&#9776;</div><!-- Hamburger icon -->
         <h1>
           <a href="http://pike.lysator.liu.se/" class="logo">
@@ -74,9 +74,11 @@ svg a { fill:#0768b2; text-decoration: underline; }
    otherwise the result will be &gt;= 0 and &lt;= 0x7fffffff.</p>
 </dd>
 <dt class='head--doc'>Note</dt>
-<dd class='body--doc'><p>The hash algorithm was changed in Pike 7.5. If you want a hash
+<dd class='body--doc'><p>The hash algorithm was changed in Pike 8.1. If you want a hash
+   that is compatible with Pike 8.0 and earlier, use <a class='ms reference' href='../predef_3A_3A/hash_8_0.html'>hash_8_0()</a>.</p>
+<p>   The hash algorithm was also changed in Pike 7.5. If you want a hash
    that is compatible with Pike 7.4 and earlier, use <a class='ms reference' href='../predef_3A_3A/hash_7_4.html'>hash_7_4()</a>.
-   The difference only affects wide strings.</p>
+   The difference with regards to <a class='ms reference' href='../predef_3A_3A/hash_8_0.html'>hash_8_0()</a> only affects wide strings.</p>
 <p>   The hash algorithm was also changed in Pike 7.1. If you want a hash
    that is compatible with Pike 7.0 and earlier, use <a class='ms reference' href='../predef_3A_3A/hash_7_0.html'>hash_7_0()</a>.</p>
 </dd>
@@ -85,7 +87,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
    in that <a class='ms reference' href='../predef_3A_3A/hash_value.html'>hash_value()</a> returns a process specific value.</p>
 </dd>
 <dt class='head--doc'>See also</dt>
-<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/hash_7_0.html'>hash_7_0()</a>, <a class='ms reference' href='../predef_3A_3A/hash_7_4.html'>hash_7_4()</a>, <a class='ms reference' href='../predef_3A_3A/hash_value.html'>hash_value</a></p>
+<dd class='body--doc'><p><a class='ms reference' href='../predef_3A_3A/hash_7_0.html'>hash_7_0()</a>, <a class='ms reference' href='../predef_3A_3A/hash_7_4.html'>hash_7_4()</a>, <a class='ms reference' href='../predef_3A_3A/hash_8_0.html'>hash_8_0()</a>, <a class='ms reference' href='../predef_3A_3A/hash_value.html'>hash_value</a></p>
 </dd></dl>
 
           </article>
@@ -93,7 +95,7 @@ svg a { fill:#0768b2; text-decoration: underline; }
       </div>
     </div>
     <footer>
-      <div id="build-date">Extracted from <strong data-id="version"></strong> as of <strong data-id="date"></strong>.</div>
+      <div id="build-date">Extracted from <strong data-id="version">Pike v8.1 release 6</strong> as of <strong data-id="date" data-timestamp="1478943856">2016-11-12</strong>.</div>
     </footer>
     <script>PikeDoc.current = {"link":"ex/predef_3A_3A/hash.html","name":"hash"};</script>
 <script src='../../ex/predef_3A_3A/index.js'></script>

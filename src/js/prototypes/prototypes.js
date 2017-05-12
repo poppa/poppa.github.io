@@ -7,6 +7,8 @@
   purpose granted as long as my name is still attached to it. More
   specifically, the GPL, LGPL and MPL licenses apply to this software.
 */
+// jshint esversion: 6
+
 (function() {
   'use strict';
 

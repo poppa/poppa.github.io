@@ -1,12 +1,13 @@
+// jshint esversion: 6
 /* global App $ localStorage */
 
 (function() {
   'use strict';
   const ACCESS_TOKEN  = '40563140.5d854a2.bf2dc58a4abc46478f3be8b43bc1e53b';
   const USER_ID       = '40563140';
-  const store = localStorage;
+  const store         = localStorage;
 
-  App.plugins.instagram = (new function() {
+  const instagram = function() {
     this.run = () => {
       let cache = store.getItem('instagram');
 
@@ -66,5 +67,7 @@
         t.append(s);
       });
     };
-  }());
+  };
+
+  App.plugins.instagram = new instagram();
 }());

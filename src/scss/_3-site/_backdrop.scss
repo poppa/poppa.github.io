@@ -16,6 +16,13 @@
     height: 25vw;
   }
 
+  &.b2 {
+    background-image: url(../img/spiderweb-www.jpg);
+    max-height: 320px;
+    height: 25vw;
+  }
+
+
   &.ig, &.stuff {
     background-color: $accent-color-3;
     margin-top: $spacing-unit;

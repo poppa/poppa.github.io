@@ -1,3 +1,4 @@
+// jshint esversion: 6, node: true
 /* globals require */
 'use strict';
 
@@ -440,5 +441,5 @@ gulp.task('default', [ 'all-js', 'style', 'image', 'font', 'reload-template', 'h
   gulp.watch(images,       [ 'image'                       ]);
   gulp.watch(fonts,        [ 'font'                        ]);
   gulp.watch(datafiles,    [ 'htmlmin'                     ]);
-  gulp.watch(templates     [ 'reload-template', 'htmlmin'  ]);
+  gulp.watch(templates,    [ 'reload-template', 'htmlmin'  ]);
 });

@@ -1,3 +1,4 @@
+// jshint esversion: 6
 /* global App $ */
 
 (function() {
@@ -6,7 +7,7 @@
   const TOKEN = '7a1785a8e3d036cf2174e4b7e80b6f70b3b1faca';
   const USERNAME = 'poppa';
 
-  App.plugins.github = (new function() {
+  const github = function() {
     let apiUri = 'https://api.github.com';
     let repoPath = `/users/${USERNAME}/repos`;
     let query = `?token=${TOKEN}&auth=oauth&callback=?`;
@@ -50,17 +51,17 @@
       let t = $('#github');
       t.empty();
       data.data.sort((a, b) => {
-        return a.watchers_count < b.watchers_count
-          ? 1
-          : a.watchers_count === b.watchers_count
-            ? 0
-            : -1;
+        return a.watchers_count < b.watchers_count ?
+          1 : a.watchers_count === b.watchers_count ?
+            0 : -1;
       });
 
       let tmp = [],
-        name = undefined,
-        obj = undefined,
-        i = 0, j = 0, x = undefined;
+        name,
+        obj,
+        i = 0,
+        j = 0,
+        x;
 
       for (; i < sortOrder.length; i++) {
         name = sortOrder[i];
@@ -117,7 +118,9 @@
         });
       });
     };
-  }());
+  };
+
+  App.plugins.github = new github();
 
 
 }());

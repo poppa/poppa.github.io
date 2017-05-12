@@ -1,9 +1,10 @@
+// jshint esversion: 6
 /* global App */
 
 (function() {
   'use strict';
 
-  App.plugins.portfolio = (new function() {
+  var portfolio = function() {
     const buttons = [];
     // let current = null;
 
@@ -15,7 +16,8 @@
       });
     };
 
-    const viewArea = (new function() {
+
+    const _viewArea = function() {
       let va       = null,
         loader     = null,
         cont       = null,
@@ -27,7 +29,10 @@
       const init = () => {
         va = $('<div>').addClass('viewarea');
         cont = $('<div>').addClass('content');
-        loader = $('<div>').addClass('loading').html('<i class="fa fa-spinner fa-spin"></i> Loading...').hide();
+        loader = $('<div>')
+                  .addClass('loading')
+                  .html('<i class="fa fa-spinner fa-spin"></i> Loading...')
+                  .hide();
         va.append(cont);
       };
 
@@ -112,7 +117,9 @@
 
       // On DOM ready
       $(() => { init(); });
-    }());
+    };
+
+    const viewArea = new _viewArea();
 
     class button {
 
@@ -197,13 +204,15 @@
     };
 
     this.run = () => {
-      $('[data-portfolio').each((i, el) => {
+      $('[data-portfolio]').each((i, el) => {
         el = $(el);
         let b = new button(el);
         buttons.push(b);
       });
 
     };
-  }());
+  };
+
+  App.plugins.portfolio = new portfolio();
 
 }());

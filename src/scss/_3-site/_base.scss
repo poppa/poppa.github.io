@@ -70,6 +70,9 @@ header {
   width: 100%;
   background: $header-bg-color;
   transition: background-color .6s ease-in;
+  -webkit-backdrop-filter: invert(0%) blur(3px);
+  -moz-backdrop-filter: invert(0%) blur(3px);
+  backdrop-filter: invert(0%) blur(3px);
   //background: #f1f1f1;
 
   + div:first-of-type {
@@ -83,6 +86,9 @@ header {
     border-bottom: 1px solid rgba(0,0,0,.2);
     background-color: rgba(255, 255, 255, .8);
     box-shadow: 0px 3px 12px rgba(0,0,0,.1);
+    -webkit-backdrop-filter: invert(100%) blur(3px);
+    -moz-backdrop-filter: invert(100%) blur(3px);
+    backdrop-filter: invert(100%) blur(3px);
     h1 {
       img {
         width: 4.2rem;

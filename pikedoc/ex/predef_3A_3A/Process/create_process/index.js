@@ -1,4 +1,0 @@
-// Class path Process.create_process
-PikeDoc.registerSymbol('Process.create_process', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Process/create_process/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Process/create_process/kill.html","modifiers":null,"name":"kill"},{"link":"ex/predef_3A_3A/Process/create_process/last_signal.html","modifiers":null,"name":"last_signal"},{"link":"ex/predef_3A_3A/Process/create_process/pid.html","modifiers":null,"name":"pid"},{"link":"ex/predef_3A_3A/Process/create_process/set_priority.html","modifiers":null,"name":"set_priority"},{"link":"ex/predef_3A_3A/Process/create_process/status.html","modifiers":null,"name":"status"},{"link":"ex/predef_3A_3A/Process/create_process/wait.html","modifiers":null,"name":"wait"}])
-.finish();

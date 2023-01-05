@@ -1,4 +1,0 @@
-// Class path GTK2.CheckMenuItem
-PikeDoc.registerSymbol('GTK2.CheckMenuItem', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/create.html","modifiers":["protected"],"name":"create"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/get_active.html","modifiers":null,"name":"get_active"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/get_draw_as_radio.html","modifiers":null,"name":"get_draw_as_radio"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/get_inconsistent.html","modifiers":null,"name":"get_inconsistent"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/set_active.html","modifiers":null,"name":"set_active"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/set_draw_as_radio.html","modifiers":null,"name":"set_draw_as_radio"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/set_inconsistent.html","modifiers":null,"name":"set_inconsistent"},{"link":"ex/predef_3A_3A/GTK2/CheckMenuItem/toggled.html","modifiers":null,"name":"toggled"}])
-.finish();

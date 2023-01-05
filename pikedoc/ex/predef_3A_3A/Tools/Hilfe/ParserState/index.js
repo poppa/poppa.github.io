@@ -1,4 +1,0 @@
-// Class path Tools.Hilfe.ParserState
-PikeDoc.registerSymbol('Tools.Hilfe.ParserState', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/datap.html","modifiers":null,"name":"datap"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/feed.html","modifiers":null,"name":"feed"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/finishedp.html","modifiers":null,"name":"finishedp"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/flush.html","modifiers":null,"name":"flush"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/push_string.html","modifiers":null,"name":"push_string"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/read.html","modifiers":null,"name":"read"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/show_error.html","modifiers":null,"name":"show_error"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState/status.html","modifiers":null,"name":"status"}])
-.finish();

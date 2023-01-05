@@ -1,4 +1,0 @@
-// Class path Calendar.Stardate.cTick
-PikeDoc.registerSymbol('Calendar.Stardate.cTick', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/format_long.html","modifiers":null,"name":"format_long"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/format_short.html","modifiers":null,"name":"format_short"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/format_vshort.html","modifiers":null,"name":"format_vshort"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/number_of_days.html","modifiers":null,"name":"number_of_days"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/number_of_seconds.html","modifiers":null,"name":"number_of_seconds"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/tic.html","modifiers":null,"name":"tic"},{"link":"ex/predef_3A_3A/Calendar/Stardate/cTick/tics.html","modifiers":null,"name":"tics"}])
-.finish();

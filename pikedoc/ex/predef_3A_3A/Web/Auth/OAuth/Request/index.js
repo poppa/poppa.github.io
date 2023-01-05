@@ -1,5 +1,0 @@
-// Class path Web.Auth.OAuth.Request
-PikeDoc.registerSymbol('Web.Auth.OAuth.Request', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/add_param.html","modifiers":null,"name":"add_param"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/add_params.html","modifiers":null,"name":"add_params"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/create.html","modifiers":["protected"],"name":"create"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/get_param.html","modifiers":null,"name":"get_param"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/get_params.html","modifiers":null,"name":"get_params"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/get_signature_base.html","modifiers":null,"name":"get_signature_base"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/sign_request.html","modifiers":null,"name":"sign_request"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/submit.html","modifiers":null,"name":"submit"}])
-.addChildren('operator', [{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Request/cast.html","modifiers":["protected"],"name":"cast"}])
-.finish();

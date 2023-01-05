@@ -1,5 +1,0 @@
-// Class path Tools.Hilfe
-PikeDoc.registerSymbol('Tools.Hilfe', PikeDoc.isInline)
-.addChildren('class', [{"link":"ex/predef_3A_3A/Tools/Hilfe/Command.html","modifiers":null,"name":"Command"},{"link":"ex/predef_3A_3A/Tools/Hilfe/CommandReset.html","modifiers":null,"name":"CommandReset"},{"link":"ex/predef_3A_3A/Tools/Hilfe/Evaluator.html","modifiers":null,"name":"Evaluator"},{"link":"ex/predef_3A_3A/Tools/Hilfe/Expression.html","modifiers":null,"name":"Expression"},{"link":"ex/predef_3A_3A/Tools/Hilfe/GenericAsyncHilfe.html","modifiers":null,"name":"GenericAsyncHilfe"},{"link":"ex/predef_3A_3A/Tools/Hilfe/GenericHilfe.html","modifiers":null,"name":"GenericHilfe"},{"link":"ex/predef_3A_3A/Tools/Hilfe/HilfeHistory.html","modifiers":null,"name":"HilfeHistory"},{"link":"ex/predef_3A_3A/Tools/Hilfe/ParserState.html","modifiers":null,"name":"ParserState"},{"link":"ex/predef_3A_3A/Tools/Hilfe/StdinHilfe.html","modifiers":null,"name":"StdinHilfe"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Tools/Hilfe/format_hr_time.html","modifiers":null,"name":"format_hr_time"}])
-.finish();

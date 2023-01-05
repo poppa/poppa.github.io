@@ -1,5 +1,0 @@
-// Class path Graphics.Graph
-PikeDoc.registerSymbol('Graphics.Graph', PikeDoc.isInline)
-.addChildren('class', [{"link":"ex/predef_3A_3A/Graphics/Graph/create_bars.html","modifiers":null,"name":"create_bars"},{"link":"ex/predef_3A_3A/Graphics/Graph/create_graph.html","modifiers":null,"name":"create_graph"},{"link":"ex/predef_3A_3A/Graphics/Graph/create_pie.html","modifiers":null,"name":"create_pie"},{"link":"ex/predef_3A_3A/Graphics/Graph/polyline.html","modifiers":null,"name":"polyline"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Graphics/Graph/bars.html","modifiers":null,"name":"bars"},{"link":"ex/predef_3A_3A/Graphics/Graph/check_mapping.html","modifiers":null,"name":"check_mapping"},{"link":"ex/predef_3A_3A/Graphics/Graph/graph.html","modifiers":null,"name":"graph"},{"link":"ex/predef_3A_3A/Graphics/Graph/line.html","modifiers":null,"name":"line"},{"link":"ex/predef_3A_3A/Graphics/Graph/norm.html","modifiers":null,"name":"norm"},{"link":"ex/predef_3A_3A/Graphics/Graph/pie.html","modifiers":null,"name":"pie"},{"link":"ex/predef_3A_3A/Graphics/Graph/sumbars.html","modifiers":null,"name":"sumbars"}])
-.finish();

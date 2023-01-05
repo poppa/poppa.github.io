@@ -1,4 +1,0 @@
-// Class path Search.Utils.Logger
-PikeDoc.registerSymbol('Search.Utils.Logger', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Search/Utils/Logger/add_program_name.html","modifiers":null,"name":"add_program_name"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/get_log.html","modifiers":null,"name":"get_log"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/log_error.html","modifiers":null,"name":"log_error"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/log_event.html","modifiers":null,"name":"log_event"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/log_notice.html","modifiers":null,"name":"log_notice"},{"link":"ex/predef_3A_3A/Search/Utils/Logger/log_warning.html","modifiers":null,"name":"log_warning"}])
-.finish();

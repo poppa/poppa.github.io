@@ -1,4 +1,0 @@
-// Class path Protocols.NNTP.client
-PikeDoc.registerSymbol('Protocols.NNTP.client', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/NNTP/client/article.html","modifiers":null,"name":"article"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/body.html","modifiers":null,"name":"body"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/go_to_group.html","modifiers":null,"name":"go_to_group"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/head.html","modifiers":null,"name":"head"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/list_groups.html","modifiers":null,"name":"list_groups"},{"link":"ex/predef_3A_3A/Protocols/NNTP/client/set_group.html","modifiers":null,"name":"set_group"}])
-.finish();

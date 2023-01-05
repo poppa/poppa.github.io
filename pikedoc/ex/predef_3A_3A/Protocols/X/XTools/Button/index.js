@@ -1,4 +1,0 @@
-// Class path Protocols.X.XTools.Button
-PikeDoc.registerSymbol('Protocols.X.XTools.Button', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/button_exposed.html","modifiers":null,"name":"button_exposed"},{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/button_pressed.html","modifiers":null,"name":"button_pressed"},{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/button_released.html","modifiers":null,"name":"button_released"},{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/window_entered.html","modifiers":null,"name":"window_entered"},{"link":"ex/predef_3A_3A/Protocols/X/XTools/Button/window_left.html","modifiers":null,"name":"window_left"}])
-.finish();

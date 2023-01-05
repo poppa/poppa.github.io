@@ -1,4 +1,0 @@
-// Class path Web.Auth.OAuth.Client
-PikeDoc.registerSymbol('Web.Auth.OAuth.Client', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/create.html","modifiers":["protected"],"name":"create"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/get_access_token_url.html","modifiers":null,"name":"get_access_token_url"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/get_consumer.html","modifiers":null,"name":"get_consumer"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/get_request_token_url.html","modifiers":null,"name":"get_request_token_url"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/get_token.html","modifiers":null,"name":"get_token"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/get_user_auth_url.html","modifiers":null,"name":"get_user_auth_url"},{"link":"ex/predef_3A_3A/Web/Auth/OAuth/Client/set_token.html","modifiers":null,"name":"set_token"}])
-.finish();

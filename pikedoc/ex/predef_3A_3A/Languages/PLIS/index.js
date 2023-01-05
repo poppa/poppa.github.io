@@ -1,5 +1,0 @@
-// Class path Languages.PLIS
-PikeDoc.registerSymbol('Languages.PLIS', PikeDoc.isInline)
-.addChildren('class', [{"link":"ex/predef_3A_3A/Languages/PLIS/Binding.html","modifiers":null,"name":"Binding"},{"link":"ex/predef_3A_3A/Languages/PLIS/Builtin.html","modifiers":null,"name":"Builtin"},{"link":"ex/predef_3A_3A/Languages/PLIS/Lambda.html","modifiers":null,"name":"Lambda"},{"link":"ex/predef_3A_3A/Languages/PLIS/Number.html","modifiers":null,"name":"Number"},{"link":"ex/predef_3A_3A/Languages/PLIS/Parser.html","modifiers":null,"name":"Parser"},{"link":"ex/predef_3A_3A/Languages/PLIS/SelfEvaluating.html","modifiers":null,"name":"SelfEvaluating"},{"link":"ex/predef_3A_3A/Languages/PLIS/String.html","modifiers":null,"name":"String"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Languages/PLIS/default_environment.html","modifiers":null,"name":"default_environment"},{"link":"ex/predef_3A_3A/Languages/PLIS/init_functions.html","modifiers":null,"name":"init_functions"},{"link":"ex/predef_3A_3A/Languages/PLIS/init_specials.html","modifiers":null,"name":"init_specials"},{"link":"ex/predef_3A_3A/Languages/PLIS/main.html","modifiers":null,"name":"main"}])
-.finish();

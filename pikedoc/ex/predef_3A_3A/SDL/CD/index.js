@@ -1,4 +1,0 @@
-// Class path SDL.CD
-PikeDoc.registerSymbol('SDL.CD', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/SDL/CD/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/SDL/CD/eject.html","modifiers":null,"name":"eject"},{"link":"ex/predef_3A_3A/SDL/CD/pause.html","modifiers":null,"name":"pause"},{"link":"ex/predef_3A_3A/SDL/CD/play.html","modifiers":null,"name":"play"},{"link":"ex/predef_3A_3A/SDL/CD/play_tracks.html","modifiers":null,"name":"play_tracks"},{"link":"ex/predef_3A_3A/SDL/CD/resume.html","modifiers":null,"name":"resume"},{"link":"ex/predef_3A_3A/SDL/CD/status.html","modifiers":null,"name":"status"},{"link":"ex/predef_3A_3A/SDL/CD/stop.html","modifiers":null,"name":"stop"},{"link":"ex/predef_3A_3A/SDL/CD/track.html","modifiers":null,"name":"track"}])
-.finish();

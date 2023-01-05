@@ -1,4 +1,0 @@
-// Class path Protocols.HTTP.Session()->Request
-PikeDoc.registerSymbol('Protocols.HTTP.Session()->Request', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/destroy.html","modifiers":null,"name":"destroy"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/do_async.html","modifiers":null,"name":"do_async"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/do_sync.html","modifiers":null,"name":"do_sync"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/do_thread.html","modifiers":null,"name":"do_thread"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/prepare_method.html","modifiers":null,"name":"prepare_method"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/set_callbacks.html","modifiers":null,"name":"set_callbacks"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Session/Request/wait.html","modifiers":null,"name":"wait"}])
-.finish();

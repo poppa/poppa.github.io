@@ -1,4 +1,0 @@
-// Class path Stdio.Readline()->History
-PikeDoc.registerSymbol('Stdio.Readline()->History', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Stdio/Readline/History/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/encode.html","modifiers":null,"name":"encode"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/finishline.html","modifiers":null,"name":"finishline"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/get_history_num.html","modifiers":null,"name":"get_history_num"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/history.html","modifiers":null,"name":"history"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/initline.html","modifiers":null,"name":"initline"},{"link":"ex/predef_3A_3A/Stdio/Readline/History/set_max_history.html","modifiers":null,"name":"set_max_history"}])
-.finish();

@@ -1,5 +1,0 @@
-// Class path Parser.XML.Validating
-PikeDoc.registerSymbol('Parser.XML.Validating', PikeDoc.isInline)
-.addChildren('class', [{"link":"ex/predef_3A_3A/Parser/XML/Validating/Element.html","modifiers":null,"name":"Element"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Parser/XML/Validating/get_external_entity.html","modifiers":null,"name":"get_external_entity"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/isname.html","modifiers":null,"name":"isname"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/isnames.html","modifiers":null,"name":"isnames"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/isnmtoken.html","modifiers":null,"name":"isnmtoken"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/isnmtokens.html","modifiers":null,"name":"isnmtokens"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/parse.html","modifiers":null,"name":"parse"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/parse_dtd.html","modifiers":null,"name":"parse_dtd"},{"link":"ex/predef_3A_3A/Parser/XML/Validating/validate.html","modifiers":null,"name":"validate"}])
-.finish();

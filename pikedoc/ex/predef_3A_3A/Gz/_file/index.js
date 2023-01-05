@@ -1,4 +1,0 @@
-// Class path Gz._file
-PikeDoc.registerSymbol('Gz._file', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Gz/_file/close.html","modifiers":null,"name":"close"},{"link":"ex/predef_3A_3A/Gz/_file/create.html","modifiers":["protected"],"name":"create"},{"link":"ex/predef_3A_3A/Gz/_file/eof.html","modifiers":null,"name":"eof"},{"link":"ex/predef_3A_3A/Gz/_file/open.html","modifiers":null,"name":"open"},{"link":"ex/predef_3A_3A/Gz/_file/read.html","modifiers":null,"name":"read"},{"link":"ex/predef_3A_3A/Gz/_file/seek.html","modifiers":null,"name":"seek"},{"link":"ex/predef_3A_3A/Gz/_file/setparams.html","modifiers":null,"name":"setparams"},{"link":"ex/predef_3A_3A/Gz/_file/tell.html","modifiers":null,"name":"tell"},{"link":"ex/predef_3A_3A/Gz/_file/write.html","modifiers":null,"name":"write"}])
-.finish();

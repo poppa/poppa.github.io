@@ -1,4 +1,0 @@
-// Class path Search.Utils.ProfileEntry
-PikeDoc.registerSymbol('Search.Utils.ProfileEntry', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/check_timeout.html","modifiers":null,"name":"check_timeout"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/get_database.html","modifiers":null,"name":"get_database"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/get_database_value.html","modifiers":null,"name":"get_database_value"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/get_query_value.html","modifiers":null,"name":"get_query_value"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/get_ranking.html","modifiers":null,"name":"get_ranking"},{"link":"ex/predef_3A_3A/Search/Utils/ProfileEntry/get_stop_words.html","modifiers":null,"name":"get_stop_words"}])
-.finish();

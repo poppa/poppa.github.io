@@ -1,4 +1,0 @@
-// Class path Tools.AutoDoc.PikeObjects._Class_or_Module
-PikeDoc.registerSymbol('Tools.AutoDoc.PikeObjects._Class_or_Module', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/addChild.html","modifiers":null,"name":"addChild"},{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/addGroup.html","modifiers":null,"name":"addGroup"},{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/addInherit.html","modifiers":null,"name":"addInherit"},{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/containsDoc.html","modifiers":null,"name":"containsDoc"},{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/findChild.html","modifiers":null,"name":"findChild"},{"link":"ex/predef_3A_3A/Tools/AutoDoc/PikeObjects/_Class_or_Module/findObject.html","modifiers":null,"name":"findObject"}])
-.finish();

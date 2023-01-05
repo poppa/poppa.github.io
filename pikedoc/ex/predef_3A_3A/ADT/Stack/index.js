@@ -1,5 +1,0 @@
-// Class path ADT.Stack
-PikeDoc.registerSymbol('ADT.Stack', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/ADT/Stack/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/ADT/Stack/pop.html","modifiers":null,"name":"pop"},{"link":"ex/predef_3A_3A/ADT/Stack/push.html","modifiers":null,"name":"push"},{"link":"ex/predef_3A_3A/ADT/Stack/quick_pop.html","modifiers":null,"name":"quick_pop"},{"link":"ex/predef_3A_3A/ADT/Stack/reset.html","modifiers":null,"name":"reset"},{"link":"ex/predef_3A_3A/ADT/Stack/set_stack.html","modifiers":null,"name":"set_stack"},{"link":"ex/predef_3A_3A/ADT/Stack/top.html","modifiers":null,"name":"top"}])
-.addChildren('operator', [{"link":"ex/predef_3A_3A/ADT/Stack/_search.html","modifiers":["protected"],"name":"_search"},{"link":"ex/predef_3A_3A/ADT/Stack/_sizeof.html","modifiers":null,"name":"_sizeof"},{"link":"ex/predef_3A_3A/ADT/Stack/_values.html","modifiers":null,"name":"_values"},{"link":"ex/predef_3A_3A/ADT/Stack/_backtick_add.html","modifiers":null,"name":"`+"}])
-.finish();

@@ -1,5 +1,0 @@
-// Class path Yp.Map
-PikeDoc.registerSymbol('Yp.Map', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Yp/Map/all.html","modifiers":null,"name":"all"},{"link":"ex/predef_3A_3A/Yp/Map/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Yp/Map/map.html","modifiers":null,"name":"map"},{"link":"ex/predef_3A_3A/Yp/Map/match.html","modifiers":null,"name":"match"},{"link":"ex/predef_3A_3A/Yp/Map/order.html","modifiers":null,"name":"order"},{"link":"ex/predef_3A_3A/Yp/Map/server.html","modifiers":null,"name":"server"}])
-.addChildren('operator', [{"link":"ex/predef_3A_3A/Yp/Map/_indices.html","modifiers":null,"name":"_indices"},{"link":"ex/predef_3A_3A/Yp/Map/_sizeof.html","modifiers":null,"name":"_sizeof"},{"link":"ex/predef_3A_3A/Yp/Map/_values.html","modifiers":null,"name":"_values"},{"link":"ex/predef_3A_3A/Yp/Map/_backtick_5B_5D.html","modifiers":null,"name":"`[]"},{"link":"ex/predef_3A_3A/Yp/Map/cast.html","modifiers":["protected"],"name":"cast"}])
-.finish();

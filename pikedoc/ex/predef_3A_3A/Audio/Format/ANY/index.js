@@ -1,4 +1,0 @@
-// Class path Audio.Format.ANY
-PikeDoc.registerSymbol('Audio.Format.ANY', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Audio/Format/ANY/check_format.html","modifiers":null,"name":"check_format"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/get_data.html","modifiers":null,"name":"get_data"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/get_frame.html","modifiers":null,"name":"get_frame"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/get_map.html","modifiers":null,"name":"get_map"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/get_sample.html","modifiers":null,"name":"get_sample"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/read_file.html","modifiers":null,"name":"read_file"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/read_streamed.html","modifiers":null,"name":"read_streamed"},{"link":"ex/predef_3A_3A/Audio/Format/ANY/read_string.html","modifiers":null,"name":"read_string"}])
-.finish();

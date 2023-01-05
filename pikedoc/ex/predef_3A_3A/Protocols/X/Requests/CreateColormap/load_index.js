@@ -1,3 +1,0 @@
-// Indirect loader of the symbol index for Protocols.X.Requests.CreateColormap.
-
-PikeDoc.loadScript("ex/predef_3A_3A/Protocols/X/Requests/CreateColormap/index.js", true, null);

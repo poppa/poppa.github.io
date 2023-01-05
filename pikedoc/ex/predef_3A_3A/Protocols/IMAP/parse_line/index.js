@@ -1,4 +1,0 @@
-// Class path Protocols.IMAP.parse_line
-PikeDoc.registerSymbol('Protocols.IMAP.parse_line', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_atom_options.html","modifiers":null,"name":"get_atom_options"},{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_flag_list.html","modifiers":null,"name":"get_flag_list"},{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_range.html","modifiers":null,"name":"get_range"},{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_set.html","modifiers":null,"name":"get_set"},{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_simple_list.html","modifiers":null,"name":"get_simple_list"},{"link":"ex/predef_3A_3A/Protocols/IMAP/parse_line/get_token.html","modifiers":null,"name":"get_token"}])
-.finish();

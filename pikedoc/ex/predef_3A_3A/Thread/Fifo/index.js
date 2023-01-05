@@ -1,4 +1,0 @@
-// Class path Thread.Fifo
-PikeDoc.registerSymbol('Thread.Fifo', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Thread/Fifo/create.html","modifiers":null,"name":"create"},{"link":"ex/predef_3A_3A/Thread/Fifo/read.html","modifiers":null,"name":"read"},{"link":"ex/predef_3A_3A/Thread/Fifo/read_array.html","modifiers":null,"name":"read_array"},{"link":"ex/predef_3A_3A/Thread/Fifo/size.html","modifiers":null,"name":"size"},{"link":"ex/predef_3A_3A/Thread/Fifo/try_read.html","modifiers":null,"name":"try_read"},{"link":"ex/predef_3A_3A/Thread/Fifo/try_read_array.html","modifiers":null,"name":"try_read_array"},{"link":"ex/predef_3A_3A/Thread/Fifo/try_write.html","modifiers":null,"name":"try_write"},{"link":"ex/predef_3A_3A/Thread/Fifo/write.html","modifiers":null,"name":"write"}])
-.finish();

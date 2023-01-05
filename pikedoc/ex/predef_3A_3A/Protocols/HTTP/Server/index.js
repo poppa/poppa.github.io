@@ -1,5 +1,0 @@
-// Class path Protocols.HTTP.Server
-PikeDoc.registerSymbol('Protocols.HTTP.Server', PikeDoc.isInline)
-.addChildren('class', [{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/Port.html","modifiers":null,"name":"Port"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/Request.html","modifiers":null,"name":"Request"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/SSLPort.html","modifiers":null,"name":"SSLPort"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/extension_to_type.html","modifiers":null,"name":"extension_to_type"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/filename_to_type.html","modifiers":null,"name":"filename_to_type"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/http_date.html","modifiers":null,"name":"http_date"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/http_decode_date.html","modifiers":null,"name":"http_decode_date"},{"link":"ex/predef_3A_3A/Protocols/HTTP/Server/http_decode_urlencoded_query.html","modifiers":null,"name":"http_decode_urlencoded_query"}])
-.finish();

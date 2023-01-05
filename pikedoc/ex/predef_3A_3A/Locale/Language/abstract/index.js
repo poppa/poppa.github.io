@@ -1,4 +1,0 @@
-// Class path Locale.Language.abstract
-PikeDoc.registerSymbol('Locale.Language.abstract', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Locale/Language/abstract/date.html","modifiers":null,"name":"date"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/day.html","modifiers":null,"name":"day"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/month.html","modifiers":null,"name":"month"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/number.html","modifiers":null,"name":"number"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/ordered.html","modifiers":null,"name":"ordered"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/short_day.html","modifiers":null,"name":"short_day"},{"link":"ex/predef_3A_3A/Locale/Language/abstract/short_month.html","modifiers":null,"name":"short_month"}])
-.finish();

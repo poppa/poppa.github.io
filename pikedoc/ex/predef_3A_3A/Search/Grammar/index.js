@@ -1,6 +1,0 @@
-// Class path Search.Grammar
-PikeDoc.registerSymbol('Search.Grammar', PikeDoc.isInline)
-.addChildren('module', [{"link":"ex/predef_3A_3A/Search/Grammar/Lexer.html","modifiers":null,"name":"Lexer"}])
-.addChildren('class', [{"link":"ex/predef_3A_3A/Search/Grammar/AbstractParser.html","modifiers":null,"name":"AbstractParser"},{"link":"ex/predef_3A_3A/Search/Grammar/AndNode.html","modifiers":null,"name":"AndNode"},{"link":"ex/predef_3A_3A/Search/Grammar/DateNode.html","modifiers":null,"name":"DateNode"},{"link":"ex/predef_3A_3A/Search/Grammar/DefaultParser.html","modifiers":null,"name":"DefaultParser"},{"link":"ex/predef_3A_3A/Search/Grammar/OrNode.html","modifiers":null,"name":"OrNode"},{"link":"ex/predef_3A_3A/Search/Grammar/ParseNode.html","modifiers":null,"name":"ParseNode"},{"link":"ex/predef_3A_3A/Search/Grammar/TextNode.html","modifiers":null,"name":"TextNode"}])
-.addChildren('method', [{"link":"ex/predef_3A_3A/Search/Grammar/getDefaultFields.html","modifiers":null,"name":"getDefaultFields"},{"link":"ex/predef_3A_3A/Search/Grammar/optimize.html","modifiers":null,"name":"optimize"},{"link":"ex/predef_3A_3A/Search/Grammar/remove_stop_words.html","modifiers":null,"name":"remove_stop_words"}])
-.finish();

@@ -1,4 +1,0 @@
-// Class path GTK2.Layout
-PikeDoc.registerSymbol('GTK2.Layout', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/GTK2/Layout/create.html","modifiers":["protected"],"name":"create"},{"link":"ex/predef_3A_3A/GTK2/Layout/get_hadjustment.html","modifiers":null,"name":"get_hadjustment"},{"link":"ex/predef_3A_3A/GTK2/Layout/get_vadjustment.html","modifiers":null,"name":"get_vadjustment"},{"link":"ex/predef_3A_3A/GTK2/Layout/move.html","modifiers":null,"name":"move"},{"link":"ex/predef_3A_3A/GTK2/Layout/put.html","modifiers":null,"name":"put"},{"link":"ex/predef_3A_3A/GTK2/Layout/set_hadjustment.html","modifiers":null,"name":"set_hadjustment"},{"link":"ex/predef_3A_3A/GTK2/Layout/set_size.html","modifiers":null,"name":"set_size"},{"link":"ex/predef_3A_3A/GTK2/Layout/set_vadjustment.html","modifiers":null,"name":"set_vadjustment"}])
-.finish();

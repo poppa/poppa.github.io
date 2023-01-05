@@ -1,4 +1,0 @@
-// Class path Protocols.X.KeySyms
-PikeDoc.registerSymbol('Protocols.X.KeySyms', PikeDoc.isInline)
-.addChildren('method', [{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/LookupCharacter.html","modifiers":null,"name":"LookupCharacter"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/LookupKeycode.html","modifiers":null,"name":"LookupKeycode"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/LookupKeysym.html","modifiers":null,"name":"LookupKeysym"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/ReleaseKey.html","modifiers":null,"name":"ReleaseKey"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/_LookupCharacter.html","modifiers":null,"name":"_LookupCharacter"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/_LookupKeysym.html","modifiers":null,"name":"_LookupKeysym"},{"link":"ex/predef_3A_3A/Protocols/X/KeySyms/makeKeysymtoKeycode.html","modifiers":null,"name":"makeKeysymtoKeycode"}])
-.finish();

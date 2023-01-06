@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use './variables' as vars;
+@use './breakpoints' as bp;
+
+.container {
+  max-width: vars.$max-width;
+  padding: vars.$gutter-width;
+  margin: 0 auto;
+
+  @include bp.md-up {
+    padding: vars.$gutter-width * 1 vars.$gutter-width * 2;
+  }
+
+  &__extra {
+    padding-top: vars.$gutter-width * 1.5;
+    padding-bottom: vars.$gutter-width * 1.5;
+
+    @include bp.md-up {
+      padding-top: vars.$gutter-width * 2.5;
+      padding-bottom: vars.$gutter-width * 2.5;
+    }
+  }
+}
+
+section.primary {
+  background-color: var(--theme-primary-dark);
+  background-image: var(--theme-primary-gradient);
+  color: var(--theme-primary-dark-text);
+}

@@ -1,0 +1,58 @@
+@use './variables' as vars;
+
+:root {
+  --theme-background: #fbfcff;
+  --theme-background-text: #121111;
+  --theme-background-2: #d0ccd0;
+  --theme-background-2-text: #121111;
+  --theme-gray: #605856;
+  --theme-gray-text: #f4e4e4;
+  --theme-primary: #1c6e8c;
+  --theme-primary-text: #f4f4f4;
+  --theme-primary-dark: #274156;
+  --theme-primary-dark-text: #f4f4f4;
+  --theme-secondary: #db3069;
+  --theme-secondary-text: #fff;
+
+  --theme-primary-gradient: linear-gradient(
+    300deg,
+    var(--theme-primary) 0%,
+    var(--theme-primary-dark) 100%
+  );
+
+  --gap: #{vars.$gap};
+
+  --border-color: var(--theme-background-2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: vars.$font-family;
+  font-size: vars.$font-size;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.1;
+}

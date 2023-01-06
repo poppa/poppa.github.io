@@ -1,0 +1,10 @@
+.gradient-text {
+  display: flex;
+  color: var(--theme-primary-dark);
+  background-image: var(--theme-primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
